@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 
-public class MainActivity extends AppCompatActivity
+public class IdentificacionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -109,5 +109,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
     public  void next(View view){
+        Intent intent = new Intent(this, ViviendaActivity.class);
+        startActivity(intent);
     }
 }

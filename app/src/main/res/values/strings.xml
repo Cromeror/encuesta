@@ -20,6 +20,26 @@
     <string name="num_persona_hogar">¿Cuantas personas tiene cada hogar?</string>
     <string name="edades_mienbros_hogar">Edades de cada uno de los miembros del hogar</string>
     <string name="telefono">Teléfono</string>
+    <!-- caracterirticas de vivienda-->
+    <string name="tipo_vivienda">Tipo de vivienda:</string>
+    <string name="propiedad_vivienda">La vivienda donde habita es:</string>
+    <string name="pago_vivienda">¿Cuanto pagan mensualmente por la cuota de la vivienda?</string>
+    <string name="precio_venta_vivienda">Si ud quisiera vender esta vivienda. ¿Cual seria el precio minimo en que la venderia?</string>
+    <string name="arriendo_estimado">Si tuviera que pagar arriendo por esta vivienda. ¿Cuanto estima que tendria que pagar mensualmente?</string>
+    <string name="pago_arriendo">¿Cuanto pagan mensualmente por arriendo?</string>
+    <string name="material_piso_vivienda">¿Cual es el material predominante de los pisos de su vivienda ?</string>
+    <string name="material_paredes_exteriores">¿Cual es el material predominante de las paredes exteriores de su vivienda?</string>
+    <string name="servicios_vivienda">¿Con cuales de los siguientes servicios cuenta la vivienda?</string>
+    <string name="acueducto24_7">¿El agua del acueducto llega las 24 horas del dia, los 7 dias de la semana?</string>
+    <string name="habitaciones_vivienda">¿Cuantos cuartos posee la vivienda?</string>
+    <string name="personasxhabitacion">¿Cuantas personas duermen en cada cuarto?</string>
+    <string name="tipo_sanitario">El servicio sanitario que utiliza el hogar es:</string>
+    <string name="uso_sanitario">El servicio sanitario del hogar es:</string>
+    <string name="tratamiento_basuras">¿Como eliminan principalmente la basura en este hogar?</string>
+    <string name="agua_consumo_humano">¿De donde obtiene principalmente el agua para consumo humano?</string>
+    <string name="lugar_preparacion_alimento">¿En cual de los siguientes lugares, preparan los alimentos las personas de este hogar</string>
+    <string name="energia_combustible_cocina">¿Con que energia o combustible cocinan principalmente en este hogar</string>
+    <string name="bienes_hogar">¿Cuales de los siguientes servicios o bienes en un uso, posee este hogar ?</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -32,10 +52,27 @@
         <item>Familiar</item>
         <item>Miembro</item>
     </string-array>
+    <!-- Arrays-vivienda-->
+    <string-array name="tipo_vivienda">
+        <item>Casa</item>
+        <item>Apartamento</item>
+        <item>Pension</item>
+        <item>Indigena</item>
+        <item>Otra ( Carpa, cueva,refugio natural, etc.)</item>
+    </string-array>
+    <string-array name="propiedad_vivienda">
+        <item>Propia totalmente paga</item>
+        <item>Propia, la estan pagando</item>
+        <item>En arriendo o en subarriendo</item>
+        <item>En usufructo</item>
+        <item>Posesión sin titulo (ocupante de hecho) ó de propiedad colectiva</item>
+        <item>Otra ¿Cuál?</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_hogar">Hogares</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_vivienda">ViviendaActivity</string>
 
 </resources>
