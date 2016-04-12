@@ -1,5 +1,6 @@
 package com.crom.encuesta.view_controller;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,20 +27,28 @@ public class ViviendaActivity extends AppCompatActivity implements AdapterView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         pregunta1 = (Spinner) findViewById(R.id.tipo_vivienda);
-        pregunta1.setAdapter(getAdapter(ViviendaArray.tipo_vivienda));
+        pregunta1.setAdapter(getAdapter(this,ViviendaArray.tipo_vivienda));
         pregunta2 = (Spinner) findViewById(R.id.propiedad_vivienda);
-        pregunta2.setAdapter(getAdapter(ViviendaArray.propiedad_vivienda));
+        pregunta2.setAdapter(getAdapter(this,ViviendaArray.propiedad_vivienda));
         pregunta2.setOnItemSelectedListener(this);
-        //initEvent();
     }
-    private ArrayAdapter getAdapter(ViviendaArray viviendaArray){
+    public static ArrayAdapter getAdapter(Context context ,ViviendaArray viviendaArray){
         ArrayAdapter<CharSequence> adapter = null;
         switch (viviendaArray){
             case tipo_vivienda:
-                adapter = ArrayAdapter.createFromResource(this,R.array.tipo_vivienda, android.R.layout.simple_spinner_item);
+                adapter = ArrayAdapter.createFromResource(context,R.array.tipo_vivienda, android.R.layout.simple_spinner_item);
                 break;
             case propiedad_vivienda:
-                adapter = ArrayAdapter.createFromResource(this,R.array.propiedad_vivienda, android.R.layout.simple_spinner_item);
+                adapter = ArrayAdapter.createFromResource(context,R.array.propiedad_vivienda, android.R.layout.simple_spinner_item);
+                break;
+            case material_piso_vivienda:
+                adapter = ArrayAdapter.createFromResource(context,R.array.material_piso_vivienda, android.R.layout.simple_spinner_item);
+                break;
+            case material_paredes_exteriores:
+                adapter = ArrayAdapter.createFromResource(context,R.array.material_paredes_exteriores, android.R.layout.simple_spinner_item);
+                break;
+            case servicios_vivienda:
+                adapter = ArrayAdapter.createFromResource(context,R.array.servicios_vivienda, android.R.layout.simple_spinner_item);
                 break;
         }
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

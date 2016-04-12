@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta6a8Fragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/material_piso_vivienda"
+        android:layout_gravity="center_vertical" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/material_piso_vivienda"
+        android:layout_gravity="center_vertical">
+    </Spinner>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/material_paredes_exteriores"
+        android:layout_gravity="center_vertical" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/material_paredes_exteriores"
+        android:layout_gravity="center_vertical">
+    </Spinner>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/servicios_vivienda"
+        android:layout_gravity="center_vertical" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/servicios_vivienda"
+        android:layout_gravity="center_vertical">
+    </Spinner>
+
+
+</LinearLayout>

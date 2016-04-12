@@ -13,6 +13,7 @@ import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta2_1;
 import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta3;
 import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta4;
 import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta5;
+import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta6a8Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +47,7 @@ public class Pregunta2SubFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             selected = getArguments().getInt(ARG_SELECTED);
+            init();
         }
     }
 
@@ -53,7 +55,6 @@ public class Pregunta2SubFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        init();
         return inflater.inflate(R.layout.subfragment_pregunta2, container, false);
     }
     private void init(){
@@ -80,6 +81,7 @@ public class Pregunta2SubFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.pregunta2_otro, new Pregunta2OtroFragment()).commit();
                 break;
         }
+        getFragmentManager().beginTransaction().replace(R.id.pregunta6a8, new Pregunta6a8Fragment()).commit();
     }
 
 }

@@ -68,6 +68,31 @@
         <item>Posesión sin titulo (ocupante de hecho) ó de propiedad colectiva</item>
         <item>Otra ¿Cuál?</item>
     </string-array>
+    <string-array name="material_piso_vivienda">
+        <item>Tierra, arena</item>
+        <item>Cemento, gravilla</item>
+        <item>Madera, tabla, tablon</item>
+        <item>Marmol</item>
+        <item>Baldosa, ladrillo, otros materiales sinteticos</item>
+    </string-array>
+    <string-array name="material_paredes_exteriores">
+        <item>Ladrillo, bloque, material prefabricado, piedra</item>
+        <item>Madera pulida</item>
+        <item>Adobe</item>
+        <item>Bahereque</item>
+        <item>Madera burda, tabla, tablon</item>
+        <item>Guadua</item>
+        <item>Esterilla, esterilla, caña, otro material vegetal</item>
+        <item>Zinc, tela, carton, latas, plastico</item>
+        <item>Sin paredes</item>
+    </string-array>
+    <string-array name="servicios_vivienda">
+        <item>Gas natural conectado a red publica</item>
+        <item>Energia electrica</item>
+        <item>Recoleccion de basuras( dias por semana)</item>
+        <item>Alcantarillado</item>
+        <item>Acueducto</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
