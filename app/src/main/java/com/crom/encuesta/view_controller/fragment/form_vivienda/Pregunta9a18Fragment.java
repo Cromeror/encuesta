@@ -12,10 +12,10 @@ import com.crom.encuesta.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Pregunta9_18Fragment extends Fragment {
+public class Pregunta9a18Fragment extends Fragment {
 
 
-    public Pregunta9_18Fragment() {
+    public Pregunta9a18Fragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class Pregunta9_18Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta9_18, container, false);
+        return inflater.inflate(R.layout.fragment_pregunta9a18, container, false);
     }
 
 }

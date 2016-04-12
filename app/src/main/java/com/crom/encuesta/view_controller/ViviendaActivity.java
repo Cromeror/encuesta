@@ -11,10 +11,6 @@ import android.widget.Spinner;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.enums.ViviendaArray;
-import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta2_1;
-import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta3;
-import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta4;
-import com.crom.encuesta.view_controller.fragment.form_vivienda.Pregunta5;
 import com.crom.encuesta.view_controller.subFragment.Pregunta2SubFragment;
 
 public class ViviendaActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -69,7 +65,7 @@ public class ViviendaActivity extends AppCompatActivity implements AdapterView.O
 
     }
     private void filtroPropiedadVivienda(int select){
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_subfragment_pregunta2, Pregunta2SubFragment.newInstance(select)).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment_pregunta2, Pregunta2SubFragment.newInstance(select)).commit();
 
     }
 }
