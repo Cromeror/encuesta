@@ -20,6 +20,13 @@
     <string name="num_persona_hogar">¿Cuantas personas tiene cada hogar?</string>
     <string name="edades_mienbros_hogar">Edades de cada uno de los miembros del hogar</string>
     <string name="telefono">Teléfono</string>
+    <!-- Educacion-->
+    <string name="leer_escribir">¿Ud sabe leer y escribir?</string>
+    <string name="estudia">¿Actualmente ud asiste a preescolar, colegio, escuela, universidad?</string>
+    <string name="establecimiento_educativo">¿El establecimiento al que asiste es oficial?</string>
+    <string name="nivel_educativo">¿Cuál es el nivel educativo mas alto alcanzado por ud?</string>
+    <string name="mayor_titulo_obtenido">¿Cual es el titulo o diploma de mayor nivel educativo que ud ha recibido?</string>
+    <string name="observaciones">OBSERVACIONES</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -32,10 +39,28 @@
         <item>Familiar</item>
         <item>Miembro</item>
     </string-array>
+    <string-array name="nivel_educativo_array">
+        <item>Ninguno</item>
+        <item>Preescolar</item>
+        <item>Basica primaria (1°-5°)</item>
+        <item>Basica secundaria (6°-9°)</item>
+        <item>Media (10°-13°)</item>
+        <item>Superior o universitaria</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="titulo_educativo_array">
+        <item>Ninguno</item>
+        <item>Bachiller</item>
+        <item>Tecnico o tecnologico</item>
+        <item>Universitario</item>
+        <item>Postgrado</item>
+        <item>No sabe, no informa</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_hogar">Hogares</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_family">FamilyActivity</string>
 
 </resources>
