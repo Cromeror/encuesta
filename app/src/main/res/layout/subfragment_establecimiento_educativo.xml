@@ -6,6 +6,7 @@
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/establecimiento_educativo"
         android:id="@+id/establecimiento_educativo" />
 </LinearLayout>
