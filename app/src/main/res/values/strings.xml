@@ -5,6 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="btn_siguente">Siguiente</string>
+    <!--Otros Generales-->
+    <string name="observaciones">OBSERVACIONES</string>
     <!-- Datos-->
     <string name="dpt_value">Cordoba</string>
     <string name="municipio_value">San Bernardo Del Viento</string>
@@ -26,7 +28,11 @@
     <string name="establecimiento_educativo">¿El establecimiento al que asiste es oficial?</string>
     <string name="nivel_educativo">¿Cuál es el nivel educativo mas alto alcanzado por ud?</string>
     <string name="mayor_titulo_obtenido">¿Cual es el titulo o diploma de mayor nivel educativo que ud ha recibido?</string>
-    <string name="observaciones">OBSERVACIONES</string>
+    <!--Salud-->
+    <string name="afiliacion">¿Ud está afiliado, es cotizante o es beneficiario de alguna entidad de seguridad social en salud?</string>
+    <string name="regimen_afiliado">¿A cual de los siguientes regimenes de seguridad social en salud está afiliado?</string>
+    <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
+    <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
