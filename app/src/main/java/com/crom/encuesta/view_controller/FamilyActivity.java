@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.fragment.EducacionFragment;
+import com.crom.encuesta.view_controller.fragment.FuerzaFragment;
 
 public class FamilyActivity extends AppCompatActivity {
 
@@ -100,7 +101,13 @@ public class FamilyActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return new EducacionFragment();
+            switch (position){
+                case 0:
+                return new EducacionFragment();
+                case 1:
+                    return new FuerzaFragment();
+            }
+            return  new EducacionFragment();
         }
 
         @Override
@@ -113,9 +120,9 @@ public class FamilyActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Educación";
+                    return getString(R.string.capE);
                 case 1:
-                    return "SECTION 2";
+                    return getString(R.string.capF);
                 case 2:
                     return "SECTION 3";
             }

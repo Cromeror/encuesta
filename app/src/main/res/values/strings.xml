@@ -1,4 +1,7 @@
 <resources>
+    <!--Titles-->
+    <string name="capE">Cap E</string>
+    <string name="capF">Cap F</string>
     <!--General -->
     <string name="app_name">encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -33,6 +36,20 @@
     <string name="regimen_afiliado">¿A cual de los siguientes regimenes de seguridad social en salud está afiliado?</string>
     <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
     <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
+    <!-- Fuerza trabajo -->
+    <string name="actividad_primera_semana_abril">¿En que actividad ocupo ud la mayor parte de la primera semana de abril?</string>
+    <string name="ademas_de_anterior">Ademas de lo anterior, ¿Ud realizo durante la primera semana de abril alguna actividad paga por una hora o más ?</string>
+    <string name="aunque_usted_no_trabajo">Aunque ud no trabajo la primera semana de abril, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
+    <string name="actividad_primera_semana_abril_hora">¿Trabajo la primera semana de abril en un negocio por una hora o mas sin que le pagaran ?</string>
+    <string name="diligencia_ultimo_mes">En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
+    <string name="hizo_ultimas_4_semanas">¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
+    <string name="desea_trabajo_negocio">¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
+    <string name="porque_no_hizo_diligencias">Aunque ud desea trabajar, ¿Por qué motivo principal no hizo diligencias para buscar un trabajo o instalar un negocio en las ultimas 4 semanas?</string>
+    <string name="ultimos_12_meses_trabajo">Durante los ultimos 12 meses ¿Ud trabajo por lo menos dos semanas consecutivas?</string>
+    <string name="despues_ultimo_empleo">Despues de su ultimo empleo, ¿ Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="ultimos_12_meses_diligencio_trabajo">Durante los ultimos 12 meses ¿Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="hace_cuantos_meses_dejo_buscar">¿Cuantos meses hace que ud dejo de buscar trabajo por ultima vez?</string>
+    <string name="estaba_disponible_semana_pasada">Si le hubiese resultado algun trabajo a ud ¿estaba disponible la semana pasada para empezar a trabajar?</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
