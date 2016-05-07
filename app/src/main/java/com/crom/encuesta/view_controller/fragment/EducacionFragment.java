@@ -2,6 +2,7 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.view_controller.FamilyActivity;
 import com.crom.encuesta.view_controller.subFragment.EstablecimientoEducativoSubFragment;
 
 /**
@@ -43,22 +45,20 @@ public class EducacionFragment extends Fragment {
                 R.array.nivel_educativo_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         nivelEducativo.setAdapter(adapter);
+        nivelEducativo.setSelection(4);
         final Spinner tituloMayor = (Spinner) view.findViewById(R.id.mayor_titulo_obtenido);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.titulo_educativo_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tituloMayor.setAdapter(adapter2);
 
         nivelEducativo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position <= 3 || position == 6) {
-                    tituloMayor.setEnabled(false);
-                    tituloMayor.setClickable(false);
-                    tituloMayor.setSelection(5);
-                } else {
-                    tituloMayor.setEnabled(true);
-                    tituloMayor.setClickable(true);
+                    FamilyActivity f = (FamilyActivity) getActivity();
+                    Log.i("EducacionFragment", "Entro!!!");
+                    f.setPositionPager(1);
                 }
             }
 

@@ -1,7 +1,7 @@
 <resources>
     <!--Titles-->
-    <string name="capE">Cap E</string>
-    <string name="capF">Cap F</string>
+    <string name="capE">Educación</string>
+    <string name="capF">Fuerza de trabajo</string>
     <!--General -->
     <string name="app_name">encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -50,6 +50,32 @@
     <string name="ultimos_12_meses_diligencio_trabajo">Durante los ultimos 12 meses ¿Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
     <string name="hace_cuantos_meses_dejo_buscar">¿Cuantos meses hace que ud dejo de buscar trabajo por ultima vez?</string>
     <string name="estaba_disponible_semana_pasada">Si le hubiese resultado algun trabajo a ud ¿estaba disponible la semana pasada para empezar a trabajar?</string>
+    <!--Ocupados  -->
+    <string name="que_hace_trabajo">¿Que hace ud en este trabajo?</string>
+    <string name="nombre_empresa_negocio">¿Cual es el nombre de la empresa, negocio, industria, oficina, firma o finca donde trabaja ud?</string>
+    <string name="serivios_empresa_dedica">A que servicios se dedica principalmente la empresa o negocio donde trabaja?</string>
+    <string name="tiene_contrato">¿Para realizar este trabajo tiene algun tipo de contrato?</string>
+    <string name="contrato_es">¿El contrato es:</string>
+    <string name="contrato_trabajo_es">¿El contrato de trabajo es:</string>
+    <string name="empresa_que_lo_contrato">La empresa o persona que lo(a) contrato ¿Es la misma empresa donde trabaja o presta su servicio?</string>
+    <string name="empresa_que_lo_contrato_es">La empresa que lo(a) contrato es:</string>
+    <string name="actividad_dela_empresa">¿Cual es la actividad de la de la empresa o persona que lo contrato?</string>
+    <string name="esta_contento_contrato">¿Esta contento con el tipo de contrato que tiene?</string>
+    <string name="contrato_tiene_derecho">¿Por su contrato actual recibe o tiene derecho a:</string>
+    <string name="tiempo_enla_empresa">¿Cuánto tiempo lleva trabajando en la empresa o negocio?</string>
+    <string name="trabajo_usted_es">En este trabajo ud es:</string>
+    <!-- Ocupados Asalariados-->
+    <string name="medio_consiguio_empleo">¿Por qué medio principal ud consiguio su empleo actual?</string>
+    <string name="cuanto_gano_mes_pasado">¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
+    <string name="mes_pasado_horas_extras">¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
+    <string name="alimentos_parte_pago">Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_vivienda">Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="usa_transporte_de_empresa">Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_pago_especie">Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
+    <string name="subsidio_mes_pasado">¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
+    <string name="el_mes_pasado_recibio">El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
+    <string name="ultimos_12_meses_recibio">En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
+    <string name="semana_pasada_horas_extras">¿La semana pasada ud trabajó horas extra remuneradas?</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -85,5 +111,6 @@
     <string name="title_activity_hogar">Hogares</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_family">FamilyActivity</string>
+    <string name="title_activity_ocupado">Ocupado</string>
 
 </resources>
