@@ -76,6 +76,22 @@
     <string name="el_mes_pasado_recibio">El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
     <string name="ultimos_12_meses_recibio">En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
     <string name="semana_pasada_horas_extras">¿La semana pasada ud trabajó horas extra remuneradas?</string>
+    <!--Datos de vivienda y del hogar-->
+    <string name="tipo_vivienda">Tipo de vivienda</string>
+    <string name="vivienda_habita_es">La vivienda donde habita es:</string>
+    <string name="mensualidad_arriendo">¿Cuanto pagan mensualmente por arriendo?</string>
+    <string name="cuartos_vivienda">¿Cuantos cuartos posee la vivienda?</string>
+    <string name="personas_cuarto_vivienda">¿Cuantas personas duermen en cada cuarto de la vivienda?</string>
+    <string name="material_pisos">¿Cual es el material predominante de los pisos de su vivienda?</string>
+    <string name="material_exteriores">¿Cual es el material predominante de las paredes exteriores de su vivienda?</string>
+    <string name="servicios_vivienda">¿Con cuales de los siguientes servicios cuenta la vivienda?</string>
+    <string name="agua_consumo">¿De donde obtienen principalmente el agua para consumo humano?</string>
+    <string name="agua_otras_actividades">¿De donde obtienen el agua para otras actividades?</string>
+    <string name="como_eliminan_basura">¿Como eliminan principalmente la basura en este hogar?</string>
+    <string name="servicio_sanitario_hogar">El servicio sanitario que utiliza el hogar es:</string>
+    <string name="servicio_sanitario_viviendas">El servicio sanitario que utiliza en la vivienda es:</string>
+    <string name="energia_cocina">¿Con qué energia o combustible cocinan principalmente en este hogar</string>
+    <string name="servicios_bienes_hogar">¿Con qué energia o combustible cocinan principalmente en este hogar?</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -105,6 +121,21 @@
         <item>Postgrado</item>
         <item>No sabe, no informa</item>
     </string-array>
+    <string-array name="tipo_vivienda__array">
+        <item>Casa</item>
+        <item>Apartamento</item>
+        <item>Pensión</item>
+        <item>Indígena</item>
+        <item>Otra (Cueva, carpa, etc)</item>
+    </string-array>
+    <string-array name="vivienda_habita_es_array">
+        <item>Propia totalmente paga</item>
+        <item>Propia, la estan pagando</item>
+        <item>En arriendo o en subarriendo</item>
+        <item>En usufructo</item>
+        <item>Posesión sin titulo ó de propiedad colectiva</item>
+        <item>Otra ¿Cuál?</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -112,5 +143,6 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_family">FamilyActivity</string>
     <string name="title_activity_ocupado">Ocupado</string>
+    <string name="title_activity_vivienda_hogar">ViviendaHogarActivity</string>
 
 </resources>

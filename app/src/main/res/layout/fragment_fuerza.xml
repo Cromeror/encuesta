@@ -15,7 +15,6 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/actividad_primera_semana_abril"
                 android:layout_gravity="center_vertical" />
-
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

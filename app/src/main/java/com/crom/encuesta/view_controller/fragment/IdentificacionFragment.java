@@ -56,24 +56,7 @@ public class IdentificacionFragment extends Fragment {
             }
         });
 
-        final EditText numPersonasHogar = (EditText) view.findViewById(R.id.editText_num_persona_hogar);
-        numPersonasHogar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    int size = 0;
-                    try {
-                        size = Integer.parseInt(numPersonasHogar.getText() + "");
-                    } finally {
-                        for (int i = 0; i < size && size > 0; i++) {
-                            getFragmentManager().beginTransaction().replace(R.id.content_edades,
-                                    ListaEdadSubFragment.newInstance(size)).commit();
-                        }
-                    }
-                }
-                return false;
-            }
-        });
+
         //RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.content_edades);
         //relativeLayout.setVisibility(View.INVISIBLE);
 

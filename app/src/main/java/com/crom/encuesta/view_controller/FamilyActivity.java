@@ -20,7 +20,8 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.fragment.EducacionFragment;
 import com.crom.encuesta.view_controller.fragment.FuerzaFragment;
 
-public class FamilyActivity extends AppCompatActivity {
+public class
+        FamilyActivity extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
