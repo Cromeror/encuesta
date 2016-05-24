@@ -3,11 +3,18 @@
     <string name="capE">Educación</string>
     <string name="capF">Fuerza de trabajo</string>
     <!--General -->
-    <string name="app_name">encuesta</string>
+    <string name="app_name">A. Indentificación del hogar</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuración</string>
     <string name="btn_siguente">Siguiente</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_hogar">Hogares</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_family">FamilyActivity</string>
+    <string name="title_activity_ocupado">Ocupado</string>
+    <string name="title_activity_vivienda_hogar">B. Datos de vivienda y del hogar</string>
     <!--Otros Generales-->
     <string name="observaciones">OBSERVACIONES</string>
     <!-- Datos-->
@@ -136,13 +143,93 @@
         <item>Posesión sin titulo ó de propiedad colectiva</item>
         <item>Otra ¿Cuál?</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_hogar">Hogares</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_family">FamilyActivity</string>
-    <string name="title_activity_ocupado">Ocupado</string>
-    <string name="title_activity_vivienda_hogar">ViviendaHogarActivity</string>
-
+    <string-array name="material_pisos_array">
+        <item>Tierra, arena</item>
+        <item>Cemento, gravilla</item>
+        <item>Madera, tabla, tablon</item>
+        <item>Marmol</item>
+        <item>Baldosa, ladrillo, otros materiales sinteticos</item>
+    </string-array>
+    <string-array name="material_exteriores_array">
+        <item>Ladrillo, bloque, material prefabricado, piedra</item>
+        <item>Madera pulida</item>
+        <item>Adobe</item>
+        <item>Bahereque</item>
+        <item>Madera burda, tabla, tablon</item>
+        <item>Guadua</item>
+        <item>Esterilla, caña, otro material vegetal</item>
+        <item>Zinc, tela, carton, latas, plastico</item>
+        <item>Sin paredes</item>
+    </string-array>
+    <string-array name="servicios_vivienda_array">
+        <item>Energia electrica</item>
+        <item>Acueducto</item>
+        <item>Recoleccion de basuras</item>
+        <item>Alcantarillado</item>
+        <item>Gas natural</item>
+        <item>Ninguno</item>
+    </string-array>
+    <string-array name="agua_array">
+        <item>Tuberia conectada al acueducto</item>
+        <item>De otra fuente por tuberia</item>
+        <item>De pozo con bomba</item>
+        <item>De pozo sin bomba, aljibe, jaguey.</item>
+        <item>Aguas lluvias</item>
+        <item>Rio, quebrada, nacimiento o manantial.</item>
+        <item>Pila publica</item>
+        <item>Carro tanque</item>
+        <item>Aguatero</item>
+        <item>Agua embotellada o en bolsa</item>
+    </string-array>
+    <string-array name="como_eliminan_basura_array">
+        <item>Por recolección  pública o privada</item>
+        <item>La tiran a un rio, quebrada, caño o laguna.</item>
+        <item>La tiran a un patio, lote, zanja o baldio.</item>
+        <item>La queman o entierran</item>
+        <item>Otras formas.</item>
+    </string-array>
+    <string-array name="servicio_sanitario_hogar_array">
+        <item>Inodoro conectado al alcantarillado</item>
+        <item>Inodoro conectado a pozo séptico</item>
+        <item>Inodoro sin conexión</item>
+        <item>Letrina</item>
+        <item>Bajamar</item>
+        <item>No tiene servicio sanitario</item>
+    </string-array>
+    <string-array name="servicio_sanitario_viviendas_array">
+        <item>De uso exclusivo de las personas de la vivienda</item>
+        <item>Compartido con personas de otra vivienda</item>
+    </string-array>
+    <string-array name="energia_cocina_array">
+        <item>Electricidad</item>
+        <item>Petroleo, gasolina, Kerosone, alcohol</item>
+        <item>Gas natural conectado a red publica</item>
+        <item>Gas propano en cilindro o pipeta</item>
+        <item>Leña, madera o de carbon de leña</item>
+        <item>Carbón mineral</item>
+        <item>Materiales de desecho</item>
+        <item>No cocina</item>
+    </string-array>
+    <string-array name="servicios_bienes_hogar_array">
+        <item>Servicio de telefono fijo</item>
+        <item>Televisión por cable o parabolica</item>
+        <item>Servicio de internet</item>
+        <item>Lavadora de ropa</item>
+        <item>Nevera o refrigerador</item>
+        <item>Licuadora</item>
+        <item>Estufa electrica o de gas</item>
+        <item>Horno electrico o de gas</item>
+        <item>Horno microondas</item>
+        <item>Televisor a color</item>
+        <item>DVD</item>
+        <item>Equipo de sonido</item>
+        <item>Computador para uso del hogar</item>
+        <item>Aspiradora</item>
+        <item>Aire acondicionado</item>
+        <item>Ventilador o abanico</item>
+        <item>Bicicleta</item>
+        <item>Moto</item>
+        <item>Carro particular</item>
+        <item>Casa, apartamento o finca de recreo</item>
+    </string-array>
 </resources>
