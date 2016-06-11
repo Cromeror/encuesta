@@ -77,5 +77,16 @@
         android:lines="6"
         android:hint="Escriba sus observaciones"
         android:id="@+id/observaciones" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/next_salud_btn"
+            android:text="@string/btn_siguente"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
 
 </LinearLayout>

@@ -23,6 +23,16 @@ import com.crom.encuesta.view_controller.subFragment.EstablecimientoEducativoSub
  */
 public class EducacionFragment extends Fragment {
     private EstablecimientoEducativoSubFragment establecimiento;
+    private static final String PARAM_EDAD = "Edad";
+    private int edad = 0;
+
+    public EducacionFragment newInstance(int edad) {
+        EducacionFragment fragment = new EducacionFragment();
+        Bundle args = new Bundle();
+        args.putInt(PARAM_EDAD, edad);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

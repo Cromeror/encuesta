@@ -20,8 +20,7 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.fragment.EducacionFragment;
 import com.crom.encuesta.view_controller.fragment.FuerzaFragment;
 
-public class
-        FamilyActivity extends AppCompatActivity {
+public class FamilyActivity extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -50,7 +49,7 @@ public class
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_family, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

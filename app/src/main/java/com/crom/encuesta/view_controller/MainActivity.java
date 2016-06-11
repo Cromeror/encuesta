@@ -19,9 +19,12 @@ import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
+import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,6 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.contenedor,new IdentificacionFragment()).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -100,7 +102,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
     public  void next(View view){
-        Intent i = new Intent(view.getContext(),ViviendaHogarActivity.class);
-        startActivity(i);
+        fragmentManager.beginTransaction().replace(R.id.contenedor,new ViviendaHogarFragment()).commit();
+        //Intent i = new Intent(view.getContext(),ViviendaHogarActivity.class);
+        //startActivity(i);
     }
 }

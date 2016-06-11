@@ -1,20 +1,22 @@
 <resources>
     <!--Titles-->
+    <string name="capA">A. Indentificación del hogar</string>
+    <string name="capB">B. Datos de vivienda y del hogar</string>
+    <string name="capC">C. Características generales</string>
+    <string name="capD">D. Salud</string>
     <string name="capE">Educación</string>
     <string name="capF">Fuerza de trabajo</string>
     <!--General -->
-    <string name="app_name">A. Indentificación del hogar</string>
+    <string name="app_name">Encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Configuración</string>
     <string name="btn_siguente">Siguiente</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_hogar">Hogares</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_family">FamilyActivity</string>
     <string name="title_activity_ocupado">Ocupado</string>
-    <string name="title_activity_vivienda_hogar">B. Datos de vivienda y del hogar</string>
     <!--Otros Generales-->
     <string name="observaciones">OBSERVACIONES</string>
     <!-- Datos-->
@@ -99,6 +101,14 @@
     <string name="servicio_sanitario_viviendas">El servicio sanitario que utiliza en la vivienda es:</string>
     <string name="energia_cocina">¿Con qué energia o combustible cocinan principalmente en este hogar</string>
     <string name="servicios_bienes_hogar">¿Con qué energia o combustible cocinan principalmente en este hogar?</string>
+    <!--Cap C. Caracteristicas generales -->
+    <string name="sexo">Sexo</string>
+    <string name="nacimiento">¿Cuál es la fecha de nacimiento?</string>
+    <string name="cuantos_años_tiene">¿ Cuantos años cumplidos tiene ? Si es menor de un año coloque 00 </string>
+    <string name="lugar_nacimiento">¿ Cual es su lugar de nacimiento?</string>
+    <string name="parentesco">¿Cuál es el parentesco con el jefe o jefa del hogar ?</string>
+    <string name="estado_civil">Estado civil</string>
+    <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -232,4 +242,36 @@
         <item>Carro particular</item>
         <item>Casa, apartamento o finca de recreo</item>
     </string-array>
+    <string name="title_activity_caracteristicas_gnrl">CaracteristicasGnrlActivity</string>
+
+
+    <!--Caracteristicas generales -->
+
+
+    <string-array name="generales5">
+        <item>Jefe(a) del hogar</item>
+        <item>Pareja, esposo(a), conyuge</item>
+        <item>Hijo(a), Hijastro(a)</item>
+        <item>Nieto</item>
+        <item>Otro pariente</item>
+        <item>Empleado(a) del servicio domestico</item>
+        <item>Pensionista</item>
+        <item>Otro no pariente</item>
+    </string-array>
+
+    <string-array name="generales6">
+        <item>No esta casado(a) y vive en pareja hace menos de dos años</item>
+        <item>No esta casado(a) y vive en pareja hace dos años o mas</item>
+        <item>Esta casado(a)</item>
+        <item>Esta separado(a) o divorciado(a)</item>
+        <item>Esta viudo(a)</item>
+        <item>Esta Soltero(a)</item>
+    </string-array>
+
+    <string-array name="generales1">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
+
 </resources>

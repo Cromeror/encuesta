@@ -31,6 +31,8 @@ public class IdentificacionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_identificacion, container, false);
+        getActivity().setTitle(getActivity().getString(R.string.capA));
+
         Spinner zona = (Spinner) view.findViewById(R.id.spiner_zona);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.zona_array, android.R.layout.simple_spinner_item);
