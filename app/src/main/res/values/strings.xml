@@ -1,11 +1,12 @@
 <resources>
     <!--Titles-->
     <string name="capA">A. Indentificación del hogar</string>
-    <string name="capB">B. Datos de vivienda y del hogar</string>
-    <string name="capC">C. Características generales</string>
-    <string name="capD">D. Salud</string>
-    <string name="capE">Educación</string>
-    <string name="capF">Fuerza de trabajo</string>
+    <string name="capB">B. Datos de vivienda</string>
+    <string name="capD">D. Características generales</string>
+    <string name="capE">E. Salud</string>
+    <string name="capF">Educación</string>
+    <string name="capG">Fuerza de trabajo</string>
+    <string name="capC">C. Datos del hogar</string>
     <!--General -->
     <string name="app_name">Encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -93,7 +94,9 @@
     <string name="personas_cuarto_vivienda">¿Cuantas personas duermen en cada cuarto de la vivienda?</string>
     <string name="material_pisos">¿Cual es el material predominante de los pisos de su vivienda?</string>
     <string name="material_exteriores">¿Cual es el material predominante de las paredes exteriores de su vivienda?</string>
-    <string name="servicios_vivienda">¿Con cuales de los siguientes servicios cuenta la vivienda?</string>
+    <string name="servicios_hogar">¿Cuáles de los siguientes servicios o bienes en un uso, posee este hogar?</string>
+    <string name="numero_hogares_vivenda">¿Número de hogares en la vivienda?</string>
+    <string name="servicios_vivienda">¿Con cuáles de los siguientes servicios cuenta la vivienda?</string>
     <string name="agua_consumo">¿De donde obtienen principalmente el agua para consumo humano?</string>
     <string name="agua_otras_actividades">¿De donde obtienen el agua para otras actividades?</string>
     <string name="como_eliminan_basura">¿Como eliminan principalmente la basura en este hogar?</string>

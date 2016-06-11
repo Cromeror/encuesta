@@ -36,11 +36,11 @@ public class ViviendaHogarFragment extends Fragment {
         return view;
     }
 
-    private void init(){
+    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
+                transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
             }
         });
     }
