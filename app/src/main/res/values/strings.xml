@@ -112,6 +112,19 @@
     <string name="parentesco">¿Cuál es el parentesco con el jefe o jefa del hogar ?</string>
     <string name="estado_civil">Estado civil</string>
     <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
+
+    <!--Inactivos-->
+    <string name="trabajado_dos_semanas_consecutivas">¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
+    <string name="trabajo_ultima_vez">¿Cuanto hace que ud. trabajo por ultima vez?</string>
+    <string name="porque_dejo_trabajo">¿Por qué razón dejó ud. su trabajo?</string>
+    <string name="busco_otro_trabajo_o_negocio">Después de su último trabajo,¿Ud. ha buscado conseguir otro trabajo o instalar un negocio?</string>
+    <string name="buscado_trabajo_alguna_vez">¿Ud. ha buscado trabajo alguna vez?</string>
+    <string name="cuando_busco_trabajo_ultima_vez">¿Cúanto hace que ud. buscó trabajo por última vez?</string>
+    <string name="razon_dejo_buscar_trabajo">¿Por qué razón principal dejó ud. de buscar trabajo?</string>
+    <string name="esta_afiliados_fondo_actualmente">¿Esta ud. afiliado actualmente a un fondo de pensiones?</string>
+    <string name="fondos_afiliados_actualmente">¿A cual de los siguientes fondos esta afiliado actualmente?</string>
+    <string name="gano_ingresos_x_trabajo">¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
+
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -247,10 +260,7 @@
     </string-array>
     <string name="title_activity_caracteristicas_gnrl">CaracteristicasGnrlActivity</string>
 
-
     <!--Caracteristicas generales -->
-
-
     <string-array name="generales5">
         <item>Jefe(a) del hogar</item>
         <item>Pareja, esposo(a), conyuge</item>
@@ -261,7 +271,6 @@
         <item>Pensionista</item>
         <item>Otro no pariente</item>
     </string-array>
-
     <string-array name="generales6">
         <item>No esta casado(a) y vive en pareja hace menos de dos años</item>
         <item>No esta casado(a) y vive en pareja hace dos años o mas</item>
@@ -270,11 +279,49 @@
         <item>Esta viudo(a)</item>
         <item>Esta Soltero(a)</item>
     </string-array>
-
     <string-array name="generales1">
         <item>Masculino</item>
         <item>Femenino</item>
         <item>Otro</item>
     </string-array>
 
+    <!--inactivos Arrays -->
+    <string-array name="trabajo_ultima_vez_array">
+        <item>Menos de un año</item>
+        <item>Entre 1 y menos de 2 años</item>
+        <item>Entre 2 y menos de 5 años</item>
+        <item>5 años y más</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="porque_dejo_trabajo_array">
+        <item>Por dedicarse a estudiar</item>
+        <item>Por despido</item>
+        <item>Jubilación o retiro</item>
+        <item>Responsabilidades familiares</item>
+        <item>Cierre de empresa</item>
+        <item>Trabajo temporal terminado</item>
+        <item>Malas condiciones de trabajo</item>
+        <item>Enfermedad o accidente</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="razon_dejo_buscar_trabajo_array">
+        <item>Por dedicarse a estudiar</item>
+        <item>No sabe como buscarlo</item>
+        <item>No encuentra el trabajo apropiado</item>
+        <item>Está cansado de buscarlo</item>
+        <item>Por la edad</item>
+        <item>No hay trabajo en el municipio</item>
+        <item>Considera que no esta calificado</item>
+        <item>Jubilación o retiro</item>
+        <item>Responsabilidades familiares</item>
+        <item>Por enfermedad</item>
+        <item>No desea trabajar</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="fondos_afiliados_actualmente_array">
+        <item>fondo privado</item>
+        <item>Colpensiones, FNA</item>
+        <item>Fondo subsidiado</item>
+        <item>regimenes especiales (FFMM,Ecopetrol)</item>
+    </string-array>
 </resources>
