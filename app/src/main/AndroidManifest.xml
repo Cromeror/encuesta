@@ -18,14 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view_controller.FamilyActivity"
-            android:label="@string/title_activity_family"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".view_controller.OcupadoActivity"
-            android:label="@string/title_activity_ocupado"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".view_controller.CaracteristicasGnrlActivity"
             android:label="@string/title_activity_caracteristicas_gnrl"
             android:theme="@style/AppTheme.NoActionBar" >
