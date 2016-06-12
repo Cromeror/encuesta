@@ -22,9 +22,11 @@ import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+
+implements NavigationView.OnNavigationItemSelectedListener {
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
+    private int edad = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

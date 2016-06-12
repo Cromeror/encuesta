@@ -2,6 +2,7 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -23,14 +25,14 @@ import com.crom.encuesta.view_controller.subFragment.EstablecimientoEducativoSub
  */
 public class EducacionFragment extends Fragment {
     private EstablecimientoEducativoSubFragment establecimiento;
-    private static final String PARAM_EDAD = "Edad";
-    private int edad = 0;
+    private Button next;
+    private FragmentTransaction transaction;
 
-    public EducacionFragment newInstance(int edad) {
+    public EducacionFragment newInstance() {
         EducacionFragment fragment = new EducacionFragment();
         Bundle args = new Bundle();
-        args.putInt(PARAM_EDAD, edad);
-        fragment.setArguments(args);
+        /*args.putInt(PARAM_EDAD, edad);
+        fragment.setArguments(args);*/
         return fragment;
     }
 
@@ -38,14 +40,18 @@ public class EducacionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_educacion, container, false);
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+        next = (Button) view.findViewById(R.id.next_salud_btn);
+        init();
         establecimiento = new EstablecimientoEducativoSubFragment();
         Switch estudia = (Switch) view.findViewById(R.id.estudia);
         estudia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked==true){
-                    getFragmentManager().beginTransaction().replace(R.id.content_establecimiento,establecimiento).commit();
-                }else {
+                if (isChecked == true) {
+                    getFragmentManager().beginTransaction().replace(R.id.content_establecimiento, establecimiento).commit();
+                } else {
                     getFragmentManager().beginTransaction().remove(establecimiento).commit();
                 }
             }
@@ -79,5 +85,18 @@ public class EducacionFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void init() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
+                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
+                startActivity(i);*/
+
+                transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+            }
+        });
     }
 }

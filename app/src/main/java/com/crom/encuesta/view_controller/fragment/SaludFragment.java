@@ -33,6 +33,7 @@ public class SaludFragment extends Fragment {
         Bundle args = new Bundle();
         args.putInt(PARAM_EDAD, edad);
         fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -56,8 +57,12 @@ public class SaludFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                Intent i = new Intent(v.getContext(),FamilyActivity.class);
-                startActivity(i);
+                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
+                startActivity(i);*/
+                if (edad < 3)
+                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                else
+                    transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
             }
         });
     }

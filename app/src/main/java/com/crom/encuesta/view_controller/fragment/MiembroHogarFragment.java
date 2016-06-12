@@ -55,7 +55,7 @@ public class MiembroHogarFragment extends Fragment {
 
         final Calendar myCalendar = Calendar.getInstance();
 
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener(){
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 myCalendar.set(Calendar.YEAR, year);
@@ -79,21 +79,20 @@ public class MiembroHogarFragment extends Fragment {
         final EditText editTextEdad = (EditText) view.findViewById(R.id.edad_gnrl);
 
 
-            Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
-            next.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                //Log.i("###CONFIRM####", "La edad es: " + editTextEdad.getText().toString());
-                //Toast.makeText(getActivity(), "Digite una edad: "+edittext.getText().toString(), Toast.LENGTH_SHORT).show();
+        Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 try {
                     int edad = Integer.parseInt(editTextEdad.getText().toString());
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                }catch (Exception e){
-                    //Log.i("###ERRROR####", "Digite una edad: " + editTextEdad.getText().toString());
+                } catch (Exception e) {
+
                     Toast.makeText(getActivity(), "Digite una edad", Toast.LENGTH_SHORT).show();
                 }
-                }
-            });
+            }
+        });
         return view;
     }
 }
