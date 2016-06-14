@@ -121,10 +121,36 @@
     <string name="buscado_trabajo_alguna_vez">¿Ud. ha buscado trabajo alguna vez?</string>
     <string name="cuando_busco_trabajo_ultima_vez">¿Cúanto hace que ud. buscó trabajo por última vez?</string>
     <string name="razon_dejo_buscar_trabajo">¿Por qué razón principal dejó ud. de buscar trabajo?</string>
+    <string name="alimentacion_switch">Auxilio o subsidio de alimentación</string>
+    <string name="trasnporte_switch">Auxilio o subsidio de transporte</string>
+    <string name="familiar_switch">Subsidio familiar</string>
+    <string name="educativo_switch">Subsidio educativo</string>
+    <string name="este_trabajo_es">Este trabajo es:</string>
+    <string name="trabajar_antes_del_mes">Si se le presentará la oportunidad de encontrar un nuevo empleo, ¿Podría Ud. empezar a trabajar antes de un mes? </string>
+    <string name="diligencias_cambio_trabajo"> ¿Hizo Ud. diligencias durante las últimas 4 semanas para cambiar de trabajo?</string>
+    <string name="por_que_quiere_cambiar_trabajo">¿Por qué desea Ud. cambiar de trabajo? (puede marcar más de una opción):</string>
+    <string name="quiere_cambiar_empleo"> ¿Ud. desea cambiar su empleo actual? </string>
+    <string name="posibilidad_trabajar_mas_horas">Si la semana pasada le hubiese resultado la posibilidad de trabajar más horas ¿Ud. estaba disponible para hacerlo? </string>
+    <string name="horas_adicionales_semana"> ¿Cuántos horas adicionales puede Ud. trabajar a la semana?</string>
+    <string name="quiere_trabajar_mas_horas">Además de las horas que trabaja actualmente, ¿A Ud. le gustaría trabajar más horas?</string>
+    <string name="ganancia_otro_trabajo">¿Cuál fue la ganancia o ingresos de ese segundo trabajo el mes pasado?</string>
+    <string name="ocupacion_segundo_trabajo">¿En el segundo trabajo Ud. es?:</string>
+    <string name="horas_trabajadas_otro_trabajo">¿Cuántos horas trabajo Ud. la semana pasada en su segundo trabajo? (si no trabajó escriba 00, si no sabe cuántas horas escriba 98)    </string>
+    <string name="otro_trabajo_o_negocio">Además de su ocupación principal, ¿Tenia Ud. la semana pasada otro trabajo o negocio?</string>
+    <string name="ganancia_neta_12_meses">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca en los últimos doce meses? </string>
+    <string name="ganancia_neta_mes">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca, el mes pasado? (Si no obtuvo coloco 00 si no sabe el valor escriba 98, si no sabe si obtuvo 99)</string>
+    <string name="ultimo_año_de_registro"> ¿Cuál fue el último año en el que renovó el registro? </string>
+    <string name="ha_registrado_el_negocio">¿Ud. ha registrado el negocio ante algún autoridad o entidad? (Cámaras de comercio, alcaldía, RUT, registro mercantil) </string>
+    <string name="formas_de_trabajo">En la semana pasada, ¿Cuál de las siguientes formas de trabajo realizo?</string>
+    <string name="incluyo_este_valor">¿Incluyó estos valor en los ingresos del mes pasado que me informo anteriormente? </string>
+    <string name="subsidios">¿Cuál de los siguientes subsidios recibió Ud. el mes pasado? (Si recibió pero no sabe escriba 98)</string>
     <string name="esta_afiliados_fondo_actualmente">¿Esta ud. afiliado actualmente a un fondo de pensiones?</string>
     <string name="fondos_afiliados_actualmente">¿A cual de los siguientes fondos esta afiliado actualmente?</string>
+    <string name="ingresos_horas_extras">¿En el mes pasado recibió ingresos por concepto de horas extras? (Si recibió pero no sabe cuánto escriba 98)</string>
     <string name="gano_ingresos_x_trabajo">¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
-
+    <string name="ingreso_en_especie">Además del salario en dinero, ¿el mes pasado recibió ingresos en especie por su trabajo (Electrodomésticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98) </string>
+    <string name="incluye_actualmente">¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
+    <string name="vivienda_por_pago">Además del salario en dinero, ¿el mes pasado recibió vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
