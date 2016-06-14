@@ -113,6 +113,20 @@
     <string name="estado_civil">Estado civil</string>
     <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
 
+    <!--Desocupado-->
+    <string name="desocupados_1">¿Durante cuaántas semanas ha estado o estuvo us buscando trabajo?</string>
+    <string name="desocupados_2">Si le hubiere resultado un trabajo la semana pasada, ¿Cuantas hotas a la semana estaba disponible para trabajar?</string>
+    <string name="desocupados_3">¿Usted ha buscado trabajo como?</string>
+    <string name="desocupados_4">¿Ud ha buscado trabajo por primera vez, o habia trabajado antes por lo menos durante 2 semanas consecutivas?</string>
+    <string name="desocupados_5">¿Cuántas semanas hace que ud dejo de trabajar por última vez?</string>
+    <string name="desocupados_6">¿Qué ocupación, oficio o labor realizó ud la ultima vez que trabajo?</string>
+    <string name="desocupados_7">¿A qué actividad se dedicaba principalmente la empresa, negocio, industria, oficina o finca, donde realizó su ultimo trabajo?</string>
+    <string name="desocupados_8">¿En este ultimo trabajo ud era?</string>
+    <string name="desocupados_9">¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde us trabajaba?</string>
+    <string name="desocupados_10">¿Actualmente recibe subsidio de desempleo?</string>
+    <string name="desocupados_11">¿En caso de enfermedad como cubriria los costos medicos y los medicamentos?</string>
+    <string name="desocupados_12">¿Qué esta haciendo ud actualmente para sostenerse economicamente en la vejez?</string>
+
     <!--Inactivos-->
     <string name="trabajado_dos_semanas_consecutivas">¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
     <string name="trabajo_ultima_vez">¿Cuanto hace que ud. trabajo por ultima vez?</string>
@@ -148,9 +162,53 @@
     <string name="fondos_afiliados_actualmente">¿A cual de los siguientes fondos esta afiliado actualmente?</string>
     <string name="ingresos_horas_extras">¿En el mes pasado recibió ingresos por concepto de horas extras? (Si recibió pero no sabe cuánto escriba 98)</string>
     <string name="gano_ingresos_x_trabajo">¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
+
+    <!-- TICs -->
+    <string name="tics_1">¿Usó ud el computador (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_2">¿Usó ud el internet (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_3">Durante los últimos 12 meses, ¿En cuales de los siguientes sitios usó internet?</string>
+    <string name="tics_4">¿Para cual de los siguientes servicios o actividades utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_5">¿Con qué frecuencia utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_3a">En centros de acceso público gratis</string>
+    <string name="tics_3b">En la casa de otra persona</string>
+    <string name="tics_3c">En la institución educativa</string>
+    <string name="tics_3d">En el trabajo</string>
+    <string name="tics_3e">En el hogar</string>
+    <string name="tics_3f">En centros de acceso público con costo (café internet)</string>
+    <string name="tics_3g">Otro, ¿Cual?</string>
+    <string name="tics_4a">Obtener información (excluir educación y aprendizaje)</string>
+    <string name="tics_4b">Comprar/ordenar productos y servicios</string>
+    <string name="tics_4c">Eduación y aprendizaje</string>
+    <string name="tics_4d">Comunicación</string>
+    <string name="tics_4e">Actividades de entretenimiento(juegos, bajar música, etc)</string>
+    <string name="tics_4f">Banca electronica y otras transacciones financieras</string>
+    <string name="tics_4g">Otro, ¿Cual?</string>
+
+    <!--Otros ingresos mes pasado -->
+    <string name="otros_ingresos1">El mes pasado, ¿Usted recibió pagos por concepto de arriendo y/o pensiones?</string>
+    <string name="otros_ingresos2">El mes pasado, recibio pagos por:</string>
+    <string name="otros_ingresos2a">a. Arriendos de casas, apartamentos fincas, lotes, vehiculos, equipos, etc.</string>
+    <string name="otros_ingresos2b">b. Pensiones o jubilaciones por vejez, invalidez o sustitucion pensional</string>
+    <string name="otros_ingresos2c">Pension alimenticia por paternidad, divorcio o separación</string>
+    <string name="otros_ingresos_cuanto">¿Cuánto recibió?</string>
+
+    <!-- calidad del empleo principal -->
+    <string name="empleo_57">Esta usted: 1 Muy satisfecto - 5 Muy Insatisfecho</string>
+    <string name="empleo_57a">Con su trabajo actual</string>
+    <string name="empleo_57b">Con el numero de horas trabajadas a la semana</string>
+    <string name="empleo_57c">Con la aplicación de su conocimiento en su trabajo</string>
+    <string name="empleo_57d">Con el pago o ganancia que recibe de su empleo o negocio</string>
+    <string name="empleo_57e">Con los beneficios y prestaciones que recibe</string>
+    <string name="empleo_57f">Con su jornada laboral actual</string>
+    <string name="empleo_58">¿Esta usted afiliado o hace parte de una asociación gremial o sindical?</string>
+    <string name="empleo_59">¿Como considera usted que es su empleo actual?</string>
+    <string name="empleo_60">Su horario de trabajo y sus responsabilidades son:</string>
+    <string name="empleo_61">¿En caso de no tener trabajo, de donde obtendría principalmente los recursos para cubir los gastos de ud y de su hogar?</string>
+
     <string name="ingreso_en_especie">Además del salario en dinero, ¿el mes pasado recibió ingresos en especie por su trabajo (Electrodomésticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98) </string>
     <string name="incluye_actualmente">¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
     <string name="vivienda_por_pago">Además del salario en dinero, ¿el mes pasado recibió vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+
     <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
@@ -349,5 +407,101 @@
         <item>Colpensiones, FNA</item>
         <item>Fondo subsidiado</item>
         <item>regimenes especiales (FFMM,Ecopetrol)</item>
+    </string-array>
+
+    <!--desocupado Arrays -->
+    <string-array name="desocupados_3_8">
+        <item>Obrero o empleado de empresa particular</item>
+        <item>Obrero o empleado del gobierno</item>
+        <item>Empleado domestico</item>
+        <item>Trabajador por cuenta propia</item>
+        <item>Patron o empleador</item>
+        <item>Trabajador familiar sin remuneración</item>
+        <item>Trabajador sin remuneración en empresas o negocios de otros hogares</item>
+        <item>Jornalero o peón</item>
+        <item>Otro, ¿cual?</item>
+    </string-array>
+    <string-array name="desocupados_9">
+        <item>Trabaja solo</item>
+        <item>2 a 3 personas</item>
+        <item>4 a 5 personas</item>
+        <item>6 a 10 personas</item>
+        <item>11 a 19 personas</item>
+        <item>20 a 30 personas</item>
+        <item>31 a 50 personas</item>
+        <item>51 a 100 personas</item>
+        <item>100 y más personas</item>
+    </string-array>
+    <string-array name="desocupados_10">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="desocupados_11">
+        <item>Tiene regimen subsidiario</item>
+        <item>Es beneficiario de un afiliado</item>
+        <item>Con ahorros personales</item>
+        <item>Con ayuda de algún familiar</item>
+        <item>Con otro tipo de seguro</item>
+        <item>Pidiendo dinero prestado</item>
+        <item>No lo ha considerado</item>
+        <item>Otro,¿cual?</item>
+    </string-array>
+    <string-array name="desocupados_12">
+        <item>Aportar a un fondo de pensiones obligatorias</item>
+        <item>Aportar a un fondo de pensiones voluntarias</item>
+        <item>Ahorrando</item>
+        <item>Haciendo inversiones</item>
+        <item>Pagando un seguro por su cuenta</item>
+        <item>Preparando a sus hijos para que lo mantengan en la vejez</item>
+        <item>Otro, ¿Cual?</item>
+        <item>Nada</item>
+    </string-array>
+
+    <!-- TICs -->
+    <string-array name="tics_5">
+        <item>Al menos una vez al día</item>
+        <item>Al menos una vez a la semana, pero no cada día</item>
+        <item>Al menos una vez al mes, pero no cada semana</item>
+        <item>Menos de una vez al mes</item>
+
+    </string-array>
+    <string-array name="tics_1_2">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+
+    <!-- calidad del empleo principal -->
+    <string-array name="empleo_57">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="empleo_59">
+        <item>Muy inestable</item>
+        <item>Inestable</item>
+        <item>Estable</item>
+        <item>Muy estable</item>
+    </string-array>
+    <string-array name="empleo_60">
+        <item>Muy incompatibles</item>
+        <item>Incompatibles</item>
+        <item>Compatibles</item>
+        <item>My compatibles</item>
+    </string-array>
+    <string-array name="empleo_61">
+        <item>De cesantias</item>
+        <item>Ahorros personales</item>
+        <item>Indemnización o similar</item>
+        <item>Pidiendo dinero prestado</item>
+        <item>Ayuda de algún familiar</item>
+        <item>No tendría como cubrirlos</item>
+        <item>No lo ha considerado</item>
+        <item>Venderia su vivienda o bienes del hogar</item>
+        <item>Empeñaria bienes del hogar</item>
+        <item>Otro, cual?</item>
     </string-array>
 </resources>
