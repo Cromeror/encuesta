@@ -116,7 +116,7 @@
             android:id="@+id/personas_cuarto_vivienda"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textAlignment="center"
-            android:text="Toque para agregar la información"
+            android:text="Informacion persona por cuarto"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -171,31 +171,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="@dimen/vertical_margin"
-            android:layout_gravity="center_horizontal">
-
+            android:paddingBottom="@dimen/vertical_margin">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/cuartos_vivienda" />
-
+                android:text="@string/num_hogares"/>
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
-
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="4"
                     android:inputType="number"
-                    android:id="@+id/editText"
-                    android:layout_centerHorizontal="true" />
+                    android:id="@+id/editText_num_hogares"
+                    android:layout_centerHorizontal="true"/>
             </RelativeLayout>
         </LinearLayout>
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

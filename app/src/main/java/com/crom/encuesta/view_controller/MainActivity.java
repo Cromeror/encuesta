@@ -104,9 +104,5 @@ implements NavigationView.OnNavigationItemSelectedListener {
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public  void next(View view){
-        fragmentManager.beginTransaction().replace(R.id.contenedor,new ViviendaHogarFragment()).commit();
-        //Intent i = new Intent(view.getContext(),ViviendaHogarActivity.class);
-        //startActivity(i);
-    }
+
 }
