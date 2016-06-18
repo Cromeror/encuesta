@@ -370,6 +370,47 @@
         <item>Otro</item>
     </string-array>
 
+    <!--fuerza de empleo Arrays-->
+    <string-array name="actividad_ocupo_mayor_tiempo_mayo">
+        <item>otro</item>
+        <item>trabajando</item>
+        <item>buscando empleo</item>
+        <item>estudiando</item>
+        <item>oficios del hogar</item>
+        <item>incapacitado permanentemente para trabajar</item>
+    </string-array>
+    <string-array name="si_no">
+        <item>si</item>
+        <item>no</item>
+    </string-array>
+    <string-array name="fuerza_6">
+        <item>Pidió ayuda a familia, amigos, colegas</item>
+        <item>Visitó, llevó o envío hojas de vida a empresas o empleadores</item>
+        <item>Visitó, llevó o envío hojas de vida a bolsas de empleo o intermediarios</item>
+        <item>Puso o consultó avisos clasificados</item>
+        <item>Se presentó a convocatorias </item>
+        <item>Hizo preparatorios para iniciar un negocio</item>
+        <item>Otro medio</item>
+        <item>No sabe, No informa</item>
+    </string-array>
+    <string-array name="fuerza_8">
+        <item>No hay trabajo disponible en la ciudad o región/ No encuentra trabajo en su oficio o profesión
+        </item>
+        <item>Ya encontré trabajo</item>
+        <item>Está esperanzado que lo llamen o está esperando temporada alta</item>
+        <item>No sabe cómo buscarlo</item>
+        <item>Está cansado de buscar</item>
+        <item>Carece de la experiencia necesaria</item>
+        <item>No tiene los recursos necesarios para instalar un negocio</item>
+        <item>Los empleadores lo consideran muy joven o muy viejo</item>
+        <item>Ud. se considera muy joven o muy viejo</item>
+        <item>Responsabilidades familiares</item>
+        <item>Problemas de salud</item>
+        <item>Está estudiando</item>
+        <item>Otro</item>
+    </string-array>
+
+
     <!--inactivos Arrays -->
     <string-array name="trabajo_ultima_vez_array">
         <item>Menos de un año</item>
