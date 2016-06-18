@@ -36,6 +36,7 @@ public class FuerzaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fuerza, container, false);
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarD));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();

@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 
 /**
@@ -22,12 +25,14 @@ public class IdentificacionFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.a_fragment_identificacion, container, false);
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         getActivity().setTitle(getActivity().getString(R.string.capA));
 
         Spinner zona = (Spinner) view.findViewById(R.id.spiner_zona);
@@ -46,9 +51,14 @@ public class IdentificacionFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
+                save();
+               // transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
             }
         });
+    }
+    private void save(){
+        vivienda.setDepartamento(getString(R.string.dpt_value));
+        Log.i("####SAVE####", vivienda.toString());
     }
 
 }

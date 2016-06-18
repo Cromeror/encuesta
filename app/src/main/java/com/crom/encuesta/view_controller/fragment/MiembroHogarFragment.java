@@ -34,7 +34,7 @@ public class MiembroHogarFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_miembro_hogar, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capC));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarA));
 
         Spinner generales1 = (Spinner) view.findViewById(R.id.generales1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(), R.array.generales1, android.R.layout.simple_spinner_item);

@@ -27,8 +27,7 @@ public class CaracteristicaHogarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        getActivity().setTitle(getActivity().getString(R.string.capB));
-
+        getActivity().setTitle(getActivity().getString(R.string.capHogarA));
         view = inflater.inflate(R.layout.fragment_caracterisitca_hogar, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         next = (Button) view.findViewById(R.id.next_vivienda_btn);

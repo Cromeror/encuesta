@@ -18,13 +18,13 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-implements NavigationView.OnNavigationItemSelectedListener {
-
+    private final Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private int edad = 0;
 
@@ -41,7 +41,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        fragmentManager.beginTransaction().replace(R.id.contenedor,new IdentificacionFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -105,4 +105,11 @@ implements NavigationView.OnNavigationItemSelectedListener {
         return true;
     }
 
+    public int getEdad() {
+        return 20;
+    }
+
+    public Vivienda getVivienda() {
+        return vivienda;
+    }
 }

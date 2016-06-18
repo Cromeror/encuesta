@@ -1,7 +1,13 @@
 <resources>
     <!--Titles-->
     <string name="capA">A. Indentificación del hogar</string>
-    <string name="capB">B. Datos de vivienda</string>
+    <string name="capB">B. Características de la vivienda</string>
+    <string name="capHogarA">A. Características del hogar </string>
+    <string name="capMHogarA">A. Indentificación miembro del hogar</string>
+    <string name="capMHogarB">B. Salud</string>
+    <string name="capMHogarC">C. Educación</string>
+    <string name="capMHogarD">D. Fuerza de trabajo</string>
+
     <string name="capD">D. Características generales</string>
     <string name="capE">E. Salud</string>
     <string name="capF">Educación</string>
@@ -32,7 +38,7 @@
     <string name="sector_vereda">Sector o Vereda</string>
     <string name="direccion">Dirección (calle, manzana, lote, apartamento, finca, etc)</string>
     <string name="num_hogares">Números de hogares en la vivienda</string>
-    <string name="num_persona_hogar">¿Cuantas personas tiene cada hogar?</string>
+    <string name="num_persona_hogar">¿Cuántas personas conforman este hogar?</string>
     <string name="edades_mienbros_hogar">Edades de cada uno de los miembros del hogar</string>
     <string name="telefono">Teléfono</string>
     <!-- Educacion-->

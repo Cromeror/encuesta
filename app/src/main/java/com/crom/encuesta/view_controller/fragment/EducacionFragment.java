@@ -25,6 +25,7 @@ public class EducacionFragment extends Fragment {
     private Button next;
     private FragmentTransaction transaction;
 
+
     public EducacionFragment newInstance() {
         EducacionFragment fragment = new EducacionFragment();
         Bundle args = new Bundle();
@@ -37,6 +38,7 @@ public class EducacionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_educacion, container, false);
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarC));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
         next = (Button) view.findViewById(R.id.next_salud_btn);
@@ -86,10 +88,6 @@ public class EducacionFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
-                startActivity(i);*/
-
                 transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
             }
         });
