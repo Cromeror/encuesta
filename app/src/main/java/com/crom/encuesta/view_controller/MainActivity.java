@@ -1,10 +1,12 @@
 package com.crom.encuesta.view_controller;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -111,5 +113,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public Vivienda getVivienda() {
         return vivienda;
+    }
+
+    public void dialogIncompleteField(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Recuerde no debe dejar campos vacios").setTitle("Formulario incompleto")
+                .setCancelable(true)
+        .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

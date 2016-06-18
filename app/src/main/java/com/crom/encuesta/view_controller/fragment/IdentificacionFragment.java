@@ -52,12 +52,26 @@ public class IdentificacionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 save();
-               // transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
             }
         });
     }
-    private void save(){
+
+    private void save() {
         vivienda.setDepartamento(getString(R.string.dpt_value));
+        vivienda.setMunicipio(getString(R.string.municipio_value));
+        vivienda.setZona(((Spinner)view.findViewById(R.id.spiner_zona)).getSelectedItem().toString());
+        String barrio = ((EditText) view.findViewById(R.id.identi_barrio_corregimiento)).getText().toString();
+        String sector = ((EditText) view.findViewById(R.id.identi_sector_vereda)).getText().toString();
+        String direccion = ((EditText) view.findViewById(R.id.identi_direccion)).getText().toString();
+
+        if(!barrio.equals("") && !sector.equals("")  && !direccion.equals("")){
+            vivienda.setBarrio(barrio);
+            vivienda.setSector(sector);
+            vivienda.setDireccion(direccion);
+            transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
+        }else {
+            ((MainActivity) getActivity()).dialogIncompleteField();
+        }
         Log.i("####SAVE####", vivienda.toString());
     }
 

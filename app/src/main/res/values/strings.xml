@@ -24,6 +24,10 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_family">FamilyActivity</string>
     <string name="title_activity_ocupado">Ocupado</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="continuar">Continuar</string>
+    <string name="touch_me">Toque para seleccionar la respuesta</string>
     <!--Otros Generales-->
     <string name="observaciones">OBSERVACIONES</string>
     <!-- Datos-->

@@ -189,7 +189,9 @@ public class Vivienda {
                 output3.append(hogares.size());
                 output3.append("\n");
             }
+
+            output2.append("\n");
         }
-        return output.toString();
+        return output2.toString();
     }
 }
