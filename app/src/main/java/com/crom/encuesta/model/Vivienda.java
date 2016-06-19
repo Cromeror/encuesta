@@ -150,6 +150,13 @@ public class Vivienda {
         this.hogares = hogares;
     }
 
+    public Hogar getLastHogar() {
+        if (hogares.size() > 0) {
+            return hogares.get(hogares.size() - 1);
+        }
+        return null;
+    }
+
     public String toString() {
         StringBuilder output = new StringBuilder();
         StringBuilder result = new StringBuilder();
@@ -189,8 +196,8 @@ public class Vivienda {
                 output3.append(",");
                 output3.append(hogares.size());
                 output3.append(",");
-                for (Hogar hogar: hogares){
-                    for (String string: hogar.toList()){
+                for (Hogar hogar : hogares) {
+                    for (String string : hogar.toList()) {
                         StringBuilder output4 = new StringBuilder();
                         output4.append(output3);
                         output4.append(string);

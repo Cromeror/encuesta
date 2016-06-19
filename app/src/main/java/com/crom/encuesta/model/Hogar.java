@@ -88,7 +88,7 @@ public class Hogar {
 
     public List<String> toList() {
         ArrayList<String> strings = new ArrayList<String>();
-        for(String servicio: serviciosBienes){
+        for (String servicio : serviciosBienes) {
             StringBuilder output = new StringBuilder();
             output.append(miembros.size());
             output.append(",");
@@ -105,7 +105,13 @@ public class Hogar {
             output.append(sanitarioVivienda);
             output.append(",");
             output.append(energiaCocinan);
-            strings.add(output.toString());
+            output.append(",");
+            for (Miembro miembro : miembros) {
+                StringBuilder output2 = new StringBuilder();
+                output2.append(output);
+                output2.append(miembro);
+                strings.add(output2.toString());
+            }
         }
         return strings;
     }
