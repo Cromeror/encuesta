@@ -113,8 +113,10 @@
     <string name="servicio_sanitario_hogar">El servicio sanitario que utiliza el hogar es:</string>
     <string name="servicio_sanitario_viviendas">El servicio sanitario que utiliza en la vivienda es:</string>
     <string name="energia_cocina">¿Con qué energia o combustible cocinan principalmente en este hogar</string>
-    <string name="servicios_bienes_hogar">¿Con qué energia o combustible cocinan principalmente en este hogar?</string>
+    <string name="energia_cocinan">¿Con qué energia o combustible cocinan principalmente en este hogar?</string>
     <string name="b_dialog">Cuantas personas duermen en el siguiente cuarto</string>
+    <!--Caracteristicas del hogar -->
+    <string name="hogar_a_2">¿Cuáles de los siguientes servicios o bienes en un uso, posee este hogar?</string>
     <!--Cap C. Caracteristicas generales -->
     <string name="sexo">Sexo</string>
     <string name="nacimiento">¿Cuál es la fecha de nacimiento?</string>

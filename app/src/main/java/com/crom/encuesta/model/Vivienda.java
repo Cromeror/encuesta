@@ -1,5 +1,7 @@
 package com.crom.encuesta.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -152,6 +154,7 @@ public class Vivienda {
 
     public String toString() {
         StringBuilder output = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         output.append(departamento);
         output.append(",");
         output.append(municipio);
@@ -172,26 +175,26 @@ public class Vivienda {
         output.append(",");
         output.append(cuartos.size());
         output.append(",");
-        StringBuilder output2 = new StringBuilder();
-        StringBuilder output3 = new StringBuilder();
-        for (int i = 0; i < cuartos.size(); i++) {
+        for (String personasCuarto : cuartos) {
+            StringBuilder output2 = new StringBuilder();
+            Log.i("PERSONAS POR CUARTO", personasCuarto);
             output2.append(output);
-            output2.append(cuartos.get(i));
+            output2.append(personasCuarto);
             output2.append(",");
             output2.append(materialPisos);
             output2.append(",");
             output2.append(materialParedesExteriores);
             output2.append(",");
-            for (int j = 0; j < servicios.size(); j++) {
+            for (String servicio : servicios) {
+                StringBuilder output3 = new StringBuilder();
                 output3.append(output2);
-                output3.append(servicios.get(j));
+                output3.append(servicio);
                 output3.append(",");
                 output3.append(hogares.size());
                 output3.append("\n");
+                result.append(output3);
             }
-
-            output2.append("\n");
         }
-        return output2.toString();
+        return result.toString();
     }
 }

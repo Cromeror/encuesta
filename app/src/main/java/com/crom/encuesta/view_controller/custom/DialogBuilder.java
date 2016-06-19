@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.fragment.CaracteristicaHogarFragment;
 import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
 import java.util.ArrayList;
@@ -58,6 +59,8 @@ public class DialogBuilder {
     private void saveMultipleChoice(MainActivity mainActivity, Class c) {
         if (ViviendaHogarFragment.class.equals(c)) {
             mainActivity.getVivienda().setServicios(mSelectedItems);
+        }else if(CaracteristicaHogarFragment.class.equals(c)){
+            //mainActivity.getVivienda().getHogares().
         }
     }
 }
