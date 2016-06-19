@@ -1,6 +1,7 @@
 package com.crom.encuesta.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Katherine Buelvas on 17/06/2016.
@@ -85,10 +86,27 @@ public class Hogar {
         this.energiaCocinan = energiaCocinan;
     }
 
-    @Override
-    public String toString() {
-        return "Hogar{" +
-                "miembros=" + miembros +
-                '}';
+    public List<String> toList() {
+        ArrayList<String> strings = new ArrayList<String>();
+        for(String servicio: serviciosBienes){
+            StringBuilder output = new StringBuilder();
+            output.append(miembros.size());
+            output.append(",");
+            output.append(servicio);
+            output.append(",");
+            output.append(aguaConsumo);
+            output.append(",");
+            output.append(aguaOtroUso);
+            output.append(",");
+            output.append(basura);
+            output.append(",");
+            output.append(sanitarioHogar);
+            output.append(",");
+            output.append(sanitarioVivienda);
+            output.append(",");
+            output.append(energiaCocinan);
+            strings.add(output.toString());
+        }
+        return strings;
     }
 }

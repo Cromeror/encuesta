@@ -59,8 +59,11 @@ public class DialogBuilder {
     private void saveMultipleChoice(MainActivity mainActivity, Class c) {
         if (ViviendaHogarFragment.class.equals(c)) {
             mainActivity.getVivienda().setServicios(mSelectedItems);
-        }else if(CaracteristicaHogarFragment.class.equals(c)){
-            //mainActivity.getVivienda().getHogares().
+        } else if (CaracteristicaHogarFragment.class.equals(c)) {
+            //Log.i("DIALOG",""+mainActivity.getVivienda().getHogares().size());
+            if (mainActivity.getVivienda().getHogares().size() > 0) {
+                mainActivity.getVivienda().getHogares().get(mainActivity.getVivienda().getHogares().size() - 1).setServiciosBienes(mSelectedItems);
+            }
         }
     }
 }

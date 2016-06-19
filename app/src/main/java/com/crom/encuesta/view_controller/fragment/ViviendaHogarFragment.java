@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -105,13 +104,9 @@ public class ViviendaHogarFragment extends Fragment {
                 vivienda.setTipoVivienda(spinner1.getSelectedItem().toString());
                 vivienda.setPropiedadVivienda(spinner2.getSelectedItem().toString());
                 vivienda.setCuantoPagan(((EditText) view.findViewById(R.id.mensualidad_arriendo)).getText().toString());
-
-                Log.i("###PRUEBA###", personasCuarto.size()+"");
                 vivienda.setCuartos(personasCuarto);
                 vivienda.setMaterialPisos(spinner6.getSelectedItem().toString());
                 vivienda.setMaterialParedesExteriores(spinner7.getSelectedItem().toString());
-                //vivienda.setHogares(null);
-                Log.i("##DIALOG##", vivienda.toString());
                 transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
             }
         });

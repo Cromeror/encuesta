@@ -1,7 +1,5 @@
 package com.crom.encuesta.model;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 /**
@@ -177,7 +175,6 @@ public class Vivienda {
         output.append(",");
         for (String personasCuarto : cuartos) {
             StringBuilder output2 = new StringBuilder();
-            Log.i("PERSONAS POR CUARTO", personasCuarto);
             output2.append(output);
             output2.append(personasCuarto);
             output2.append(",");
@@ -191,8 +188,16 @@ public class Vivienda {
                 output3.append(servicio);
                 output3.append(",");
                 output3.append(hogares.size());
-                output3.append("\n");
-                result.append(output3);
+                output3.append(",");
+                for (Hogar hogar: hogares){
+                    for (String string: hogar.toList()){
+                        StringBuilder output4 = new StringBuilder();
+                        output4.append(output3);
+                        output4.append(string);
+                        output4.append("\n");
+                        result.append(output4);
+                    }
+                }
             }
         }
         return result.toString();
