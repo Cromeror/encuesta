@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crom.encuesta.view_controller.fragment.OtrosIngresosFragment">
+
+    <Switch
+        android:id="@+id/otros_ingresos1"
+        android:text="@string/otros_ingresos1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/otros_ingresos2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Switch
+        android:id="@+id/otros_ingresos2a"
+        android:text="@string/otros_ingresos2a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/otros_text2a"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content" />
+
+    <Switch
+        android:id="@+id/otros_ingresos2b"
+        android:text="@string/otros_ingresos2b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/otros_text2b"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content" />
+    <Switch
+        android:id="@+id/otros_ingresos2c"
+        android:text="@string/otros_ingresos2c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/otros_text2c"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

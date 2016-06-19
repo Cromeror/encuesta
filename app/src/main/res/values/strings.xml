@@ -1,8 +1,562 @@
 <resources>
-    <string name="app_name">encuesta</string>
+    <!--Titles-->
+    <string name="capA">A. Indentificación del hogar</string>
+    <string name="capB">B. Características de la vivienda</string>
+    <string name="capHogarA">A. Características del hogar </string>
+    <string name="capMHogarA">A. Indentificación miembro del hogar</string>
+    <string name="capMHogarB">B. Salud</string>
+    <string name="capMHogarC">C. Educación</string>
+    <string name="capMHogarD">D. Fuerza de trabajo</string>
 
+    <string name="capD">D. Características generales</string>
+    <string name="capE">E. Salud</string>
+    <string name="capF">Educación</string>
+    <string name="capG">Fuerza de trabajo</string>
+    <string name="capC">C. Datos del hogar</string>
+    <!--General -->
+    <string name="app_name">Encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Configuración</string>
+    <string name="btn_siguente">Siguiente</string>
+    <string name="toque">Toque para agregar información</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_family">FamilyActivity</string>
+    <string name="title_activity_ocupado">Ocupado</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="continuar">Continuar</string>
+    <string name="touch_me">Toque para seleccionar la respuesta</string>
+    <!--Otros Generales-->
+    <string name="observaciones">OBSERVACIONES</string>
+    <!-- Datos-->
+    <string name="dpt_value">Cordoba</string>
+    <string name="municipio_value">San Bernardo Del Viento</string>
+    <!-- Labels-->
+    <!--Identificacion -->
+    <string name="dpt">Departamento:</string>
+    <string name="municipio">Municipio:</string>
+    <string name="zona">Zona</string>
+    <string name="barrio_corregimiento">Barrio o Corregimiento</string>
+    <string name="sector_vereda">Sector o Vereda</string>
+    <string name="direccion">Dirección (calle, manzana, lote, apartamento, finca, etc)</string>
+    <string name="num_hogares">Números de hogares en la vivienda</string>
+    <string name="num_persona_hogar">¿Cuántas personas conforman este hogar?</string>
+    <string name="edades_mienbros_hogar">Edades de cada uno de los miembros del hogar</string>
+    <string name="telefono">Teléfono</string>
+    <!-- Educacion-->
+    <string name="leer_escribir">¿Ud sabe leer y escribir?</string>
+    <string name="estudia">¿Actualmente ud asiste a preescolar, colegio, escuela, universidad?</string>
+    <string name="establecimiento_educativo">¿El establecimiento al que asiste es oficial?</string>
+    <string name="nivel_educativo">¿Cuál es el nivel educativo mas alto alcanzado por ud?</string>
+    <string name="mayor_titulo_obtenido">¿Cual es el titulo o diploma de mayor nivel educativo que ud ha recibido?</string>
+    <!--Salud-->
+    <string name="afiliacion">¿Ud está afiliado, es cotizante o es beneficiario de alguna entidad de seguridad social en salud?</string>
+    <string name="regimen_afiliado">¿A cual de los siguientes regimenes de seguridad social en salud está afiliado?</string>
+    <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
+    <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
+    <!-- Fuerza trabajo -->
+    <string name="actividad_primera_semana_abril">¿En que actividad ocupo ud la mayor parte de la primera semana de abril?</string>
+    <string name="ademas_de_anterior">Ademas de lo anterior, ¿Ud realizo durante la primera semana de abril alguna actividad paga por una hora o más ?</string>
+    <string name="aunque_usted_no_trabajo">Aunque ud no trabajo la primera semana de abril, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
+    <string name="actividad_primera_semana_abril_hora">¿Trabajo la primera semana de abril en un negocio por una hora o mas sin que le pagaran ?</string>
+    <string name="diligencia_ultimo_mes">En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
+    <string name="hizo_ultimas_4_semanas">¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
+    <string name="desea_trabajo_negocio">¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
+    <string name="porque_no_hizo_diligencias">Aunque ud desea trabajar, ¿Por qué motivo principal no hizo diligencias para buscar un trabajo o instalar un negocio en las ultimas 4 semanas?</string>
+    <string name="ultimos_12_meses_trabajo">Durante los ultimos 12 meses ¿Ud trabajo por lo menos dos semanas consecutivas?</string>
+    <string name="despues_ultimo_empleo">Despues de su ultimo empleo, ¿ Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="ultimos_12_meses_diligencio_trabajo">Durante los ultimos 12 meses ¿Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="hace_cuantos_meses_dejo_buscar">¿Cuantos meses hace que ud dejo de buscar trabajo por ultima vez?</string>
+    <string name="estaba_disponible_semana_pasada">Si le hubiese resultado algun trabajo a ud ¿estaba disponible la semana pasada para empezar a trabajar?</string>
+    <!--Ocupados  -->
+    <string name="que_hace_trabajo">¿Que hace ud en este trabajo?</string>
+    <string name="nombre_empresa_negocio">¿Cual es el nombre de la empresa, negocio, industria, oficina, firma o finca donde trabaja ud?</string>
+    <string name="serivios_empresa_dedica">A que servicios se dedica principalmente la empresa o negocio donde trabaja?</string>
+    <string name="tiene_contrato">¿Para realizar este trabajo tiene algun tipo de contrato?</string>
+    <string name="contrato_es">¿El contrato es:</string>
+    <string name="contrato_trabajo_es">¿El contrato de trabajo es:</string>
+    <string name="empresa_que_lo_contrato">La empresa o persona que lo(a) contrato ¿Es la misma empresa donde trabaja o presta su servicio?</string>
+    <string name="empresa_que_lo_contrato_es">La empresa que lo(a) contrato es:</string>
+    <string name="actividad_dela_empresa">¿Cual es la actividad de la de la empresa o persona que lo contrato?</string>
+    <string name="esta_contento_contrato">¿Esta contento con el tipo de contrato que tiene?</string>
+    <string name="contrato_tiene_derecho">¿Por su contrato actual recibe o tiene derecho a:</string>
+    <string name="tiempo_enla_empresa">¿Cuánto tiempo lleva trabajando en la empresa o negocio?</string>
+    <string name="trabajo_usted_es">En este trabajo ud es:</string>
+    <!-- Ocupados Asalariados-->
+    <string name="medio_consiguio_empleo">¿Por qué medio principal ud consiguio su empleo actual?</string>
+    <string name="cuanto_gano_mes_pasado">¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
+    <string name="mes_pasado_horas_extras">¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
+    <string name="alimentos_parte_pago">Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_vivienda">Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="usa_transporte_de_empresa">Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_pago_especie">Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
+    <string name="subsidio_mes_pasado">¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
+    <string name="el_mes_pasado_recibio">El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
+    <string name="ultimos_12_meses_recibio">En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
+    <string name="semana_pasada_horas_extras">¿La semana pasada ud trabajó horas extra remuneradas?</string>
+    <!--Datos de vivienda y del hogar-->
+    <string name="tipo_vivienda">Tipo de vivienda</string>
+    <string name="vivienda_habita_es">La vivienda donde habita es:</string>
+    <string name="mensualidad_arriendo">¿Cuanto pagan mensualmente por arriendo?</string>
+    <string name="cuartos_vivienda">¿Cuantos cuartos posee la vivienda?</string>
+    <string name="personas_cuarto_vivienda">¿Cuantas personas duermen en cada cuarto de la vivienda?</string>
+    <string name="material_pisos">¿Cual es el material predominante de los pisos de su vivienda?</string>
+    <string name="material_exteriores">¿Cual es el material predominante de las paredes exteriores de su vivienda?</string>
+    <string name="servicios_hogar">¿Cuáles de los siguientes servicios o bienes en un uso, posee este hogar?</string>
+    <string name="numero_hogares_vivenda">¿Número de hogares en la vivienda?</string>
+    <string name="servicios_vivienda">¿Con cuáles de los siguientes servicios cuenta la vivienda?</string>
+    <string name="agua_consumo">¿De donde obtienen principalmente el agua para consumo humano?</string>
+    <string name="agua_otras_actividades">¿De donde obtienen el agua para otras actividades?</string>
+    <string name="como_eliminan_basura">¿Como eliminan principalmente la basura en este hogar?</string>
+    <string name="servicio_sanitario_hogar">El servicio sanitario que utiliza el hogar es:</string>
+    <string name="servicio_sanitario_viviendas">El servicio sanitario que utiliza en la vivienda es:</string>
+    <string name="energia_cocina">¿Con qué energia o combustible cocinan principalmente en este hogar</string>
+    <string name="energia_cocinan">¿Con qué energia o combustible cocinan principalmente en este hogar?</string>
+    <string name="b_dialog">Cuantas personas duermen en el siguiente cuarto</string>
+    <!--Caracteristicas del hogar -->
+    <string name="hogar_a_2">¿Cuáles de los siguientes servicios o bienes en un uso, posee este hogar?</string>
+    <!--Cap C. Caracteristicas generales -->
+    <string name="sexo">Sexo</string>
+    <string name="nacimiento">¿Cuál es la fecha de nacimiento?</string>
+    <string name="cuantos_años_tiene">¿ Cuantos años cumplidos tiene ? Si es menor de un año coloque 00 </string>
+    <string name="lugar_nacimiento">¿ Cual es su lugar de nacimiento?</string>
+    <string name="parentesco">¿Cuál es el parentesco con el jefe o jefa del hogar ?</string>
+    <string name="estado_civil">Estado civil</string>
+    <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
 
-    <string name="action_settings">Settings</string>
+    <!--Desocupado-->
+    <string name="desocupados_1">¿Durante cuaántas semanas ha estado o estuvo us buscando trabajo?</string>
+    <string name="desocupados_2">Si le hubiere resultado un trabajo la semana pasada, ¿Cuantas hotas a la semana estaba disponible para trabajar?</string>
+    <string name="desocupados_3">¿Usted ha buscado trabajo como?</string>
+    <string name="desocupados_4">¿Ud ha buscado trabajo por primera vez, o habia trabajado antes por lo menos durante 2 semanas consecutivas?</string>
+    <string name="desocupados_5">¿Cuántas semanas hace que ud dejo de trabajar por última vez?</string>
+    <string name="desocupados_6">¿Qué ocupación, oficio o labor realizó ud la ultima vez que trabajo?</string>
+    <string name="desocupados_7">¿A qué actividad se dedicaba principalmente la empresa, negocio, industria, oficina o finca, donde realizó su ultimo trabajo?</string>
+    <string name="desocupados_8">¿En este ultimo trabajo ud era?</string>
+    <string name="desocupados_9">¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde us trabajaba?</string>
+    <string name="desocupados_10">¿Actualmente recibe subsidio de desempleo?</string>
+    <string name="desocupados_11">¿En caso de enfermedad como cubriria los costos medicos y los medicamentos?</string>
+    <string name="desocupados_12">¿Qué esta haciendo ud actualmente para sostenerse economicamente en la vejez?</string>
+
+    <!--Inactivos-->
+    <string name="trabajado_dos_semanas_consecutivas">¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
+    <string name="trabajo_ultima_vez">¿Cuanto hace que ud. trabajo por ultima vez?</string>
+    <string name="porque_dejo_trabajo">¿Por qué razón dejó ud. su trabajo?</string>
+    <string name="busco_otro_trabajo_o_negocio">Después de su último trabajo,¿Ud. ha buscado conseguir otro trabajo o instalar un negocio?</string>
+    <string name="buscado_trabajo_alguna_vez">¿Ud. ha buscado trabajo alguna vez?</string>
+    <string name="cuando_busco_trabajo_ultima_vez">¿Cúanto hace que ud. buscó trabajo por última vez?</string>
+    <string name="razon_dejo_buscar_trabajo">¿Por qué razón principal dejó ud. de buscar trabajo?</string>
+    <string name="alimentacion_switch">Auxilio o subsidio de alimentación</string>
+    <string name="trasnporte_switch">Auxilio o subsidio de transporte</string>
+    <string name="familiar_switch">Subsidio familiar</string>
+    <string name="educativo_switch">Subsidio educativo</string>
+    <string name="este_trabajo_es">Este trabajo es:</string>
+    <string name="trabajar_antes_del_mes">Si se le presentará la oportunidad de encontrar un nuevo empleo, ¿Podría Ud. empezar a trabajar antes de un mes? </string>
+    <string name="diligencias_cambio_trabajo"> ¿Hizo Ud. diligencias durante las últimas 4 semanas para cambiar de trabajo?</string>
+    <string name="por_que_quiere_cambiar_trabajo">¿Por qué desea Ud. cambiar de trabajo? (puede marcar más de una opción):</string>
+    <string name="quiere_cambiar_empleo"> ¿Ud. desea cambiar su empleo actual? </string>
+    <string name="posibilidad_trabajar_mas_horas">Si la semana pasada le hubiese resultado la posibilidad de trabajar más horas ¿Ud. estaba disponible para hacerlo? </string>
+    <string name="horas_adicionales_semana"> ¿Cuántos horas adicionales puede Ud. trabajar a la semana?</string>
+    <string name="quiere_trabajar_mas_horas">Además de las horas que trabaja actualmente, ¿A Ud. le gustaría trabajar más horas?</string>
+    <string name="ganancia_otro_trabajo">¿Cuál fue la ganancia o ingresos de ese segundo trabajo el mes pasado?</string>
+    <string name="ocupacion_segundo_trabajo">¿En el segundo trabajo Ud. es?:</string>
+    <string name="horas_trabajadas_otro_trabajo">¿Cuántos horas trabajo Ud. la semana pasada en su segundo trabajo? (si no trabajó escriba 00, si no sabe cuántas horas escriba 98)    </string>
+    <string name="otro_trabajo_o_negocio">Además de su ocupación principal, ¿Tenia Ud. la semana pasada otro trabajo o negocio?</string>
+    <string name="ganancia_neta_12_meses">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca en los últimos doce meses? </string>
+    <string name="ganancia_neta_mes">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca, el mes pasado? (Si no obtuvo coloco 00 si no sabe el valor escriba 98, si no sabe si obtuvo 99)</string>
+    <string name="ultimo_año_de_registro"> ¿Cuál fue el último año en el que renovó el registro? </string>
+    <string name="ha_registrado_el_negocio">¿Ud. ha registrado el negocio ante algún autoridad o entidad? (Cámaras de comercio, alcaldía, RUT, registro mercantil) </string>
+    <string name="formas_de_trabajo">En la semana pasada, ¿Cuál de las siguientes formas de trabajo realizo?</string>
+    <string name="incluyo_este_valor">¿Incluyó estos valor en los ingresos del mes pasado que me informo anteriormente? </string>
+    <string name="subsidios">¿Cuál de los siguientes subsidios recibió Ud. el mes pasado? (Si recibió pero no sabe escriba 98)</string>
+    <string name="esta_afiliados_fondo_actualmente">¿Esta ud. afiliado actualmente a un fondo de pensiones?</string>
+    <string name="fondos_afiliados_actualmente">¿A cual de los siguientes fondos esta afiliado actualmente?</string>
+    <string name="ingresos_horas_extras">¿En el mes pasado recibió ingresos por concepto de horas extras? (Si recibió pero no sabe cuánto escriba 98)</string>
+    <string name="gano_ingresos_x_trabajo">¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
+
+    <!-- TICs -->
+    <string name="tics_1">¿Usó ud el computador (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_2">¿Usó ud el internet (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_3">Durante los últimos 12 meses, ¿En cuales de los siguientes sitios usó internet?</string>
+    <string name="tics_4">¿Para cual de los siguientes servicios o actividades utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_5">¿Con qué frecuencia utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_3a">En centros de acceso público gratis</string>
+    <string name="tics_3b">En la casa de otra persona</string>
+    <string name="tics_3c">En la institución educativa</string>
+    <string name="tics_3d">En el trabajo</string>
+    <string name="tics_3e">En el hogar</string>
+    <string name="tics_3f">En centros de acceso público con costo (café internet)</string>
+    <string name="tics_3g">Otro, ¿Cual?</string>
+    <string name="tics_4a">Obtener información (excluir educación y aprendizaje)</string>
+    <string name="tics_4b">Comprar/ordenar productos y servicios</string>
+    <string name="tics_4c">Eduación y aprendizaje</string>
+    <string name="tics_4d">Comunicación</string>
+    <string name="tics_4e">Actividades de entretenimiento(juegos, bajar música, etc)</string>
+    <string name="tics_4f">Banca electronica y otras transacciones financieras</string>
+    <string name="tics_4g">Otro, ¿Cual?</string>
+
+    <!--Otros ingresos mes pasado -->
+    <string name="otros_ingresos1">El mes pasado, ¿Usted recibió pagos por concepto de arriendo y/o pensiones?</string>
+    <string name="otros_ingresos2">El mes pasado, recibio pagos por:</string>
+    <string name="otros_ingresos2a">a. Arriendos de casas, apartamentos fincas, lotes, vehiculos, equipos, etc.</string>
+    <string name="otros_ingresos2b">b. Pensiones o jubilaciones por vejez, invalidez o sustitucion pensional</string>
+    <string name="otros_ingresos2c">Pension alimenticia por paternidad, divorcio o separación</string>
+    <string name="otros_ingresos_cuanto">¿Cuánto recibió?</string>
+
+    <!-- calidad del empleo principal -->
+    <string name="empleo_57">Esta usted: 1 Muy satisfecto - 5 Muy Insatisfecho</string>
+    <string name="empleo_57a">Con su trabajo actual</string>
+    <string name="empleo_57b">Con el numero de horas trabajadas a la semana</string>
+    <string name="empleo_57c">Con la aplicación de su conocimiento en su trabajo</string>
+    <string name="empleo_57d">Con el pago o ganancia que recibe de su empleo o negocio</string>
+    <string name="empleo_57e">Con los beneficios y prestaciones que recibe</string>
+    <string name="empleo_57f">Con su jornada laboral actual</string>
+    <string name="empleo_58">¿Esta usted afiliado o hace parte de una asociación gremial o sindical?</string>
+    <string name="empleo_59">¿Como considera usted que es su empleo actual?</string>
+    <string name="empleo_60">Su horario de trabajo y sus responsabilidades son:</string>
+    <string name="empleo_61">¿En caso de no tener trabajo, de donde obtendría principalmente los recursos para cubir los gastos de ud y de su hogar?</string>
+
+    <string name="ingreso_en_especie">Además del salario en dinero, ¿el mes pasado recibió ingresos en especie por su trabajo (Electrodomésticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98) </string>
+    <string name="incluye_actualmente">¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
+    <string name="vivienda_por_pago">Además del salario en dinero, ¿el mes pasado recibió vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+
+    <!--Arrays-->
+    <string-array name="zona_array">
+        <item>Urbana</item>
+        <item>Rural</item>
+    </string-array>
+    <string-array name="parentesco_array">
+        <item>Jefe del Hogar</item>
+        <item>Cónyuge</item>
+        <item>Hijo</item>
+        <item>Familiar</item>
+        <item>Miembro</item>
+    </string-array>
+    <string-array name="nivel_educativo_array">
+        <item>Ninguno</item>
+        <item>Preescolar</item>
+        <item>Basica primaria (1°-5°)</item>
+        <item>Basica secundaria (6°-9°)</item>
+        <item>Media (10°-13°)</item>
+        <item>Superior o universitaria</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="titulo_educativo_array">
+        <item>Ninguno</item>
+        <item>Bachiller</item>
+        <item>Tecnico o tecnologico</item>
+        <item>Universitario</item>
+        <item>Postgrado</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="tipo_vivienda__array">
+        <item>Casa</item>
+        <item>Apartamento</item>
+        <item>Pensión</item>
+        <item>Indígena</item>
+        <item>Otra (Cueva, carpa, etc)</item>
+    </string-array>
+    <string-array name="vivienda_habita_es_array">
+        <item>Propia totalmente paga</item>
+        <item>Propia, la estan pagando</item>
+        <item>En arriendo o en subarriendo</item>
+        <item>En usufructo</item>
+        <item>Posesión sin titulo ó de propiedad colectiva</item>
+        <item>Otra ¿Cuál?</item>
+    </string-array>
+    <string-array name="material_pisos_array">
+        <item>Tierra, arena</item>
+        <item>Cemento, gravilla</item>
+        <item>Madera, tabla, tablon</item>
+        <item>Marmol</item>
+        <item>Baldosa, ladrillo, otros materiales sinteticos</item>
+    </string-array>
+    <string-array name="material_exteriores_array">
+        <item>Ladrillo, bloque, material prefabricado, piedra</item>
+        <item>Madera pulida</item>
+        <item>Adobe</item>
+        <item>Bahereque</item>
+        <item>Madera burda, tabla, tablon</item>
+        <item>Guadua</item>
+        <item>Esterilla, caña, otro material vegetal</item>
+        <item>Zinc, tela, carton, latas, plastico</item>
+        <item>Sin paredes</item>
+    </string-array>
+    <string-array name="servicios_vivienda_array">
+        <item>Energia electrica</item>
+        <item>Acueducto</item>
+        <item>Recoleccion de basuras</item>
+        <item>Alcantarillado</item>
+        <item>Gas natural</item>
+        <item>Ninguno</item>
+    </string-array>
+    <string-array name="agua_array">
+        <item>Tuberia conectada al acueducto</item>
+        <item>De otra fuente por tuberia</item>
+        <item>De pozo con bomba</item>
+        <item>De pozo sin bomba, aljibe, jaguey.</item>
+        <item>Aguas lluvias</item>
+        <item>Rio, quebrada, nacimiento o manantial.</item>
+        <item>Pila publica</item>
+        <item>Carro tanque</item>
+        <item>Aguatero</item>
+        <item>Agua embotellada o en bolsa</item>
+    </string-array>
+    <string-array name="como_eliminan_basura_array">
+        <item>Por recolección  pública o privada</item>
+        <item>La tiran a un rio, quebrada, caño o laguna.</item>
+        <item>La tiran a un patio, lote, zanja o baldio.</item>
+        <item>La queman o entierran</item>
+        <item>Otras formas.</item>
+    </string-array>
+    <string-array name="servicio_sanitario_hogar_array">
+        <item>Inodoro conectado al alcantarillado</item>
+        <item>Inodoro conectado a pozo séptico</item>
+        <item>Inodoro sin conexión</item>
+        <item>Letrina</item>
+        <item>Bajamar</item>
+        <item>No tiene servicio sanitario</item>
+    </string-array>
+    <string-array name="servicio_sanitario_viviendas_array">
+        <item>De uso exclusivo de las personas de la vivienda</item>
+        <item>Compartido con personas de otra vivienda</item>
+    </string-array>
+    <string-array name="energia_cocina_array">
+        <item>Electricidad</item>
+        <item>Petroleo, gasolina, Kerosone, alcohol</item>
+        <item>Gas natural conectado a red publica</item>
+        <item>Gas propano en cilindro o pipeta</item>
+        <item>Leña, madera o de carbon de leña</item>
+        <item>Carbón mineral</item>
+        <item>Materiales de desecho</item>
+        <item>No cocina</item>
+    </string-array>
+    <string-array name="servicios_bienes_hogar_array">
+        <item>Servicio de telefono fijo</item>
+        <item>Televisión por cable o parabolica</item>
+        <item>Servicio de internet</item>
+        <item>Lavadora de ropa</item>
+        <item>Nevera o refrigerador</item>
+        <item>Licuadora</item>
+        <item>Estufa electrica o de gas</item>
+        <item>Horno electrico o de gas</item>
+        <item>Horno microondas</item>
+        <item>Televisor a color</item>
+        <item>DVD</item>
+        <item>Equipo de sonido</item>
+        <item>Computador para uso del hogar</item>
+        <item>Aspiradora</item>
+        <item>Aire acondicionado</item>
+        <item>Ventilador o abanico</item>
+        <item>Bicicleta</item>
+        <item>Moto</item>
+        <item>Carro particular</item>
+        <item>Casa, apartamento o finca de recreo</item>
+    </string-array>
+    <string name="title_activity_caracteristicas_gnrl">CaracteristicasGnrlActivity</string>
+
+    <!--Caracteristicas generales -->
+    <string-array name="generales5">
+        <item>Jefe(a) del hogar</item>
+        <item>Pareja, esposo(a), conyuge</item>
+        <item>Hijo(a), Hijastro(a)</item>
+        <item>Nieto</item>
+        <item>Otro pariente</item>
+        <item>Empleado(a) del servicio domestico</item>
+        <item>Pensionista</item>
+        <item>Otro no pariente</item>
+    </string-array>
+    <string-array name="generales6">
+        <item>No esta casado(a) y vive en pareja hace menos de dos años</item>
+        <item>No esta casado(a) y vive en pareja hace dos años o mas</item>
+        <item>Esta casado(a)</item>
+        <item>Esta separado(a) o divorciado(a)</item>
+        <item>Esta viudo(a)</item>
+        <item>Esta Soltero(a)</item>
+    </string-array>
+    <string-array name="generales1">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
+
+    <!--fuerza de empleo Arrays-->
+    <string-array name="actividad_ocupo_mayor_tiempo_mayo">
+        <item>otro</item>
+        <item>trabajando</item>
+        <item>buscando empleo</item>
+        <item>estudiando</item>
+        <item>oficios del hogar</item>
+        <item>incapacitado permanentemente para trabajar</item>
+    </string-array>
+    <string-array name="si_no">
+        <item>si</item>
+        <item>no</item>
+    </string-array>
+    <string-array name="fuerza_6">
+        <item>Pidió ayuda a familia, amigos, colegas</item>
+        <item>Visitó, llevó o envío hojas de vida a empresas o empleadores</item>
+        <item>Visitó, llevó o envío hojas de vida a bolsas de empleo o intermediarios</item>
+        <item>Puso o consultó avisos clasificados</item>
+        <item>Se presentó a convocatorias </item>
+        <item>Hizo preparatorios para iniciar un negocio</item>
+        <item>Otro medio</item>
+        <item>No sabe, No informa</item>
+    </string-array>
+    <string-array name="fuerza_8">
+        <item>No hay trabajo disponible en la ciudad o región/ No encuentra trabajo en su oficio o profesión
+        </item>
+        <item>Ya encontré trabajo</item>
+        <item>Está esperanzado que lo llamen o está esperando temporada alta</item>
+        <item>No sabe cómo buscarlo</item>
+        <item>Está cansado de buscar</item>
+        <item>Carece de la experiencia necesaria</item>
+        <item>No tiene los recursos necesarios para instalar un negocio</item>
+        <item>Los empleadores lo consideran muy joven o muy viejo</item>
+        <item>Ud. se considera muy joven o muy viejo</item>
+        <item>Responsabilidades familiares</item>
+        <item>Problemas de salud</item>
+        <item>Está estudiando</item>
+        <item>Otro</item>
+    </string-array>
+
+
+    <!--inactivos Arrays -->
+    <string-array name="trabajo_ultima_vez_array">
+        <item>Menos de un año</item>
+        <item>Entre 1 y menos de 2 años</item>
+        <item>Entre 2 y menos de 5 años</item>
+        <item>5 años y más</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="porque_dejo_trabajo_array">
+        <item>Por dedicarse a estudiar</item>
+        <item>Por despido</item>
+        <item>Jubilación o retiro</item>
+        <item>Responsabilidades familiares</item>
+        <item>Cierre de empresa</item>
+        <item>Trabajo temporal terminado</item>
+        <item>Malas condiciones de trabajo</item>
+        <item>Enfermedad o accidente</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="razon_dejo_buscar_trabajo_array">
+        <item>Por dedicarse a estudiar</item>
+        <item>No sabe como buscarlo</item>
+        <item>No encuentra el trabajo apropiado</item>
+        <item>Está cansado de buscarlo</item>
+        <item>Por la edad</item>
+        <item>No hay trabajo en el municipio</item>
+        <item>Considera que no esta calificado</item>
+        <item>Jubilación o retiro</item>
+        <item>Responsabilidades familiares</item>
+        <item>Por enfermedad</item>
+        <item>No desea trabajar</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="fondos_afiliados_actualmente_array">
+        <item>fondo privado</item>
+        <item>Colpensiones, FNA</item>
+        <item>Fondo subsidiado</item>
+        <item>regimenes especiales (FFMM,Ecopetrol)</item>
+    </string-array>
+
+    <!--desocupado Arrays -->
+    <string-array name="desocupados_3_8">
+        <item>Obrero o empleado de empresa particular</item>
+        <item>Obrero o empleado del gobierno</item>
+        <item>Empleado domestico</item>
+        <item>Trabajador por cuenta propia</item>
+        <item>Patron o empleador</item>
+        <item>Trabajador familiar sin remuneración</item>
+        <item>Trabajador sin remuneración en empresas o negocios de otros hogares</item>
+        <item>Jornalero o peón</item>
+        <item>Otro, ¿cual?</item>
+    </string-array>
+    <string-array name="desocupados_9">
+        <item>Trabaja solo</item>
+        <item>2 a 3 personas</item>
+        <item>4 a 5 personas</item>
+        <item>6 a 10 personas</item>
+        <item>11 a 19 personas</item>
+        <item>20 a 30 personas</item>
+        <item>31 a 50 personas</item>
+        <item>51 a 100 personas</item>
+        <item>100 y más personas</item>
+    </string-array>
+    <string-array name="desocupados_10">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="desocupados_11">
+        <item>Tiene regimen subsidiario</item>
+        <item>Es beneficiario de un afiliado</item>
+        <item>Con ahorros personales</item>
+        <item>Con ayuda de algún familiar</item>
+        <item>Con otro tipo de seguro</item>
+        <item>Pidiendo dinero prestado</item>
+        <item>No lo ha considerado</item>
+        <item>Otro,¿cual?</item>
+    </string-array>
+    <string-array name="desocupados_12">
+        <item>Aportar a un fondo de pensiones obligatorias</item>
+        <item>Aportar a un fondo de pensiones voluntarias</item>
+        <item>Ahorrando</item>
+        <item>Haciendo inversiones</item>
+        <item>Pagando un seguro por su cuenta</item>
+        <item>Preparando a sus hijos para que lo mantengan en la vejez</item>
+        <item>Otro, ¿Cual?</item>
+        <item>Nada</item>
+    </string-array>
+
+    <!-- TICs -->
+    <string-array name="tics_5">
+        <item>Al menos una vez al día</item>
+        <item>Al menos una vez a la semana, pero no cada día</item>
+        <item>Al menos una vez al mes, pero no cada semana</item>
+        <item>Menos de una vez al mes</item>
+
+    </string-array>
+    <string-array name="tics_1_2">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+
+    <!-- calidad del empleo principal -->
+    <string-array name="empleo_57">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="empleo_59">
+        <item>Muy inestable</item>
+        <item>Inestable</item>
+        <item>Estable</item>
+        <item>Muy estable</item>
+    </string-array>
+    <string-array name="empleo_60">
+        <item>Muy incompatibles</item>
+        <item>Incompatibles</item>
+        <item>Compatibles</item>
+        <item>My compatibles</item>
+    </string-array>
+    <string-array name="empleo_61">
+        <item>De cesantias</item>
+        <item>Ahorros personales</item>
+        <item>Indemnización o similar</item>
+        <item>Pidiendo dinero prestado</item>
+        <item>Ayuda de algún familiar</item>
+        <item>No tendría como cubrirlos</item>
+        <item>No lo ha considerado</item>
+        <item>Venderia su vivienda o bienes del hogar</item>
+        <item>Empeñaria bienes del hogar</item>
+        <item>Otro, cual?</item>
+    </string-array>
 </resources>
