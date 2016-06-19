@@ -1,7 +1,6 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.view_controller.FamilyActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,14 +35,12 @@ public class SaludFragment extends Fragment {
         return fragment;
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_salud, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capD));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarB));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         edad = getArguments().getInt(PARAM_EDAD);
         next = (Button) view.findViewById(R.id.next_salud_btn);
@@ -56,15 +52,9 @@ public class SaludFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
-                startActivity(i);*/
-                if (edad < 3)
-                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
-                else
+                if (edad >= 3)
                     transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
             }
         });
     }
-
 }

@@ -3,7 +3,6 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +13,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.view_controller.FamilyActivity;
 import com.crom.encuesta.view_controller.subFragment.EstablecimientoEducativoSubFragment;
 
 /**
@@ -27,6 +24,7 @@ public class EducacionFragment extends Fragment {
     private EstablecimientoEducativoSubFragment establecimiento;
     private Button next;
     private FragmentTransaction transaction;
+
 
     public EducacionFragment newInstance() {
         EducacionFragment fragment = new EducacionFragment();
@@ -40,6 +38,7 @@ public class EducacionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_educacion, container, false);
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarC));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
         next = (Button) view.findViewById(R.id.next_salud_btn);
@@ -72,9 +71,7 @@ public class EducacionFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position <= 3 || position == 6) {
-                    FamilyActivity f = (FamilyActivity) getActivity();
-                    Log.i("EducacionFragment", "Entro!!!");
-                    f.setPositionPager(1);
+
                 }
             }
 
@@ -91,10 +88,6 @@ public class EducacionFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
-                startActivity(i);*/
-
                 transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
             }
         });

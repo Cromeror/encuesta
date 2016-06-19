@@ -1,10 +1,12 @@
 package com.crom.encuesta.view_controller;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,13 +20,13 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-implements NavigationView.OnNavigationItemSelectedListener {
-
+    private final Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private int edad = 0;
 
@@ -41,7 +43,7 @@ implements NavigationView.OnNavigationItemSelectedListener {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        fragmentManager.beginTransaction().replace(R.id.contenedor,new IdentificacionFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -104,9 +106,25 @@ implements NavigationView.OnNavigationItemSelectedListener {
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public  void next(View view){
-        fragmentManager.beginTransaction().replace(R.id.contenedor,new ViviendaHogarFragment()).commit();
-        //Intent i = new Intent(view.getContext(),ViviendaHogarActivity.class);
-        //startActivity(i);
+
+    public int getEdad() {
+        return 20;
+    }
+
+    public Vivienda getVivienda() {
+        return vivienda;
+    }
+
+    public void dialogIncompleteField(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Recuerde no debe dejar campos vacios").setTitle("Formulario incompleto")
+                .setCancelable(true)
+        .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

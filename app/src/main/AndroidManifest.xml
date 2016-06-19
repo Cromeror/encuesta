@@ -10,21 +10,14 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".view_controller.MainActivity"
-            android:label="@string/capA"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view_controller.FamilyActivity"
-            android:label="@string/title_activity_family"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".view_controller.OcupadoActivity"
-            android:label="@string/title_activity_ocupado"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view_controller.CaracteristicasGnrlActivity"
             android:label="@string/title_activity_caracteristicas_gnrl"
