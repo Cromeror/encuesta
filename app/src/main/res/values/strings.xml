@@ -121,7 +121,7 @@
     <!--Cap C. Caracteristicas generales -->
     <string name="sexo">Sexo</string>
     <string name="nacimiento">¿Cuál es la fecha de nacimiento?</string>
-    <string name="cuantos_años_tiene">¿ Cuantos años cumplidos tiene ? Si es menor de un año coloque 00 </string>
+    <string name="cuantos_años_tiene">¿ Cuantos años cumplidos tiene ?</string>
     <string name="lugar_nacimiento">¿ Cual es su lugar de nacimiento?</string>
     <string name="parentesco">¿Cuál es el parentesco con el jefe o jefa del hogar ?</string>
     <string name="estado_civil">Estado civil</string>
@@ -558,5 +558,27 @@
         <item>Venderia su vivienda o bienes del hogar</item>
         <item>Empeñaria bienes del hogar</item>
         <item>Otro, cual?</item>
+    </string-array>
+    <string-array name="sino_array">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="sino_nosabe_array">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="salud2_array">
+        <item>Contributivo EPS</item>
+        <item>Especial (Fuerzas armadas, Ecopetrol, Universidades</item>
+        <item>Subsidiado</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="atencion_array">
+        <item>Muy buena</item>
+        <item>Buena</item>
+        <item>Regular</item>
+        <item>Mala</item>
+        <item>Muy mala</item>
     </string-array>
 </resources>

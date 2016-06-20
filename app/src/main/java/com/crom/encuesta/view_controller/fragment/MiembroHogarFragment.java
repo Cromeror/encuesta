@@ -4,7 +4,6 @@ package com.crom.encuesta.view_controller.fragment;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,13 +112,12 @@ public class MiembroHogarFragment extends Fragment {
                     }
                 } else {
                     miembro.setNacimiento(edittext.getText().toString());
-                    miembro.setEdad(edad+"");
+                    miembro.setEdad(edad + "");
                 }
                 miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                 miembro.setParentesco(generales5.getSelectedItem().toString());
                 miembro.setEstadoCivil(generales6.getSelectedItem().toString());
-                Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, SaludFragment.newInstance(0)).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
             }
         });
         return view;
