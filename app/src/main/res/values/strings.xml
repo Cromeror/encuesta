@@ -423,6 +423,43 @@
         <item>Otro</item>
     </string-array>
 
+    <!--ocupados Arrays-->
+    <string-array name="ocupados_5">
+        <item>Escrito</item>
+        <item>Verbal</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="ocupados_6">
+        <item>Termino fijo</item>
+        <item>Término indefinido</item>
+        <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="ocupados_7">
+        <item>No</item>
+        <item>Si</item>
+        <item>No sabe,no informa</item>
+    </string-array>
+    <string-array name="ocupados_8">
+        <item>De servicios temporales</item>
+        <item>Una cooperativa de trabajo asociado</item>
+        <item>Una empresa asociativa de trabajo </item>
+        <item>Otro</item>
+    </string-array>
+    <string name="ocupados_11_a">Vacaciones con sueldo</string>
+    <string name="ocupados_11_b">Prima de navidad</string>
+    <string name="ocupados_11_c">Derecho a cesantía</string>
+    <string-array name="ocupados_12">
+        <item>Obrero o empleado de empresa particular</item>
+        <item>Obrero o empleado del gobierno</item>
+        <item>Empleado domestico</item>
+        <item>Trabajador por cuenta propia</item>
+        <item>Patrón o empleador</item>
+        <item>Trabajador familiar sin remuneración</item>
+        <item>trabajador sin remuneración en empresas o negocios de otros hogares</item>
+        <item>Jornalero o peón</item>
+        <item>Otro</item>
+    </string-array>
+
 
     <!--inactivos Arrays -->
     <string-array name="trabajo_ultima_vez_array">
