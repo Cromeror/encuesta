@@ -22,8 +22,13 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/medio_consiguio_empleo"
+            android:id="@+id/asalariado_1"
             android:layout_gravity="center_vertical"></Spinner>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:ems="8"
                     android:inputType="number"
-                    android:id="@+id/cuanto_gano_mes_pasado"
+                    android:id="@+id/asalariado_2"
                     android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </LinearLayout>
@@ -65,7 +70,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/asalariado_3" />
 
         <TextView
             android:layout_width="match_parent"
@@ -80,7 +85,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/contrato_trabajo_es"
+            android:id="@+id/asalariado_4"
             android:layout_gravity="center_vertical"></Spinner>
 
         <TextView
@@ -96,7 +101,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/empresa_que_lo_contrato"
+            android:id="@+id/asalariado_5"
             android:layout_gravity="center_vertical"></Spinner>
 
         <EditText
@@ -104,7 +109,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText3" />
+            android:id="@+id/asalariado_5_editText" />
 
         <TextView
             android:layout_width="match_parent"
@@ -119,7 +124,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/empresa_que_lo_contrato_es"
+            android:id="@+id/asalariado_6"
             android:layout_gravity="center_vertical"></Spinner>
 
         <EditText
@@ -127,7 +132,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText4" />
+            android:id="@+id/asalariado_6_editText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -141,7 +146,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spinner"
+            android:id="@+id/asalariado_7"
             android:layout_gravity="center_horizontal" />
 
         <EditText
@@ -149,7 +154,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText5"
+            android:id="@+id/asalariado_7_editText"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -165,7 +170,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/contrato_tiene_derecho"
+            android:id="@+id/asalariado_8"
             android:layout_gravity="center_vertical"></Spinner>
 
         <EditText
@@ -173,7 +178,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText6"
+            android:id="@+id/asalariado_8_editText"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -189,15 +194,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:text="@string/alimentacion_switch"
-            android:id="@+id/esta_contento_contrato" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText7"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/alimentacion_switch" />
 
         <Switch
             android:layout_width="match_parent"
@@ -205,15 +202,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:text="@string/trasnporte_switch"
-            android:id="@+id/switch1" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText8"
-            android:layout_gravity="center_horizontal" />
+            android:id="@+id/trasnporte_switch" />
 
         <Switch
             android:layout_width="786dp"
@@ -221,14 +210,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:text="@string/familiar_switch"
-            android:id="@+id/switch2" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText9" />
+            android:id="@+id/familiar_switch" />
 
         <Switch
             android:layout_width="783dp"
@@ -236,14 +218,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:text="@string/educativo_switch"
-            android:id="@+id/switch3" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText10" />
+            android:id="@+id/educativo_switch" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -257,7 +232,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/alimentacion_switch"
-            android:id="@+id/textView3" />
+            android:id="@+id/alimentacion_textView" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -265,14 +240,22 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spinner2" />
+            android:id="@+id/alimentacion_spinner" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/alimentacion_editText"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/trasnporte_switch"
-            android:id="@+id/textView4" />
+            android:id="@+id/transporte_textView" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -280,14 +263,22 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spinner3" />
+            android:id="@+id/trasnporte_spinner" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/transporte_editText"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/familiar_switch"
-            android:id="@+id/textView5" />
+            android:id="@+id/familiar_textView" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -295,14 +286,22 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spinner4" />
+            android:id="@+id/familiar_spinner" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/familiar_editText"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/educativo_switch"
-            android:id="@+id/textView6" />
+            android:id="@+id/educativo_textView" />
 
         <Spinner
             android:layout_width="match_parent"
@@ -310,7 +309,15 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spinner5" />
+            android:id="@+id/educativo_spinner" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/educativo_editText"
+            android:layout_gravity="center_horizontal" />
 
         <Button
             android:layout_width="wrap_content"

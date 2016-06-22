@@ -465,6 +465,23 @@
         <item>no</item>
     </string-array>
 
+    <!--Ocupados asalariados arrays-->
+    <string-array name="asalariados_1">
+        <item>Pidió ayuda a familia, amigos, colegas</item>
+        <item>Visitó, llevó o envió hojas de vida a empresas o empleadores</item>
+        <item>Visitó, llevó o envió hojas de vida a bolsas de empleo o intermediarios</item>
+        <item>Puso o consultó avisos clasificados</item>
+        <item>Por convocatorias </item>
+        <item>Por medio del SENA</item>
+        <item>Otro medio</item>
+        <item>No sabe,no informa</item>
+    </string-array>
+    <string-array name="si_no_nosabe">
+        <item>Si</item>
+        <item>No</item>
+        <item>No sabe,no informa</item>
+    </string-array>
+
 
     <!--inactivos Arrays -->
     <string-array name="trabajo_ultima_vez_array">

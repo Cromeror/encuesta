@@ -36,6 +36,7 @@ public class OcupadoFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_ocupado, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -191,7 +192,7 @@ public class OcupadoFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });
     }
