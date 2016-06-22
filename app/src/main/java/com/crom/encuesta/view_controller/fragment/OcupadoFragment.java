@@ -34,11 +34,23 @@ public class OcupadoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_ocupado, container, false);
+        getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
 
-        Switch ocupado_4 = (Switch) view.findViewById(R.id.ocupado_4);
-        ocupado_4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == false) {
+        next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        init();
+        Spinner ocupado_4 = (Spinner) view.findViewById(R.id.ocupado_4);
+        ArrayAdapter<CharSequence> spinner_adapter_4 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.ocupados_4, android.R.layout.simple_spinner_item);
+        spinner_adapter_4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ocupado_4.setAdapter(spinner_adapter_4);
+        ocupado_4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v,
+                                       int position, long id) {
+                String scountry = adapter.getItemAtPosition(position).toString();
+
+                if (scountry.equalsIgnoreCase("no")) {
                     Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
                     Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
                     Spinner ocupado_7 = (Spinner) view.findViewById(R.id.ocupado_7);
@@ -65,6 +77,11 @@ public class OcupadoFragment extends Fragment {
                     ocupado_9_text.setVisibility(View.GONE);
 
                 }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
             }
         });
         Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
@@ -94,6 +111,19 @@ public class OcupadoFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
+
+        Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
+        ArrayAdapter spinner_adapter_6 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.ocupados_6, android.R.layout.simple_spinner_item);
+        spinner_adapter_6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ocupado_6.setAdapter(spinner_adapter_6);
+
+        Spinner ocupado_8 = (Spinner) view.findViewById(R.id.ocupado_8);
+        ArrayAdapter spinner_adapter_8 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.ocupados_8, android.R.layout.simple_spinner_item);
+        spinner_adapter_8.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ocupado_8.setAdapter(spinner_adapter_8);
+
         Spinner ocupado_7 = (Spinner) view.findViewById(R.id.ocupado_7);
         ArrayAdapter spinner_adapter_7 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.ocupados_7, android.R.layout.simple_spinner_item);
@@ -154,7 +184,16 @@ public class OcupadoFragment extends Fragment {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ocupado, container, false);
+        return view;
+    }
+
+    private void init() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+            }
+        });
     }
 
 

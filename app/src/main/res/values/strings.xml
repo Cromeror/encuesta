@@ -12,6 +12,7 @@
     <string name="capE">E. Salud</string>
     <string name="capF">Educación</string>
     <string name="capG">Fuerza de trabajo</string>
+    <string name="capEOcupado">Ocupado</string>
     <string name="capC">C. Datos del hogar</string>
     <!--General -->
     <string name="app_name">Encuesta</string>
@@ -458,6 +459,10 @@
         <item>trabajador sin remuneración en empresas o negocios de otros hogares</item>
         <item>Jornalero o peón</item>
         <item>Otro</item>
+    </string-array>
+    <string-array name="ocupados_4">
+        <item>si</item>
+        <item>no</item>
     </string-array>
 
 

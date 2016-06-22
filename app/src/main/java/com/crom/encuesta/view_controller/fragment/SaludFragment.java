@@ -18,7 +18,7 @@ public class SaludFragment extends Fragment {
 
     private static final String PARAM_EDAD = "Edad";
     private int edad = 0;
-    private Button next ;
+    private Button next;
 
     private FragmentTransaction transaction;
 
@@ -48,12 +48,14 @@ public class SaludFragment extends Fragment {
         return view;
     }
 
-    private void init(){
+    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edad >= 3)
+                if (edad > 2)
                     transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
+                else
+                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
             }
         });
     }
