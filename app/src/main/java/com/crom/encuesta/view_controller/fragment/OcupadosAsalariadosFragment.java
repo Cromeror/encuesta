@@ -37,18 +37,44 @@ public class OcupadosAsalariadosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        view = inflater.inflate(R.layout.fragment_ocupado, container, false);
+        view = inflater.inflate(R.layout.fragment_ocupados_asalariados, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
+        final EditText otro_1 = (EditText) view.findViewById(R.id.otro_1);
+        otro_1.setVisibility(View.GONE);
+
+        hide_alimentacion();
+        hide_educacion();
+        hide_transporte();
+        hide_familiar();
 
         Spinner asalariados_1 = (Spinner) view.findViewById(R.id.asalariado_1);
         ArrayAdapter<CharSequence> spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_1, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariados_1.setAdapter(spinner_adapter_1);
+        asalariados_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v,
+                                       int position, long id) {
+                String scountry = adapter.getItemAtPosition(position).toString();
+
+                if (!scountry.equalsIgnoreCase("Otro mdeio")) {
+
+                    otro_1.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+
 
         ArrayAdapter<CharSequence> spinner_adapter_si_no_noSabe = ArrayAdapter.createFromResource(getActivity(),
                 R.array.si_no_nosabe, android.R.layout.simple_spinner_item);
@@ -72,6 +98,9 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 if (!scountry.equalsIgnoreCase("si")) {
                     TextView asalariado_5_text = (TextView) view.findViewById(R.id.asalariado_5_editText);
                     asalariado_5_text.setVisibility(View.GONE);
+                } else {
+                    TextView asalariado_5_text = (TextView) view.findViewById(R.id.asalariado_5_editText);
+                    asalariado_5_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -238,9 +267,10 @@ public class OcupadosAsalariadosFragment extends Fragment {
                     alimentacion_textView.setVisibility(View.VISIBLE);
                     EditText alimantacion_editText = (EditText) view.findViewById(R.id.alimentacion_editText);
                     alimantacion_editText.setVisibility(View.VISIBLE);
-                }
+                } else hide_alimentacion();
             }
         });
+
 
         Switch trasnporte_switch = (Switch) view.findViewById(R.id.trasnporte_switch);
         trasnporte_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -253,7 +283,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
                     transporte_textView.setVisibility(View.VISIBLE);
                     EditText transporte_editText = (EditText) view.findViewById(R.id.alimentacion_editText);
                     transporte_editText.setVisibility(View.VISIBLE);
-                }
+                } else hide_transporte();
             }
         });
 
@@ -268,7 +298,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
                     educativo_textView.setVisibility(View.VISIBLE);
                     EditText educativo_editText = (EditText) view.findViewById(R.id.educativo_editText);
                     educativo_editText.setVisibility(View.VISIBLE);
-                }
+                } else hide_educacion();
             }
         });
 
@@ -283,10 +313,9 @@ public class OcupadosAsalariadosFragment extends Fragment {
                     familiar_textView.setVisibility(View.VISIBLE);
                     EditText familiar_editText = (EditText) view.findViewById(R.id.familiar_editText);
                     familiar_editText.setVisibility(View.VISIBLE);
-                }
+                } else hide_familiar();
             }
         });
-
 
         return view;
     }
@@ -298,6 +327,42 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });
+    }
+
+    private void hide_alimentacion() {
+        Spinner alimentacion = (Spinner) view.findViewById(R.id.alimentacion_spinner);
+        alimentacion.setVisibility(View.GONE);
+        TextView alimentacion_textView = (TextView) view.findViewById(R.id.alimentacion_textView);
+        alimentacion_textView.setVisibility(View.GONE);
+        EditText alimantacion_editText = (EditText) view.findViewById(R.id.alimentacion_editText);
+        alimantacion_editText.setVisibility(View.GONE);
+    }
+
+    private void hide_transporte() {
+        Spinner transporte = (Spinner) view.findViewById(R.id.trasnporte_spinner);
+        transporte.setVisibility(View.GONE);
+        TextView transporte_textView = (TextView) view.findViewById(R.id.transporte_textView);
+        transporte_textView.setVisibility(View.GONE);
+        EditText transporte_editText = (EditText) view.findViewById(R.id.alimentacion_editText);
+        transporte_editText.setVisibility(View.GONE);
+    }
+
+    private void hide_familiar() {
+        Spinner familiar = (Spinner) view.findViewById(R.id.familiar_spinner);
+        familiar.setVisibility(View.GONE);
+        TextView familiar_textView = (TextView) view.findViewById(R.id.familiar_textView);
+        familiar_textView.setVisibility(View.GONE);
+        EditText familiar_editText = (EditText) view.findViewById(R.id.familiar_editText);
+        familiar_editText.setVisibility(View.GONE);
+    }
+
+    private void hide_educacion() {
+        Spinner educativo = (Spinner) view.findViewById(R.id.educativo_spinner);
+        educativo.setVisibility(View.GONE);
+        TextView educativo_textView = (TextView) view.findViewById(R.id.educativo_textView);
+        educativo_textView.setVisibility(View.GONE);
+        EditText educativo_editText = (EditText) view.findViewById(R.id.educativo_editText);
+        educativo_editText.setVisibility(View.GONE);
     }
 
 }
