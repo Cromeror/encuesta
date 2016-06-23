@@ -25,6 +25,7 @@ public class EducacionFragment extends Fragment {
     private FragmentTransaction transaction;
     private Spinner nivelEducativo, estudia, leerEscribir, spinnerEstablecimiento;
     private Spinner tituloMayor;
+private LinearLayout contentEstablecimiento;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +36,7 @@ public class EducacionFragment extends Fragment {
 
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();
+        contentEstablecimiento = ((LinearLayout) view.findViewById(R.id.content_establecimiento));
         leerEscribir = (Spinner) view.findViewById(R.id.leer_escribir);
         ArrayAdapter<CharSequence> adapterLeer = ArrayAdapter.createFromResource(getActivity(),
                 R.array.sino_array, android.R.layout.simple_spinner_item);
@@ -53,13 +55,13 @@ public class EducacionFragment extends Fragment {
                 switch (position) {
                     case 1:
                         if (isChecked == false) {
-                            ((LinearLayout) view.findViewById(R.id.content_establecimiento)).setVisibility(View.VISIBLE);
+                            contentEstablecimiento.setVisibility(View.VISIBLE);
                             isChecked = true;
                         }
                         break;
                     case 2:
                         if (isChecked == true) {
-                            ((LinearLayout) view.findViewById(R.id.content_establecimiento)).setVisibility(View.GONE);
+                            contentEstablecimiento.setVisibility(View.GONE);
                             isChecked = false;
                         }
                         break;
@@ -83,7 +85,6 @@ public class EducacionFragment extends Fragment {
                 R.array.sino_array, android.R.layout.simple_spinner_item);
         adapterEstablecimiento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerEstablecimiento.setAdapter(adapterEstablecimiento);
-
         nivelEducativo = (Spinner) view.findViewById(R.id.nivel_educativo);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.nivel_educativo_array, android.R.layout.simple_spinner_item);
@@ -110,13 +111,18 @@ public class EducacionFragment extends Fragment {
     }
 
     private boolean save() {
+
         if (nivelEducativo.getSelectedItemPosition() == 0 || tituloMayor.getSelectedItemPosition() == 0
-                || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0
-                || (spinnerEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0)) {
+                || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0) {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
             return false;
         } else {
-            Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
+            if(contentEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0){
+               (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                return false;
+            }else {
+                Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
+            }
         }
         return true;
     }
