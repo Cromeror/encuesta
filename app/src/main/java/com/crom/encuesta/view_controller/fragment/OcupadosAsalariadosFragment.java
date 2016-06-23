@@ -43,6 +43,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
+
         Spinner asalariados_1 = (Spinner) view.findViewById(R.id.asalariado_1);
         ArrayAdapter<CharSequence> spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_1, android.R.layout.simple_spinner_item);
@@ -144,6 +145,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         });
 
         final Spinner alimentacion = (Spinner) view.findViewById(R.id.alimentacion_spinner);
+        alimentacion.setVisibility(View.GONE);
         alimentacion.setAdapter(spinner_adapter_si_no);
         alimentacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -164,6 +166,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         });
 
         final Spinner transporte = (Spinner) view.findViewById(R.id.trasnporte_spinner);
+        transporte.setVisibility(View.GONE);
         transporte.setAdapter(spinner_adapter_si_no);
         transporte.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -184,6 +187,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         });
 
         final Spinner familiar = (Spinner) view.findViewById(R.id.familiar_spinner);
+        familiar.setVisibility(View.GONE);
         familiar.setAdapter(spinner_adapter_si_no);
         familiar.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -204,6 +208,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         });
 
         final Spinner educativo = (Spinner) view.findViewById(R.id.educativo_spinner);
+        educativo.setVisibility(View.GONE);
         educativo.setAdapter(spinner_adapter_si_no);
         educativo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
