@@ -10,68 +10,91 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.view_controller.subFragment.EstablecimientoEducativoSubFragment;
+import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
 /**
  * Created by Katherine Buelvas on 15/04/16.
  */
 public class EducacionFragment extends Fragment {
-    private EstablecimientoEducativoSubFragment establecimiento;
     private Button next;
     private FragmentTransaction transaction;
-
-
-    public EducacionFragment newInstance() {
-        EducacionFragment fragment = new EducacionFragment();
-        Bundle args = new Bundle();
-        /*args.putInt(PARAM_EDAD, edad);
-        fragment.setArguments(args);*/
-        return fragment;
-    }
+    private Spinner nivelEducativo, estudia, leerEscribir, spinnerEstablecimiento;
+    private Spinner tituloMayor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_educacion, container, false);
+        final View view = inflater.inflate(R.layout.fragment_educacion, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarC));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();
-        establecimiento = new EstablecimientoEducativoSubFragment();
-        Switch estudia = (Switch) view.findViewById(R.id.estudia);
-        estudia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        leerEscribir = (Spinner) view.findViewById(R.id.leer_escribir);
+        ArrayAdapter<CharSequence> adapterLeer = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapterLeer.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        leerEscribir.setAdapter(adapterLeer);
+        estudia = (Spinner) view.findViewById(R.id.estudia);
+        ArrayAdapter<CharSequence> adapterEstudia = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapterEstudia.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        estudia.setAdapter(adapterEstudia);
+        estudia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            boolean isChecked = false;
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true) {
-                    getFragmentManager().beginTransaction().replace(R.id.content_establecimiento, establecimiento).commit();
-                } else {
-                    getFragmentManager().beginTransaction().remove(establecimiento).commit();
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                switch (position) {
+                    case 1:
+                        if (isChecked == false) {
+                            ((LinearLayout)view.findViewById(R.id.content_establecimiento)).setVisibility(View.VISIBLE);
+                            isChecked = true;
+                        }
+                        break;
+                    case 2:
+                        if (isChecked == true) {
+                            ((LinearLayout)view.findViewById(R.id.content_establecimiento)).setVisibility(View.GONE);
+                            isChecked=false;
+                        }
+                        break;
                 }
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+
         });
-        Spinner nivelEducativo = (Spinner) view.findViewById(R.id.nivel_educativo);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.nivel_educativo_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        nivelEducativo.setAdapter(adapter);
-        nivelEducativo.setSelection(4);
-        final Spinner tituloMayor = (Spinner) view.findViewById(R.id.mayor_titulo_obtenido);
+
+        tituloMayor = (Spinner) view.findViewById(R.id.mayor_titulo_obtenido);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.titulo_educativo_array, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tituloMayor.setAdapter(adapter2);
 
+        spinnerEstablecimiento = (Spinner) view.findViewById(R.id.establecimiento_educativo);
+        ArrayAdapter<CharSequence> adapterEstablecimiento = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapterEstablecimiento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerEstablecimiento.setAdapter(adapterEstablecimiento);
+
+        nivelEducativo = (Spinner) view.findViewById(R.id.nivel_educativo);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.nivel_educativo_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        nivelEducativo.setAdapter(adapter);
+        nivelEducativo.setSelection(4);
         nivelEducativo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                if (position <= 3 || position == 6) {
-
+                if (position >= 6) {
+                    save();
+                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                 }
             }
 
@@ -84,10 +107,18 @@ public class EducacionFragment extends Fragment {
         return view;
     }
 
+    private void save() {
+        if (nivelEducativo.getSelectedItemPosition() == 0 && tituloMayor.getSelectedItemPosition() == 0) {
+            (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+        }
+        Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
+    }
+
     private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                save();
                 transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
             }
         });

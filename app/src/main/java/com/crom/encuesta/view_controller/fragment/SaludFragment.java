@@ -72,7 +72,7 @@ public class SaludFragment extends Fragment {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-                if (position == 0) {
+                if (position == 1) {
                     ((LinearLayout) view.findViewById(R.id.salud2)).setVisibility(View.VISIBLE);
                 } else {
                     ((LinearLayout) view.findViewById(R.id.salud2)).setVisibility(View.GONE);
@@ -86,7 +86,7 @@ public class SaludFragment extends Fragment {
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-                if (position == 0) {
+                if (position == 1) {
                     ((LinearLayout) view.findViewById(R.id.salud4)).setVisibility(View.VISIBLE);
                 } else {
                     ((LinearLayout) view.findViewById(R.id.salud4)).setVisibility(View.GONE);
@@ -122,10 +122,8 @@ public class SaludFragment extends Fragment {
                     }
                 }
                 if (edad >= 3) {
-                    Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
                     transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
                 }else {
-                    Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
                     transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                 }
             }

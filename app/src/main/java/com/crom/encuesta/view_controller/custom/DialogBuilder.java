@@ -66,4 +66,17 @@ public class DialogBuilder {
             }
         }
     }
+
+    public void dialogIncompleteField(Activity activity, String message){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setMessage(message).setTitle("Formulario incompleto")
+                .setCancelable(true)
+                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }

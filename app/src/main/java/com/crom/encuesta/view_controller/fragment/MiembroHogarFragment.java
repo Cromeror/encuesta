@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,10 +32,6 @@ import java.util.Locale;
  */
 public class MiembroHogarFragment extends Fragment {
     private View view;
-
-    public MiembroHogarFragment() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,24 +98,16 @@ public class MiembroHogarFragment extends Fragment {
             public void onClick(View v) {
                 Miembro miembro = new Miembro();
                 ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
-                miembro.setSexo(generales1.getSelectedItem().toString());
-                int edad = 0;
-                if (edittext.getText().toString().equals("")) {
-                    try {
-                        edad = Integer.parseInt(editTextEdad.getText().toString());
-                        miembro.setEdad(edad + "");
-                        miembro.setNacimiento(edittext.getText().toString());
-                    } catch (Exception e) {
-                        Toast.makeText(getActivity(), "Digite la edad o seleccione la fecha de nacimiento", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    miembro.setNacimiento(edittext.getText().toString());
-                    miembro.setEdad(edad + "");
-                }
-                miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
-                miembro.setParentesco(generales5.getSelectedItem().toString());
+                miembro.setSexo(generales1.getSelectedItem().toString());miembro.setParentesco(generales5.getSelectedItem().toString());
                 miembro.setEstadoCivil(generales6.getSelectedItem().toString());
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
+                if (edittext.getText().toString().equals("")&&editTextEdad.getText().toString().equals("")) {
+                    (new DialogBuilder()).dialogIncompleteField(getActivity(), "Digite la edad o seleccione la fecha de nacimiento");
+                } else {
+                    miembro.setEdad(editTextEdad.getText().toString());
+                    miembro.setNacimiento(edittext.getText().toString());
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                }
             }
         });
         return view;
