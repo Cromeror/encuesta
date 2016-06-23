@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
 
 /**
@@ -70,9 +71,8 @@ public class IdentificacionFragment extends Fragment {
             vivienda.setDireccion(direccion);
             transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
         }else {
-            ((MainActivity) getActivity()).dialogIncompleteField();
+            (new DialogBuilder()).dialogIncompleteField(getActivity(), "Recuerde no debe dejar campos vacios");
         }
-        Log.i("####SAVE####", vivienda.toString());
     }
 
 }

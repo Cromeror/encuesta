@@ -47,19 +47,20 @@ public class EducacionFragment extends Fragment {
         estudia.setAdapter(adapterEstudia);
         estudia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             boolean isChecked = false;
+
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 switch (position) {
                     case 1:
                         if (isChecked == false) {
-                            ((LinearLayout)view.findViewById(R.id.content_establecimiento)).setVisibility(View.VISIBLE);
+                            ((LinearLayout) view.findViewById(R.id.content_establecimiento)).setVisibility(View.VISIBLE);
                             isChecked = true;
                         }
                         break;
                     case 2:
                         if (isChecked == true) {
-                            ((LinearLayout)view.findViewById(R.id.content_establecimiento)).setVisibility(View.GONE);
-                            isChecked=false;
+                            ((LinearLayout) view.findViewById(R.id.content_establecimiento)).setVisibility(View.GONE);
+                            isChecked = false;
                         }
                         break;
                 }
@@ -93,8 +94,9 @@ public class EducacionFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position >= 6) {
-                    save();
-                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                    if (save()){
+                        transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                    }
                 }
             }
 
@@ -107,19 +109,25 @@ public class EducacionFragment extends Fragment {
         return view;
     }
 
-    private void save() {
-        if (nivelEducativo.getSelectedItemPosition() == 0 && tituloMayor.getSelectedItemPosition() == 0) {
+    private boolean save() {
+        if (nivelEducativo.getSelectedItemPosition() == 0 || tituloMayor.getSelectedItemPosition() == 0
+                || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0
+                || (spinnerEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0)) {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+            return false;
+        } else {
+            Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
         }
-        Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
+        return true;
     }
 
     private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
-                transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                if (save()) {
+                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                }
             }
         });
     }
