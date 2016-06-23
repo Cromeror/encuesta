@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
 
@@ -115,16 +116,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return vivienda;
     }
 
-    public void dialogIncompleteField(){
-        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Recuerde no debe dejar campos vacios").setTitle("Formulario incompleto")
-                .setCancelable(true)
-        .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
 }

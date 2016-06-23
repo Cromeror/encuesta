@@ -86,6 +86,13 @@ public class Hogar {
         this.energiaCocinan = energiaCocinan;
     }
 
+    public Miembro getLastMiembro() {
+        if (miembros.size() > 0) {
+            return miembros.get(miembros.size() - 1);
+        }
+        return null;
+    }
+
     public List<String> toList() {
         ArrayList<String> strings = new ArrayList<String>();
         for (String servicio : serviciosBienes) {
