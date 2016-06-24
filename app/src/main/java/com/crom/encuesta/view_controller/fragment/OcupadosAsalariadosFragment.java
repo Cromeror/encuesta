@@ -96,10 +96,10 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView asalariado_5_text = (TextView) view.findViewById(R.id.asalariado_5_editText);
+                    EditText asalariado_5_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
                     asalariado_5_text.setVisibility(View.GONE);
                 } else {
-                    TextView asalariado_5_text = (TextView) view.findViewById(R.id.asalariado_5_editText);
+                    EditText asalariado_5_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
                     asalariado_5_text.setVisibility(View.VISIBLE);
                 }
             }
@@ -120,8 +120,11 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView asalariado_6_text = (TextView) view.findViewById(R.id.asalariado_6_editText);
+                    EditText asalariado_6_text = (EditText) view.findViewById(R.id.asalariado_6_editText);
                     asalariado_6_text.setVisibility(View.GONE);
+                } else {
+                    EditText asalariado_6_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
+                    asalariado_6_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -141,8 +144,11 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView asalariado_7_text = (TextView) view.findViewById(R.id.asalariado_7_editText);
+                    EditText asalariado_7_text = (EditText) view.findViewById(R.id.asalariado_7_editText);
                     asalariado_7_text.setVisibility(View.GONE);
+                } else {
+                    EditText asalariado_7_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
+                    asalariado_7_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -162,8 +168,11 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView asalariado_8_text = (TextView) view.findViewById(R.id.asalariado_8_editText);
+                    EditText asalariado_8_text = (EditText) view.findViewById(R.id.asalariado_8_editText);
                     asalariado_8_text.setVisibility(View.GONE);
+                } else {
+                    EditText asalariado_8_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
+                    asalariado_8_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -183,8 +192,11 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView alimentacion_editText = (TextView) view.findViewById(R.id.alimentacion_editText);
+                    EditText alimentacion_editText = (EditText) view.findViewById(R.id.alimentacion_editText);
                     alimentacion_editText.setVisibility(View.GONE);
+                } else {
+                    EditText asalariado_5_text = (EditText) view.findViewById(R.id.asalariado_5_editText);
+                    asalariado_5_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -204,8 +216,11 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (!scountry.equalsIgnoreCase("si")) {
-                    TextView transporte_editText = (TextView) view.findViewById(R.id.transporte_editText);
+                    EditText transporte_editText = (EditText) view.findViewById(R.id.transporte_editText);
                     transporte_editText.setVisibility(View.GONE);
+                } else {
+                    EditText transporte_editText = (EditText) view.findViewById(R.id.transporte_editText);
+                    transporte_editText.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -227,6 +242,9 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 if (!scountry.equalsIgnoreCase("si")) {
                     TextView familiar_editText = (TextView) view.findViewById(R.id.familiar_editText);
                     familiar_editText.setVisibility(View.GONE);
+                } else {
+                    TextView familiar_editText = (TextView) view.findViewById(R.id.familiar_editText);
+                    familiar_editText.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -248,6 +266,9 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 if (!scountry.equalsIgnoreCase("si")) {
                     TextView educativo_editText = (TextView) view.findViewById(R.id.educativo_editText);
                     educativo_editText.setVisibility(View.GONE);
+                } else {
+                    TextView educativo_editText = (TextView) view.findViewById(R.id.educativo_editText);
+                    educativo_editText.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -324,7 +345,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
             }
         });
     }
