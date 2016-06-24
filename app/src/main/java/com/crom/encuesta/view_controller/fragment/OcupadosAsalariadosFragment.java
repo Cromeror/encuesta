@@ -37,7 +37,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        view = inflater.inflate(R.layout.fragment_ocupado, container, false);
+        view = inflater.inflate(R.layout.fragment_ocupados_asalariados, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
