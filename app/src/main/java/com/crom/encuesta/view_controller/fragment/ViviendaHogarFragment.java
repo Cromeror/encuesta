@@ -83,6 +83,9 @@ public class ViviendaHogarFragment extends Fragment {
                         for (int i = 0; i < numeroCuartos; i++) {
                             getDialog();
                         }
+                        if (numeroCuartos==0)
+                            vivienda.setCuartos(new ArrayList<String>());
+
                         band = false;
                     }
                 }

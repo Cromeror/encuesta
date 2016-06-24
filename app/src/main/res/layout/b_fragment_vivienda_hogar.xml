@@ -29,7 +29,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="center_vertical"
-            android:text="@string/tipo_vivienda" />
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/tipo_vivienda" >
+            <requestFocus />
+        </TextView>
 
         <Spinner
             android:layout_width="match_parent"
@@ -107,6 +111,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/texto5"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/personas_cuarto_vivienda" />
 

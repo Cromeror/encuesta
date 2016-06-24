@@ -7,6 +7,7 @@ import java.util.List;
  * Created by Katherine Buelvas on 17/06/2016.
  */
 public class Hogar {
+
     private ArrayList<Miembro> miembros;
     private ArrayList<String> serviciosBienes;
     private String aguaConsumo, aguaOtroUso, basura, sanitarioHogar, sanitarioVivienda, energiaCocinan;
@@ -114,10 +115,12 @@ public class Hogar {
             output.append(energiaCocinan);
             output.append(",");
             for (Miembro miembro : miembros) {
-                StringBuilder output2 = new StringBuilder();
-                output2.append(output);
-                output2.append(miembro);
-                strings.add(output2.toString());
+                for (String string : miembro.toList()) {
+                    StringBuilder output2 = new StringBuilder();
+                    output2.append(output);
+                    output2.append(string);
+                    strings.add(output2.toString());
+                }
             }
         }
         return strings;

@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by Katherine Buelvas on 17/06/2016.
  */
 public class Vivienda {
+
     private String departamento;
     private String municipio;
     private String zona;
@@ -180,6 +181,7 @@ public class Vivienda {
         output.append(",");
         output.append(cuartos.size());
         output.append(",");
+//                System.err.println("asdasdsa: "+cuartos.size());
         for (String personasCuarto : cuartos) {
             StringBuilder output2 = new StringBuilder();
             output2.append(output);
@@ -205,8 +207,13 @@ public class Vivienda {
                         result.append(output4);
                     }
                 }
+//                output3.append("\n");
+//                result.append(output3);
             }
+
         }
+//        output.append("\n");
+//        result.append(output);
         return result.toString();
     }
 }
