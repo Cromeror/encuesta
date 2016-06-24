@@ -3,11 +3,13 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,7 +21,9 @@ import com.crom.encuesta.R;
  * A simple {@link Fragment} subclass.
  */
 public class DesocupadosFragment extends Fragment {
-
+    private Button next;
+    private View view;
+    private FragmentTransaction transaction;
 
     public DesocupadosFragment() {
         // Required empty public constructor
@@ -29,7 +33,10 @@ public class DesocupadosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_desocupados, container, false);
+        view = inflater.inflate(R.layout.fragment_desocupados, container, false);
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        init();
 
         Spinner des_3 = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(getActivity(),
@@ -154,6 +161,15 @@ public class DesocupadosFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void init() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+            }
+        });
     }
 
 }

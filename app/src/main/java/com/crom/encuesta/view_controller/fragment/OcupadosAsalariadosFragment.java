@@ -77,7 +77,7 @@ public class OcupadosAsalariadosFragment extends Fragment {
 
 
         ArrayAdapter<CharSequence> spinner_adapter_si_no_noSabe = ArrayAdapter.createFromResource(getActivity(),
-                R.array.si_no_nosabe, android.R.layout.simple_spinner_item);
+                R.array.ocupados_7, android.R.layout.simple_spinner_item);
         spinner_adapter_si_no_noSabe.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ArrayAdapter<CharSequence> spinner_adapter_si_no = ArrayAdapter.createFromResource(getActivity(),

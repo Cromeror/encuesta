@@ -95,7 +95,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
             }
         });
     }

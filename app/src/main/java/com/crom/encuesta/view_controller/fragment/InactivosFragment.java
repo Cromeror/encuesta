@@ -3,11 +3,13 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -21,6 +23,9 @@ import com.crom.encuesta.R;
  * A simple {@link Fragment} subclass.
  */
 public class InactivosFragment extends Fragment {
+    private Button next;
+    private View view;
+    private FragmentTransaction transaction;
 
     EditText otro3,otro7,dinero;
 
@@ -32,7 +37,10 @@ public class InactivosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_inactivos, container, false);
+        view = inflater.inflate(R.layout.fragment_inactivos, container, false);
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        init();
 
         otro3 = (EditText) view.findViewById(R.id.etext_inactivos_3);
         otro7 = (EditText) view.findViewById(R.id.etext_inactivos_7);
@@ -179,13 +187,16 @@ public class InactivosFragment extends Fragment {
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             ina_9.setAdapter(adapter9);
 
-
-
-
-
-
-
         return view;
+    }
+
+    private void init() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+            }
+        });
     }
 
 }
