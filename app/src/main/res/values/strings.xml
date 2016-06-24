@@ -484,6 +484,50 @@
         <item>No sabe,no informa</item>
     </string-array>
 
+    <!--ocupados independientes Arrays-->
+    <string-array name="independientes_1">
+        <item>Trabajó por obra</item>
+        <item>Trabajó por honorarios o prestación de servicios</item>
+        <item>Trabajó por piezas (maquila, etc.)</item>
+        <item>Trabajó por comisión únicamente</item>
+        <item>Trabajó vendiendo por catálogo</item>
+        <item>Trabajó en su oficio (taxista, ama de casa por días, etc.)</item>
+        <item>Tiene un negocio de industria, comercio, servicios o tiene una finca</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="independientes_6">
+        <item>Ocasional (De vez en cuando)</item>
+        <item>Estacional (En ciertas épocas del año)</item>
+        <item>Permanente </item>
+        <item>Otro</item>
+    </string-array>
+
+    <!--ocupados trabajos secundarios Arrays-->
+    <string-array name="secundario_3">
+        <item>Obrero o empleado de empresa particular</item>
+        <item>Obrero o empleado del gobierno</item>
+        <item>Empleado domestico</item>
+        <item>Trabajador por cuenta propia</item>
+        <item>Patrón o empleador</item>
+        <item>Trabajador familiar sin remuneración</item>
+        <item>trabajador sin remuneración en empresas o negocios de otros hogares</item>
+        <item>Jornalero o peón</item>
+        <item>Otro</item>
+    </string-array>
+
+    <!--ocupados insuficiencia horas Arrays-->
+    <string-array name="insufienncia_5">
+        <item>Para mejorar la utilización de sus capacidades o formación</item>
+        <item>Desea mejorar sus ingresos</item>
+        <item>Desea trabajar menos horas</item>
+        <item>Porque el trabajo actual es temporal</item>
+        <item>Problemas en el trabajo</item>
+        <item>No le gusta su trabajo actual</item>
+        <item>Su trabajo actual exige mucho esfuerzo físico o mental</item>
+        <item>Problemas ambientales</item>
+        <item>Otro</item>
+    </string-array>
+
 
     <!--inactivos Arrays -->
     <string-array name="trabajo_ultima_vez_array">

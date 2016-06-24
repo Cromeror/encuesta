@@ -95,7 +95,7 @@ private LinearLayout contentEstablecimiento;
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position >= 6) {
-                    if (save()){
+                    if (save(false)){
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     }
                 }
@@ -110,13 +110,17 @@ private LinearLayout contentEstablecimiento;
         return view;
     }
 
-    private boolean save() {
+    private boolean save(boolean b) {
 
-        if (nivelEducativo.getSelectedItemPosition() == 0 || tituloMayor.getSelectedItemPosition() == 0
+        if (nivelEducativo.getSelectedItemPosition() == 0
                 || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0) {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
             return false;
         } else {
+            if(b && tituloMayor.getSelectedItemPosition() == 0){
+                (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                return false;
+            }
             if(contentEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0){
                (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                 return false;
@@ -131,7 +135,7 @@ private LinearLayout contentEstablecimiento;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save()) {
+                if (save(true)) {
                     transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                 }
             }
