@@ -216,7 +216,7 @@ public class OcupadoFragment extends Fragment {
                     transaction.replace(R.id.contenedor, new OcupadoIndependienteFragment()).commit();
                 }
                 if (scountry.equalsIgnoreCase("Trabajador familiar sin remuneración")) {
-                    transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                    transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
                 }
 
 

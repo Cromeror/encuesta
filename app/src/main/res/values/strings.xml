@@ -14,6 +14,25 @@
     <string name="capG">Fuerza de trabajo</string>
     <string name="capEOcupado">Ocupado</string>
     <string name="capC">C. Datos del hogar</string>
+
+    <!--ocupados asalariados independientes-->
+    <string name="asalariados_independienes_1">¿Cuántos meses trabajó en los últimos doce meses?</string>
+    <string name="asalariados_independientes_2">¿Cuántos horas a la semana trabaja normalmente Ud. en este trabajo?</string>
+    <string name="asalariados_independientes_3">¿Cuál es la razón por la que trabaja normalmente menos de 40 horas a la semana?</string>
+    <string name="asalariados_independientes_4">¿Cuántos horas trabajó Ud. la semana pasada en este trabajo?</string>
+    <string name="asalariados_independientes_5">¿Por qué razón, de las horas que normalmente trabaja, hubo algunas que no trabajó la semana (Solo realice está pregunta si en 32 la respuesta es menor que en30) pasada?</string>
+    <string name="asalariados_independientes_6">¿En qué horario realizó su trabajo principal de la semana pasada? (registre horario de 00 a 24 horas)</string>
+    <string name="asalariados_independientes_7">. ¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde Ud. trabaja?</string>
+    <string name="asalariados_independientes_8">Donde realiza principalmente su trabajo</string>
+    <string name="asalariados_independientes_9">¿En caso de enfermedad como cubriría los costos médicos y los medicamentos?</string>
+    <string name="asalariados_independientes_10">¿Está Ud. cotizando actualmente a un fondo de pensiones?</string>
+    <string name="asalariados_independientes_11">En cuál de los siguientes fondos cotiza actualmente:</string>
+    <string name="asalariados_independientes_12">¿Quién paga mensualmente por la afiliación al fondo de pensiones de Ud.?</string>
+    <string name="asalariados_independientes_13">¿Cuántos años lleva Ud. cotizando en el fondo de pensiones?</string>
+    <string name="asalariados_independientes_14">¿Qué está haciendo Ud. actualmente para sostenerse económicamente en la vejez? </string>
+    <string name="asalariados_independientes_15">¿Se encuentra afiliado actualmente por una empresa o individualmente a una aseguradora de riesgos laborales?</string>
+    <string name="asalariados_independientes_16">¿Se encuentra afiliado actualmente a una caja de compensación familiar?</string>
+
     <!--General -->
     <string name="app_name">Encuesta</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -501,6 +520,85 @@
         <item>Permanente </item>
         <item>Otro</item>
     </string-array>
+
+    <!--ocupados asalariados e independientes Arrays-->
+    <string-array name="asalariados_independientes_3">
+        <item>Es lo único que ha conseguido pero quiere trabajar más horas</item>
+        <item>Es la jornada que se ajusta a sus necesidades</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="asalariados_independientes_5">
+        <item>Enfermedad, permiso o licencia</item>
+        <item>Festivos</item>
+        <item>Vacaciones</item>
+        <item>Capacitación</item>
+        <item>Suspensión o terminación del empleo</item>
+        <item>Reducción de la actividad económica de la empresa</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="asalariados_independientes_7">
+        <item>Trabaja solo</item>
+        <item>2 a 3 personas</item>
+        <item>4 a 5 personas</item>
+        <item>6 a 10 personas</item>
+        <item>11 a 19 personas</item>
+        <item>20 a 30 personas</item>
+        <item>31 a 50 personas</item>
+        <item>51 a 100 personas</item>
+        <item>100 y más personas</item>
+    </string-array>
+    <string-array name="asalariados_independientes_8">
+        <item>En esta vivienda</item>
+        <item>En otras viviendas</item>
+        <item>En un kiosco o caseta</item>
+        <item>En un vehículo</item>
+        <item>De puerta en puerta</item>
+        <item>En la calle</item>
+        <item>Local, oficina, fábrica, etc</item>
+        <item>En el campo, mar o rio</item>
+        <item>En una obra en construcción</item>
+        <item>En una mina o cantera</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="asalariados_independientes_9">
+        <item>Es cotizante en régimen contributivo</item>
+        <item>Tiene régimen subsidiado</item>
+        <item>Es beneficiario de un afiliado</item>
+        <item>Con ahorros personales</item>
+        <item>Con ayuda de algún familiar</item>
+        <item>Con otro tipo de seguro</item>
+        <item>Pidiendo dinero prestado</item>
+        <item>Vendería su vivienda o bienes del hogar</item>
+        <item>No lo ha considerado</item>
+        <item>No tendría como cubrirlos</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="asalariados_independientes_10">
+        <item>Si</item>
+        <item>No</item>
+        <item>Ya es pensionado</item>
+    </string-array>
+    <string-array name="asalariados_independientes_11">
+        <item>Fondo privado</item>
+        <item>Colpensiones, FNA?</item>
+        <item>Fondo subsidiado</item>
+        <item>Regímenes especiales (FFMM, Ecopetrol)</item>
+        <item></item>
+    </string-array>
+    <string-array name="asalariados_independientes_12">
+        <item>Ud. paga una parte y otra la empresa o patrón</item>
+        <item>Colpensiones, FNA</item>
+        <item>Fondo subsidiado</item>
+        <item>Regímenes especiales (FFMM, Ecopetrol)</item>
+    </string-array>
+    <string name="asalariados_independientes_14_a">Aportar a un fondo de pensiones obligatorias</string>
+    <string name="asalariados_independientes_14_b">Aportar a un fondo de pensiones voluntarias</string>
+    <string name="asalariados_independientes_14_c">Ahorrando</string>
+    <string name="asalariados_independientes_14_d">Haciendo inversiones</string>
+    <string name="asalariados_independientes_14_e">Pagando un seguro por su cuenta1</string>
+    <string name="asalariados_independientes_14_f">Preparando a sus hijos para que lo mantengan en su vejez</string>
+    <string name="asalariados_independientes_14_g">Otro</string>
+    <string name="asalariados_independientes_14_h">Nada</string>
 
     <!--ocupados trabajos secundarios Arrays-->
     <string-array name="secundario_3">
