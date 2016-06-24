@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private final Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
-    private int edad = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,10 +99,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public int getEdad() {
-        return 20;
     }
 
     public Vivienda getVivienda() {

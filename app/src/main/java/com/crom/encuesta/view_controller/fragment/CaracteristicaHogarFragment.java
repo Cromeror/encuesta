@@ -94,7 +94,6 @@ public class CaracteristicaHogarFragment extends Fragment {
                 hogar.setSanitarioHogar(spinner6.getSelectedItem().toString());
                 hogar.setSanitarioVivienda(spinner7.getSelectedItem().toString());
                 hogar.setEnergiaCocinan(spinner8.getSelectedItem().toString());
-                Log.i("##DIALOG##","dsds: "+ ((MainActivity) getActivity()).getVivienda().toString());
                 transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
             }
         });
