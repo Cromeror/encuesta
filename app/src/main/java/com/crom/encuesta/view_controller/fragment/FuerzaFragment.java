@@ -141,31 +141,33 @@ public class FuerzaFragment extends Fragment {
         Switch fuerza_7 = (Switch) view.findViewById(R.id.fuerza_7);
         fuerza_7.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == false)
+                if (!isChecked) {
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
+                }
             }
         });
         Switch fuerza_10 = (Switch) view.findViewById(R.id.fuerza_10);
         fuerza_10.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == false)
+                if (!isChecked)
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
             }
         });
         Switch fuerza_11 = (Switch) view.findViewById(R.id.fuerza_11);
         fuerza_11.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == false)
+                if (!isChecked)
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
             }
         });
         Switch fuerza_13 = (Switch) view.findViewById(R.id.fuerza_13);
         fuerza_13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == false)
-                    transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
-                else
+                if (isChecked)
                     transaction.replace(R.id.contenedor, new DesocupadosFragment()).commit();
+                else {
+                    transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
+                }
             }
         });
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -58,11 +59,15 @@ public class OcupadoFragment extends Fragment {
                     Spinner ocupado_8 = (Spinner) view.findViewById(R.id.ocupado_8);
                     EditText ocupado_9 = (EditText) view.findViewById(R.id.ocupado_9);
                     Switch ocupado_10 = (Switch) view.findViewById(R.id.ocupado_10);
+                    CheckBox ocupado_11_a = (CheckBox) view.findViewById(R.id.ocupado_11_a);
+                    CheckBox ocupado_11_b = (CheckBox) view.findViewById(R.id.ocupado_11_b);
+                    CheckBox ocupado_11_c = (CheckBox) view.findViewById(R.id.ocupado_11_c);
                     TextView ocupado_5_text = (TextView) view.findViewById(R.id.ocupado_5_texto);
                     TextView ocupado_6_text = (TextView) view.findViewById(R.id.ocupado_6_texto);
                     TextView ocupado_7_text = (TextView) view.findViewById(R.id.ocupado_7_texto);
                     TextView ocupado_8_text = (TextView) view.findViewById(R.id.ocupado_8_texto);
                     TextView ocupado_9_text = (TextView) view.findViewById(R.id.ocupado_9_texto);
+                    TextView ocupado_11_text = (TextView) view.findViewById(R.id.ocupado_11_texto);
 
 
                     ocupado_5.setVisibility(View.GONE);
@@ -71,12 +76,49 @@ public class OcupadoFragment extends Fragment {
                     ocupado_8.setVisibility(View.GONE);
                     ocupado_9.setVisibility(View.GONE);
                     ocupado_10.setVisibility(View.GONE);
+                    ocupado_11_a.setVisibility(View.GONE);
+                    ocupado_11_b.setVisibility(View.GONE);
+                    ocupado_11_c.setVisibility(View.GONE);
                     ocupado_5_text.setVisibility(View.GONE);
                     ocupado_6_text.setVisibility(View.GONE);
                     ocupado_7_text.setVisibility(View.GONE);
                     ocupado_8_text.setVisibility(View.GONE);
                     ocupado_9_text.setVisibility(View.GONE);
+                    ocupado_11_text.setVisibility(View.GONE);
 
+                } else {
+                    Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
+                    Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
+                    Spinner ocupado_7 = (Spinner) view.findViewById(R.id.ocupado_7);
+                    Spinner ocupado_8 = (Spinner) view.findViewById(R.id.ocupado_8);
+                    EditText ocupado_9 = (EditText) view.findViewById(R.id.ocupado_9);
+                    Switch ocupado_10 = (Switch) view.findViewById(R.id.ocupado_10);
+                    CheckBox ocupado_11_a = (CheckBox) view.findViewById(R.id.ocupado_11_a);
+                    CheckBox ocupado_11_b = (CheckBox) view.findViewById(R.id.ocupado_11_b);
+                    CheckBox ocupado_11_c = (CheckBox) view.findViewById(R.id.ocupado_11_c);
+                    TextView ocupado_5_text = (TextView) view.findViewById(R.id.ocupado_5_texto);
+                    TextView ocupado_6_text = (TextView) view.findViewById(R.id.ocupado_6_texto);
+                    TextView ocupado_7_text = (TextView) view.findViewById(R.id.ocupado_7_texto);
+                    TextView ocupado_8_text = (TextView) view.findViewById(R.id.ocupado_8_texto);
+                    TextView ocupado_9_text = (TextView) view.findViewById(R.id.ocupado_9_texto);
+                    TextView ocupado_11_text = (TextView) view.findViewById(R.id.ocupado_11_texto);
+
+
+                    ocupado_5.setVisibility(View.VISIBLE);
+                    ocupado_6.setVisibility(View.VISIBLE);
+                    ocupado_7.setVisibility(View.VISIBLE);
+                    ocupado_8.setVisibility(View.VISIBLE);
+                    ocupado_9.setVisibility(View.VISIBLE);
+                    ocupado_10.setVisibility(View.VISIBLE);
+                    ocupado_11_a.setVisibility(View.VISIBLE);
+                    ocupado_11_b.setVisibility(View.VISIBLE);
+                    ocupado_11_c.setVisibility(View.VISIBLE);
+                    ocupado_5_text.setVisibility(View.VISIBLE);
+                    ocupado_6_text.setVisibility(View.VISIBLE);
+                    ocupado_7_text.setVisibility(View.VISIBLE);
+                    ocupado_8_text.setVisibility(View.VISIBLE);
+                    ocupado_9_text.setVisibility(View.VISIBLE);
+                    ocupado_11_text.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -142,6 +184,11 @@ public class OcupadoFragment extends Fragment {
                     TextView ocupado_8_text = (TextView) view.findViewById(R.id.ocupado_8_texto);
                     ocupado_8.setVisibility(View.GONE);
                     ocupado_8_text.setVisibility(View.GONE);
+                } else {
+                    Spinner ocupado_8 = (Spinner) view.findViewById(R.id.ocupado_8);
+                    TextView ocupado_8_text = (TextView) view.findViewById(R.id.ocupado_8_texto);
+                    ocupado_8.setVisibility(View.VISIBLE);
+                    ocupado_8_text.setVisibility(View.VISIBLE);
                 }
 
 
