@@ -107,55 +107,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Para mejorar la utilización de sus capacidades o formación"
-            android:id="@+id/checkBox" />
+            android:id="@+id/checkBox1" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Desea mejorar sus ingresos"
-            android:id="@+id/checkBox6" />
+            android:id="@+id/checkBox2" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Desea trabajar menos horas"
-            android:id="@+id/checkBox8" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Porque el trabajo actual es temporal"
-            android:id="@+id/checkBox7" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Problemas en el trabajo"
-            android:id="@+id/checkBox9" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No le gusta su trabajo actual"
             android:id="@+id/checkBox3" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Su trabajo actual exige mucho esfuerzo físico o mental"
-            android:id="@+id/checkBox5" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Problemas ambientales"
+            android:text="Porque el trabajo actual es temporal"
             android:id="@+id/checkBox4" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=" Problemas en el trabajo"
+            android:id="@+id/checkBox5" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No le gusta su trabajo actual"
+            android:id="@+id/checkBox6" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Su trabajo actual exige mucho esfuerzo físico o mental"
+            android:id="@+id/checkBox7" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Problemas ambientales"
+            android:id="@+id/checkBox8" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Otro"
-            android:id="@+id/checkBox2" />
+            android:id="@+id/checkBox8" />
 
         <EditText
             android:layout_width="match_parent"

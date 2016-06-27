@@ -18,6 +18,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +28,7 @@ public class InactivosFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
     EditText otro3,otro7,dinero;
 
@@ -39,6 +42,7 @@ public class InactivosFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_inactivos, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
@@ -194,9 +198,21 @@ public class InactivosFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        String dato = "";
+        Switch dsocupados_switch = (Switch) view.findViewById(R.id.switch_inactivos_1);
+        if (dsocupados_switch.isChecked()) {
+            vivienda.getLastHogar().getLastMiembro().getInactivo().setG("si", 1);
+        } else vivienda.getLastHogar().getLastMiembro().getInactivo().setG("no", 1);
+        dsocupados_switch = (Switch) view.findViewById(R.id.switch_inactivos_4);
+        if (dsocupados_switch.isChecked()) {
+            vivienda.getLastHogar().getLastMiembro().getInactivo().setG("si", 4);
+        } else vivienda.getLastHogar().getLastMiembro().getInactivo().setG("no", 4);
     }
 
 }

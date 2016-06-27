@@ -486,6 +486,7 @@
         <item>no</item>
     </string-array>
 
+
     <!--Ocupados asalariados arrays-->
     <string-array name="asalariados_1">
         <item>Pidió ayuda a familia, amigos, colegas</item>
@@ -502,6 +503,17 @@
         <item>No</item>
         <item>No sabe,no informa</item>
     </string-array>
+    <string name="asalariados_22">En los últimos 12 meses Ud. recibió: (si no sabe estimar el monto escriba 98)</string>
+    <string name="asalariados_22_a">Prima de servicios</string>
+    <string name="asalariados_22_b">Prima de navidad</string>
+    <string name="asalariados_22_c">Prima de vacaciones</string>
+    <string name="asalariados_22_d">Viáticos permanentes y/o bonos anuales</string>
+    <string name="asalariados_22_e">Pago por accidentes de trabajo</string>
+    <string name="asalariados_23">¿La semana pasada Ud. trabajó horas extra remuneradas?</string>
+    <string name="asalariados_21">El mes pasado Ud. recibió: (si no sabe el valor correcto coloque 98)</string>
+    <string name="asalariados_21_a">Primas (técnica, de antigüedad, clima, orden público, otras, etc.)</string>
+    <string name="asalariados_21_b">Algún tipo de bonificación de carácter mensual</string>
+
 
     <!--ocupados independientes Arrays-->
     <string-array name="independientes_1">

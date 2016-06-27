@@ -18,6 +18,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +28,7 @@ public class OcupadoFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
     public OcupadoFragment() {
         // Required empty public constructor
@@ -38,6 +41,7 @@ public class OcupadoFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupado, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -213,9 +217,11 @@ public class OcupadoFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 // Showing selected spinner item
                 if (scountry.equalsIgnoreCase("Trabajador por cuenta propia") || scountry.equalsIgnoreCase("Otro")) {
+                    save();
                     transaction.replace(R.id.contenedor, new OcupadoIndependienteFragment()).commit();
                 }
                 if (scountry.equalsIgnoreCase("Trabajador familiar sin remuneración")) {
+                    save();
                     transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
                 }
 
@@ -239,9 +245,64 @@ public class OcupadoFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                save();
                 transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        EditText ocupado = (EditText) view.findViewById(R.id.que_hace_trabajo);
+        String dato = ocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 1);
+        ocupado = (EditText) view.findViewById(R.id.nombre_empresa_negocio);
+        dato = ocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 2);
+        ocupado = (EditText) view.findViewById(R.id.serivios_empresa_dedica);
+        dato = ocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 3);
+        Spinner ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_4);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 4);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_4);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 4);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_5);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 5);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_6);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 6);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_7);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 7);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_8);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 8);
+        ocupado = (EditText) view.findViewById(R.id.ocupado_9);
+        dato = ocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 9);
+        Switch ocupado_switch = (Switch) view.findViewById(R.id.ocupado_10);
+        if (ocupado_switch.isChecked()) dato = "si";
+        else dato = "no";
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 10);
+        dato = "";
+        CheckBox checkBox1 = (CheckBox) view.findViewById(R.id.ocupado_11_a);
+        CheckBox checkBox2 = (CheckBox) view.findViewById(R.id.ocupado_11_b);
+        CheckBox checkBox3 = (CheckBox) view.findViewById(R.id.ocupado_11_c);
+        if (checkBox1.isChecked())
+            dato = checkBox1.getText().toString();
+        else if (checkBox2.isChecked())
+            dato = dato + "," + checkBox2.getText().toString();
+        else if (checkBox3.isChecked()) dato = dato + "," + checkBox3.getText().toString();
+        if (",".equalsIgnoreCase(String.valueOf(dato.charAt(0)))) dato = dato.substring(1);
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 11);
+        ocupado = (EditText) view.findViewById(R.id.tiempo_enla_empresa);
+        dato = ocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 12);
+        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_12);
+        dato = ocupado_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 13);
     }
 
 

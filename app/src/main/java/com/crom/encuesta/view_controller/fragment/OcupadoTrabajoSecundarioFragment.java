@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -23,6 +25,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
     public OcupadoTrabajoSecundarioFragment() {
         // Required empty public constructor
@@ -37,6 +40,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_trabajo_secundario, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -55,6 +59,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (scountry.equalsIgnoreCase("no")) {
+                    save();
                     transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
                 }
 
@@ -95,9 +100,32 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                save();
                 transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        String dato = "";
+        Spinner secundario_spinner = (Spinner) view.findViewById(R.id.secundario_1_spinner);
+        dato = secundario_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 45);
+        EditText secundario_editText = (EditText) view.findViewById(R.id.secundario_2_editText);
+        dato = secundario_editText.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 46);
+        secundario_spinner = (Spinner) view.findViewById(R.id.secundario_3_spinner);
+        if (!secundario_spinner.getSelectedItem().toString().equalsIgnoreCase("Otro")) {
+            dato = secundario_spinner.getSelectedItem().toString();
+        } else {
+            EditText otro = (EditText) view.findViewById(R.id.otro);
+            dato = otro.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 47);
+        secundario_editText = (EditText) view.findViewById(R.id.secundario_4_editText);
+        dato = secundario_editText.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 48);
+
     }
 
 }

@@ -16,6 +16,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -24,6 +26,7 @@ public class OcupadoIndependienteFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
 
     public OcupadoIndependienteFragment() {
@@ -39,6 +42,7 @@ public class OcupadoIndependienteFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_indepedente, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -164,6 +168,38 @@ public class OcupadoIndependienteFragment extends Fragment {
                 transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        String dato = "";
+        Spinner independientes_spinner = (Spinner) view.findViewById(R.id.independientes_1_spinner);
+        if (!independientes_spinner.getSelectedItem().toString().equalsIgnoreCase("Otro")) {
+            dato = independientes_spinner.getSelectedItem().toString();
+        } else {
+            EditText otro = (EditText) view.findViewById(R.id.otro_editText_1);
+            dato = otro.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 24);
+        independientes_spinner = (Spinner) view.findViewById(R.id.independientes_2_Spinner);
+        dato = independientes_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 25);
+        EditText idependientes_editText = (EditText) view.findViewById(R.id.independientes_3_editText);
+        dato = idependientes_editText.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 26);
+        idependientes_editText = (EditText) view.findViewById(R.id.independientes_4_editText);
+        dato = idependientes_editText.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 27);
+        idependientes_editText = (EditText) view.findViewById(R.id.independientes_5_editText);
+        dato = idependientes_editText.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 28);
+        independientes_spinner = (Spinner) view.findViewById(R.id.independientes_6_spinner);
+        if (!independientes_spinner.getSelectedItem().toString().equalsIgnoreCase("Otro")) {
+            dato = independientes_spinner.getSelectedItem().toString();
+        } else {
+            EditText otro = (EditText) view.findViewById(R.id.otro_editText_6);
+            dato = otro.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 29);
     }
 
 }

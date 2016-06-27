@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +26,7 @@ public class DesocupadosFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
     public DesocupadosFragment() {
         // Required empty public constructor
@@ -35,6 +38,7 @@ public class DesocupadosFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_desocupados, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
@@ -158,6 +162,16 @@ public class DesocupadosFragment extends Fragment {
                 }
             }
         });
+        Switch swt4 = (Switch) view.findViewById(R.id.switch_desocupados_4);
+        swt4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    save();
+                    transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
+                }
+            }
+        });
 
 
         return view;
@@ -167,9 +181,71 @@ public class DesocupadosFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                save();
+                transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        String dato = "";
+        EditText desocupado = (EditText) view.findViewById(R.id.desocupados_1);
+        dato = desocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 1);
+        desocupado = (EditText) view.findViewById(R.id.desocupados_2);
+        dato = desocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 2);
+        Spinner desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
+        if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
+            dato = desocupados_spinner.getSelectedItem().toString();
+        else {
+            desocupado = (EditText) view.findViewById(R.id.desocupados_3);
+            dato = desocupado.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 3);
+        Switch dsocupados_switch = (Switch) view.findViewById(R.id.switch_desocupados_4);
+        if (dsocupados_switch.isChecked()) {
+            vivienda.getLastHogar().getLastMiembro().getOcupado().setE("si", 4);
+        } else vivienda.getLastHogar().getLastMiembro().getOcupado().setE("no", 4);
+        desocupado = (EditText) view.findViewById(R.id.desocupados_5);
+        dato = desocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 5);
+        desocupado = (EditText) view.findViewById(R.id.desocupados_6);
+        dato = desocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 6);
+        desocupado = (EditText) view.findViewById(R.id.desocupados_7);
+        dato = desocupado.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 7);
+        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_8);
+        if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
+            dato = desocupados_spinner.getSelectedItem().toString();
+        else {
+            desocupado = (EditText) view.findViewById(R.id.desocupados_8);
+            dato = desocupado.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 8);
+        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_9);
+        dato = desocupados_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 9);
+        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_10);
+        dato = desocupados_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 10);
+        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_11);
+        if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
+            dato = desocupados_spinner.getSelectedItem().toString();
+        else {
+            desocupado = (EditText) view.findViewById(R.id.desocupados_11);
+            dato = desocupado.getText().toString();
+        }
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 11);
+        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_12);
+        dato = desocupados_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 12);
+        dsocupados_switch = (Switch) view.findViewById(R.id.switch_desocupados_13);
+        if (dsocupados_switch.isChecked()) {
+            vivienda.getLastHogar().getLastMiembro().getOcupado().setE("si", 13);
+        } else vivienda.getLastHogar().getLastMiembro().getOcupado().setE("no", 13);
+
     }
 
 }

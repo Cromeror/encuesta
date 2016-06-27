@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -23,7 +26,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-
+    private Vivienda vivienda;
 
     public OcupadoinsuficienfiaHorasFragment() {
         // Required empty public constructor
@@ -37,6 +40,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_insuficiencia_horas, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -143,9 +147,58 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                save();
+                transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
             }
         });
+    }
+
+    private void save() {
+        String dato = "";
+        Spinner insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_1);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 49);
+        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_8_spinner);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 51);
+        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_3_spinner);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 52);
+        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_4_spinner);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 53);
+        EditText insuficienca = (EditText) view.findViewById(R.id.insuficiencia_2_editText);
+        dato = insuficienca.getText().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 50);
+        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_6_spinner);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 55);
+        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_7_spinner);
+        dato = insuficiencia_spinner.getSelectedItem().toString();
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 56);
+        dato = "";
+        CheckBox checkBox1 = (CheckBox) view.findViewById(R.id.checkBox1);
+        CheckBox checkBox2 = (CheckBox) view.findViewById(R.id.checkBox2);
+        CheckBox checkBox3 = (CheckBox) view.findViewById(R.id.checkBox3);
+        CheckBox checkBox4 = (CheckBox) view.findViewById(R.id.checkBox4);
+        CheckBox checkBox5 = (CheckBox) view.findViewById(R.id.checkBox5);
+        CheckBox checkBox6 = (CheckBox) view.findViewById(R.id.checkBox6);
+        CheckBox checkBox7 = (CheckBox) view.findViewById(R.id.checkBox7);
+        CheckBox checkBox8 = (CheckBox) view.findViewById(R.id.checkBox8);
+        CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.checkBox9);
+        if (checkBox1.isChecked()) dato = checkBox1.getText().toString();
+        else if (checkBox2.isChecked()) dato = dato + "," + checkBox2.getText().toString();
+        else if (checkBox3.isChecked()) dato = dato + "," + checkBox3.getText().toString();
+        else if (checkBox4.isChecked()) dato = dato + "," + checkBox4.getText().toString();
+        else if (checkBox5.isChecked()) dato = dato + "," + checkBox5.getText().toString();
+        else if (checkBox6.isChecked()) dato = dato + "," + checkBox6.getText().toString();
+        else if (checkBox7.isChecked()) dato = dato + "," + checkBox7.getText().toString();
+        else if (checkBox8.isChecked()) dato = dato + "," + checkBox8.getText().toString();
+        else if (checkBox9.isChecked()) dato = dato + "," + checkBox9.getText().toString();
+        if (",".equalsIgnoreCase(String.valueOf(dato.charAt(0)))) dato = dato.substring(1);
+        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 54);
+
+
     }
 
 

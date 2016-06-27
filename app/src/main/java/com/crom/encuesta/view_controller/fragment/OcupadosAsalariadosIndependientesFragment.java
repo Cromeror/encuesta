@@ -18,6 +18,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.view_controller.MainActivity;
 
 import org.w3c.dom.Text;
 
@@ -28,6 +30,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
+    private Vivienda vivienda;
 
 
     public OcupadosAsalariadosIndependientesFragment() {
@@ -45,6 +48,8 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_ocupados_asalariados_independientes, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
@@ -295,6 +300,10 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         d.setVisibility(View.VISIBLE);
         e.setVisibility(View.VISIBLE);
         f.setVisibility(View.VISIBLE);
+    }
+
+    private void save() {
+
     }
 
 }
