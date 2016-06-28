@@ -1,6 +1,6 @@
 <resources>
     <!--Titles-->
-    <string name="capA">A. Indentificación del hogar</string>
+    <string name="capA">A. Indentificación de la vivienda</string>
     <string name="capB">B. Características de la vivienda</string>
     <string name="capHogarA">A. Características del hogar </string>
     <string name="capMHogarA">A. Indentificación miembro del hogar</string>

@@ -1,0 +1,45 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crom.encuesta.view_controller.fragment.BookmarkFragmento">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        style="@style/explorador_titulo"
+        android:text="Vivienda"/>
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capA"
+        android:id="@+id/t1" />
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capB"
+        android:id="@+id/t2" />
+    <TextView
+        style="@style/explorador_titulo"
+        android:text="Hogar"/>
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capHogarA"
+        android:id="@+id/t3" />
+    <TextView
+        style="@style/explorador_titulo"
+        android:text="Miembro"/>
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capMHogarA"
+        android:id="@+id/t4" />
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capMHogarB"
+        android:id="@+id/t5" />
+    <TextView
+        style="@style/explorador_contenido"
+        android:text="@string/capMHogarC"
+        android:id="@+id/t6" />
+</LinearLayout>
+
+</ScrollView>
