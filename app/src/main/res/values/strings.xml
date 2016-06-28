@@ -280,6 +280,7 @@
         <item>Pensión</item>
         <item>Indígena</item>
         <item>Otra (Cueva, carpa, etc)</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="vivienda_habita_es_array">
         <item>Propia totalmente paga</item>
@@ -288,6 +289,7 @@
         <item>En usufructo</item>
         <item>Posesión sin titulo ó de propiedad colectiva</item>
         <item>Otra ¿Cuál?</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="material_pisos_array">
         <item>Tierra, arena</item>
@@ -295,6 +297,7 @@
         <item>Madera, tabla, tablon</item>
         <item>Marmol</item>
         <item>Baldosa, ladrillo, otros materiales sinteticos</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="material_exteriores_array">
         <item>Ladrillo, bloque, material prefabricado, piedra</item>
@@ -306,6 +309,7 @@
         <item>Esterilla, caña, otro material vegetal</item>
         <item>Zinc, tela, carton, latas, plastico</item>
         <item>Sin paredes</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="servicios_vivienda_array">
         <item>Energia electrica</item>
@@ -326,6 +330,7 @@
         <item>Carro tanque</item>
         <item>Aguatero</item>
         <item>Agua embotellada o en bolsa</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="como_eliminan_basura_array">
         <item>Por recolección  pública o privada</item>
@@ -333,6 +338,7 @@
         <item>La tiran a un patio, lote, zanja o baldio.</item>
         <item>La queman o entierran</item>
         <item>Otras formas.</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="servicio_sanitario_hogar_array">
         <item>Inodoro conectado al alcantarillado</item>
@@ -341,10 +347,12 @@
         <item>Letrina</item>
         <item>Bajamar</item>
         <item>No tiene servicio sanitario</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="servicio_sanitario_viviendas_array">
         <item>De uso exclusivo de las personas de la vivienda</item>
         <item>Compartido con personas de otra vivienda</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="energia_cocina_array">
         <item>Electricidad</item>
@@ -355,6 +363,7 @@
         <item>Carbón mineral</item>
         <item>Materiales de desecho</item>
         <item>No cocina</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="servicios_bienes_hogar_array">
         <item>Servicio de telefono fijo</item>
@@ -390,6 +399,7 @@
         <item>Empleado(a) del servicio domestico</item>
         <item>Pensionista</item>
         <item>Otro no pariente</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="generales6">
         <item>No esta casado(a) y vive en pareja hace menos de dos años</item>
@@ -398,11 +408,13 @@
         <item>Esta separado(a) o divorciado(a)</item>
         <item>Esta viudo(a)</item>
         <item>Esta Soltero(a)</item>
+        <item>Seleccione una opción</item>
     </string-array>
     <string-array name="generales1">
         <item>Masculino</item>
         <item>Femenino</item>
         <item>Otro</item>
+        <item>Seleccione una opción</item>
     </string-array>
 
     <!--fuerza de empleo Arrays-->

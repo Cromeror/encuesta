@@ -4,7 +4,6 @@ package com.crom.encuesta.view_controller.fragment;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
+import com.crom.encuesta.view_controller.util.Validador;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -44,17 +43,18 @@ public class MiembroHogarFragment extends Fragment {
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(), R.array.generales1, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         generales1.setAdapter(adapter1);
-
+        generales1.setSelection(3);
         final Spinner generales5 = (Spinner) view.findViewById(R.id.generales5);
         ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(getActivity(), R.array.generales5, android.R.layout.simple_spinner_item);
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         generales5.setAdapter(adapter5);
-
+        generales5.setSelection(8);
         final Spinner generales6 = (Spinner) view.findViewById(R.id.generales6);
         ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(getActivity(), R.array.generales6, android.R.layout.simple_spinner_item);
         adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         generales6.setAdapter(adapter6);
-        final TextView edittext = (TextView) view.findViewById(R.id.generales2);
+        generales6.setSelection(6);
+        final TextView textView = (TextView) view.findViewById(R.id.generales2);
         final EditText editTextEdad = (EditText) view.findViewById(R.id.edad_gnrl);
         final Calendar myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -65,16 +65,16 @@ public class MiembroHogarFragment extends Fragment {
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 String myFormat = "dd/MM/yyyy"; //In which you need put here
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-                edittext.setText(sdf.format(myCalendar.getTime()));
-                if (calcularEdad(edittext.getText().toString()) > 0) {
-                    editTextEdad.setText(calcularEdad(edittext.getText().toString()) + "");
+                textView.setText(sdf.format(myCalendar.getTime()));
+                if (calcularEdad(textView.getText().toString()) > 0) {
+                    editTextEdad.setText(calcularEdad(textView.getText().toString()) + "");
                     isMayor(Integer.parseInt(editTextEdad.getText().toString()));
                 } else {
                     editTextEdad.setText("0");
                 }
             }
         };
-        edittext.setOnClickListener(new View.OnClickListener() {
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new DatePickerDialog(getActivity(), date, myCalendar
@@ -86,27 +86,55 @@ public class MiembroHogarFragment extends Fragment {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && !editTextEdad.getText().toString().equals("")) {
-                    edittext.setText(calcularNacimiento(Integer.parseInt(editTextEdad.getText().toString())));
+                    textView.setText(calcularNacimiento(Integer.parseInt(editTextEdad.getText().toString())));
                     isMayor(Integer.parseInt(editTextEdad.getText().toString()));
                 }
             }
         });
 
+        final EditText nacimiento = (EditText) view.findViewById(R.id.generales4);
+
+        editTextEdad.setText("");
         Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Miembro miembro = new Miembro();
-                ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
-                miembro.setSexo(generales1.getSelectedItem().toString());miembro.setParentesco(generales5.getSelectedItem().toString());
-                miembro.setEstadoCivil(generales6.getSelectedItem().toString());
-                miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
-                if (edittext.getText().toString().equals("")&&editTextEdad.getText().toString().equals("")) {
-                    (new DialogBuilder()).dialogIncompleteField(getActivity(), "Digite la edad o seleccione la fecha de nacimiento");
+                //!textView.getText().toString().equals("")
+               /* if(Validador.validarSpinner(generales1,generales5)
+                        || nacimiento.getText().toString().equals("") || editTextEdad.getText().toString().equals("")
+                        ){
+
+                    (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+
+                }*/
+                if (Validador.validarSpinner(generales1, generales5)
+                        || Validador.isEmptyEditText(editTextEdad,nacimiento)
+                        || textView.getText().toString().equals(getString(R.string.touch_me))) {
+                    (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                 } else {
-                    miembro.setEdad(editTextEdad.getText().toString());
-                    miembro.setNacimiento(edittext.getText().toString());
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                    if (Integer.parseInt(editTextEdad.getText().toString()) < 10) {
+                        Miembro miembro = new Miembro();
+                        ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
+                        miembro.setSexo(generales1.getSelectedItem().toString());
+                        miembro.setParentesco(generales5.getSelectedItem().toString());
+                        miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
+                        miembro.setEdad(editTextEdad.getText().toString());
+                        miembro.setNacimiento(textView.getText().toString());
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                    }else {
+                        if(!Validador.validarSpinner(generales6)){
+                            Miembro miembro = new Miembro();
+                            ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
+                            miembro.setSexo(generales1.getSelectedItem().toString());
+                            miembro.setParentesco(generales5.getSelectedItem().toString());
+                            miembro.setEstadoCivil(generales6.getSelectedItem().toString());
+                            miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
+                            miembro.setEdad(editTextEdad.getText().toString());
+                            miembro.setNacimiento(textView.getText().toString());
+                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                        }else
+                        (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                    }
                 }
             }
         });
@@ -135,6 +163,8 @@ public class MiembroHogarFragment extends Fragment {
     public void isMayor(int edad) {
         if (edad >= 10) {
             ((LinearLayout) view.findViewById(R.id.mayor)).setVisibility(View.VISIBLE);
+        }else {
+            ((LinearLayout) view.findViewById(R.id.mayor)).setVisibility(View.GONE);
         }
     }
 

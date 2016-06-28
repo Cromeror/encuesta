@@ -2,16 +2,21 @@ package com.crom.encuesta.view_controller.fragment;
 
 
 import android.os.Bundle;
+import android.support.annotation.VisibleForTesting;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -60,19 +65,33 @@ public class IdentificacionFragment extends Fragment {
     private void save() {
         vivienda.setDepartamento(getString(R.string.dpt_value));
         vivienda.setMunicipio(getString(R.string.municipio_value));
-        vivienda.setZona(((Spinner)view.findViewById(R.id.spiner_zona)).getSelectedItem().toString());
+        vivienda.setZona(((Spinner) view.findViewById(R.id.spiner_zona)).getSelectedItem().toString());
         String barrio = ((EditText) view.findViewById(R.id.identi_barrio_corregimiento)).getText().toString();
         String sector = ((EditText) view.findViewById(R.id.identi_sector_vereda)).getText().toString();
         String direccion = ((EditText) view.findViewById(R.id.identi_direccion)).getText().toString();
-
-        if(!barrio.equals("") && !sector.equals("")  && !direccion.equals("")){
+        barrio = cleanText(barrio);
+        sector = cleanText(sector);
+        direccion = cleanText(direccion);
+        if (!barrio.equals("") && !sector.equals("") && !direccion.equals("")) {
             vivienda.setBarrio(barrio);
             vivienda.setSector(sector);
             vivienda.setDireccion(direccion);
             transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
-        }else {
+        } else {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), "Recuerde no debe dejar campos vacios");
         }
+    }
+
+    private String cleanText(String value) {
+        String auxi = "";
+        for (char c : value.toCharArray()) {
+            if (c == '\n') {
+                auxi += " ";
+            } else {
+                auxi += c;
+            }
+        }
+        return auxi;
     }
 
 }

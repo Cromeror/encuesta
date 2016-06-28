@@ -18,6 +18,10 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Salud;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
+import com.crom.encuesta.view_controller.util.Validador;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +53,9 @@ public class SaludFragment extends Fragment {
     }
 
     private void init() {
+        /*if (edad < 3) {
+            transaction.add(R.id.content_btn, new ActionFormFragment()).commit();
+        }*/
         final Spinner spinner1 = (Spinner) view.findViewById(R.id.afiliacion);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.sino_nosabe_array, android.R.layout.simple_spinner_item);
@@ -101,32 +108,44 @@ public class SaludFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Spinner[] spinners = {spinner1, spinner2, spinner3, spinner4};
-                salud.setAfiliado(spinner1.getSelectedItem().toString());
-                for (int i = 0; i < spinners.length; i++) {
-                    if (spinners[i].getVisibility() == View.VISIBLE) {
-                        switch (i) {
-                            case 0:
-                                salud.setAfiliado(spinner1.getSelectedItem().toString());
-                                break;
-                            case 1:
-                                salud.setRegimenAfiliado(spinner2.getSelectedItem().toString());
-                                break;
-                            case 2:
-                                salud.setAtencionESE(spinner3.getSelectedItem().toString());
-                                break;
-                            case 3:
-                                salud.setComentarioAtencionESE(spinner4.getSelectedItem().toString());
-                                break;
-                        }
-                    }
-                }
-                if (edad >= 3) {
+                if (save(spinner1, spinner2, spinner3, spinner4)) {
                     transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
-                }else {
-                    transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
+                } else {
+                    if (edad < 3) {
+                        transaction.add(R.id.contenedor, new ActionFormFragment()).commit();
+                    } else {
+                        DialogBuilder builder = new DialogBuilder();
+                        builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                    }
                 }
             }
         });
+    }
+
+    private boolean save(Spinner... spinners) {
+        if (!Validador.validarSpinner(spinners[0])) {
+            salud.setAfiliado(spinners[0].getSelectedItem().toString());
+            if (spinners[0].getSelectedItem().toString().equals("Si")) {
+                if (Validador.validarSpinner(spinners[1])) {
+                    return false;
+                }
+                salud.setRegimenAfiliado(spinners[1].getSelectedItem().toString());
+            }
+        }else {
+            return false;
+        }
+
+        if (!Validador.validarSpinner(spinners[2])) {
+            salud.setAtencionESE(spinners[2].getSelectedItem().toString());
+            if (spinners[2].getSelectedItem().toString().equals("Si")) {
+                if (Validador.validarSpinner(spinners[3])) {
+                    return false;
+                }
+                salud.setComentarioAtencionESE(spinners[3].getSelectedItem().toString());
+            }
+        }else {
+            return false;
+        }
+        return true;
     }
 }

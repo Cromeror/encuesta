@@ -2,7 +2,10 @@ package com.crom.encuesta.view_controller.custom;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.MainActivity;
@@ -23,7 +26,7 @@ public class DialogBuilder {
         mSelectedItems = new ArrayList();
     }
 
-    public ArrayList<String> MultipleChoiceList(final Class c, final Activity activity, String title, int array) {
+    public ArrayList<String> MultipleChoiceList(final Class c, final TextView component, final Activity activity, final String title, final int array) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         final String arrayResource[] = activity.getResources().getStringArray(array);
         builder.setTitle(title)
@@ -42,13 +45,18 @@ public class DialogBuilder {
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        saveMultipleChoice(((MainActivity) activity), c);
+                        if(saveMultipleChoice(((MainActivity) activity), c)){
+                            component.setBackgroundColor(Color.WHITE);
+                            component.setText("Completo");
+                        }
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         mSelectedItems.clear();
+                        component.setBackgroundColor(Color.RED);
+                        component.setText(activity.getString(R.string.touch_me));
                     }
                 });
         builder.create();
@@ -56,7 +64,7 @@ public class DialogBuilder {
         return mSelectedItems;
     }
 
-    private void saveMultipleChoice(MainActivity mainActivity, Class c) {
+    private boolean saveMultipleChoice(MainActivity mainActivity, Class c) {
         if (ViviendaHogarFragment.class.equals(c)) {
             mainActivity.getVivienda().setServicios(mSelectedItems);
         } else if (CaracteristicaHogarFragment.class.equals(c)) {
@@ -65,6 +73,10 @@ public class DialogBuilder {
                 mainActivity.getVivienda().getHogares().get(mainActivity.getVivienda().getHogares().size() - 1).setServiciosBienes(mSelectedItems);
             }
         }
+        if (mSelectedItems.isEmpty()) {
+            return false;
+        }
+        return true;
     }
 
     public void dialogIncompleteField(Activity activity, String message){

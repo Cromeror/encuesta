@@ -89,7 +89,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp">
+        android:paddingBottom="15dp"
+        android:paddingTop="30dp"
+        android:id="@+id/content_btn">
 
         <Button
             android:id="@+id/next_salud_btn"

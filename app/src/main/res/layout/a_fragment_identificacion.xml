@@ -18,6 +18,8 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:text="@string/dpt"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -42,7 +44,10 @@
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:text="@string/municipio"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge" >
+
+            <requestFocus />
+        </TextView>
 
         <TextView
             android:id="@+id/identi_municipio"
@@ -64,13 +69,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:text="@string/zona"
-            android:textAppearance="?android:attr/textAppearanceLarge">
-
-            <requestFocus />
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <Spinner
             android:id="@+id/spiner_zona"
@@ -100,6 +100,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:imeOptions="actionSend"
             android:layout_weight="2" />
     </LinearLayout>
 

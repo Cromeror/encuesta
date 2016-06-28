@@ -21,7 +21,7 @@ public class Miembro {
     public Miembro() {
         sexo = "";
         nacimiento = "";
-        edad = "";
+        edad = "0";
         lugarNacimiento = "";
         parentesco = "";
         estadoCivil = "";

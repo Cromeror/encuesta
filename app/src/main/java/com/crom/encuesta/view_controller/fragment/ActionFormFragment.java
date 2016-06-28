@@ -20,7 +20,6 @@ public class ActionFormFragment extends Fragment {
     private View view;
     private FragmentTransaction transaction;
 
-
     public ActionFormFragment() {
         // Required empty public constructor
     }

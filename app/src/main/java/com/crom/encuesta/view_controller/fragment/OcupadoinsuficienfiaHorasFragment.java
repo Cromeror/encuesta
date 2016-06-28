@@ -185,7 +185,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         CheckBox checkBox6 = (CheckBox) view.findViewById(R.id.checkBox6);
         CheckBox checkBox7 = (CheckBox) view.findViewById(R.id.checkBox7);
         CheckBox checkBox8 = (CheckBox) view.findViewById(R.id.checkBox8);
-        CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.checkBox9);
+       // CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.che);
         if (checkBox1.isChecked()) dato = checkBox1.getText().toString();
         else if (checkBox2.isChecked()) dato = dato + "," + checkBox2.getText().toString();
         else if (checkBox3.isChecked()) dato = dato + "," + checkBox3.getText().toString();
@@ -194,7 +194,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         else if (checkBox6.isChecked()) dato = dato + "," + checkBox6.getText().toString();
         else if (checkBox7.isChecked()) dato = dato + "," + checkBox7.getText().toString();
         else if (checkBox8.isChecked()) dato = dato + "," + checkBox8.getText().toString();
-        else if (checkBox9.isChecked()) dato = dato + "," + checkBox9.getText().toString();
+       // else if (checkBox9.isChecked()) dato = dato + "," + checkBox9.getText().toString();
         if (",".equalsIgnoreCase(String.valueOf(dato.charAt(0)))) dato = dato.substring(1);
         vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 54);
 
