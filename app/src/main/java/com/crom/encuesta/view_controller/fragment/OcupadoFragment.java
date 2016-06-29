@@ -39,7 +39,7 @@ public class OcupadoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_ocupado, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarE));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         vivienda = ((MainActivity) getActivity()).getVivienda();
 

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private final Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
+    public static boolean INICIADO = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +82,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_bookmark) {
+            INICIADO = false;
             fragmentManager.beginTransaction().replace(R.id.contenedor, new BookmarkFragmento()).commit();
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_encuestar) {
+            if (!INICIADO) {
+                INICIADO = true;
+                fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
+            } else {
+                Toast.makeText(this, "Encuesta en curso", Toast.LENGTH_SHORT).show();
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

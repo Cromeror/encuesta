@@ -182,7 +182,7 @@ public class DesocupadosFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 save();
-                transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
+                transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
     }

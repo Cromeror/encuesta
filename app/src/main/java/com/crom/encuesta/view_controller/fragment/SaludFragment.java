@@ -112,7 +112,7 @@ public class SaludFragment extends Fragment {
                     transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
                 } else {
                     if (edad < 3) {
-                        transaction.add(R.id.contenedor, new ActionFormFragment()).commit();
+                        transaction.add(R.id.contenedor, new TicsFragment()).commit();
                     } else {
                         DialogBuilder builder = new DialogBuilder();
                         builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));

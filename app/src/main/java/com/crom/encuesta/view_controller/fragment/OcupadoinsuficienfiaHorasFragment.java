@@ -38,7 +38,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_ocupados_insuficiencia_horas, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarE6));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         vivienda = ((MainActivity) getActivity()).getVivienda();
 

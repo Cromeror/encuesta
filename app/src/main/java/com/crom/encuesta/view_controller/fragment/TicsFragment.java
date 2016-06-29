@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
@@ -58,6 +59,14 @@ public class TicsFragment extends Fragment {
 
             }
         });
+        Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.contenedor, new ActionFormFragment());
+            }
+        });
+
         return view;
     }
 

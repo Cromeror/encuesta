@@ -97,6 +97,8 @@ private LinearLayout contentEstablecimiento;
                 if (position >= 6) {
                     if (save(false)){
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                    }else {
+                        nivelEducativo.setSelection(0);
                     }
                 }
             }

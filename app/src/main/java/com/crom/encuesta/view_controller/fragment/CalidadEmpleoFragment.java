@@ -36,6 +36,7 @@ public class CalidadEmpleoFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_calidad_empleo, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        getActivity().setTitle(getString(R.string.capMHogarE7));
         vivienda = ((MainActivity) getActivity()).getVivienda();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
@@ -98,7 +99,7 @@ public class CalidadEmpleoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 save();
-                transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
+                transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
     }

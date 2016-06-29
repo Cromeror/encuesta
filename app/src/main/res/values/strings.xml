@@ -7,13 +7,17 @@
     <string name="capMHogarB">B. Salud</string>
     <string name="capMHogarC">C. Educación</string>
     <string name="capMHogarD">D. Fuerza de trabajo</string>
-
-    <string name="capD">D. Características generales</string>
-    <string name="capE">E. Salud</string>
-    <string name="capF">Educación</string>
-    <string name="capG">Fuerza de trabajo</string>
-    <string name="capEOcupado">Ocupado</string>
-    <string name="capC">C. Datos del hogar</string>
+    <string name="capMHogarE">E. Ocupados</string>
+    <string name="capMHogarE2">E. Ocupados -Asalariados</string>
+    <string name="capMHogarE3">E. Ocupados – Independientes</string>
+    <string name="capMHogarE4">E. Ocupados: Asalariados e Independientes</string>
+    <string name="capMHogarE5">E. Ocupados-Trabajo secundario</string>
+    <string name="capMHogarE6">E. Ocupados-Empleo con insuficiencia de horas</string>
+    <string name="capMHogarE7">E. Ocupados: Calidad del empleo principal</string>
+    <string name="capMHogarF">F. Desocupados</string>
+    <string name="capMHogarG">G. Inactivos</string>
+    <string name="capMHogarH">H. Otros ingresos del mes pasado</string>
+    <string name="capMHogarI">I. TICs</string>
 
     <!--ocupados asalariados independientes-->
     <string name="asalariados_independienes_1">¿Cuántos meses trabajó en los últimos doce meses?</string>
@@ -78,10 +82,10 @@
     <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
     <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
     <!-- Fuerza trabajo -->
-    <string name="actividad_primera_semana_abril">¿En que actividad ocupo ud la mayor parte de la primera semana de abril?</string>
-    <string name="ademas_de_anterior">Ademas de lo anterior, ¿Ud realizo durante la primera semana de abril alguna actividad paga por una hora o más ?</string>
-    <string name="aunque_usted_no_trabajo">Aunque ud no trabajo la primera semana de abril, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
-    <string name="actividad_primera_semana_abril_hora">¿Trabajo la primera semana de abril en un negocio por una hora o mas sin que le pagaran ?</string>
+    <string name="actividad_primera_semana_mayo">¿En que actividad ocupo ud la mayor parte de la primera semana de Mayo?</string>
+    <string name="ademas_de_anterior">Ademas de lo anterior, ¿Ud realizo durante la primera semana de Mayo alguna actividad paga por una hora o más ?</string>
+    <string name="aunque_usted_no_trabajo">Aunque ud no trabajo la primera semana de Mayo, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
+    <string name="actividad_ultima_semana_mayo_hora">¿Trabajo la ultima semana de Mayo en un negocio por una hora o mas sin que le pagaran ?</string>
     <string name="diligencia_ultimo_mes">En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
     <string name="hizo_ultimas_4_semanas">¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
     <string name="desea_trabajo_negocio">¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
@@ -441,9 +445,9 @@
         <item>No sabe, No informa</item>
     </string-array>
     <string-array name="fuerza_8">
-        <item>No hay trabajo disponible en la ciudad o región/ No encuentra trabajo en su oficio o profesión
-        </item>
+        <item>Seleccione una opción</item>
         <item>Ya encontré trabajo</item>
+        <item>No hay trabajo disponible en la ciudad o región/ No encuentra trabajo en su oficio o profesión</item>
         <item>Está esperanzado que lo llamen o está esperando temporada alta</item>
         <item>No sabe cómo buscarlo</item>
         <item>Está cansado de buscar</item>
@@ -760,7 +764,6 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
-        <item>5</item>
     </string-array>
     <string-array name="empleo_59">
         <item>Muy inestable</item>

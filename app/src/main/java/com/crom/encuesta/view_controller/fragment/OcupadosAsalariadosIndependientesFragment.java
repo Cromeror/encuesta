@@ -47,7 +47,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         // Inflate the layout for this fragment
 
         view = inflater.inflate(R.layout.fragment_ocupados_asalariados_independientes, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarE4));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         vivienda = ((MainActivity) getActivity()).getVivienda();
 

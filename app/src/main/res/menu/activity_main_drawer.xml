@@ -4,13 +4,9 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_encuestar"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Finalizar encuesta" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Encuestar" />
         <item
             android:id="@+id/nav_bookmark"
             android:icon="@drawable/ic_bookmark_black_24dp"

@@ -3,43 +3,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.crom.encuesta.view_controller.fragment.BookmarkFragmento">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <TextView
-        style="@style/explorador_titulo"
-        android:text="Vivienda"/>
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capA"
-        android:id="@+id/t1" />
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capB"
-        android:id="@+id/t2" />
-    <TextView
-        style="@style/explorador_titulo"
-        android:text="Hogar"/>
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capHogarA"
-        android:id="@+id/t3" />
-    <TextView
-        style="@style/explorador_titulo"
-        android:text="Miembro"/>
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capMHogarA"
-        android:id="@+id/t4" />
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capMHogarB"
-        android:id="@+id/t5" />
-    <TextView
-        style="@style/explorador_contenido"
-        android:text="@string/capMHogarC"
-        android:id="@+id/t6" />
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/explorador_titulo"
+            android:text="Vivienda" />
+
+        <TextView
+            android:id="@+id/t1"
+            style="@style/explorador_contenido"
+            android:text="@string/capA" />
+
+        <TextView
+            android:id="@+id/t2"
+            style="@style/explorador_contenido"
+            android:text="@string/capB" />
+
+        <TextView
+            style="@style/explorador_titulo"
+            android:text="Hogar" />
+
+        <TextView
+            android:id="@+id/t3"
+            style="@style/explorador_contenido"
+            android:text="@string/capHogarA" />
+
+        <TextView
+            style="@style/explorador_titulo"
+            android:text="Miembro" />
+
+        <TextView
+            android:id="@+id/t4"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarA" />
+
+        <TextView
+            android:id="@+id/t5"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarB" />
+
+        <TextView
+            android:id="@+id/t6"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarC" />
+
+        <TextView
+            android:id="@+id/t7"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarD" />
+
+        <TextView
+            android:id="@+id/t8"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE" />
+
+        <TextView
+            android:id="@+id/t9"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE2" />
+
+        <TextView
+            android:id="@+id/t10"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE3" />
+
+        <TextView
+            android:id="@+id/t11"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE4" />
+
+        <TextView
+            android:id="@+id/t12"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE5" />
+
+        <TextView
+            android:id="@+id/t13"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE6" />
+
+        <TextView
+            android:id="@+id/t14"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarE7" />
+
+        <TextView
+            android:id="@+id/t15"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarF" />
+
+        <TextView
+            android:id="@+id/t16"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarG" />
+
+        <TextView
+            android:id="@+id/t17"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarH" />
+
+        <TextView
+            android:id="@+id/t18"
+            style="@style/explorador_contenido"
+            android:text="@string/capMHogarI" />
+    </LinearLayout>
 
 </ScrollView>

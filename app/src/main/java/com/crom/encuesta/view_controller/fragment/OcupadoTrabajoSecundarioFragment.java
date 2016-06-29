@@ -38,7 +38,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         // Inflate the layout for this fragment
 
         view = inflater.inflate(R.layout.fragment_ocupados_trabajo_secundario, container, false);
-        getActivity().setTitle(getActivity().getString(R.string.capEOcupado));
+        getActivity().setTitle(getActivity().getString(R.string.capMHogarE5));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         vivienda = ((MainActivity) getActivity()).getVivienda();
 
@@ -101,7 +101,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 save();
-                transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
+                transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });
     }
