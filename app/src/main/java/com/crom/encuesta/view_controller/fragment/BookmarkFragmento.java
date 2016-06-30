@@ -14,7 +14,7 @@ import com.crom.encuesta.R;
  * A simple {@link Fragment} subclass.
  */
 public class BookmarkFragmento extends Fragment {
-
+    private String PARAM_CONTENT = "Bookmark";
 
     public BookmarkFragmento() {
         // Required empty public constructor

@@ -31,7 +31,6 @@ public class FuerzaFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,7 +40,10 @@ public class FuerzaFragment extends Fragment {
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();
+        return view;
+    }
 
+    private void init() {
         Spinner fuerza_1 = (Spinner) view.findViewById(R.id.fuerza_1);
         ArrayAdapter spinner_adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.actividad_ocupo_mayor_tiempo_mayo, android.R.layout.simple_spinner_item);
@@ -149,7 +151,6 @@ public class FuerzaFragment extends Fragment {
             }
         });
 
-
         Spinner fuerza_6 = (Spinner) view.findViewById(R.id.fuerza_6);
         ArrayAdapter spinner_adapter_6 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.fuerza_6, android.R.layout.simple_spinner_item);
@@ -238,8 +239,8 @@ public class FuerzaFragment extends Fragment {
         fuerza_9.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
-                 if (i == 2) {
-                   ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.GONE);
+                if (i == 2) {
+                    ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.GONE);
                 } else {
                     ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.VISIBLE);
                 }
@@ -311,22 +312,15 @@ public class FuerzaFragment extends Fragment {
             }
         });
         ((TextView) view.findViewById(R.id.tv1)).requestFocus();
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //transaction.replace(R.id.contenedor, SaludFragment.newInstance(edad)).commit();
-                /*Intent i = new Intent(v.getContext(),FamilyActivity.class);
-                startActivity(i);*/
-
                 transaction.replace(R.id.contenedor, new OcupadoFragment()).commit();
             }
         });
-
-
+    }
+    public boolean save(){
+        return true;
     }
 
 }
