@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -87,17 +88,21 @@ public class ViviendaHogarFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                    int numeroCuartos = Integer.parseInt(editText4.getText().toString());
-                    if (band) {
-                        personasCuarto.clear();
-                        for (int i = 0; i < numeroCuartos; i++) {
-                            getDialog();
+                    try {
+                        int numeroCuartos = Integer.parseInt(editText4.getText().toString());
+                        if (band) {
+                            personasCuarto.clear();
+                            for (int i = 0; i < numeroCuartos; i++) {
+                                getDialog();
+                            }
+                            if (numeroCuartos == 0)
+                                vivienda.setCuartos(new ArrayList<String>());
+                            else
+                                textView5.setBackgroundColor(Color.WHITE);
+                            band = false;
                         }
-                        if (numeroCuartos == 0)
-                            vivienda.setCuartos(new ArrayList<String>());
-                        else
-                            textView5.setBackgroundColor(Color.WHITE);
-                        band = false;
+                    }catch (Exception e){
+                        Toast.makeText(view.getContext(), "Debe digitar un numero mayor que cero", Toast.LENGTH_SHORT).show();
                     }
                 }
                 return false;

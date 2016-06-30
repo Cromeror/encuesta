@@ -40,11 +40,15 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_trabajo_secundario, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE5));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
+
+        return view;
+    }
+
+    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         final EditText otro = (EditText) view.findViewById(R.id.otro);
         otro.setVisibility(View.GONE);
         Spinner secundario_1 = (Spinner) view.findViewById(R.id.secundario_1_spinner);
@@ -92,15 +96,10 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
             }
         });
 
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+                //save();
                 transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });

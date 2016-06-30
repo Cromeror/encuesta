@@ -423,12 +423,13 @@
 
     <!--fuerza de empleo Arrays-->
     <string-array name="actividad_ocupo_mayor_tiempo_mayo">
-        <item>otro</item>
-        <item>trabajando</item>
-        <item>buscando empleo</item>
-        <item>estudiando</item>
-        <item>oficios del hogar</item>
-        <item>incapacitado permanentemente para trabajar</item>
+        <item>Seleccione una opción</item>
+        <item>Trabajando</item>
+        <item>Buscando empleo</item>
+        <item>Estudiando</item>
+        <item>Oficios del hogar</item>
+        <item>Incapacitado permanentemente para trabajar</item>
+        <item>Otro actividad</item>
     </string-array>
     <string-array name="si_no">
         <item>si</item>

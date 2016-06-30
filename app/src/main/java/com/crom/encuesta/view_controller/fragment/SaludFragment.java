@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
@@ -29,6 +30,8 @@ import java.util.ArrayList;
 public class SaludFragment extends Fragment {
 
     private static final String PARAM_EDAD = "Edad";
+    public static String PARAM_CONTENT = "contenido";
+    private static boolean desactivado = false;
     private View view;
     private int edad = 0;
     private Button next;
@@ -39,23 +42,19 @@ public class SaludFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_salud, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarB));
-        Miembro miembro = ((MainActivity) getActivity()).getVivienda().getLastHogar().getLastMiembro();
-        salud = new Salud();
-        miembro.setSalud(salud);
-        edad = Integer.parseInt(miembro.getEdad());
-        transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        next = (Button) view.findViewById(R.id.next_salud_btn);
+        if (getArguments() != null) {
+            if (getArguments().getString(PARAM_CONTENT).equals("true"))
+                desactivado = true;
+        }
         init();
         return view;
     }
 
     private void init() {
-        /*if (edad < 3) {
-            transaction.add(R.id.content_btn, new ActionFormFragment()).commit();
-        }*/
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        next = (Button) view.findViewById(R.id.next_salud_btn);
         final Spinner spinner1 = (Spinner) view.findViewById(R.id.afiliacion);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.sino_nosabe_array, android.R.layout.simple_spinner_item);
@@ -108,11 +107,20 @@ public class SaludFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save(spinner1, spinner2, spinner3, spinner4)) {
-                    transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
+                if (desactivado) {
+                    if (edad > 3) {
+                        transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
+                    } else {
+                        Toast.makeText(view.getContext(), "Modo: contenido\nTiene menos de 3 años, pase a TICs", Toast.LENGTH_SHORT).show();
+                        transaction.replace(R.id.contenedor, new TicsFragment()).commit();
+                    }
                 } else {
-                    if (edad < 3) {
-                        transaction.add(R.id.contenedor, new TicsFragment()).commit();
+                    if (save(spinner1, spinner2, spinner3, spinner4)) {
+                        if (edad > 3) {
+                            transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
+                        } else {
+                            transaction.add(R.id.contenedor, new TicsFragment()).commit();
+                        }
                     } else {
                         DialogBuilder builder = new DialogBuilder();
                         builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
@@ -123,6 +131,10 @@ public class SaludFragment extends Fragment {
     }
 
     private boolean save(Spinner... spinners) {
+        Miembro miembro = ((MainActivity) getActivity()).getVivienda().getLastHogar().getLastMiembro();
+        salud = new Salud();
+        miembro.setSalud(salud);
+        edad = Integer.parseInt(miembro.getEdad());
         if (!Validador.validarSpinner(spinners[0])) {
             salud.setAfiliado(spinners[0].getSelectedItem().toString());
             if (spinners[0].getSelectedItem().toString().equals("Si")) {
@@ -131,7 +143,7 @@ public class SaludFragment extends Fragment {
                 }
                 salud.setRegimenAfiliado(spinners[1].getSelectedItem().toString());
             }
-        }else {
+        } else {
             return false;
         }
 
@@ -143,7 +155,7 @@ public class SaludFragment extends Fragment {
                 }
                 salud.setComentarioAtencionESE(spinners[3].getSelectedItem().toString());
             }
-        }else {
+        } else {
             return false;
         }
         return true;

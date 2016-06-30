@@ -3,9 +3,11 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -17,17 +19,26 @@ import com.crom.encuesta.R;
  */
 public class OtrosIngresosFragment extends Fragment {
 
+    private Button next;
+    private FragmentTransaction transaction;
 
     public OtrosIngresosFragment() {
         // Required empty public constructor
     }
 
-
+private View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_otros_ingresos, container, false);
+        view = inflater.inflate(R.layout.fragment_otros_ingresos, container, false);
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        getActivity().setTitle(getString(R.string.capMHogarH));
+        next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        init();
+        return view;
+    }
+    public void init(){
 
         Switch otros1 = (Switch) view.findViewById(R.id.otros_ingresos1);
         Switch otros2a = (Switch) view.findViewById(R.id.otros_ingresos2a);
@@ -73,8 +84,13 @@ public class OtrosIngresosFragment extends Fragment {
                 }
             }
         });
-
-        return view;
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //save();
+                transaction.replace(R.id.contenedor, new TicsFragment()).commit();
+            }
+        });
     }
 
 }

@@ -41,19 +41,18 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        EditText otro_14 = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
-        otro_14.setVisibility(View.GONE);
-        // Inflate the layout for this fragment
-
         view = inflater.inflate(R.layout.fragment_ocupados_asalariados_independientes, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE4));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
 
+    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
+        EditText otro_14 = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
+        otro_14.setVisibility(View.GONE);
         Spinner asalariado_independiente_3 = (Spinner) view.findViewById(R.id.asalariado_independiente_3_spinner);
         ArrayAdapter spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_3, android.R.layout.simple_spinner_item);
@@ -257,11 +256,6 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariado_independiente_16.setAdapter(spinner_adapter_1);
 
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

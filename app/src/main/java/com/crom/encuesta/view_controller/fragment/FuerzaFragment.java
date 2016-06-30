@@ -51,16 +51,15 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
-                // On selecting a spinner item
-                String scountry = adapter.getItemAtPosition(position).toString();
-                // Showing selected spinner item
-                if (scountry.equalsIgnoreCase("trabajando")) {
+                if(position == 1){
                     transaction.replace(R.id.contenedor, new OcupadoFragment()).commit();
-                }
-                if (scountry.equalsIgnoreCase("incapacitado permanentemente para trabajar")) {
+                }else if(position == 5){
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
+                }else if(position == 6){
+                    ((TextView) view.findViewById(R.id.et1)).setVisibility(View.VISIBLE);
+                }else {
+                    ((TextView) view.findViewById(R.id.et1)).setVisibility(View.GONE);
                 }
-
             }
 
             @Override

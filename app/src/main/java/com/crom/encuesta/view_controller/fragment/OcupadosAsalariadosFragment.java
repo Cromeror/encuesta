@@ -34,7 +34,6 @@ public class OcupadosAsalariadosFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,10 +42,12 @@ public class OcupadosAsalariadosFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_asalariados, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE2));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
+
+    private void init() {
 
         final EditText otro_1 = (EditText) view.findViewById(R.id.otro_1);
         otro_1.setVisibility(View.GONE);
@@ -78,7 +79,6 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
-
 
         ArrayAdapter<CharSequence> spinner_adapter_si_no_noSabe = ArrayAdapter.createFromResource(getActivity(),
                 R.array.ocupados_7, android.R.layout.simple_spinner_item);
@@ -561,17 +561,12 @@ public class OcupadosAsalariadosFragment extends Fragment {
 
 
 
-
-
-        return view;
-    }
-
-    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
-                transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
+                //save();
+                transaction.replace(R.id.contenedor, new OcupadoIndependienteFragment()).commit();
             }
         });
     }

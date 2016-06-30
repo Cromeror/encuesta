@@ -38,10 +38,15 @@ public class DesocupadosFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_desocupados, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
 
+    private void init() {
+
+
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         Spinner des_3 = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.desocupados_3_8, android.R.layout.simple_spinner_item);
@@ -167,21 +172,15 @@ public class DesocupadosFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    save();
+                   // save();
                     transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
                 }
             }
         });
-
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+                //save();
                 transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });

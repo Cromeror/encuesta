@@ -34,7 +34,7 @@ public class ActionFormFragment extends Fragment {
         hogar = (Button) view.findViewById(R.id.hogar_btn);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
-
+        init();
         return view;
     }
 
@@ -54,7 +54,7 @@ public class ActionFormFragment extends Fragment {
         hogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
+                transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
             }
         });
     }

@@ -3,6 +3,8 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +20,8 @@ import com.crom.encuesta.R;
  * A simple {@link Fragment} subclass.
  */
 public class TicsFragment extends Fragment {
-
+    public View view;
+    private FragmentTransaction transaction;
 
     public TicsFragment() {
         // Required empty public constructor
@@ -29,8 +32,15 @@ public class TicsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tics, container, false);
+        view = inflater.inflate(R.layout.fragment_tics, container, false);
+        getActivity().setTitle(getString(R.string.capMHogarI));
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        init();
 
+        return view;
+    }
+
+    private void init() {
         Spinner tics_1 = (Spinner) view.findViewById(R.id.spiner_tic_1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.tics_1_2, android.R.layout.simple_spinner_item);
@@ -46,10 +56,9 @@ public class TicsFragment extends Fragment {
         tics_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==0){
+                if (position == 0) {
                     ocultar.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ocultar.setVisibility(View.GONE);
                 }
             }
@@ -60,14 +69,13 @@ public class TicsFragment extends Fragment {
             }
         });
         Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
+        Log.i("##", "Mas adelante se le presentarán las opciones que puede colocar en la barra de acciones");
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(R.id.contenedor, new ActionFormFragment());
+                transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
             }
         });
-
-        return view;
     }
 
 }

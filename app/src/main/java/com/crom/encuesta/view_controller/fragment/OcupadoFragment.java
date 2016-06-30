@@ -245,7 +245,7 @@ public class OcupadoFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+//                save();
                 transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });

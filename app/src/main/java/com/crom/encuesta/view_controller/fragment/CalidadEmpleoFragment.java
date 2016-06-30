@@ -37,11 +37,13 @@ public class CalidadEmpleoFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_calidad_empleo, container, false);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         getActivity().setTitle(getString(R.string.capMHogarE7));
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
 
+    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         Spinner empl_57a = (Spinner) view.findViewById(R.id.empleo_57a);
         Spinner empl_57b = (Spinner) view.findViewById(R.id.empleo_57b);
         Spinner empl_57c = (Spinner) view.findViewById(R.id.empleo_57c);
@@ -89,16 +91,10 @@ public class CalidadEmpleoFragment extends Fragment {
 
             }
         });
-
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+                //save();
                 transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });

@@ -40,11 +40,13 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_insuficiencia_horas, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE6));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
 
+    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         final EditText otro = (EditText) view.findViewById(R.id.otro);
         otro.setVisibility(View.GONE);
 
@@ -139,15 +141,10 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
             }
         });
 
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+               // save();
                 transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
             }
         });

@@ -42,11 +42,14 @@ public class OcupadoIndependienteFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupados_indepedente, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE3));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
+        return view;
+    }
 
+    private void init() {
+
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         final EditText otro_1 = (EditText) view.findViewById(R.id.otro_editText_1);
         final EditText otro_6 = (EditText) view.findViewById(R.id.otro_editText_6);
         otro_1.setVisibility(View.GONE);
@@ -157,15 +160,10 @@ public class OcupadoIndependienteFragment extends Fragment {
             }
         });
 
-
-        return view;
-    }
-
-    private void init() {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
+                transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
             }
         });
     }

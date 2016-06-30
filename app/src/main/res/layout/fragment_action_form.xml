@@ -12,18 +12,17 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/miembro_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar miembro" />
+
+        <Button
             android:id="@+id/hogar_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="Agregar hogar" />
-
-        <Button
-            android:id="@+id/miembro_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Agregar miembro" />
 
         <Button
             android:id="@+id/finish_btn"

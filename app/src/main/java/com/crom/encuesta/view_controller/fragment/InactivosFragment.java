@@ -41,11 +41,17 @@ public class InactivosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_inactivos, container, false);
+        getActivity().setTitle(getString(R.string.capMHogarG));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
 
+
+        return view;
+    }
+
+    private void init() {
+        vivienda = ((MainActivity) getActivity()).getVivienda();
         otro3 = (EditText) view.findViewById(R.id.etext_inactivos_3);
         otro7 = (EditText) view.findViewById(R.id.etext_inactivos_7);
         dinero = (EditText) view.findViewById(R.id.etext_inactivos_10);
@@ -131,70 +137,65 @@ public class InactivosFragment extends Fragment {
         });
 
         Spinner ina_2 = (Spinner) view.findViewById(R.id.spiner_inactivos_2);
-            ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
-                    R.array.trabajo_ultima_vez_array, android.R.layout.simple_spinner_item);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ina_2.setAdapter(adapter2);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.trabajo_ultima_vez_array, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ina_2.setAdapter(adapter2);
 
         Spinner ina_3 = (Spinner) view.findViewById(R.id.spiner_inactivos_3);
-            ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(getActivity(),
-                    R.array.porque_dejo_trabajo_array, android.R.layout.simple_spinner_item);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ina_3.setAdapter(adapter3);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.porque_dejo_trabajo_array, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ina_3.setAdapter(adapter3);
 
-            ina_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        ina_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                    if(position==8)
-                        otro3.setVisibility(View.VISIBLE);
-                    else
-                        otro3.setVisibility(View.GONE);
-                }
+                if(position==8)
+                    otro3.setVisibility(View.VISIBLE);
+                else
+                    otro3.setVisibility(View.GONE);
+            }
 
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-                }
-            });
+            }
+        });
 
         Spinner ina_6 = (Spinner) view.findViewById(R.id.spiner_inactivos_6);
-            ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(getActivity(),
-                    R.array.trabajo_ultima_vez_array, android.R.layout.simple_spinner_item);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ina_6.setAdapter(adapter6);
+        ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.trabajo_ultima_vez_array, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ina_6.setAdapter(adapter6);
 
         Spinner ina_7 = (Spinner) view.findViewById(R.id.spiner_inactivos_7);
-            ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(getActivity(),
-                    R.array.razon_dejo_buscar_trabajo_array, android.R.layout.simple_spinner_item);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ina_7.setAdapter(adapter7);
+        ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.razon_dejo_buscar_trabajo_array, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ina_7.setAdapter(adapter7);
 
-            ina_7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if(position==11)
-                        otro7.setVisibility(View.VISIBLE);
-                    else
-                        otro7.setVisibility(View.GONE);
-                }
+        ina_7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position==11)
+                    otro7.setVisibility(View.VISIBLE);
+                else
+                    otro7.setVisibility(View.GONE);
+            }
 
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-                }
-            });
+            }
+        });
 
         Spinner ina_9 = (Spinner) view.findViewById(R.id.spiner_inactivos_9);
-            ArrayAdapter<CharSequence> adapter9 = ArrayAdapter.createFromResource(getActivity(),
-                    R.array.fondos_afiliados_actualmente_array, android.R.layout.simple_spinner_item);
-            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            ina_9.setAdapter(adapter9);
-
-        return view;
-    }
-
-    private void init() {
+        ArrayAdapter<CharSequence> adapter9 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.fondos_afiliados_actualmente_array, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ina_9.setAdapter(adapter9);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

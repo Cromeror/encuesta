@@ -72,7 +72,11 @@ public class BookmarkFragmento extends Fragment {
         t5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                SaludFragment salud = new SaludFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString(SaludFragment.PARAM_CONTENT, "true");
+                salud.setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.contenedor, salud).commit();
             }
         });
         t6.setOnClickListener(new View.OnClickListener() {
