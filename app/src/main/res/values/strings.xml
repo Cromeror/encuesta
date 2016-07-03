@@ -20,22 +20,22 @@
     <string name="capMHogarI">I. TICs</string>
 
     <!--ocupados asalariados independientes-->
-    <string name="asalariados_independienes_1">¿Cuántos meses trabajó en los últimos doce meses?</string>
-    <string name="asalariados_independientes_2">¿Cuántos horas a la semana trabaja normalmente Ud. en este trabajo?</string>
-    <string name="asalariados_independientes_3">¿Cuál es la razón por la que trabaja normalmente menos de 40 horas a la semana?</string>
-    <string name="asalariados_independientes_4">¿Cuántos horas trabajó Ud. la semana pasada en este trabajo?</string>
-    <string name="asalariados_independientes_5">¿Por qué razón, de las horas que normalmente trabaja, hubo algunas que no trabajó la semana (Solo realice está pregunta si en 32 la respuesta es menor que en30) pasada?</string>
-    <string name="asalariados_independientes_6">¿En qué horario realizó su trabajo principal de la semana pasada? (registre horario de 00 a 24 horas)</string>
-    <string name="asalariados_independientes_7">. ¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde Ud. trabaja?</string>
-    <string name="asalariados_independientes_8">Donde realiza principalmente su trabajo</string>
-    <string name="asalariados_independientes_9">¿En caso de enfermedad como cubriría los costos médicos y los medicamentos?</string>
-    <string name="asalariados_independientes_10">¿Está Ud. cotizando actualmente a un fondo de pensiones?</string>
-    <string name="asalariados_independientes_11">En cuál de los siguientes fondos cotiza actualmente:</string>
-    <string name="asalariados_independientes_12">¿Quién paga mensualmente por la afiliación al fondo de pensiones de Ud.?</string>
-    <string name="asalariados_independientes_13">¿Cuántos años lleva Ud. cotizando en el fondo de pensiones?</string>
-    <string name="asalariados_independientes_14">¿Qué está haciendo Ud. actualmente para sostenerse económicamente en la vejez? </string>
-    <string name="asalariados_independientes_15">¿Se encuentra afiliado actualmente por una empresa o individualmente a una aseguradora de riesgos laborales?</string>
-    <string name="asalariados_independientes_16">¿Se encuentra afiliado actualmente a una caja de compensación familiar?</string>
+    <string name="asalariados_independienes_1">29. ¿Cuántos meses trabajó en los últimos doce meses?</string>
+    <string name="asalariados_independientes_2">30. ¿Cuántos horas a la semana trabaja normalmente Ud. en este trabajo?</string>
+    <string name="asalariados_independientes_3">31. ¿Cuál es la razón por la que trabaja normalmente menos de 40 horas a la semana?</string>
+    <string name="asalariados_independientes_4">32. ¿Cuántos horas trabajó Ud. la semana pasada en este trabajo?</string>
+    <string name="asalariados_independientes_5">33. ¿Por qué razón, de las horas que normalmente trabaja, hubo algunas que no trabajó la semana (Solo realice está pregunta si en 32 la respuesta es menor que en30) pasada?</string>
+    <string name="asalariados_independientes_6">34. ¿En qué horario realizó su trabajo principal de la semana pasada? (registre horario de 00 a 24 horas)</string>
+    <string name="asalariados_independientes_7">35. ¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde Ud. trabaja?</string>
+    <string name="asalariados_independientes_8">36. Donde realiza principalmente su trabajo</string>
+    <string name="asalariados_independientes_9">37. ¿En caso de enfermedad como cubriría los costos médicos y los medicamentos?</string>
+    <string name="asalariados_independientes_10">38. ¿Está Ud. cotizando actualmente a un fondo de pensiones?</string>
+    <string name="asalariados_independientes_11">39. En cuál de los siguientes fondos cotiza actualmente:</string>
+    <string name="asalariados_independientes_12">40. ¿Quién paga mensualmente por la afiliación al fondo de pensiones de Ud.?</string>
+    <string name="asalariados_independientes_13">41. ¿Cuántos años lleva Ud. cotizando en el fondo de pensiones?</string>
+    <string name="asalariados_independientes_14">42. ¿Qué está haciendo Ud. actualmente para sostenerse económicamente en la vejez? </string>
+    <string name="asalariados_independientes_15">43. ¿Se encuentra afiliado actualmente por una empresa o individualmente a una aseguradora de riesgos laborales?</string>
+    <string name="asalariados_independientes_16">44. ¿Se encuentra afiliado actualmente a una caja de compensación familiar?</string>
 
     <!--General -->
     <string name="app_name">Encuesta</string>
@@ -82,45 +82,45 @@
     <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
     <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
     <!-- Fuerza trabajo -->
-    <string name="actividad_primera_semana_mayo">¿En que actividad ocupo ud la mayor parte de la primera semana de Mayo?</string>
-    <string name="ademas_de_anterior">Ademas de lo anterior, ¿Ud realizo durante la primera semana de Mayo alguna actividad paga por una hora o más ?</string>
-    <string name="aunque_usted_no_trabajo">Aunque ud no trabajo la primera semana de Mayo, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
-    <string name="actividad_ultima_semana_mayo_hora">¿Trabajo la ultima semana de Mayo en un negocio por una hora o mas sin que le pagaran ?</string>
-    <string name="diligencia_ultimo_mes">En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
-    <string name="hizo_ultimas_4_semanas">¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
-    <string name="desea_trabajo_negocio">¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
-    <string name="porque_no_hizo_diligencias">Aunque ud desea trabajar, ¿Por qué motivo principal no hizo diligencias para buscar un trabajo o instalar un negocio en las ultimas 4 semanas?</string>
-    <string name="ultimos_12_meses_trabajo">Durante los ultimos 12 meses ¿Ud trabajo por lo menos dos semanas consecutivas?</string>
-    <string name="despues_ultimo_empleo">Despues de su ultimo empleo, ¿ Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
-    <string name="ultimos_12_meses_diligencio_trabajo">Durante los ultimos 12 meses ¿Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
-    <string name="hace_cuantos_meses_dejo_buscar">¿Cuantos meses hace que ud dejo de buscar trabajo por ultima vez?</string>
-    <string name="estaba_disponible_semana_pasada">Si le hubiese resultado algun trabajo a ud ¿estaba disponible la semana pasada para empezar a trabajar?</string>
+    <string name="actividad_primera_semana_mayo">1. ¿En que actividad ocupo ud la mayor parte de la primera semana de Mayo?</string>
+    <string name="ademas_de_anterior">2. Ademas de lo anterior, ¿Ud realizo durante la primera semana de Mayo alguna actividad paga por una hora o más ?</string>
+    <string name="aunque_usted_no_trabajo">3. Aunque ud no trabajo la primera semana de Mayo, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
+    <string name="actividad_ultima_semana_mayo_hora">4. ¿Trabajo la ultima semana de Mayo en un negocio por una hora o mas sin que le pagaran ?</string>
+    <string name="diligencia_ultimo_mes">5. En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
+    <string name="hizo_ultimas_4_semanas">6. ¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
+    <string name="desea_trabajo_negocio">7. ¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
+    <string name="porque_no_hizo_diligencias">8. Aunque ud desea trabajar, ¿Por qué motivo principal no hizo diligencias para buscar un trabajo o instalar un negocio en las ultimas 4 semanas?</string>
+    <string name="ultimos_12_meses_trabajo">9. Durante los ultimos 12 meses ¿Ud trabajo por lo menos dos semanas consecutivas?</string>
+    <string name="despues_ultimo_empleo">10. Despues de su ultimo empleo, ¿ Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="ultimos_12_meses_diligencio_trabajo">11. Durante los ultimos 12 meses ¿Ud ha hecho alguna diligencia para conseguir trabajo o instalar un negocio?</string>
+    <string name="hace_cuantos_meses_dejo_buscar">12. ¿Cuantos meses hace que ud dejo de buscar trabajo por ultima vez?</string>
+    <string name="estaba_disponible_semana_pasada">13. Si le hubiese resultado algun trabajo a ud ¿estaba disponible la semana pasada para empezar a trabajar?</string>
     <!--Ocupados  -->
-    <string name="que_hace_trabajo">¿Que hace ud en este trabajo?</string>
-    <string name="nombre_empresa_negocio">¿Cual es el nombre de la empresa, negocio, industria, oficina, firma o finca donde trabaja ud?</string>
-    <string name="serivios_empresa_dedica">A que servicios se dedica principalmente la empresa o negocio donde trabaja?</string>
-    <string name="tiene_contrato">¿Para realizar este trabajo tiene algun tipo de contrato?</string>
-    <string name="contrato_es">¿El contrato es:</string>
-    <string name="contrato_trabajo_es">¿El contrato de trabajo es:</string>
-    <string name="empresa_que_lo_contrato">La empresa o persona que lo(a) contrato ¿Es la misma empresa donde trabaja o presta su servicio?</string>
-    <string name="empresa_que_lo_contrato_es">La empresa que lo(a) contrato es:</string>
-    <string name="actividad_dela_empresa">¿Cual es la actividad de la de la empresa o persona que lo contrato?</string>
-    <string name="esta_contento_contrato">¿Esta contento con el tipo de contrato que tiene?</string>
-    <string name="contrato_tiene_derecho">¿Por su contrato actual recibe o tiene derecho a:</string>
-    <string name="tiempo_enla_empresa">¿Cuánto tiempo lleva trabajando en la empresa o negocio?</string>
-    <string name="trabajo_usted_es">En este trabajo ud es:</string>
+    <string name="que_hace_trabajo">1. ¿Que hace ud en este trabajo?</string>
+    <string name="nombre_empresa_negocio">2. ¿Cual es el nombre de la empresa, negocio, industria, oficina, firma o finca donde trabaja ud?</string>
+    <string name="serivios_empresa_dedica">3. A que servicios se dedica principalmente la empresa o negocio donde trabaja?</string>
+    <string name="tiene_contrato">4. ¿Para realizar este trabajo tiene algun tipo de contrato?</string>
+    <string name="contrato_es">5. ¿El contrato es:</string>
+    <string name="contrato_trabajo_es">6. ¿El contrato de trabajo es:</string>
+    <string name="empresa_que_lo_contrato">7. La empresa o persona que lo(a) contrato ¿Es la misma empresa donde trabaja o presta su servicio?</string>
+    <string name="empresa_que_lo_contrato_es">7a. La empresa que lo(a) contrato es:</string>
+    <string name="actividad_dela_empresa">8. ¿Cual es la actividad de la de la empresa o persona que lo contrato?</string>
+    <string name="esta_contento_contrato">9. ¿Esta contento con el tipo de contrato que tiene?</string>
+    <string name="contrato_tiene_derecho">10. ¿Por su contrato actual recibe o tiene derecho a:</string>
+    <string name="tiempo_enla_empresa">11. ¿Cuánto tiempo lleva trabajando en la empresa o negocio?</string>
+    <string name="trabajo_usted_es">12. En este trabajo ud es:</string>
     <!-- Ocupados Asalariados-->
-    <string name="medio_consiguio_empleo">¿Por qué medio principal ud consiguio su empleo actual?</string>
-    <string name="cuanto_gano_mes_pasado">¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
-    <string name="mes_pasado_horas_extras">¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
-    <string name="alimentos_parte_pago">Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
-    <string name="aparte_de_salario_recibio_vivienda">Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
-    <string name="usa_transporte_de_empresa">Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
-    <string name="aparte_de_salario_recibio_pago_especie">Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
-    <string name="subsidio_mes_pasado">¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
-    <string name="el_mes_pasado_recibio">El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
-    <string name="ultimos_12_meses_recibio">En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
-    <string name="semana_pasada_horas_extras">¿La semana pasada ud trabajó horas extra remuneradas?</string>
+    <string name="medio_consiguio_empleo">13. ¿Por qué medio principal ud consiguio su empleo actual?</string>
+    <string name="cuanto_gano_mes_pasado">14. ¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
+    <string name="mes_pasado_horas_extras">15. ¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
+    <string name="alimentos_parte_pago">15. Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_vivienda">16. Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="usa_transporte_de_empresa">17. Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_pago_especie">18. Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
+    <string name="subsidio_mes_pasado">19. ¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
+    <string name="el_mes_pasado_recibio">20. El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
+    <string name="ultimos_12_meses_recibio">21. En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
+    <string name="semana_pasada_horas_extras">22. ¿La semana pasada ud trabajó horas extra remuneradas?</string>
     <!--Datos de vivienda y del hogar-->
     <string name="tipo_vivienda">Tipo de vivienda</string>
     <string name="vivienda_habita_es">La vivienda donde habita es:</string>
@@ -152,7 +152,7 @@
     <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
 
     <!--Desocupado-->
-    <string name="desocupados_1">¿Durante cuaántas semanas ha estado o estuvo us buscando trabajo?</string>
+    <string name="desocupados_1">¿Durante cuántas semanas ha estado o estuvo us buscando trabajo?</string>
     <string name="desocupados_2">Si le hubiere resultado un trabajo la semana pasada, ¿Cuantas hotas a la semana estaba disponible para trabajar?</string>
     <string name="desocupados_3">¿Usted ha buscado trabajo como?</string>
     <string name="desocupados_4">¿Ud ha buscado trabajo por primera vez, o habia trabajado antes por lo menos durante 2 semanas consecutivas?</string>
@@ -166,34 +166,44 @@
     <string name="desocupados_12">¿Qué esta haciendo ud actualmente para sostenerse economicamente en la vejez?</string>
 
     <!--Inactivos-->
-    <string name="trabajado_dos_semanas_consecutivas">¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
-    <string name="trabajo_ultima_vez">¿Cuanto hace que ud. trabajo por ultima vez?</string>
-    <string name="porque_dejo_trabajo">¿Por qué razón dejó ud. su trabajo?</string>
-    <string name="busco_otro_trabajo_o_negocio">Después de su último trabajo,¿Ud. ha buscado conseguir otro trabajo o instalar un negocio?</string>
-    <string name="buscado_trabajo_alguna_vez">¿Ud. ha buscado trabajo alguna vez?</string>
-    <string name="cuando_busco_trabajo_ultima_vez">¿Cúanto hace que ud. buscó trabajo por última vez?</string>
-    <string name="razon_dejo_buscar_trabajo">¿Por qué razón principal dejó ud. de buscar trabajo?</string>
-    <string name="alimentacion_switch">Auxilio o subsidio de alimentación</string>
-    <string name="trasnporte_switch">Auxilio o subsidio de transporte</string>
+    <string name="trabajado_dos_semanas_consecutivas">1. ¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
+    <string name="trabajo_ultima_vez">2. ¿Cuanto hace que ud. trabajo por ultima vez?</string>
+    <string name="porque_dejo_trabajo">3. ¿Por qué razón dejó ud. su trabajo?</string>
+    <string name="busco_otro_trabajo_o_negocio">4. Después de su último trabajo,¿Ud. ha buscado conseguir otro trabajo o instalar un negocio?</string>
+    <string name="buscado_trabajo_alguna_vez">5. ¿Ud. ha buscado trabajo alguna vez?</string>
+    <string name="cuando_busco_trabajo_ultima_vez">6. ¿Cúanto hace que ud. buscó trabajo por última vez?</string>
+    <string name="razon_dejo_buscar_trabajo">7. ¿Por qué razón principal dejó ud. de buscar trabajo?</string>
+    <string name="inactivo8">8. ¿Esta ud. afiliado actualmente a un fondo de pensiones?</string>
+    <string name="inactivo9">9. ¿A cual de los siguientes fondos esta afiliado actualmente?</string>
+    <string name="inactivo10">10. ¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
+
+
     <string name="familiar_switch">Subsidio familiar</string>
     <string name="educativo_switch">Subsidio educativo</string>
-    <string name="este_trabajo_es">Este trabajo es:</string>
-    <string name="trabajar_antes_del_mes">Si se le presentará la oportunidad de encontrar un nuevo empleo, ¿Podría Ud. empezar a trabajar antes de un mes? </string>
-    <string name="diligencias_cambio_trabajo"> ¿Hizo Ud. diligencias durante las últimas 4 semanas para cambiar de trabajo?</string>
-    <string name="por_que_quiere_cambiar_trabajo">¿Por qué desea Ud. cambiar de trabajo? (puede marcar más de una opción):</string>
-    <string name="quiere_cambiar_empleo"> ¿Ud. desea cambiar su empleo actual? </string>
-    <string name="posibilidad_trabajar_mas_horas">Si la semana pasada le hubiese resultado la posibilidad de trabajar más horas ¿Ud. estaba disponible para hacerlo? </string>
-    <string name="horas_adicionales_semana"> ¿Cuántos horas adicionales puede Ud. trabajar a la semana?</string>
-    <string name="quiere_trabajar_mas_horas">Además de las horas que trabaja actualmente, ¿A Ud. le gustaría trabajar más horas?</string>
-    <string name="ganancia_otro_trabajo">¿Cuál fue la ganancia o ingresos de ese segundo trabajo el mes pasado?</string>
-    <string name="ocupacion_segundo_trabajo">¿En el segundo trabajo Ud. es?:</string>
-    <string name="horas_trabajadas_otro_trabajo">¿Cuántos horas trabajo Ud. la semana pasada en su segundo trabajo? (si no trabajó escriba 00, si no sabe cuántas horas escriba 98)    </string>
-    <string name="otro_trabajo_o_negocio">Además de su ocupación principal, ¿Tenia Ud. la semana pasada otro trabajo o negocio?</string>
-    <string name="ganancia_neta_12_meses">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca en los últimos doce meses? </string>
-    <string name="ganancia_neta_mes">¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca, el mes pasado? (Si no obtuvo coloco 00 si no sabe el valor escriba 98, si no sabe si obtuvo 99)</string>
-    <string name="ultimo_año_de_registro"> ¿Cuál fue el último año en el que renovó el registro? </string>
-    <string name="ha_registrado_el_negocio">¿Ud. ha registrado el negocio ante algún autoridad o entidad? (Cámaras de comercio, alcaldía, RUT, registro mercantil) </string>
-    <string name="formas_de_trabajo">En la semana pasada, ¿Cuál de las siguientes formas de trabajo realizo?</string>
+    <string name="alimentacion_switch">Auxilio o subsidio de alimentación</string>
+    <string name="trasnporte_switch">Auxilio o subsidio de transporte</string>
+
+    <string name="ocupado49">49. Además de las horas que trabaja actualmente, ¿A Ud. le gustaría trabajar más horas?</string>
+    <string name="ocupado50">50. ¿Cuántos horas adicionales puede Ud. trabajar a la semana?</string>
+    <string name="ocupado51">51. ¿Hizo Ud. diligencias durante las últimas 4 semanas para trabajar más horas?</string>
+    <string name="ocupado52">52. Si la semana pasada le hubiese resultado la posibilidad de trabajar más horas ¿Ud. estaba disponible para hacerlo? </string>
+    <string name="ocupado53">53. ¿Ud. desea cambiar su empleo actual? </string>
+    <string name="ocupado54">54. ¿Por qué desea Ud. cambiar de trabajo? (puede marcar más de una opción):</string>
+    <string name="ocupado55">55. ¿Hizo Ud. diligencias durante las últimas 4 semanas para cambiar de trabajo?</string>
+    <string name="ocupado56">56. Si se le presentará la oportunidad de encontrar un nuevo empleo, ¿Podría Ud. empezar a trabajar antes de un mes? </string>
+
+    <string name="otro_trabajo_o_negocio">45. Además de su ocupación principal, ¿Tenia Ud. la semana pasada otro trabajo o negocio?</string>
+    <string name="horas_trabajadas_otro_trabajo">46. ¿Cuántos horas trabajo Ud. la semana pasada en su segundo trabajo? (si no trabajó escriba 00, si no sabe cuántas horas escriba 98)    </string>
+    <string name="ocupacion_segundo_trabajo">47. ¿En el segundo trabajo Ud. es?:</string>
+    <string name="ganancia_otro_trabajo">48. ¿Cuál fue la ganancia o ingresos de ese segundo trabajo el mes pasado?</string>
+
+    <string name="formas_de_trabajo">24. En la semana pasada, ¿Cuál de las siguientes formas de trabajo realizo?</string>
+    <string name="ha_registrado_el_negocio">25. ¿Ud. ha registrado el negocio ante algún autoridad o entidad? (Cámaras de comercio, alcaldía, RUT, registro mercantil) </string>
+    <string name="ultimo_año_de_registro">25a. ¿Cuál fue el último año en el que renovó el registro? </string>
+    <string name="ganancia_neta_mes">26. ¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca, el mes pasado? (Si no obtuvo coloco 00 si no sabe el valor escriba 98, si no sabe si obtuvo 99)</string>
+    <string name="ganancia_neta_12_meses">27. ¿Cuál fue la ganancia neta u honorarios netos de Ud. en esa actividad, negocio, profesión o finca en los últimos doce meses? </string>
+    <string name="este_trabajo_es">28. Este trabajo es:</string>
+
     <string name="incluyo_este_valor">¿Incluyó estos valor en los ingresos del mes pasado que me informo anteriormente? </string>
     <string name="subsidios">¿Cuál de los siguientes subsidios recibió Ud. el mes pasado? (Si recibió pero no sabe escriba 98)</string>
     <string name="esta_afiliados_fondo_actualmente">¿Esta ud. afiliado actualmente a un fondo de pensiones?</string>
@@ -223,15 +233,15 @@
     <string name="tics_4g">Otro, ¿Cual?</string>
 
     <!--Otros ingresos mes pasado -->
-    <string name="otros_ingresos1">El mes pasado, ¿Usted recibió pagos por concepto de arriendo y/o pensiones?</string>
-    <string name="otros_ingresos2">El mes pasado, recibio pagos por:</string>
-    <string name="otros_ingresos2a">a. Arriendos de casas, apartamentos fincas, lotes, vehiculos, equipos, etc.</string>
-    <string name="otros_ingresos2b">b. Pensiones o jubilaciones por vejez, invalidez o sustitucion pensional</string>
-    <string name="otros_ingresos2c">Pension alimenticia por paternidad, divorcio o separación</string>
+    <string name="otros_ingresos1">1. El mes pasado, ¿Usted recibió pagos por concepto de arriendo y/o pensiones?</string>
+    <string name="otros_ingresos2">2. El mes pasado, recibio pagos por:</string>
+    <string name="otros_ingresos2a">2a. Arriendos de casas, apartamentos fincas, lotes, vehiculos, equipos, etc.</string>
+    <string name="otros_ingresos2b">2b. Pensiones o jubilaciones por vejez, invalidez o sustitucion pensional</string>
+    <string name="otros_ingresos2c">2c. Pension alimenticia por paternidad, divorcio o separación</string>
     <string name="otros_ingresos_cuanto">¿Cuánto recibió?</string>
 
     <!-- calidad del empleo principal -->
-    <string name="empleo_57">Esta usted: 1 Muy satisfecto - 5 Muy Insatisfecho</string>
+    <string name="empleo_57">Esta usted: 1 Muy satisfecto - 4 Muy Insatisfecho</string>
     <string name="empleo_57a">Con su trabajo actual</string>
     <string name="empleo_57b">Con el numero de horas trabajadas a la semana</string>
     <string name="empleo_57c">Con la aplicación de su conocimiento en su trabajo</string>
@@ -436,6 +446,7 @@
         <item>no</item>
     </string-array>
     <string-array name="fuerza_6">
+        <item>Seleccione una opción</item>
         <item>Pidió ayuda a familia, amigos, colegas</item>
         <item>Visitó, llevó o envío hojas de vida a empresas o empleadores</item>
         <item>Visitó, llevó o envío hojas de vida a bolsas de empleo o intermediarios</item>
@@ -565,6 +576,10 @@
         <item>Reducción de la actividad económica de la empresa</item>
         <item>Otro</item>
     </string-array>
+    <string-array name="asalariados_independientes_6">
+        <item>De ___ a ___</item>
+        <item>Por turnos rotatorios</item>
+    </string-array>
     <string-array name="asalariados_independientes_7">
         <item>Trabaja solo</item>
         <item>2 a 3 personas</item>
@@ -663,6 +678,11 @@
         <item>Entre 2 y menos de 5 años</item>
         <item>5 años y más</item>
         <item>No sabe, no informa</item>
+    </string-array>
+    <string-array name="inactivo_8_array">
+        <item>Si</item>
+        <item>No</item>
+        <item>Ya es pensionado</item>
     </string-array>
     <string-array name="porque_dejo_trabajo_array">
         <item>Por dedicarse a estudiar</item>
@@ -766,6 +786,11 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+    <string-array name="empleo_58_array">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
     <string-array name="empleo_59">
         <item>Muy inestable</item>
         <item>Inestable</item>

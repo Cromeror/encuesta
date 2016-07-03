@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
+import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -50,6 +50,7 @@ public class CalidadEmpleoFragment extends Fragment {
         Spinner empl_57d = (Spinner) view.findViewById(R.id.empleo_57d);
         Spinner empl_57e = (Spinner) view.findViewById(R.id.empleo_57e);
         Spinner empl_57f = (Spinner) view.findViewById(R.id.empleo_57f);
+        Spinner empleo_58 = (Spinner) view.findViewById(R.id.empleo_58);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_57, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empl_57a.setAdapter(adapter);
@@ -58,6 +59,9 @@ public class CalidadEmpleoFragment extends Fragment {
         empl_57d.setAdapter(adapter);
         empl_57e.setAdapter(adapter);
         empl_57f.setAdapter(adapter);
+        adapter = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_58_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        empleo_58.setAdapter(adapter);
 
         Spinner empl_59 = (Spinner) view.findViewById(R.id.empleo_59);
         ArrayAdapter<CharSequence> adapter59 = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_59, android.R.layout.simple_spinner_item);
@@ -91,6 +95,7 @@ public class CalidadEmpleoFragment extends Fragment {
 
             }
         });
+        ((TextView) view.findViewById(R.id.calidad1)).requestFocus();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,10 +129,7 @@ public class CalidadEmpleoFragment extends Fragment {
         calidad_spinner = (Spinner) view.findViewById(R.id.empleo_61);
         dato = calidad_spinner.getSelectedItem().toString();
         vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 61);
-        Switch asalariado_switch = (Switch) view.findViewById(R.id.alimentacion_switch);
-        if (asalariado_switch.isChecked()) {
-            vivienda.getLastHogar().getLastMiembro().getOcupado().setE("si", 58);
-        } else vivienda.getLastHogar().getLastMiembro().getOcupado().setE("no", 58);
+
     }
 
 }

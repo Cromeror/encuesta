@@ -1,6 +1,7 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,14 +11,20 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -62,43 +69,15 @@ public class OcupadoIndependienteFragment extends Fragment {
         independientes_1.setAdapter(spinner_adapter_1);
         independientes_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapter, View v,
-                                       int position, long id) {
-                String scountry = adapter.getItemAtPosition(position).toString();
-
-                if (scountry.equalsIgnoreCase("Trabajó por honorarios o prestación de servicios")) {
-                    Spinner indepedientes_2 = (Spinner) view.findViewById(R.id.independientes_2_Spinner);
-                    EditText independientes_3 = (EditText) view.findViewById(R.id.independientes_3_editText);
-                    TextView independientes_2_text = (TextView) view.findViewById(R.id.independientes_2_textView);
-                    TextView independientes_3_text = (TextView) view.findViewById(R.id.independientes_3_textView);
-
-                    indepedientes_2.setVisibility(View.GONE);
-                    independientes_2_text.setVisibility(View.GONE);
-                    independientes_3.setVisibility(View.GONE);
-                    independientes_3_text.setVisibility(View.GONE);
-                }
-                if (scountry.equalsIgnoreCase("Otro")) {
-                    Spinner indepedientes_2 = (Spinner) view.findViewById(R.id.independientes_2_Spinner);
-                    EditText independientes_3 = (EditText) view.findViewById(R.id.independientes_3_editText);
-                    TextView independientes_2_text = (TextView) view.findViewById(R.id.independientes_2_textView);
-                    TextView independientes_3_text = (TextView) view.findViewById(R.id.independientes_3_textView);
-
-                    indepedientes_2.setVisibility(View.GONE);
-                    independientes_2_text.setVisibility(View.GONE);
-                    independientes_3.setVisibility(View.GONE);
-                    independientes_3_text.setVisibility(View.GONE);
-
+            public void onItemSelected(AdapterView<?> adapter, View v,int position, long id) {
+                if(position==1){ Spinner indepedientes_2 = (Spinner) view.findViewById(R.id.independientes_2_Spinner);
+                    ((LinearLayout) view.findViewById(R.id.l24)).setVisibility(View.GONE);
+                }else if (position==7) {
+                    ((LinearLayout) view.findViewById(R.id.l24)).setVisibility(View.VISIBLE);
                     otro_1.setVisibility(View.VISIBLE);
                 } else {
-                    Spinner indepedientes_2 = (Spinner) view.findViewById(R.id.independientes_2_Spinner);
-                    EditText independientes_3 = (EditText) view.findViewById(R.id.independientes_3_editText);
-                    TextView independientes_2_text = (TextView) view.findViewById(R.id.independientes_2_textView);
-                    TextView independientes_3_text = (TextView) view.findViewById(R.id.independientes_3_textView);
-
-                    indepedientes_2.setVisibility(View.VISIBLE);
-                    independientes_2_text.setVisibility(View.VISIBLE);
-                    independientes_3.setVisibility(View.VISIBLE);
-                    independientes_3_text.setVisibility(View.VISIBLE);
+                    ((LinearLayout) view.findViewById(R.id.l24)).setVisibility(View.VISIBLE);
+                    otro_1.setVisibility(View.GONE);
                 }
             }
 
@@ -136,6 +115,27 @@ public class OcupadoIndependienteFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
                 // TODO Auto-generated method stub
+            }
+        });
+        final Calendar myCalendar = Calendar.getInstance();
+        EditText independientes_3 = (EditText) view.findViewById(R.id.independientes_3_editText);
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker v, int year, int monthOfYear, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                String myFormat = "dd/MM/yyyy"; //In which you need put here
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                ((EditText) view.findViewById(R.id.independientes_3_editText)).setText(sdf.format(myCalendar.getTime()));
+            }
+        };
+        ((ImageButton) view.findViewById(R.id.calendar_btn)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 

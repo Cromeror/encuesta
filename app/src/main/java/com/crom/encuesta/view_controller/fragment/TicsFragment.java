@@ -68,6 +68,13 @@ public class TicsFragment extends Fragment {
 
             }
         });
+
+        Spinner tics_5 = (Spinner) view.findViewById(R.id.spiner_tic_5);
+        adapter2 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.tics_5, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tics_5.setAdapter(adapter2);
+
         Button next = (Button) view.findViewById(R.id.next_gnrl_btn);
         Log.i("##", "Mas adelante se le presentarán las opciones que puede colocar en la barra de acciones");
         next.setOnClickListener(new View.OnClickListener() {

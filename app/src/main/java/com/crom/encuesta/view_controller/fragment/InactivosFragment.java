@@ -10,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
@@ -56,83 +54,119 @@ public class InactivosFragment extends Fragment {
         otro7 = (EditText) view.findViewById(R.id.etext_inactivos_7);
         dinero = (EditText) view.findViewById(R.id.etext_inactivos_10);
         final LinearLayout oculto1 = (LinearLayout) view.findViewById(R.id.inactivos_saltar1);
+        oculto1.setVisibility(View.GONE);
 
-        Switch swt1 = (Switch) view.findViewById(R.id.switch_inactivos_1);
-        final Switch swt5 = (Switch) view.findViewById(R.id.switch_inactivos_5);
-
-
-
-        swt1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner inactivos1 = (Spinner) view.findViewById(R.id.spinner_inactivos_1);
+        inactivos1.setAdapter(adapter);
+        inactivos1.setSelection(2);
+        inactivos1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 2){
                     oculto1.setVisibility(View.VISIBLE);
-                    swt5.setVisibility(View.GONE);
-                }
-                else{
+                }else {
                     oculto1.setVisibility(View.GONE);
-                    swt5.setVisibility(View.VISIBLE);
                 }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
-        final Spinner sp6 = (Spinner) view.findViewById(R.id.spiner_inactivos_6);
-        final Spinner sp7 = (Spinner) view.findViewById(R.id.spiner_inactivos_7);
-
-        Switch swt4 = (Switch) view.findViewById(R.id.switch_inactivos_4);
-        swt4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Spinner inactivos4 = (Spinner) view.findViewById(R.id.spinner_inactivos_4);
+        adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inactivos4.setAdapter(adapter);
+        inactivos4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    sp6.setVisibility(View.VISIBLE);
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                switch (position){
+                    case 1:
+                        ((LinearLayout) view.findViewById(R.id.l_5)).setVisibility(View.GONE);
+                        break;
+                    case 2:
+                        ((LinearLayout) view.findViewById(R.id.l_5_6)).setVisibility(View.GONE);
+                        break;
+                    default:
+                        ((LinearLayout) view.findViewById(R.id.l_5)).setVisibility(View.VISIBLE );
+                        ((LinearLayout) view.findViewById(R.id.l_5_6)).setVisibility(View.VISIBLE);
                 }
-                else{
-                    sp6.setVisibility(View.GONE);
-                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
-        swt5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        final Spinner inactivos5 = (Spinner) view.findViewById(R.id.spinner_inactivos_5);
+        adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inactivos5.setAdapter(adapter);
+        inactivos5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    sp6.setVisibility(View.VISIBLE);
-                    sp7.setVisibility(View.VISIBLE);
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                if(position==2){
+                    ((LinearLayout) view.findViewById(R.id.l_6)).setVisibility(View.GONE);
+                    ((LinearLayout) view.findViewById(R.id.l_7)).setVisibility(View.GONE);
+                }else {
+                    ((LinearLayout) view.findViewById(R.id.l_6)).setVisibility(View.VISIBLE);
+                    ((LinearLayout) view.findViewById(R.id.l_7)).setVisibility(View.VISIBLE);
                 }
-                else{
-                    sp6.setVisibility(View.GONE);
-                    sp7.setVisibility(View.GONE);
-                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
-        Switch swt8 = (Switch) view.findViewById(R.id.switch_inactivos_8);
-        final Spinner sp9 = (Spinner) view.findViewById(R.id.spiner_inactivos_9);
-        final TextView txv = (TextView) view.findViewById(R.id.txv_inactivos_9);
-        swt8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Spinner inactivos8 = (Spinner)  view.findViewById(R.id.spinner_inactivos_8);
+        adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.inactivo_8_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inactivos8.setAdapter(adapter);
+        inactivos8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    txv.setVisibility(View.VISIBLE);
-                    sp9.setVisibility(View.VISIBLE);
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                if(position!=0){
+                    ((LinearLayout) view.findViewById(R.id.l_9)).setVisibility(View.GONE);
+                }else {
+                    ((LinearLayout) view.findViewById(R.id.l_9)).setVisibility(View.VISIBLE);
                 }
-                else{
-                    txv.setVisibility(View.GONE);
-                    sp9.setVisibility(View.GONE);
-                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
-        Switch swt10 = (Switch) view.findViewById(R.id.switch_inactivos_10);
-        swt10.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Spinner inactivos10 = (Spinner) view.findViewById(R.id.switch_inactivos_10);
+        adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        inactivos10.setAdapter(adapter);
+        inactivos10.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                if(position==1){
                     dinero.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else{
                     dinero.setVisibility(View.GONE);
                 }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -202,18 +236,10 @@ public class InactivosFragment extends Fragment {
                 transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
+        ((TextView) view.findViewById(R.id.inactivos_1_textview)).requestFocus();
     }
 
     private void save() {
-        String dato = "";
-        Switch dsocupados_switch = (Switch) view.findViewById(R.id.switch_inactivos_1);
-        if (dsocupados_switch.isChecked()) {
-            vivienda.getLastHogar().getLastMiembro().getInactivo().setG("si", 1);
-        } else vivienda.getLastHogar().getLastMiembro().getInactivo().setG("no", 1);
-        dsocupados_switch = (Switch) view.findViewById(R.id.switch_inactivos_4);
-        if (dsocupados_switch.isChecked()) {
-            vivienda.getLastHogar().getLastMiembro().getInactivo().setG("si", 4);
-        } else vivienda.getLastHogar().getLastMiembro().getInactivo().setG("no", 4);
     }
 
 }

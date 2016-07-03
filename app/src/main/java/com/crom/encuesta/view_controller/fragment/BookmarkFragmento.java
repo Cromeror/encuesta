@@ -26,6 +26,7 @@ public class BookmarkFragmento extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bookmark_fragmento, container, false);
+        getActivity().setTitle("Contenido");
         TextView t1 = (TextView) view.findViewById(R.id.t1);
         TextView t2 = (TextView) view.findViewById(R.id.t2);
         TextView t3 = (TextView) view.findViewById(R.id.t3);
@@ -124,7 +125,7 @@ public class BookmarkFragmento extends Fragment {
         t13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getFragmentManager().beginTransaction().replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });
         t14.setOnClickListener(new View.OnClickListener() {

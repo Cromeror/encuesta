@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -63,7 +62,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (scountry.equalsIgnoreCase("no")) {
-                    save();
+                    //save();
                     transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
                 }
 
@@ -87,6 +86,8 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 if (scountry.equalsIgnoreCase("Otro")) {
                     otro.setVisibility(View.VISIBLE);
+                }else {
+                    otro.setVisibility(View.GONE);
                 }
             }
 

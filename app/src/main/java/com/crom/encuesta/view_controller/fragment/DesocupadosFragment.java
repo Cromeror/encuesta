@@ -37,6 +37,7 @@ public class DesocupadosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_desocupados, container, false);
+        getActivity().setTitle(getString(R.string.capMHogarF));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();

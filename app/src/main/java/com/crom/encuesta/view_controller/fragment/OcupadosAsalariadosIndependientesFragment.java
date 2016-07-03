@@ -1,9 +1,13 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +15,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
-
-import org.w3c.dom.Text;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -79,11 +81,82 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
+        final EditText independiente2 = (EditText) view.findViewById(R.id.asalariado_independiente_2_edtText);
+        independiente2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+                try {
+                    if (Integer.parseInt(s.toString()) >= 40) {
+                        ((LinearLayout) view.findViewById(R.id.l_31)).setVisibility(View.GONE);
+                    } else {
+                        ((LinearLayout) view.findViewById(R.id.l_31)).setVisibility(View.VISIBLE);
+                    }
+                } catch (Exception e) {
+                    Log.i(OcupadosAsalariadosIndependientesFragment.class.toString(), "- parserInt: " + e);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+        });
+        ((EditText) view.findViewById(R.id.asalariado_independiente_4_editText)).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+                try {
+                    if (Integer.parseInt(s.toString()) < 30) {
+                        ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.GONE);
+                    } else {
+                        ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.VISIBLE);
+                    }
+                } catch (Exception e) {
+                    Log.i(OcupadosAsalariadosIndependientesFragment.class.toString(), "- parserInt: " + e);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+        });
+
+
         Spinner asalariado_independiente_5 = (Spinner) view.findViewById(R.id.asalariado_independiente_5_spinner);
         ArrayAdapter spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_5, android.R.layout.simple_spinner_item);
         spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariado_independiente_5.setAdapter(spinner_adapter_2);
+
+        Spinner asalariado_independiente_6 = (Spinner) view.findViewById(R.id.asalariado_independiente_6_spinner);
+        spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.asalariados_independientes_6, android.R.layout.simple_spinner_item);
+        spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        asalariado_independiente_6.setAdapter(spinner_adapter_2);
+        asalariado_independiente_6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapter, View v, int position, long id) {
+                if (position == 0) {
+                    getDialog();
+                } else {
+                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setText("");
+                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+        asalariado_independiente_6.setSelection(1);
+        ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.GONE);
 
         Spinner asalariado_independiente_7 = (Spinner) view.findViewById(R.id.asalariado_independiente_7_spinner);
         spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
@@ -294,6 +367,31 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         d.setVisibility(View.VISIBLE);
         e.setVisibility(View.VISIBLE);
         f.setVisibility(View.VISIBLE);
+    }
+
+    public void getDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog_horario);
+        dialog.setTitle("Digite horario");
+        dialog.setCancelable(false);
+        Button aceptar = (Button) dialog.findViewById(R.id.dialog_btn);
+        //final EditText editText = (EditText) dialog.findViewById(R.id.personas_dialog);
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String de = ((EditText) dialog.findViewById(R.id.de_horario)).getText().toString();
+                String hasta = ((EditText) dialog.findViewById(R.id.hasta_horario)).getText().toString();
+                if (de.length() > 2 || hasta.length() > 2
+                        || de.length() == 0 || hasta.length() == 0) {
+                    Toast.makeText(getContext(), "Recuerde que el formato de hora son 2 digitos", Toast.LENGTH_SHORT).show();
+                } else {
+                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.VISIBLE);
+                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setText(de + " a " + hasta);
+                    dialog.dismiss();
+                }
+            }
+        });
+        dialog.show();
     }
 
     private void save() {

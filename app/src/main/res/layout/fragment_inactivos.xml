@@ -9,177 +9,227 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <Switch
+
+        <TextView
+            android:id="@+id/inactivos_1_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:text="@string/trabajado_dos_semanas_consecutivas"
-            android:id="@+id/switch_inactivos_1" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/spinner_inactivos_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"></Spinner>
 
         <LinearLayout
             android:id="@+id/inactivos_saltar1"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_vertical"
                 android:text="@string/trabajo_ultima_vez"
-                android:layout_gravity="center_vertical" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
+                android:id="@+id/spiner_inactivos_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center_vertical"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                android:id="@+id/spiner_inactivos_2"
-                android:layout_gravity="center_vertical">
-            </Spinner>
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_vertical"
                 android:text="@string/porque_dejo_trabajo"
-                android:layout_gravity="center_vertical" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
+                android:id="@+id/spiner_inactivos_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center_vertical"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                android:id="@+id/spiner_inactivos_3"
-                android:layout_gravity="center_vertical">
-            </Spinner>
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
 
             <EditText
                 android:id="@+id/etext_inactivos_3"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:hint="Otro, cual?"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
-            <Switch
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:text="@string/busco_otro_trabajo_o_negocio"
-                android:id="@+id/switch_inactivos_4" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/spinner_inactivos_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"></Spinner>
 
 
         </LinearLayout>
 
-
-        <Switch
+        <LinearLayout
+            android:id="@+id/l_5_6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/buscado_trabajo_alguna_vez"
-            android:id="@+id/switch_inactivos_5" />
+            android:orientation="vertical">
 
-        <TextView
+            <LinearLayout
+                android:id="@+id/l_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:text="@string/buscado_trabajo_alguna_vez"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <Spinner
+                    android:id="@+id/spinner_inactivos_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/cuando_busco_trabajo_ultima_vez"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <Spinner
+                    android:id="@+id/spiner_inactivos_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l_7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/cuando_busco_trabajo_ultima_vez"
-            android:layout_gravity="center_vertical" />
+            android:orientation="vertical">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spiner_inactivos_6"
-            android:layout_gravity="center_vertical">
-        </Spinner>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/razon_dejo_buscar_trabajo"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/razon_dejo_buscar_trabajo"
-            android:layout_gravity="center_vertical" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spiner_inactivos_7"
-            android:layout_gravity="center_vertical">
-        </Spinner>
+            <Spinner
+                android:id="@+id/spiner_inactivos_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+        </LinearLayout>
 
         <EditText
             android:id="@+id/etext_inactivos_7"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:hint="Otro, cual?"
-            android:visibility="gone"
-            />
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/esta_afiliados_fondo_actualmente"
-            android:id="@+id/switch_inactivos_8" />
+            android:visibility="gone" />
 
         <TextView
-            android:id="@+id/txv_inactivos_9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/fondos_afiliados_actualmente"
-            android:visibility="gone"
-            android:layout_gravity="center_vertical" />
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:text="@string/inactivo8"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:visibility="gone"
+            android:id="@+id/spinner_inactivos_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+
+        <LinearLayout
+            android:id="@+id/l_9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/spiner_inactivos_9"
-            android:layout_gravity="center_vertical">
-        </Spinner>
+            android:orientation="vertical">
 
-        <Switch
+            <TextView
+                android:id="@+id/txv_inactivos_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/inactivo9"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/spiner_inactivos_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/paddin_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/gano_ingresos_x_trabajo"
-            android:id="@+id/switch_inactivos_10" />
+            android:text="@string/inactivo10"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="siguiente"
-            android:id="@+id/next_gnrl_btn"
-            android:layout_gravity="center_horizontal" />
-
+        <Spinner
+            android:id="@+id/switch_inactivos_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
         <EditText
             android:id="@+id/etext_inactivos_10"
-            android:inputType="number"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:hint="¿En cuanto estima lo que recibio?"
-            android:visibility="gone"
-            />
+            android:inputType="number"
+            android:visibility="gone" />
 
+        <Button
+            android:layout_margin="@dimen/paddin_bottom"
+            android:id="@+id/next_gnrl_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="siguiente" />
     </LinearLayout>
 </ScrollView>

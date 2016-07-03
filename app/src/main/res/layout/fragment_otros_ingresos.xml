@@ -5,52 +5,82 @@
     android:layout_height="match_parent"
     tools:context="com.crom.encuesta.view_controller.fragment.OtrosIngresosFragment">
 
-    <Switch
-        android:id="@+id/otros_ingresos1"
+    <TextView
+        android:layout_marginTop="@dimen/paddin_bottom"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/otros_ingresos1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/otros_ingresos1"></Spinner>
 
     <TextView
+        android:layout_marginTop="@dimen/paddin_bottom"
         android:text="@string/otros_ingresos2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Switch
-        android:id="@+id/otros_ingresos2a"
+    <TextView
+        android:layout_marginTop="@dimen/paddin_bottom"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/otros_ingresos2a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <TextView
-        android:visibility="gone"
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/otros_ingresos2a"></Spinner>
+
+    <EditText
         android:id="@+id/otros_text2a"
         android:layout_width="400dp"
+        android:hint="¿Cuánto recibió?"
+        android:inputType="number"
         android:layout_height="wrap_content" />
 
-    <Switch
-        android:id="@+id/otros_ingresos2b"
+    <TextView
+        android:layout_marginTop="@dimen/paddin_bottom"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/otros_ingresos2b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:visibility="gone"
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/otros_ingresos2b"></Spinner>
+
+    <EditText
         android:id="@+id/otros_text2b"
         android:layout_width="400dp"
+        android:inputType="number"
+        android:hint="¿Cuánto recibió?"
         android:layout_height="wrap_content" />
-    <Switch
-        android:id="@+id/otros_ingresos2c"
+    <TextView
+        android:layout_marginTop="@dimen/paddin_bottom"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/otros_ingresos2c"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <TextView
-        android:visibility="gone"
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/otros_ingresos2c"></Spinner>
+
+    <EditText
         android:id="@+id/otros_text2c"
         android:layout_width="400dp"
+        android:hint="¿Cuánto recibió?"
+        android:inputType="number"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/next_gnrl_btn"
+        android:layout_marginTop="@dimen/paddin_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

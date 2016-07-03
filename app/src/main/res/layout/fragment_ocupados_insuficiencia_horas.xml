@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/quiere_trabajar_mas_horas"
+            android:text="@string/ocupado49"
             android:id="@+id/textView13" />
 
         <Spinner
@@ -25,10 +25,25 @@
             android:id="@+id/insuficiencia_1" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/ocupado50"
+            android:id="@+id/insuficiencia_2_textView" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:hint=""
+            android:id="@+id/insuficiencia_2_editText" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/posibilidad_trabajar_mas_horas"
+            android:text="@string/ocupado51"
             android:id="@+id/insuficiencia_8_textView" />
 
         <Spinner
@@ -40,24 +55,10 @@
             android:id="@+id/insuficiencia_8_spinner" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/horas_adicionales_semana"
-            android:id="@+id/insuficiencia_2_textView" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="4"
-            android:hint=""
-            android:id="@+id/insuficiencia_2_editText" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/posibilidad_trabajar_mas_horas"
+            android:text="@string/ocupado52"
             android:layout_gravity="center_vertical"
             android:id="@+id/insuficiencia_3_textView" />
 
@@ -83,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/quiere_cambiar_empleo"
+            android:text="@string/ocupado53"
             android:layout_gravity="center_vertical"
             android:id="@+id/insuficiencia_4_textView" />
 
@@ -100,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/por_que_quiere_cambiar_trabajo"
+            android:text="@string/ocupado54"
             android:id="@+id/insuficiencia_5_textView" />
 
         <CheckBox
@@ -167,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/diligencias_cambio_trabajo"
+            android:text="@string/ocupado55"
             android:id="@+id/insuficiencia_6_textView" />
 
         <Spinner
@@ -182,7 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/trabajar_antes_del_mes"
+            android:text="@string/ocupado56"
             android:id="@+id/insuficiencia_7_textView" />
 
         <Spinner

@@ -557,16 +557,12 @@ public class OcupadosAsalariadosFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
-
-
-
-
         vivienda = ((MainActivity) getActivity()).getVivienda();
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //save();
-                transaction.replace(R.id.contenedor, new OcupadoIndependienteFragment()).commit();
+                transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
             }
         });
     }

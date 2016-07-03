@@ -137,11 +137,13 @@ public class FuerzaFragment extends Fragment {
         fuerza_5.setAdapter(adapter5);
         fuerza_5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 2) {
                     ((LinearLayout) view.findViewById(R.id.l6)).setVisibility(View.GONE);
+                    ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.VISIBLE);
                 } else if (i == 1) {
                     ((LinearLayout) view.findViewById(R.id.l6)).setVisibility(View.VISIBLE);
+                    ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.VISIBLE);
                 }
             }
 
@@ -160,12 +162,10 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
-                // On selecting a spinner item
-                String scountry = adapter.getItemAtPosition(position).toString();
-                // Showing selected spinner item
-                if (scountry.equalsIgnoreCase("Pidió ayuda a familia, amigos, colegas\n")) {
-
-                }
+                if(position>0)
+                ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.GONE);
+                else
+                    ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.VISIBLE);
             }
 
             @Override
