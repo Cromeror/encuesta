@@ -99,42 +99,38 @@ public class MiembroHogarFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //!textView.getText().toString().equals("")
-               /* if(Validador.validarSpinner(generales1,generales5)
-                        || nacimiento.getText().toString().equals("") || editTextEdad.getText().toString().equals("")
-                        ){
-
-                    (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
-
-                }*/
-                if (Validador.validarSpinner(generales1, generales5)
-                        || Validador.isEmptyEditText(editTextEdad,nacimiento)
-                        || textView.getText().toString().equals(getString(R.string.touch_me))) {
-                    (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
-                } else {
-                    if (Integer.parseInt(editTextEdad.getText().toString()) < 10) {
-                        Miembro miembro = new Miembro();
-                        ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
-                        miembro.setSexo(generales1.getSelectedItem().toString());
-                        miembro.setParentesco(generales5.getSelectedItem().toString());
-                        miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
-                        miembro.setEdad(editTextEdad.getText().toString());
-                        miembro.setNacimiento(textView.getText().toString());
-                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
-                    }else {
-                        if(!Validador.validarSpinner(generales6)){
+                if (((MainActivity) getActivity()).isActivado()){
+                    if (Validador.validarSpinner(generales1, generales5)
+                            || Validador.isEmptyEditText(editTextEdad,nacimiento)
+                            || textView.getText().toString().equals(getString(R.string.touch_me))) {
+                        (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                    } else {
+                        if (Integer.parseInt(editTextEdad.getText().toString()) < 10) {
                             Miembro miembro = new Miembro();
                             ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
                             miembro.setSexo(generales1.getSelectedItem().toString());
                             miembro.setParentesco(generales5.getSelectedItem().toString());
-                            miembro.setEstadoCivil(generales6.getSelectedItem().toString());
                             miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                             miembro.setEdad(editTextEdad.getText().toString());
                             miembro.setNacimiento(textView.getText().toString());
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
-                        }else
-                        (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                        }else {
+                            if(!Validador.validarSpinner(generales6)){
+                                Miembro miembro = new Miembro();
+                                ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
+                                miembro.setSexo(generales1.getSelectedItem().toString());
+                                miembro.setParentesco(generales5.getSelectedItem().toString());
+                                miembro.setEstadoCivil(generales6.getSelectedItem().toString());
+                                miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
+                                miembro.setEdad(editTextEdad.getText().toString());
+                                miembro.setNacimiento(textView.getText().toString());
+                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
+                            }else
+                                (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                        }
                     }
+                }else {
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                 }
             }
         });

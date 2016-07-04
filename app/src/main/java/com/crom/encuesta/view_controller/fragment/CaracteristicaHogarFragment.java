@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,19 +97,22 @@ public class CaracteristicaHogarFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Log.i("####",textView2.getText().toString());
-                if (!Validador.validarSpinner(spinner3, spinner4, spinner5, spinner6,  spinner7 , spinner8)
-                        && !Validador.isEmptyMultiChoice(textView2)) {
-                    hogar.setAguaConsumo(spinner3.getSelectedItem().toString());
-                    hogar.setAguaOtroUso(spinner4.getSelectedItem().toString());
-                    hogar.setBasura(spinner5.getSelectedItem().toString());
-                    hogar.setSanitarioHogar(spinner6.getSelectedItem().toString());
-                    hogar.setSanitarioVivienda(spinner7.getSelectedItem().toString());
-                    hogar.setEnergiaCocinan(spinner8.getSelectedItem().toString());
+                if (((MainActivity)getActivity()).isActivado()){
+                    if (!Validador.validarSpinner(spinner3, spinner4, spinner5, spinner6,  spinner7 , spinner8)
+                            && !Validador.isEmptyMultiChoice(textView2)) {
+                        hogar.setAguaConsumo(spinner3.getSelectedItem().toString());
+                        hogar.setAguaOtroUso(spinner4.getSelectedItem().toString());
+                        hogar.setBasura(spinner5.getSelectedItem().toString());
+                        hogar.setSanitarioHogar(spinner6.getSelectedItem().toString());
+                        hogar.setSanitarioVivienda(spinner7.getSelectedItem().toString());
+                        hogar.setEnergiaCocinan(spinner8.getSelectedItem().toString());
+                        transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
+                    }else{
+                        DialogBuilder builder = new DialogBuilder();
+                        builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                    }
+                }else {
                     transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
-                }else{
-                    DialogBuilder builder = new DialogBuilder();
-                    builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                 }
             }
         });

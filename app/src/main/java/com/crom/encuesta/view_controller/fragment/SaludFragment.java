@@ -4,7 +4,6 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,21 +21,15 @@ import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
 
-import java.util.ArrayList;
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SaludFragment extends Fragment {
 
-    private static final String PARAM_EDAD = "Edad";
-    public static String PARAM_CONTENT = "contenido";
-    private static boolean desactivado = false;
     private View view;
     private int edad = 0;
     private Button next;
     private Salud salud;
-
     private FragmentTransaction transaction;
 
     @Override
@@ -44,10 +37,6 @@ public class SaludFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_salud, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarB));
-        if (getArguments() != null) {
-            if (getArguments().getString(PARAM_CONTENT).equals("true"))
-                desactivado = true;
-        }
         init();
         return view;
     }
@@ -107,7 +96,7 @@ public class SaludFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (desactivado) {
+                if (((MainActivity)getActivity()).isActivado()) {
                     if (edad > 3) {
                         transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
                     } else {

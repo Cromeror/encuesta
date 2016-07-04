@@ -1,11 +1,13 @@
 package com.crom.encuesta.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
  * Created by Katherine Buelvas on 17/06/2016.
  */
-public class Vivienda {
+public class Vivienda{
 
     private String departamento;
     private String municipio;
@@ -23,18 +25,18 @@ public class Vivienda {
     private ArrayList<Hogar> hogares;
 
     public Vivienda() {
-        departamento = "";
-        municipio = "";
-        zona = "";
-        barrio = "";
-        sector = "";
-        direccion = "";
-        tipoVivienda = "";
-        propiedadVivienda = "";
-        cuantoPagan = "";
+        departamento = "0";
+        municipio = "0";
+        zona = "0";
+        barrio = "0";
+        sector = "0";
+        direccion = "0";
+        tipoVivienda = "0";
+        propiedadVivienda = "0";
+        cuantoPagan = "0";
         cuartos = new ArrayList<>();
-        materialPisos = "";
-        materialParedesExteriores = "";
+        materialPisos = "0";
+        materialParedesExteriores = "0";
         servicios = new ArrayList<>();
         hogares = new ArrayList<>();
     }
@@ -205,15 +207,12 @@ public class Vivienda {
                         output4.append(string);
                         output4.append("\n");
                         result.append(output4);
+                        Log.i("#####","#####");
                     }
                 }
-//                output3.append("\n");
-//                result.append(output3);
             }
 
         }
-//        output.append("\n");
-//        result.append(output);
         return result.toString();
     }
 }

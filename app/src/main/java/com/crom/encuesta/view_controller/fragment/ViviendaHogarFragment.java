@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -101,7 +100,7 @@ public class ViviendaHogarFragment extends Fragment {
                                 textView5.setBackgroundColor(Color.WHITE);
                             band = false;
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         Toast.makeText(view.getContext(), "Debe digitar un numero mayor que cero", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -138,30 +137,28 @@ public class ViviendaHogarFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if(!textView8.getText().toString().equals("")){
-                    Log.i("######",textView8.getText().toString());
-                    builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
-                }*/
-
-                if (!Validador.validarSpinner(spinner1, spinner2, spinner6, spinner7) &&
-                        !Validador.isEmptyEditText(editText4, ((EditText) view.findViewById(R.id.mensualidad_arriendo)))
-                        && !((TextView) view.findViewById(R.id.personas_cuarto_vivienda)).equals("Informacion persona por cuarto")
-                        && !Validador.isEmptyMultiChoice(textView8)) {
-                    if (!editText4.getText().toString().equals(personasCuarto.size() + "")) {
-                        builder.dialogIncompleteField(getActivity(), "El numero de cuartos y los datos almacenados por cuarto no concuerdan");
+                if (((MainActivity) getActivity()).isActivado()) {
+                    if (!Validador.validarSpinner(spinner1, spinner2, spinner6, spinner7) &&
+                            !Validador.isEmptyEditText(editText4, ((EditText) view.findViewById(R.id.mensualidad_arriendo)))
+                            && !((TextView) view.findViewById(R.id.personas_cuarto_vivienda)).equals("Informacion persona por cuarto")
+                            && !Validador.isEmptyMultiChoice(textView8)) {
+                        if (!editText4.getText().toString().equals(personasCuarto.size() + "")) {
+                            builder.dialogIncompleteField(getActivity(), "El numero de cuartos y los datos almacenados por cuarto no concuerdan");
+                        } else {
+                            vivienda.setTipoVivienda(spinner1.getSelectedItem().toString());
+                            vivienda.setPropiedadVivienda(spinner2.getSelectedItem().toString());
+                            vivienda.setCuantoPagan(((EditText) view.findViewById(R.id.mensualidad_arriendo)).getText().toString());
+                            vivienda.setCuartos(personasCuarto);
+                            vivienda.setMaterialPisos(spinner6.getSelectedItem().toString());
+                            vivienda.setMaterialParedesExteriores(spinner7.getSelectedItem().toString());
+                            transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
+                        }
                     } else {
-                        vivienda.setTipoVivienda(spinner1.getSelectedItem().toString());
-                        vivienda.setPropiedadVivienda(spinner2.getSelectedItem().toString());
-                        vivienda.setCuantoPagan(((EditText) view.findViewById(R.id.mensualidad_arriendo)).getText().toString());
-                        vivienda.setCuartos(personasCuarto);
-                        vivienda.setMaterialPisos(spinner6.getSelectedItem().toString());
-                        vivienda.setMaterialParedesExteriores(spinner7.getSelectedItem().toString());
-                        transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
+                        builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                     }
                 } else {
-                    builder.dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+                    transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
                 }
-
             }
         });
     }

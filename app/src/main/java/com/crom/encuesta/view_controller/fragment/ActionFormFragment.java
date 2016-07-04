@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,6 @@ public class ActionFormFragment extends Fragment {
         miembro = (Button) view.findViewById(R.id.miembro_btn);
         hogar = (Button) view.findViewById(R.id.hogar_btn);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-
         init();
         return view;
     }
@@ -42,6 +42,7 @@ public class ActionFormFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("FINISH", ((MainActivity)getActivity()).getVivienda().toString());
                 transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
             }
         });

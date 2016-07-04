@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,112 +50,126 @@ public class BookmarkFragmento extends Fragment {
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
             }
         });
         t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
             }
         });
         t3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
             }
         });
         t4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new MiembroHogarFragment()).commit();
             }
         });
         t5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SaludFragment salud = new SaludFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString(SaludFragment.PARAM_CONTENT, "true");
-                salud.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.contenedor, salud).commit();
+                ((MainActivity) getActivity()).setActivado(false);
+                getFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
             }
         });
         t6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new EducacionFragment()).commit();
             }
         });
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new FuerzaFragment()).commit();
             }
         });
         t8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadoFragment()).commit();
             }
         });
         t9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });
         t10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadoIndependienteFragment()).commit();
             }
         });
         t11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
             }
         });
         t12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
             }
         });
         t13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });
         t14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
             }
         });
         t15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new DesocupadosFragment()).commit();
             }
         });
         t16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new InactivosFragment()).commit();
             }
         });
         t17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
         t18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) getActivity()).setActivado(false);
                 getFragmentManager().beginTransaction().replace(R.id.contenedor, new TicsFragment()).commit();
             }
         });

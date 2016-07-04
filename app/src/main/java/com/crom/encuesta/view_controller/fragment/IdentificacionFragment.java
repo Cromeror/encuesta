@@ -2,21 +2,15 @@ package com.crom.encuesta.view_controller.fragment;
 
 
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
@@ -57,7 +51,11 @@ public class IdentificacionFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save();
+                if(((MainActivity)getActivity()).isActivado()){
+                    save();
+                }else {
+                    transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
+                }
             }
         });
     }
