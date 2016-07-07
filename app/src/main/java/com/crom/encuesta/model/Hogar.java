@@ -8,9 +8,24 @@ import java.util.List;
  */
 public class Hogar {
 
+    private String id, viviendaId;
     private ArrayList<Miembro> miembros;
     private ArrayList<String> serviciosBienes;
     private String aguaConsumo, aguaOtroUso, basura, sanitarioHogar, sanitarioVivienda, energiaCocinan;
+
+    public Hogar(String id,String viviendaId, String aguaConsumo, String aguaOtroUso, String basura, String sanitarioHogar,
+                 String sanitarioVivienda, String energiaCocinan,ArrayList<Miembro> miembros,
+                 ArrayList<String> serviciosBienes) {
+        this.miembros = miembros;
+        this.viviendaId = viviendaId;
+        this.serviciosBienes = serviciosBienes;
+        this.aguaConsumo = aguaConsumo;
+        this.aguaOtroUso = aguaOtroUso;
+        this.basura = basura;
+        this.sanitarioHogar = sanitarioHogar;
+        this.sanitarioVivienda = sanitarioVivienda;
+        this.energiaCocinan = energiaCocinan;
+    }
 
     public Hogar() {
         miembros = new ArrayList<>();
@@ -21,6 +36,22 @@ public class Hogar {
         sanitarioHogar = "";
         sanitarioVivienda = "";
         energiaCocinan = "";
+    }
+
+    public String getViviendaId() {
+        return viviendaId;
+    }
+
+    public void setViviendaId(String viviendaId) {
+        this.viviendaId = viviendaId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ArrayList<Miembro> getMiembros() {
@@ -124,5 +155,21 @@ public class Hogar {
             }
         }
         return strings;
+    }
+
+    @Override
+    public String toString() {
+        return "Hogar{" +
+                "id='" + id + '\'' +
+                ", viviendaId='" + viviendaId + '\'' +
+                ", miembros=" + miembros +
+                ", serviciosBienes=" + serviciosBienes +
+                ", aguaConsumo='" + aguaConsumo + '\'' +
+                ", aguaOtroUso='" + aguaOtroUso + '\'' +
+                ", basura='" + basura + '\'' +
+                ", sanitarioHogar='" + sanitarioHogar + '\'' +
+                ", sanitarioVivienda='" + sanitarioVivienda + '\'' +
+                ", energiaCocinan='" + energiaCocinan + '\'' +
+                '}';
     }
 }

@@ -43,7 +43,7 @@ public class ActionFormFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.i("FINISH", ((MainActivity)getActivity()).getVivienda().toString());
-                transaction.replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
+                transaction.replace(R.id.contenedor, new ViviendaFragment()).commit();
             }
         });
         miembro.setOnClickListener(new View.OnClickListener() {

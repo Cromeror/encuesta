@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Vivienda{
 
+    private String id;
     private String departamento;
     private String municipio;
     private String zona;
@@ -18,27 +19,56 @@ public class Vivienda{
     private String tipoVivienda;
     private String propiedadVivienda;
     private String cuantoPagan;
-    private ArrayList<String> cuartos;
     private String materialPisos;
     private String materialParedesExteriores;
+    private ArrayList<String> cuartos;
     private ArrayList<String> servicios;
     private ArrayList<Hogar> hogares;
 
+    public Vivienda(String id, String departamento, String municipio, String zona, String barrio,
+                    String sector, String direccion, String tipoVivienda, String propiedadVivienda,
+                    String cuantoPagan, String materialPisos, String materialParedesExteriores,
+                    ArrayList<String> cuartos, ArrayList<String> servicios, ArrayList<Hogar> hogares) {
+        this.id = id;
+        this.departamento = departamento;
+        this.municipio = municipio;
+        this.zona = zona;
+        this.barrio = barrio;
+        this.sector = sector;
+        this.direccion = direccion;
+        this.tipoVivienda = tipoVivienda;
+        this.propiedadVivienda = propiedadVivienda;
+        this.cuantoPagan = cuantoPagan;
+        this.materialPisos = materialPisos;
+        this.materialParedesExteriores = materialParedesExteriores;
+        this.cuartos = cuartos;
+        this.servicios = servicios;
+        this.hogares = hogares;
+    }
+
     public Vivienda() {
-        departamento = "0";
-        municipio = "0";
-        zona = "0";
-        barrio = "0";
-        sector = "0";
-        direccion = "0";
-        tipoVivienda = "0";
-        propiedadVivienda = "0";
-        cuantoPagan = "0";
+        departamento = "";
+        municipio = "";
+        zona = "";
+        barrio = "";
+        sector = "";
+        direccion = "";
+        tipoVivienda = "";
+        propiedadVivienda = "";
+        cuantoPagan = "";
+        materialPisos = "";
+        materialParedesExteriores = "";
         cuartos = new ArrayList<>();
-        materialPisos = "0";
-        materialParedesExteriores = "0";
         servicios = new ArrayList<>();
         hogares = new ArrayList<>();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDepartamento() {
@@ -160,7 +190,7 @@ public class Vivienda{
         return null;
     }
 
-    public String toString() {
+    /*public String toString() {
         StringBuilder output = new StringBuilder();
         StringBuilder result = new StringBuilder();
         output.append(departamento);
@@ -214,5 +244,26 @@ public class Vivienda{
 
         }
         return result.toString();
+    }*/
+
+    @Override
+    public String toString() {
+        return "Vivienda{" +
+                "id='" + id + '\'' +
+                ", departamento='" + departamento + '\'' +
+                ", municipio='" + municipio + '\'' +
+                ", zona='" + zona + '\'' +
+                ", barrio='" + barrio + '\'' +
+                ", sector='" + sector + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", tipoVivienda='" + tipoVivienda + '\'' +
+                ", propiedadVivienda='" + propiedadVivienda + '\'' +
+                ", cuantoPagan='" + cuantoPagan + '\'' +
+                ", materialPisos='" + materialPisos + '\'' +
+                ", materialParedesExteriores='" + materialParedesExteriores + '\'' +
+                ", cuartos=" + cuartos +
+                ", servicios=" + servicios +
+                ", hogares=" + hogares +
+                '}';
     }
 }

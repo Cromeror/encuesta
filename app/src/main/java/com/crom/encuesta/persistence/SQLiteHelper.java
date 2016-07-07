@@ -6,22 +6,39 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
+    public static int VERSION = 1;
+    public static String DATA_BASE = "EncuestaBD";
 
-    ViviendaDAO viviendaDAO = new ViviendaDAO();
+    ViviendaDAO viviendaDAO = ViviendaDAO.getInstance();
+    HogarDAO hogarDAO = HogarDAO.getInstance();
+    MiembroDAO miembroDAO = MiembroDAO.getInstance();
 
-    public SQLiteHelper(Context contexto, String nombre,
-                        CursorFactory factory, int version) {
-        super(contexto, nombre, factory, version);
+    public ViviendaDAO getViviendaDAO() {
+        return viviendaDAO;
+    }
+
+    public void setViviendaDAO(ViviendaDAO viviendaDAO) {
+        this.viviendaDAO = viviendaDAO;
+    }
+
+    public SQLiteHelper(Context contexto) {
+        super(contexto, DATA_BASE, null, VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        hogarDAO.create(db);
         viviendaDAO.create(db);
+        miembroDAO.create(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAnterior, int versionNueva) {
         viviendaDAO.drop(db);
+        hogarDAO.drop(db);
+        miembroDAO.drop(db);
         viviendaDAO.create(db);
+        hogarDAO.create(db);
+        miembroDAO.create(db);
     }
 }

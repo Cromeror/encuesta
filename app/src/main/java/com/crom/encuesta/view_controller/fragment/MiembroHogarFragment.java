@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
+import com.crom.encuesta.persistence.MiembroDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -113,6 +115,8 @@ public class MiembroHogarFragment extends Fragment {
                             miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                             miembro.setEdad(editTextEdad.getText().toString());
                             miembro.setNacimiento(textView.getText().toString());
+                            MiembroDAO.getInstance().insert(miembro, ((MainActivity)getActivity()).getDb());
+                            Log.i("Vivienda toString", ((MainActivity)getActivity()).toString());
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                         }else {
                             if(!Validador.validarSpinner(generales6)){
@@ -124,6 +128,8 @@ public class MiembroHogarFragment extends Fragment {
                                 miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                                 miembro.setEdad(editTextEdad.getText().toString());
                                 miembro.setNacimiento(textView.getText().toString());
+                                miembro.setHogarId(((MainActivity)getActivity()).getHogar().getId());
+                                MiembroDAO.getInstance().insert(miembro, ((MainActivity)getActivity()).getDb());
                                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                             }else
                                 (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));

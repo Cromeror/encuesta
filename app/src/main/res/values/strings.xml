@@ -82,7 +82,7 @@
     <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
     <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
     <!-- Fuerza trabajo -->
-    <string name="actividad_primera_semana_mayo">1. ¿En que actividad ocupo ud la mayor parte de la primera semana de Mayo?</string>
+    <string name="actividad_primera_semana_junio">1. ¿En que actividad ocupo ud la mayor parte de la primera semana de Junio?</string>
     <string name="ademas_de_anterior">2. Ademas de lo anterior, ¿Ud realizo durante la primera semana de Mayo alguna actividad paga por una hora o más ?</string>
     <string name="aunque_usted_no_trabajo">3. Aunque ud no trabajo la primera semana de Mayo, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
     <string name="actividad_ultima_semana_mayo_hora">4. ¿Trabajo la ultima semana de Mayo en un negocio por una hora o mas sin que le pagaran ?</string>
@@ -113,14 +113,15 @@
     <string name="medio_consiguio_empleo">13. ¿Por qué medio principal ud consiguio su empleo actual?</string>
     <string name="cuanto_gano_mes_pasado">14. ¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
     <string name="mes_pasado_horas_extras">15. ¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
-    <string name="alimentos_parte_pago">15. Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
-    <string name="aparte_de_salario_recibio_vivienda">16. Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
-    <string name="usa_transporte_de_empresa">17. Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
-    <string name="aparte_de_salario_recibio_pago_especie">18. Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
-    <string name="subsidio_mes_pasado">19. ¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
-    <string name="el_mes_pasado_recibio">20. El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
-    <string name="ultimos_12_meses_recibio">21. En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
-    <string name="semana_pasada_horas_extras">22. ¿La semana pasada ud trabajó horas extra remuneradas?</string>
+    <string name="asalariados_15a">15a. ¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
+    <string name="alimentos_parte_pago">16. Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_vivienda">17. Además del salario en dinero, ¿ el mes pasado recibio vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
+    <string name="usa_transporte_de_empresa">18. Normalmente ud utiliza transporte de la empresa para desplazarse a su trabajo(Bus, automovil o moto? (si no sabe estimar el monto escriba 98)</string>
+    <string name="aparte_de_salario_recibio_pago_especie">19. Además del salario en dinero, ¿ el mes pasado recibio ingresos en especie por su trabajo (Electrodomesticos, ropa, productos diferentes a alimentos)? (Si no sabe estimar el monto escriba 98)</string>
+    <string name="subsidio_mes_pasado">20. ¿Cual de los siguientes subsidios recibio ud el mes pasado? ( Si recibio pero no sabe escriba 98)</string>
+    <string name="el_mes_pasado_recibio">21. El mes pasado ud recibio: (si no sabe el valor correcto coloque 98)</string>
+    <string name="ultimos_12_meses_recibio">22. En los ultimos 12 meses ud recibio: (si no sabe estimar el monto escriba 98)</string>
+    <string name="semana_pasada_horas_extras">23. ¿La semana pasada ud trabajó horas extra remuneradas?</string>
     <!--Datos de vivienda y del hogar-->
     <string name="tipo_vivienda">Tipo de vivienda</string>
     <string name="vivienda_habita_es">La vivienda donde habita es:</string>

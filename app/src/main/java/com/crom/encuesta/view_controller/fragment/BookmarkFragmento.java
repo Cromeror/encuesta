@@ -58,7 +58,7 @@ public class BookmarkFragmento extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity) getActivity()).setActivado(false);
-                getFragmentManager().beginTransaction().replace(R.id.contenedor, new ViviendaHogarFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.contenedor, new ViviendaFragment()).commit();
             }
         });
         t3.setOnClickListener(new View.OnClickListener() {

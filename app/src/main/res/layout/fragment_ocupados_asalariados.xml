@@ -33,29 +33,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:paddingBottom="@dimen/vertical_margin">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/cuanto_gano_mes_pasado" />
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="8"
-                    android:inputType="number"
-                    android:id="@+id/asalariado_2"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
+                android:inputType="number"
+                android:id="@+id/asalariado_2"
+                android:layout_centerHorizontal="true" />
         </LinearLayout>
 
 
@@ -63,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/ingresos_horas_extras" />
+            android:text="@string/mes_pasado_horas_extras" />
 
         <EditText
             android:layout_width="match_parent"
@@ -76,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/incluye_actualmente"
+            android:text="@string/asalariados_15a"
             android:layout_gravity="center_vertical" />
 
         <Spinner
@@ -115,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/vivienda_por_pago"
+            android:text="@string/aparte_de_salario_recibio_vivienda"
             android:layout_gravity="center_vertical" />
 
         <Spinner
@@ -161,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/ingreso_en_especie"
+            android:text="@string/aparte_de_salario_recibio_pago_especie"
             android:layout_gravity="center_vertical" />
 
         <Spinner
@@ -185,7 +176,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/subsidios"
+            android:text="@string/subsidio_mes_pasado"
             android:layout_gravity="center_vertical" />
 
         <Switch

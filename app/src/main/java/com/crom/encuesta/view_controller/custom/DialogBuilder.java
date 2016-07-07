@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
-import android.view.View;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.fragment.CaracteristicaHogarFragment;
-import com.crom.encuesta.view_controller.fragment.ViviendaHogarFragment;
+import com.crom.encuesta.view_controller.fragment.ViviendaFragment;
 
 import java.util.ArrayList;
 
@@ -65,7 +64,7 @@ public class DialogBuilder {
     }
 
     private boolean saveMultipleChoice(MainActivity mainActivity, Class c) {
-        if (ViviendaHogarFragment.class.equals(c)) {
+        if (ViviendaFragment.class.equals(c)) {
             mainActivity.getVivienda().setServicios(mSelectedItems);
         } else if (CaracteristicaHogarFragment.class.equals(c)) {
             //Log.i("DIALOG",""+mainActivity.getVivienda().getHogares().size());

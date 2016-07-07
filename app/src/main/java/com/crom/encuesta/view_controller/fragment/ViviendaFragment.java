@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ViviendaHogarFragment extends Fragment {
+public class ViviendaFragment extends Fragment {
     private View view;
     private FragmentTransaction transaction;
     private Vivienda vivienda;
@@ -39,7 +40,7 @@ public class ViviendaHogarFragment extends Fragment {
     private TextView textView5;
     private DialogBuilder builder = new DialogBuilder();
 
-    public ViviendaHogarFragment() {
+    public ViviendaFragment() {
         // Required empty public constructor
     }
 
@@ -128,7 +129,7 @@ public class ViviendaHogarFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DialogBuilder dialogBuilder = new DialogBuilder();
-                dialogBuilder.MultipleChoiceList(ViviendaHogarFragment.class, textView8, getActivity(), "", R.array.servicios_vivienda_array);
+                dialogBuilder.MultipleChoiceList(ViviendaFragment.class, textView8, getActivity(), "", R.array.servicios_vivienda_array);
             }
         });
         textView8.setBackgroundColor(Color.RED);
@@ -151,6 +152,7 @@ public class ViviendaHogarFragment extends Fragment {
                             vivienda.setCuartos(personasCuarto);
                             vivienda.setMaterialPisos(spinner6.getSelectedItem().toString());
                             vivienda.setMaterialParedesExteriores(spinner7.getSelectedItem().toString());
+                            ViviendaDAO.getInstance().insert(vivienda, ((MainActivity)getActivity()).getDb());
                             transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
                         }
                     } else {

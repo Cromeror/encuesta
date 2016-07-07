@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Hogar;
+import com.crom.encuesta.persistence.HogarDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -106,6 +107,9 @@ public class CaracteristicaHogarFragment extends Fragment {
                         hogar.setSanitarioHogar(spinner6.getSelectedItem().toString());
                         hogar.setSanitarioVivienda(spinner7.getSelectedItem().toString());
                         hogar.setEnergiaCocinan(spinner8.getSelectedItem().toString());
+                        hogar.setViviendaId(((MainActivity)getActivity()).getVivienda().getId());
+                        HogarDAO.getInstance().insert(hogar,((MainActivity)getActivity()).getDb());
+                        ((MainActivity)getActivity()).setHogar(hogar);
                         transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
                     }else{
                         DialogBuilder builder = new DialogBuilder();

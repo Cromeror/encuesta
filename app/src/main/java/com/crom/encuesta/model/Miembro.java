@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Miembro {
 
-    private String sexo, nacimiento, edad, lugarNacimiento, parentesco, estadoCivil;
+    private String id,hogarId, sexo, nacimiento, edad, lugarNacimiento, parentesco, estadoCivil;
     private Salud salud;
     private Educacion educacion;
     private FuerzaTrabajo fuerzaTrabajo;
@@ -18,7 +18,27 @@ public class Miembro {
     private OtroIngreso otroIngreso;
     private TIC tic;//con lista
 
+    public Miembro(String id,String hogarId, String sexo, String nacimiento, String edad, String lugarNacimiento, String parentesco, String estadoCivil, Salud salud, Educacion educacion, FuerzaTrabajo fuerzaTrabajo, Ocupado ocupado, Desocupado desocupado, Inactivo inactivo, OtroIngreso otroIngreso, TIC tic) {
+       this.hogarId =hogarId;
+        this.id = id;
+        this.sexo = sexo;
+        this.nacimiento = nacimiento;
+        this.edad = edad;
+        this.lugarNacimiento = lugarNacimiento;
+        this.parentesco = parentesco;
+        this.estadoCivil = estadoCivil;
+        this.salud = salud;
+        this.educacion = educacion;
+        this.fuerzaTrabajo = fuerzaTrabajo;
+        this.ocupado = ocupado;
+        this.desocupado = desocupado;
+        this.inactivo = inactivo;
+        this.otroIngreso = otroIngreso;
+        this.tic = tic;
+    }
+
     public Miembro() {
+        id = "";
         sexo = "";
         nacimiento = "";
         edad = "0";
@@ -32,6 +52,22 @@ public class Miembro {
         inactivo = new Inactivo();
         otroIngreso = new OtroIngreso();
         tic = new TIC();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getHogarId() {
+        return hogarId;
+    }
+
+    public void setHogarId(String hogarId) {
+        this.hogarId = hogarId;
     }
 
     public Desocupado getDesocupado() {
@@ -159,5 +195,27 @@ public class Miembro {
             }
         }
         return list;
+    }
+
+    @Override
+    public String toString() {
+        return "Miembro{" +
+                "id='" + id + '\'' +
+                ", hogarId='" + hogarId + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", nacimiento='" + nacimiento + '\'' +
+                ", edad='" + edad + '\'' +
+                ", lugarNacimiento='" + lugarNacimiento + '\'' +
+                ", parentesco='" + parentesco + '\'' +
+                ", estadoCivil='" + estadoCivil + '\'' +
+                ", salud=" + salud +
+                ", educacion=" + educacion +
+                ", fuerzaTrabajo=" + fuerzaTrabajo +
+                ", ocupado=" + ocupado +
+                ", desocupado=" + desocupado +
+                ", inactivo=" + inactivo +
+                ", otroIngreso=" + otroIngreso +
+                ", tic=" + tic +
+                '}';
     }
 }

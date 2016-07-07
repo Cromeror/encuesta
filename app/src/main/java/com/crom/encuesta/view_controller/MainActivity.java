@@ -16,19 +16,25 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Hogar;
+import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.HogarDAO;
+import com.crom.encuesta.persistence.MiembroDAO;
 import com.crom.encuesta.persistence.SQLiteHelper;
 import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.fragment.BookmarkFragmento;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private final Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private boolean activado = true;
-    ViviendaDAO viviendaDAO= new ViviendaDAO();
-    private SQLite sqlite;
+    private SQLiteDatabase db = null;
+    private Hogar hogar = new Hogar();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,30 +43,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SQLiteHelper helper =
-                new SQLiteHelper(this, "EncuestaBD", null, 1);
+        SQLiteHelper helper = new SQLiteHelper(this);
+        db = helper.getWritableDatabase();
+        ViviendaDAO.getInstance().drop(db);
+        HogarDAO.getInstance().drop(db);
+        MiembroDAO.getInstance().drop(db);
 
-        SQLiteDatabase db = helper.getWritableDatabase();
-        if(db != null)
-        {
-            vivienda.setDepartamento("Prieba");
-            vivienda.setMunicipio("Pozon");
-            vivienda.setMaterialParedesExteriores("sdsdasdad");
-            ViviendaDAO v= new ViviendaDAO();
-            v.insert(vivienda,db);
-            Cursor c = v.read(db,1);
-            if (c.moveToFirst()) {
-                //Recorremos el cursor hasta que no haya más registros
-                do {
-                    String codigo= c.getString(0);
-                    String nombre = c.getString(1);
-                    Log.i("#######",codigo+"-"+nombre);
-                } while(c.moveToNext());
-            }
-        }
-
-
-        //Log.i("Prueba SQL", viviendaDAO.read(sqlite.db, 1).toString());
+        ViviendaDAO.getInstance().create(db);
+        HogarDAO.getInstance().create(db);
+        MiembroDAO.getInstance().create(db);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -111,23 +102,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.nav_bookmark) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new BookmarkFragmento()).commit();
         } else if (id == R.id.nav_encuestar) {
-            if (!activado) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
+            /*if (!activado) {
                 activado = true;
                 fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
             } else {
                 Toast.makeText(this, "Encuesta en curso", Toast.LENGTH_SHORT).show();
-            }
+            }*/
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
+    public Hogar getHogar() {
+        return hogar;
+    }
+
+    public void setHogar(Hogar hogar) {
+        this.hogar = hogar;
+    }
 
     public boolean isActivado() {
         return activado;
@@ -141,4 +138,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return vivienda;
     }
 
+    public SQLiteDatabase getDb() {
+        return db;
+    }
 }
