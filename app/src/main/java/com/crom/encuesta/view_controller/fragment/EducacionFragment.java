@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Educacion;
+import com.crom.encuesta.persistence.EducacionDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
@@ -96,6 +98,7 @@ private LinearLayout contentEstablecimiento;
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position >= 6) {
                     if (save(false)){
+                        EducacionDAO.getInstance().insert(educacion, ((MainActivity)getActivity()).getDb());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     }else {
                         nivelEducativo.setSelection(0);
@@ -111,7 +114,7 @@ private LinearLayout contentEstablecimiento;
 
         return view;
     }
-
+private Educacion educacion = new Educacion();
     private boolean save(boolean b) {
 
         if (nivelEducativo.getSelectedItemPosition() == 0
@@ -130,6 +133,13 @@ private LinearLayout contentEstablecimiento;
                 Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
             }
         }
+        if(contentEstablecimiento.getVisibility() != View.GONE) {
+            educacion.setEstablecimientoOficial(spinnerEstablecimiento.getSelectedItem().toString());
+        }
+        educacion.setLeerEscribir(leerEscribir.getSelectedItem().toString());
+        educacion.setNivelEducativo(nivelEducativo.getSelectedItem().toString());
+        educacion.setAsisteEscuela(estudia.getSelectedItem().toString());
+        educacion.setMiembroId(((MainActivity)getActivity()).getMiembro().getId());
         return true;
     }
 
@@ -138,6 +148,8 @@ private LinearLayout contentEstablecimiento;
             @Override
             public void onClick(View v) {
                 if (save(true)) {
+                    educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
+                    EducacionDAO.getInstance().insert(educacion, ((MainActivity)getActivity()).getDb());
                     transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                 }
             }

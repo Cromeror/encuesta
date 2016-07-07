@@ -11,7 +11,17 @@ package com.crom.encuesta.model;
  */
 public class Educacion {
 
-    private String leerEscribir, asisteEscuela, establecimientoOficial, nivelEducativo, mayorTitulo;
+    private String id, miembroId, leerEscribir, asisteEscuela, establecimientoOficial, nivelEducativo, mayorTitulo;
+
+    public Educacion(String id, String miembroId, String leerEscribir, String asisteEscuela, String establecimientoOficial, String nivelEducativo, String mayorTitulo) {
+        this.id = id;
+        this.miembroId = miembroId;
+        this.leerEscribir = leerEscribir;
+        this.asisteEscuela = asisteEscuela;
+        this.establecimientoOficial = establecimientoOficial;
+        this.nivelEducativo = nivelEducativo;
+        this.mayorTitulo = mayorTitulo;
+    }
 
     public Educacion() {
         leerEscribir = "";
@@ -19,6 +29,24 @@ public class Educacion {
         establecimientoOficial = "";
         nivelEducativo = "";
         mayorTitulo = "";
+        id = "";
+        miembroId = "";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getLeerEscribir() {

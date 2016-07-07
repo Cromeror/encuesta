@@ -4,13 +4,40 @@ package com.crom.encuesta.model;
  * Created by Katherine Buelvas on 19/06/2016.
  */
 public class Salud {
-    private String afiliado, regimenAfiliado, atencionESE, comentarioAtencionESE;
+    private String id, miembroId, afiliado, regimenAfiliado, atencionESE, comentarioAtencionESE;
+
+    public Salud(String id, String miembroId, String afiliado, String regimenAfiliado, String atencionESE, String comentarioAtencionESE) {
+        this.id = id;
+        this.miembroId = miembroId;
+        this.afiliado = afiliado;
+        this.regimenAfiliado = regimenAfiliado;
+        this.atencionESE = atencionESE;
+        this.comentarioAtencionESE = comentarioAtencionESE;
+    }
 
     public Salud() {
         afiliado = "";
         regimenAfiliado = "";
         atencionESE = "";
         comentarioAtencionESE = "";
+        id="";
+        miembroId="";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getAfiliado() {

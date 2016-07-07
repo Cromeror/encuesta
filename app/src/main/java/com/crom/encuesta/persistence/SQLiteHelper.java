@@ -12,14 +12,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     ViviendaDAO viviendaDAO = ViviendaDAO.getInstance();
     HogarDAO hogarDAO = HogarDAO.getInstance();
     MiembroDAO miembroDAO = MiembroDAO.getInstance();
-
-    public ViviendaDAO getViviendaDAO() {
-        return viviendaDAO;
-    }
-
-    public void setViviendaDAO(ViviendaDAO viviendaDAO) {
-        this.viviendaDAO = viviendaDAO;
-    }
+    SaludDAO saludDAO = SaludDAO.getInstance();
 
     public SQLiteHelper(Context contexto) {
         super(contexto, DATA_BASE, null, VERSION);
@@ -30,6 +23,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         hogarDAO.create(db);
         viviendaDAO.create(db);
         miembroDAO.create(db);
+        saludDAO.create(db);
+
     }
 
     @Override
@@ -37,8 +32,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         viviendaDAO.drop(db);
         hogarDAO.drop(db);
         miembroDAO.drop(db);
+        saludDAO.drop(db);
         viviendaDAO.create(db);
         hogarDAO.create(db);
         miembroDAO.create(db);
+        saludDAO.create(db);
     }
 }

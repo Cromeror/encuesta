@@ -128,6 +128,7 @@ public class MiembroHogarFragment extends Fragment {
                                 miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                                 miembro.setEdad(editTextEdad.getText().toString());
                                 miembro.setNacimiento(textView.getText().toString());
+                                ((MainActivity)getActivity()).setMiembro(miembro);
                                 miembro.setHogarId(((MainActivity)getActivity()).getHogar().getId());
                                 MiembroDAO.getInstance().insert(miembro, ((MainActivity)getActivity()).getDb());
                                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();

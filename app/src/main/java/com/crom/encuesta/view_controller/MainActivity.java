@@ -16,12 +16,15 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Educacion;
 import com.crom.encuesta.model.Hogar;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.EducacionDAO;
 import com.crom.encuesta.persistence.HogarDAO;
 import com.crom.encuesta.persistence.MiembroDAO;
 import com.crom.encuesta.persistence.SQLiteHelper;
+import com.crom.encuesta.persistence.SaludDAO;
 import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.fragment.BookmarkFragmento;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean activado = true;
     private SQLiteDatabase db = null;
     private Hogar hogar = new Hogar();
+    private Miembro miembro = new Miembro();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +52,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ViviendaDAO.getInstance().drop(db);
         HogarDAO.getInstance().drop(db);
         MiembroDAO.getInstance().drop(db);
+        SaludDAO.getInstance().drop(db);
+        EducacionDAO.getInstance().drop(db);
 
         ViviendaDAO.getInstance().create(db);
         HogarDAO.getInstance().create(db);
         MiembroDAO.getInstance().create(db);
+        SaludDAO.getInstance().create(db);
+        EducacionDAO.getInstance().create(db);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -116,6 +124,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public Miembro getMiembro() {
+        return miembro;
+    }
+
+    public void setMiembro(Miembro miembro) {
+        this.miembro = miembro;
     }
 
     public Hogar getHogar() {

@@ -62,8 +62,6 @@ public class MiembroDAO implements DAO<Miembro, String> {
 
     @Override
     public Miembro insert(Miembro miembro, SQLiteDatabase db) {
-        drop(db);
-        create(db);
         SIZE = ((ArrayList) read(db)).size();
         ContentValues values = new ContentValues();
         values.put(miembroId, SIZE+1);
