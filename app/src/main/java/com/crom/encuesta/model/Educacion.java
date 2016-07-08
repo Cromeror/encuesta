@@ -7,7 +7,7 @@ package com.crom.encuesta.model;
 
 /**
  *
- * @author cristobal
+ * @author Cristóbal Romero
  */
 public class Educacion {
 
@@ -91,7 +91,14 @@ public class Educacion {
 
     @Override
     public String toString() {
-        return leerEscribir + "," + asisteEscuela + "," + establecimientoOficial + "," + nivelEducativo + "," + mayorTitulo;
+        return "Educacion{" +
+                "id='" + id + '\'' +
+                ", miembroId='" + miembroId + '\'' +
+                ", leerEscribir='" + leerEscribir + '\'' +
+                ", asisteEscuela='" + asisteEscuela + '\'' +
+                ", establecimientoOficial='" + establecimientoOficial + '\'' +
+                ", nivelEducativo='" + nivelEducativo + '\'' +
+                ", mayorTitulo='" + mayorTitulo + '\'' +
+                '}';
     }
-
 }

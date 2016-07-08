@@ -17,12 +17,16 @@ import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Educacion;
+import com.crom.encuesta.model.FuerzaTrabajo;
 import com.crom.encuesta.model.Hogar;
 import com.crom.encuesta.model.Miembro;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.persistence.EducacionDAO;
+import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
 import com.crom.encuesta.persistence.HogarDAO;
 import com.crom.encuesta.persistence.MiembroDAO;
+import com.crom.encuesta.persistence.OcupadoDAO;
 import com.crom.encuesta.persistence.SQLiteHelper;
 import com.crom.encuesta.persistence.SaludDAO;
 import com.crom.encuesta.persistence.ViviendaDAO;
@@ -54,12 +58,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MiembroDAO.getInstance().drop(db);
         SaludDAO.getInstance().drop(db);
         EducacionDAO.getInstance().drop(db);
+        OcupadoDAO.getInstance().drop(db);
+        FuerzaTrabajoDAO.getInstance().drop(db);
 
         ViviendaDAO.getInstance().create(db);
         HogarDAO.getInstance().create(db);
         MiembroDAO.getInstance().create(db);
         SaludDAO.getInstance().create(db);
         EducacionDAO.getInstance().create(db);
+        OcupadoDAO.getInstance().create(db);
+        FuerzaTrabajoDAO.getInstance().create(db);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

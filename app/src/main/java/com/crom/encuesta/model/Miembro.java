@@ -182,7 +182,7 @@ public class Miembro {
         this.tic = tic;
     }
 
-    public List<String> toList() {
+    /*public List<String> toList() {
         ArrayList<String> list = new ArrayList<>();
         String s = sexo + ',' + nacimiento + ',' + edad + ',' + lugarNacimiento + ',' + parentesco + ','
                 + estadoCivil + ',' + salud + "," + educacion + "," + fuerzaTrabajo + ",";
@@ -195,7 +195,7 @@ public class Miembro {
             }
         }
         return list;
-    }
+    }*/
 
     @Override
     public String toString() {

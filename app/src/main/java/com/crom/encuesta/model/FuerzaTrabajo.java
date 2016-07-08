@@ -11,9 +11,29 @@ package com.crom.encuesta.model;
  */
 public class FuerzaTrabajo {
 
-    private String d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13;
+    private String id, miembroId, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13;
+
+    public FuerzaTrabajo(String id, String miembroId, String d1, String d2, String d3, String d4, String d5, String d6, String d7, String d8, String d9, String d10, String d11, String d12, String d13) {
+        this.id = id;
+        this.miembroId = miembroId;
+        this.d1 = d1;
+        this.d2 = d2;
+        this.d3 = d3;
+        this.d4 = d4;
+        this.d5 = d5;
+        this.d6 = d6;
+        this.d7 = d7;
+        this.d8 = d8;
+        this.d9 = d9;
+        this.d10 = d10;
+        this.d11 = d11;
+        this.d12 = d12;
+        this.d13 = d13;
+    }
 
     public FuerzaTrabajo() {
+        id="";
+        miembroId="";
         d1 = "";
         d2 = "";
         d3 = "";
@@ -27,6 +47,22 @@ public class FuerzaTrabajo {
         d11 = "";
         d12 = "";
         d13 = "";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getD1() {
@@ -135,7 +171,22 @@ public class FuerzaTrabajo {
 
     @Override
     public String toString() {
-        return d1 + "," + d2 + "," + d3 + "," + d4 + "," + d5 + "," + d6 + "," + d7 + "," + d8 + "," + d9 + "," + d10 + "," + d11 + "," + d12 + "," + d13;
+        return "FuerzaTrabajo{" +
+                "id='" + id + '\'' +
+                ", miembroId='" + miembroId + '\'' +
+                ", d1='" + d1 + '\'' +
+                ", d2='" + d2 + '\'' +
+                ", d3='" + d3 + '\'' +
+                ", d4='" + d4 + '\'' +
+                ", d5='" + d5 + '\'' +
+                ", d6='" + d6 + '\'' +
+                ", d7='" + d7 + '\'' +
+                ", d8='" + d8 + '\'' +
+                ", d9='" + d9 + '\'' +
+                ", d10='" + d10 + '\'' +
+                ", d11='" + d11 + '\'' +
+                ", d12='" + d12 + '\'' +
+                ", d13='" + d13 + '\'' +
+                '}';
     }
-
 }

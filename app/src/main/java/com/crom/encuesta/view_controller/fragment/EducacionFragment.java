@@ -27,7 +27,9 @@ public class EducacionFragment extends Fragment {
     private FragmentTransaction transaction;
     private Spinner nivelEducativo, estudia, leerEscribir, spinnerEstablecimiento;
     private Spinner tituloMayor;
-private LinearLayout contentEstablecimiento;
+    private LinearLayout contentEstablecimiento;
+
+    private Educacion educacion = new Educacion();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,7 +37,7 @@ private LinearLayout contentEstablecimiento;
         final View view = inflater.inflate(R.layout.fragment_educacion, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarC));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-
+        ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();
         contentEstablecimiento = ((LinearLayout) view.findViewById(R.id.content_establecimiento));
@@ -97,10 +99,11 @@ private LinearLayout contentEstablecimiento;
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position >= 6) {
-                    if (save(false)){
-                        EducacionDAO.getInstance().insert(educacion, ((MainActivity)getActivity()).getDb());
+                    if (save(false)) {
+                        ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
+                        EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
-                    }else {
+                    } else {
                         nivelEducativo.setSelection(0);
                     }
                 }
@@ -114,32 +117,33 @@ private LinearLayout contentEstablecimiento;
 
         return view;
     }
-private Educacion educacion = new Educacion();
-    private boolean save(boolean b) {
 
+    private boolean save(boolean b) {
         if (nivelEducativo.getSelectedItemPosition() == 0
                 || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0) {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
             return false;
         } else {
-            if(b && tituloMayor.getSelectedItemPosition() == 0){
+            if (b && tituloMayor.getSelectedItemPosition() == 0) {
                 (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                 return false;
             }
-            if(contentEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0){
-               (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
+            if (contentEstablecimiento.getVisibility() == View.VISIBLE && spinnerEstablecimiento.getSelectedItemPosition() == 0) {
+                (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                 return false;
-            }else {
-                Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
             }
         }
-        if(contentEstablecimiento.getVisibility() != View.GONE) {
+        educacion.setLeerEscribir(leerEscribir.getSelectedItem().toString());
+        educacion.setAsisteEscuela(estudia.getSelectedItem().toString());
+        educacion.setNivelEducativo(nivelEducativo.getSelectedItem().toString());
+        if (contentEstablecimiento.getVisibility() == View.VISIBLE) {
             educacion.setEstablecimientoOficial(spinnerEstablecimiento.getSelectedItem().toString());
         }
-        educacion.setLeerEscribir(leerEscribir.getSelectedItem().toString());
-        educacion.setNivelEducativo(nivelEducativo.getSelectedItem().toString());
-        educacion.setAsisteEscuela(estudia.getSelectedItem().toString());
-        educacion.setMiembroId(((MainActivity)getActivity()).getMiembro().getId());
+        if (b){
+            educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
+        }
+        educacion.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
+        Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
         return true;
     }
 
@@ -149,7 +153,7 @@ private Educacion educacion = new Educacion();
             public void onClick(View v) {
                 if (save(true)) {
                     educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
-                    EducacionDAO.getInstance().insert(educacion, ((MainActivity)getActivity()).getDb());
+                    EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
                     transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                 }
             }

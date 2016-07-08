@@ -6,6 +6,7 @@
 package com.crom.encuesta.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,8 +17,11 @@ public class Ocupado {
 
     private String e[];
     private ArrayList<String> e11, e55;
-
+    private String id, miembroId;
+    
     public Ocupado() {
+        id = "";
+        miembroId = "";
         e = new String[62];
         for (int i = 0; i < e.length; i++) {
             e[i] = "";
@@ -26,17 +30,38 @@ public class Ocupado {
         e55 = new ArrayList<>();
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
+    }
+
     /**
      *
      * @param number numero de pregunta que desea
      * @return
      */
     public String getE(int number) {
-        return e[number];
+        if(number!=0&&number!=11&&number!=55){
+            return this.e[number];
+        }
+        return  null;
     }
 
     public void setE(String answer, int number) {
-        this.e[number] = answer;
+        if(number!=0&&number!=11&&number!=55){
+            this.e[number] = answer;
+        }
     }
 
     public ArrayList<String> getE11() {
@@ -55,7 +80,7 @@ public class Ocupado {
         this.e55 = e55;
     }
 
-    private String toString(String... values) {
+  /*  private String toString(String... values) {
 
         String string = "";
         e[11] = values[0];
@@ -79,6 +104,19 @@ public class Ocupado {
             }
         }
         return list;
-    }
+    }*/
 
+    @Override
+    public String toString() {
+        String s = "Ocupado{";
+        for (int i = 0; i < e.length; i++) {
+            if(i!=0){
+                s+="e"+i+"="+e[i]+",";
+            }
+        }
+        s+=", e11=" + e11 +
+                ", e55=" + e55 +
+                '}';
+        return s;
+    }
 }

@@ -62,7 +62,7 @@ public class HogarDAO implements  DAO<Hogar, Integer>{
                 nombreBienes + " TEXT" +
                 ")";
         db.execSQL(query);
-        Log.i("TABA BIENES", query);
+        Log.i("TABlA BIENES", query);
     }
 
     @Override

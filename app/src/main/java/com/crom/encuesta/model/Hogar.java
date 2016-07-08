@@ -125,7 +125,7 @@ public class Hogar {
         return null;
     }
 
-    public List<String> toList() {
+   /* public List<String> toList() {
         ArrayList<String> strings = new ArrayList<String>();
         for (String servicio : serviciosBienes) {
             StringBuilder output = new StringBuilder();
@@ -155,7 +155,7 @@ public class Hogar {
             }
         }
         return strings;
-    }
+    }*/
 
     @Override
     public String toString() {

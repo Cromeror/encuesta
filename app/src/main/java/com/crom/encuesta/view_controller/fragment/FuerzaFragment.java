@@ -17,6 +17,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.FuerzaTrabajo;
+import com.crom.encuesta.persistence.EducacionDAO;
+import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
+import com.crom.encuesta.view_controller.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,13 +58,16 @@ public class FuerzaFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
                 if(position == 1){
+                    save(1);
                     transaction.replace(R.id.contenedor, new OcupadoFragment()).commit();
                 }else if(position == 5){
+                    save(1);
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }else if(position == 6){
-                    ((TextView) view.findViewById(R.id.et1)).setVisibility(View.VISIBLE);
+                    ((EditText) view.findViewById(R.id.et1)).setVisibility(View.VISIBLE);
                 }else {
-                    ((TextView) view.findViewById(R.id.et1)).setVisibility(View.GONE);
+                    save(0);
+                    ((EditText) view.findViewById(R.id.et1)).setVisibility(View.GONE);
                 }
             }
 
@@ -152,7 +159,8 @@ public class FuerzaFragment extends Fragment {
 
             }
         });
-
+final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
+        fuerza_6E.setVisibility(View.GONE);
         Spinner fuerza_6 = (Spinner) view.findViewById(R.id.fuerza_6);
         ArrayAdapter spinner_adapter_6 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.fuerza_6, android.R.layout.simple_spinner_item);
@@ -162,9 +170,13 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
-                if(position>0)
-                ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.GONE);
-                else
+                if(position>0) {
+                    if (position==7)
+                        fuerza_6E.setVisibility(View.VISIBLE);
+                    save(6);
+                    ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.GONE);
+                }else
+                save(0);
                     ((LinearLayout) view.findViewById(R.id.l7_12)).setVisibility(View.VISIBLE);
             }
 
@@ -205,9 +217,11 @@ public class FuerzaFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
                 if (position == 1) {
+                    save(8);
                     ((LinearLayout) view.findViewById(R.id.l8)).setVisibility(View.GONE);
                     t8.setVisibility(View.GONE);
                 } else if (position == 9) {
+                    save(8);
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 } else if (position == 13) {
                    /* if (((LinearLayout) view.findViewById(R.id.l8)).getVisibility() == View.GONE) {
@@ -240,8 +254,10 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 2) {
+                    save(9);
                     ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.GONE);
                 } else {
+                    save(0);
                     ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.VISIBLE);
                 }
             }
@@ -260,8 +276,10 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 1) {
+                    save(10);
                     ((LinearLayout) view.findViewById(R.id.l11)).setVisibility(View.GONE);
                 } else if (i == 2) {
+                    save(10);
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }
             }
@@ -281,6 +299,7 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 2) {
+                    save(11);
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }
             }
@@ -300,8 +319,10 @@ public class FuerzaFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i==1){
+                    save(13);
                     transaction.replace(R.id.contenedor, new DesocupadosFragment()).commit();
                 }else if (i == 2) {
+                    save(13);
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }
             }
@@ -312,6 +333,14 @@ public class FuerzaFragment extends Fragment {
             }
         });
         ((TextView) view.findViewById(R.id.tv1)).requestFocus();
+
+        EditText d12 = (EditText) view.findViewById(R.id.fuerza_12);
+        d12.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                save(12);
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -319,7 +348,93 @@ public class FuerzaFragment extends Fragment {
             }
         });
     }
-    public boolean save(){
+    public boolean save(int op){
+        FuerzaTrabajo fuerzaTrabajo = new FuerzaTrabajo();
+        ((MainActivity)getActivity()).getMiembro().setFuerzaTrabajo(fuerzaTrabajo);
+        Spinner d1 = (Spinner) view.findViewById(R.id.fuerza_1);
+
+        Spinner d2 = (Spinner) view.findViewById(R.id.fuerza_2);
+        Spinner d3 = (Spinner) view.findViewById(R.id.fuerza_3);
+        Spinner d4 = (Spinner) view.findViewById(R.id.fuerza_4);
+        Spinner d5 = (Spinner) view.findViewById(R.id.fuerza_5);
+        Spinner d6 = (Spinner) view.findViewById(R.id.fuerza_6);
+        Spinner d7 = (Spinner) view.findViewById(R.id.fuerza_7);
+        Spinner d8 = (Spinner) view.findViewById(R.id.fuerza_8);
+        Spinner d9 = (Spinner) view.findViewById(R.id.fuerza_9);
+        Spinner d10 = (Spinner) view.findViewById(R.id.fuerza_10);
+        Spinner d11= (Spinner) view.findViewById(R.id.fuerza_11);
+        EditText d12 = (EditText) view.findViewById(R.id.fuerza_12);
+        Spinner d13 = (Spinner) view.findViewById(R.id.fuerza_13);
+        switch (op){
+            case 0:
+                fuerzaTrabajo = new FuerzaTrabajo();
+                Log.i("FUERZA0", fuerzaTrabajo.toString());
+                break;
+            case 1:
+                if(d1.getSelectedItemPosition() == 6){
+                    fuerzaTrabajo.setD1(((EditText) view.findViewById(R.id.et1)).getText().toString());
+                }else
+                    fuerzaTrabajo.setD1(d1.getSelectedItem().toString());
+                Log.i("FUERZA1", fuerzaTrabajo.toString());
+                break;
+            case 2:
+                fuerzaTrabajo.setD1(d1.getSelectedItem().toString());
+                fuerzaTrabajo.setD2(d2.getSelectedItem().toString());
+                break;
+            case 3:
+                save(2);
+                fuerzaTrabajo.setD3(d3.getSelectedItem().toString());
+                break;
+            case 4:
+                save(3);
+                fuerzaTrabajo.setD4(d4.getSelectedItem().toString());
+                break;
+            case 5:
+                save(4);
+                fuerzaTrabajo.setD5(d5.getSelectedItem().toString());
+                break;
+            case 6:
+                save(5);
+                if(d6.getSelectedItemPosition()==7){
+                    fuerzaTrabajo.setD5(((EditText) view.findViewById(R.id.fuerza6_e)).getText().toString());
+                }else
+                    fuerzaTrabajo.setD6(d5.getSelectedItem().toString());
+                break;
+            case 7:
+                save(5);
+                fuerzaTrabajo.setD7(d7.getSelectedItem().toString());
+                break;
+            case 8:
+                save(7);
+                if(d8.getSelectedItemPosition()==13){
+                    fuerzaTrabajo.setD8(((EditText) view.findViewById(R.id.t8)).getText().toString());
+                }else {
+                    fuerzaTrabajo.setD8(d8.getSelectedItem().toString());
+                }
+                break;
+            case 9:
+                save(8);
+                fuerzaTrabajo.setD9(d9.getSelectedItem().toString());
+                break;
+            case 10:
+                save(9);
+                fuerzaTrabajo.setD10(d10.getSelectedItem().toString());
+                break;
+            case 11:
+                save(10);
+                fuerzaTrabajo.setD11(d11.getSelectedItem().toString());
+                break;
+            case 12:
+                save(11);
+                fuerzaTrabajo.setD12(d12.getText().toString());
+            case 13:
+                fuerzaTrabajo.setD13(d13.getSelectedItem().toString());
+                break;
+            default:
+                return false;
+        }
+        fuerzaTrabajo.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
+        Log.i("FUERZA Save", fuerzaTrabajo.toString());
         return true;
     }
 

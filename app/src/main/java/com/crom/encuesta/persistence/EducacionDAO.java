@@ -18,13 +18,14 @@ public class EducacionDAO implements DAO<Educacion, String> {
     private static EducacionDAO ourInstance = new EducacionDAO();
 
     private static int SIZE = 0;
-    private static String TABLE_EDUCACION = "miembro";
-    private String educacionId = "educacionId";
-    private String miembroId = "miembroId";
-    private String leerEscribir = "leerEscribir";
-    private String establecimientoOficial = "establecimientoOficial";
-    private String nivelEducativo = "nivelEducativo";
-    private String mayorTitulo = "mayorTitulo";
+    private static String TABLE_EDUCACION = "educacion";
+    private static String educacionId = "educacionId";
+    private static String miembroId = "miembroId";
+    private static String leerEscribir = "leerEscribir";
+    private static String asisteEscuela = "asisteEscuela";
+    private static String establecimientoOficial = "establecimientoOficial";
+    private static String nivelEducativo = "nivelEducativo";
+    private static String mayorTitulo = "mayorTitulo";
 
     public static EducacionDAO getInstance() {
         return ourInstance;
@@ -39,9 +40,10 @@ public class EducacionDAO implements DAO<Educacion, String> {
                 educacionId + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 miembroId + " TEXT, " +
                 leerEscribir + " TEXT, " +
+                asisteEscuela + " TEXT, " +
                 establecimientoOficial + " TEXT, " +
                 nivelEducativo + " TEXT, " +
-                mayorTitulo +" TEXT"+
+                mayorTitulo + " TEXT" +
                 " )";
         db.execSQL(query);
     }
@@ -50,17 +52,17 @@ public class EducacionDAO implements DAO<Educacion, String> {
     public Educacion insert(Educacion educacion, SQLiteDatabase db) {
         SIZE = ((ArrayList) read(db)).size();
         ContentValues values = new ContentValues();
-        values.put(educacionId, SIZE+1);
+        values.put(educacionId, SIZE + 1);
         values.put(miembroId, educacion.getMiembroId());
-        values.put(leerEscribir,educacion.getLeerEscribir());
-        values.put(establecimientoOficial,educacion.getEstablecimientoOficial());
-        values.put(nivelEducativo,educacion.getNivelEducativo());
-        values.put(mayorTitulo,educacion.getMayorTitulo());
-        Log.i("EducacionDAO", "Nuevo registro Educacion" );
-        if((db.insert( TABLE_EDUCACION , null, values ) != -1)){
+        values.put(leerEscribir, educacion.getLeerEscribir());
+        values.put(establecimientoOficial, educacion.getEstablecimientoOficial());
+        values.put(nivelEducativo, educacion.getNivelEducativo());
+        values.put(mayorTitulo, educacion.getMayorTitulo());
+        Log.i("EducacionDAO", "Nuevo registro Educacion");
+        if ((db.insert(TABLE_EDUCACION, null, values) != -1)) {
 
-        }else return null;
-        educacion.setId((SIZE+1)+"");
+        } else return null;
+        educacion.setId((SIZE + 1) + "");
         return educacion;
     }
 
@@ -73,12 +75,12 @@ public class EducacionDAO implements DAO<Educacion, String> {
     public List<Educacion> read(SQLiteDatabase db) {
         Cursor c = db.query(TABLE_EDUCACION, null, null, null, null, null, null);
         ArrayList<Educacion> educacions = new ArrayList<>();
-        if (c.moveToFirst()&&c.getCount()>0) {
+        if (c.moveToFirst() && c.getCount() > 0) {
             do {
-                Educacion educacion = new Educacion(c.getString(0),c.getString(1),c.getString(2),c.getString(3),
-                        c.getString(4),c.getString(5),c.getString(6));
+                Educacion educacion = new Educacion(c.getString(0), c.getString(1), c.getString(2), c.getString(3),
+                        c.getString(4), c.getString(5), c.getString(6));
                 educacions.add(educacion);
-            }while (c.moveToNext());
+            } while (c.moveToNext());
         }
         return educacions;
     }
