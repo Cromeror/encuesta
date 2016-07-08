@@ -1,9 +1,11 @@
 package com.crom.encuesta.view_controller;
 
-import android.database.Cursor;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,11 +18,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.model.Educacion;
-import com.crom.encuesta.model.FuerzaTrabajo;
 import com.crom.encuesta.model.Hogar;
 import com.crom.encuesta.model.Miembro;
-import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.persistence.EducacionDAO;
 import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
@@ -33,7 +32,14 @@ import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.fragment.BookmarkFragmento;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -128,6 +134,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             } else {
                 Toast.makeText(this, "Encuesta en curso", Toast.LENGTH_SHORT).show();
             }*/
+        } else if (id == R.id.nav_import) {
+            if (isExternalStorageWritable()) {
+                try
+                {
+                    File ruta_sd_global = Environment.getExternalStorageDirectory();
+                    //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+
+                    File f = new File(ruta_sd_global.getAbsolutePath(), "import.txt");
+
+                    OutputStreamWriter fout =
+                            new OutputStreamWriter(
+                                    new FileOutputStream(f));
+
+                    fout.write("Texto de prueba.");
+                    fout.close();
+
+                    Log.i("Ficheros", "Fichero SD creado!");
+                }
+                catch (Exception ex)
+                {
+                    Log.e("Ficheros", "Error al escribir fichero a tarjeta SD");
+                }
+            }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -164,5 +193,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public SQLiteDatabase getDb() {
         return db;
+    }
+
+    /* Checks if external storage is available for read and write */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        return false;
     }
 }

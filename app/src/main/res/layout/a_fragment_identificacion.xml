@@ -151,7 +151,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"/>-->
     <LinearLayout
-        android:id="@+id/content_hogares"
+        android:id="@+id/content_hogar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
