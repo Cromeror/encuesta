@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Hogar;
 import com.crom.encuesta.model.Miembro;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.persistence.EducacionDAO;
 import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SQLiteDatabase db = null;
     private Hogar hogar = new Hogar();
     private Miembro miembro = new Miembro();
+    private Ocupado ocupado = new Ocupado();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        miembro.setOcupado(ocupado);
 
         SQLiteHelper helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
@@ -127,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_bookmark) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new BookmarkFragmento()).commit();
         } else if (id == R.id.nav_encuestar) {
+            setActivado(true);
             fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
             /*if (!activado) {
                 activado = true;
@@ -147,10 +152,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             new OutputStreamWriter(
                                     new FileOutputStream(f));
 
-                    fout.write("Texto de prueba.");
+                    fout.write(vivienda.toString());
                     fout.close();
-
-                    Log.i("Ficheros", "Fichero SD creado!");
+                    Toast.makeText(MainActivity.this,  "Fichero creado con éxito"+ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                    Log.i("Ficheros", vivienda.toString());
                 }
                 catch (Exception ex)
                 {
@@ -193,6 +198,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public SQLiteDatabase getDb() {
         return db;
+    }
+
+    public Ocupado getOcupado() {
+        return ocupado;
+    }
+
+    public void setOcupado(Ocupado ocupado) {
+        this.ocupado = ocupado;
     }
 
     /* Checks if external storage is available for read and write */

@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Salud;
-import com.crom.encuesta.persistence.MiembroDAO;
 import com.crom.encuesta.persistence.SaludDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
@@ -101,9 +100,9 @@ public class SaludFragment extends Fragment {
                 if (!((MainActivity)getActivity()).isActivado()) {
                     if (edad > 3) {
                         transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
-                    } else {
+                    }else {
                         Toast.makeText(view.getContext(), "Modo: contenido\nTiene menos de 3 años, pase a TICs", Toast.LENGTH_SHORT).show();
-                        transaction.replace(R.id.contenedor, new TicsFragment()).commit();
+                        transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                     }
                 } else {
                     if (save(spinner1, spinner2, spinner3, spinner4)) {
@@ -112,7 +111,7 @@ public class SaludFragment extends Fragment {
                         if (edad > 3) {
                             transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
                         } else {
-                            transaction.add(R.id.contenedor, new TicsFragment()).commit();
+                            transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                         }
                     } else {
                         DialogBuilder builder = new DialogBuilder();
@@ -128,10 +127,10 @@ public class SaludFragment extends Fragment {
         salud = new Salud();
         miembro.setSalud(salud);
         edad = Integer.parseInt(miembro.getEdad());
-        if (!Validador.validarSpinner(spinners[0])) {
+        if (!Validador.isEmptySpinners(spinners[0])) {
             salud.setAfiliado(spinners[0].getSelectedItem().toString());
             if (spinners[0].getSelectedItem().toString().equals("Si")) {
-                if (Validador.validarSpinner(spinners[1])) {
+                if (Validador.isEmptySpinners(spinners[1])) {
                     return false;
                 }
                 salud.setRegimenAfiliado(spinners[1].getSelectedItem().toString());
@@ -140,10 +139,10 @@ public class SaludFragment extends Fragment {
             return false;
         }
 
-        if (!Validador.validarSpinner(spinners[2])) {
+        if (!Validador.isEmptySpinners(spinners[2])) {
             salud.setAtencionESE(spinners[2].getSelectedItem().toString());
             if (spinners[2].getSelectedItem().toString().equals("Si")) {
-                if (Validador.validarSpinner(spinners[3])) {
+                if (Validador.isEmptySpinners(spinners[3])) {
                     return false;
                 }
                 salud.setComentarioAtencionESE(spinners[3].getSelectedItem().toString());

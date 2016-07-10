@@ -41,7 +41,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/spiner_inactivos_2"
+                android:id="@+id/spinner_inactivos_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -57,7 +57,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/spiner_inactivos_3"
+                android:id="@+id/spinner_inactivos_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -128,7 +128,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <Spinner
-                    android:id="@+id/spiner_inactivos_6"
+                    android:id="@+id/spinner_inactivos_6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -152,7 +152,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/spiner_inactivos_7"
+                android:id="@+id/spinner_inactivos_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -195,7 +195,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/spiner_inactivos_9"
+                android:id="@+id/spinner_inactivos_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -213,7 +213,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/switch_inactivos_10"
+            android:id="@+id/spinner_inactivos_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Spinner>
         <EditText

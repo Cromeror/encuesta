@@ -182,20 +182,21 @@ public class Miembro {
         this.tic = tic;
     }
 
-    /*public List<String> toList() {
+    public List<String> toList() {
         ArrayList<String> list = new ArrayList<>();
         String s = sexo + ',' + nacimiento + ',' + edad + ',' + lugarNacimiento + ',' + parentesco + ','
                 + estadoCivil + ',' + salud + "," + educacion + "," + fuerzaTrabajo + ",";
 
-        for (String string : ocupado.toList()) {
+        /*for (String string : ocupado.toList()) {
             for (String string1 : tic.toList()) {
                 String s2 = s + string + ',' + desocupado.toString() + "," 
                         + inactivo.toString() + "," + otroIngreso.toString() + ","+string1;
                 list.add(s2);
             }
-        }
+        }*/
+        list.add(s);
         return list;
-    }*/
+    }
 
     @Override
     public String toString() {

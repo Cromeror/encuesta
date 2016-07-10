@@ -111,7 +111,10 @@
     <string name="trabajo_usted_es">12. En este trabajo ud es:</string>
     <!-- Ocupados Asalariados-->
     <string name="medio_consiguio_empleo">13. ¿Por qué medio principal ud consiguio su empleo actual?</string>
-    <string name="cuanto_gano_mes_pasado">14. ¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo? ( incluya propinas y comisiones, excluya viaticos y pago en especie, coloco 00 si es en especie, si no sabe el valor escriba 98)</string>
+    <string name="asalariados_14">14. ¿Antes de descuentos ¿ Cuánto ganó ud el mes pasado en este empleo?
+        ( incluya propinas y comisiones, excluya viaticos y pago en especie)
+        Coloque 00 si es en especie.
+        Si no sabe el valor escriba 98.</string>
     <string name="mes_pasado_horas_extras">15. ¿En el mes pasado recibio ingresos por concepto de horas extras? (Si recibio pero no sabe escriba 98)</string>
     <string name="asalariados_15a">15a. ¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
     <string name="alimentos_parte_pago">16. Además del salario en dinero, ¿ el mes pasado recibio alimentos como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
@@ -153,18 +156,19 @@
     <string name="generalesMensaje">Solamente para personas de 10 años y mas</string>
 
     <!--Desocupado-->
-    <string name="desocupados_1">¿Durante cuántas semanas ha estado o estuvo us buscando trabajo?</string>
-    <string name="desocupados_2">Si le hubiere resultado un trabajo la semana pasada, ¿Cuantas hotas a la semana estaba disponible para trabajar?</string>
-    <string name="desocupados_3">¿Usted ha buscado trabajo como?</string>
-    <string name="desocupados_4">¿Ud ha buscado trabajo por primera vez, o habia trabajado antes por lo menos durante 2 semanas consecutivas?</string>
-    <string name="desocupados_5">¿Cuántas semanas hace que ud dejo de trabajar por última vez?</string>
-    <string name="desocupados_6">¿Qué ocupación, oficio o labor realizó ud la ultima vez que trabajo?</string>
-    <string name="desocupados_7">¿A qué actividad se dedicaba principalmente la empresa, negocio, industria, oficina o finca, donde realizó su ultimo trabajo?</string>
-    <string name="desocupados_8">¿En este ultimo trabajo ud era?</string>
-    <string name="desocupados_9">¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde us trabajaba?</string>
-    <string name="desocupados_10">¿Actualmente recibe subsidio de desempleo?</string>
-    <string name="desocupados_11">¿En caso de enfermedad como cubriria los costos medicos y los medicamentos?</string>
-    <string name="desocupados_12">¿Qué esta haciendo ud actualmente para sostenerse economicamente en la vejez?</string>
+    <string name="desocupados_1">1. ¿Durante cuántas semanas ha estado o estuvo us buscando trabajo?</string>
+    <string name="desocupados_2">2. Si le hubiere resultado un trabajo la semana pasada, ¿Cuantas hotas a la semana estaba disponible para trabajar?</string>
+    <string name="desocupados_3">3. ¿Usted ha buscado trabajo como?</string>
+    <string name="desocupados_4">4. ¿Ud ha buscado trabajo por primera vez, o habia trabajado antes por lo menos durante 2 semanas consecutivas?</string>
+    <string name="desocupados_5">5. ¿Cuántas semanas hace que ud dejo de trabajar por última vez?</string>
+    <string name="desocupados_6">6. ¿Qué ocupación, oficio o labor realizó ud la ultima vez que trabajo?</string>
+    <string name="desocupados_7">7. ¿A qué actividad se dedicaba principalmente la empresa, negocio, industria, oficina o finca, donde realizó su ultimo trabajo?</string>
+    <string name="desocupados_8">8. ¿En este ultimo trabajo ud era?</string>
+    <string name="desocupados_9">9. ¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde us trabajaba?</string>
+    <string name="desocupados_10">10. ¿Actualmente recibe subsidio de desempleo?</string>
+    <string name="desocupados_11">11. ¿En caso de enfermedad como cubriria los costos medicos y los medicamentos?</string>
+    <string name="desocupados_12">12. ¿Qué esta haciendo ud actualmente para sostenerse economicamente en la vejez?</string>
+    <string name="desocupados_13">13. ¿Recibió o ganó el mes pasado ingresos por concepto de trabajo? </string>
 
     <!--Inactivos-->
     <string name="trabajado_dos_semanas_consecutivas">1. ¿Ud. ha trabajado antes por lo menos durante dos semanas consecutivas?</string>
@@ -179,10 +183,10 @@
     <string name="inactivo10">10. ¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
 
 
-    <string name="familiar_switch">Subsidio familiar</string>
-    <string name="educativo_switch">Subsidio educativo</string>
-    <string name="alimentacion_switch">Auxilio o subsidio de alimentación</string>
-    <string name="trasnporte_switch">Auxilio o subsidio de transporte</string>
+    <string name="asalariado20a">20a. Auxilio o subsidio de alimentación</string>
+    <string name="asalariado20b">20b. Auxilio o subsidio de transporte</string>
+    <string name="asalariado20c">20c. Subsidio familiar</string>
+    <string name="asalariado20d">20d. Subsidio educativo</string>
 
     <string name="ocupado49">49. Además de las horas que trabaja actualmente, ¿A Ud. le gustaría trabajar más horas?</string>
     <string name="ocupado50">50. ¿Cuántos horas adicionales puede Ud. trabajar a la semana?</string>
@@ -213,25 +217,25 @@
     <string name="gano_ingresos_x_trabajo">¿Recibió o ganó el mes pasado ingresos por concepto de trabajo?</string>
 
     <!-- TICs -->
-    <string name="tics_1">¿Usó ud el computador (en cualquier lugar) en los últimos 12 meses?</string>
-    <string name="tics_2">¿Usó ud el internet (en cualquier lugar) en los últimos 12 meses?</string>
-    <string name="tics_3">Durante los últimos 12 meses, ¿En cuales de los siguientes sitios usó internet?</string>
-    <string name="tics_4">¿Para cual de los siguientes servicios o actividades utilizó internet en los últimos 12 meses?</string>
-    <string name="tics_5">¿Con qué frecuencia utilizó internet en los últimos 12 meses?</string>
-    <string name="tics_3a">En centros de acceso público gratis</string>
-    <string name="tics_3b">En la casa de otra persona</string>
-    <string name="tics_3c">En la institución educativa</string>
-    <string name="tics_3d">En el trabajo</string>
-    <string name="tics_3e">En el hogar</string>
-    <string name="tics_3f">En centros de acceso público con costo (café internet)</string>
-    <string name="tics_3g">Otro, ¿Cual?</string>
-    <string name="tics_4a">Obtener información (excluir educación y aprendizaje)</string>
-    <string name="tics_4b">Comprar/ordenar productos y servicios</string>
-    <string name="tics_4c">Eduación y aprendizaje</string>
-    <string name="tics_4d">Comunicación</string>
-    <string name="tics_4e">Actividades de entretenimiento(juegos, bajar música, etc)</string>
-    <string name="tics_4f">Banca electronica y otras transacciones financieras</string>
-    <string name="tics_4g">Otro, ¿Cual?</string>
+    <string name="tics_1">1. ¿Usó ud el computador (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_2">2. ¿Usó ud el internet (en cualquier lugar) en los últimos 12 meses?</string>
+    <string name="tics_3">3. Durante los últimos 12 meses, ¿En cuales de los siguientes sitios usó internet?</string>
+    <string name="tics_4">4. ¿Para cual de los siguientes servicios o actividades utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_5">5. ¿Con qué frecuencia utilizó internet en los últimos 12 meses?</string>
+    <string name="tics_3a">3a. En centros de acceso público gratis</string>
+    <string name="tics_3b">3b. En la casa de otra persona</string>
+    <string name="tics_3c">3c. En la institución educativa</string>
+    <string name="tics_3d">3d. En el trabajo</string>
+    <string name="tics_3e">3e. En el hogar</string>
+    <string name="tics_3f">3f. En centros de acceso público con costo (café internet)</string>
+    <string name="tics_3g">3g. Otro, ¿Cual?</string>
+    <string name="tics_4a">4a. Obtener información (excluir educación y aprendizaje)</string>
+    <string name="tics_4b">4b. Comprar/ordenar productos y servicios</string>
+    <string name="tics_4c">4c. Eduación y aprendizaje</string>
+    <string name="tics_4d">4d. Comunicación</string>
+    <string name="tics_4e">4e. Actividades de entretenimiento(juegos, bajar música, etc)</string>
+    <string name="tics_4f">4f. Banca electronica y otras transacciones financieras</string>
+    <string name="tics_4g">4g. Otro, ¿Cual?</string>
 
     <!--Otros ingresos mes pasado -->
     <string name="otros_ingresos1">1. El mes pasado, ¿Usted recibió pagos por concepto de arriendo y/o pensiones?</string>
@@ -517,7 +521,7 @@
 
 
     <!--Ocupados asalariados arrays-->
-    <string-array name="asalariados_1">
+    <string-array name="asalariados_13">
         <item>Pidió ayuda a familia, amigos, colegas</item>
         <item>Visitó, llevó o envió hojas de vida a empresas o empleadores</item>
         <item>Visitó, llevó o envió hojas de vida a bolsas de empleo o intermediarios</item>
@@ -532,16 +536,16 @@
         <item>No</item>
         <item>No sabe,no informa</item>
     </string-array>
-    <string name="asalariados_22">En los últimos 12 meses Ud. recibió: (si no sabe estimar el monto escriba 98)</string>
-    <string name="asalariados_22_a">Prima de servicios</string>
-    <string name="asalariados_22_b">Prima de navidad</string>
-    <string name="asalariados_22_c">Prima de vacaciones</string>
-    <string name="asalariados_22_d">Viáticos permanentes y/o bonos anuales</string>
-    <string name="asalariados_22_e">Pago por accidentes de trabajo</string>
-    <string name="asalariados_23">¿La semana pasada Ud. trabajó horas extra remuneradas?</string>
-    <string name="asalariados_21">El mes pasado Ud. recibió: (si no sabe el valor correcto coloque 98)</string>
+    <string name="asalariados_21">21. El mes pasado Ud. recibió: (si no sabe el valor correcto coloque 98)</string>
     <string name="asalariados_21_a">Primas (técnica, de antigüedad, clima, orden público, otras, etc.)</string>
     <string name="asalariados_21_b">Algún tipo de bonificación de carácter mensual</string>
+    <string name="asalariados_22">22. En los últimos 12 meses Ud. recibió: (si no sabe estimar el monto escriba 98)</string>
+    <string name="asalariados_22_a">22a. Prima de servicios</string>
+    <string name="asalariados_22_b">22b. Prima de navidad</string>
+    <string name="asalariados_22_c">22c. Prima de vacaciones</string>
+    <string name="asalariados_22_d">22d. Viáticos permanentes y/o bonos anuales</string>
+    <string name="asalariados_22_e">22e. Pago por accidentes de trabajo</string>
+    <string name="asalariados_23">23. ¿La semana pasada Ud. trabajó horas extra remuneradas?</string>
 
 
     <!--ocupados independientes Arrays-->
@@ -644,6 +648,11 @@
     <string name="asalariados_independientes_14_f">Preparando a sus hijos para que lo mantengan en su vejez</string>
     <string name="asalariados_independientes_14_g">Otro</string>
     <string name="asalariados_independientes_14_h">Nada</string>
+    <string name="en_cu_nto_estima_lo_que_recibi">¿En cuánto estima lo que recibió?</string>
+    <string name="cuanto_recibi">¿Cuánto recibió?</string>
+    <string name="valor_mensual">Valor mensual $</string>
+    <string name="cuantas">¿Cuántas?</string>
+    <string name="cual">¿Cual?</string>
 
     <!--ocupados trabajos secundarios Arrays-->
     <string-array name="secundario_3">
@@ -729,6 +738,10 @@
         <item>Jornalero o peón</item>
         <item>Otro, ¿cual?</item>
     </string-array>
+    <string-array name="desocupados_4_array">
+        <item>Primera vez</item>
+        <item>Trabajó antes</item>
+    </string-array>
     <string-array name="desocupados_9">
         <item>Trabaja solo</item>
         <item>2 a 3 personas</item>
@@ -755,7 +768,7 @@
         <item>No lo ha considerado</item>
         <item>Otro,¿cual?</item>
     </string-array>
-    <string-array name="desocupados_12">
+    <string-array name="desocupados_12_array">
         <item>Aportar a un fondo de pensiones obligatorias</item>
         <item>Aportar a un fondo de pensiones voluntarias</item>
         <item>Ahorrando</item>

@@ -105,7 +105,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
             }
         });
     }
-
+/*
     private void save() {
         String dato = "";
         Spinner secundario_spinner = (Spinner) view.findViewById(R.id.secundario_1_spinner);
@@ -127,5 +127,5 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 48);
 
     }
-
+*/
 }

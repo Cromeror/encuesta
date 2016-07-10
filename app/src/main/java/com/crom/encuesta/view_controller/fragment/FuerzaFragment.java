@@ -348,8 +348,8 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
             }
         });
     }
+    FuerzaTrabajo fuerzaTrabajo = new FuerzaTrabajo();
     public boolean save(int op){
-        FuerzaTrabajo fuerzaTrabajo = new FuerzaTrabajo();
         ((MainActivity)getActivity()).getMiembro().setFuerzaTrabajo(fuerzaTrabajo);
         Spinner d1 = (Spinner) view.findViewById(R.id.fuerza_1);
 
@@ -368,14 +368,12 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
         switch (op){
             case 0:
                 fuerzaTrabajo = new FuerzaTrabajo();
-                Log.i("FUERZA0", fuerzaTrabajo.toString());
                 break;
             case 1:
                 if(d1.getSelectedItemPosition() == 6){
                     fuerzaTrabajo.setD1(((EditText) view.findViewById(R.id.et1)).getText().toString());
                 }else
                     fuerzaTrabajo.setD1(d1.getSelectedItem().toString());
-                Log.i("FUERZA1", fuerzaTrabajo.toString());
                 break;
             case 2:
                 fuerzaTrabajo.setD1(d1.getSelectedItem().toString());

@@ -14,7 +14,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/ocupado49"
-            android:id="@+id/textView13" />
+            android:id="@+id/textView13"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <requestFocus/>
+        </TextView>
 
         <Spinner
             android:layout_width="match_parent"

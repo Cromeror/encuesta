@@ -30,6 +30,7 @@ public class ActionFormFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_action_form, container, false);
+        getActivity().setTitle(R.string.app_name);
         next = (Button) view.findViewById(R.id.finish_btn);
         miembro = (Button) view.findViewById(R.id.miembro_btn);
         hogar = (Button) view.findViewById(R.id.hogar_btn);

@@ -1,23 +1,28 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
+import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Desocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.custom.DialogBuilder;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -78,9 +83,9 @@ public class DesocupadosFragment extends Fragment {
         adapter11.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         des_11.setAdapter(adapter11);
 
-        Spinner des_12 = (Spinner) view.findViewById(R.id.spiner_desocupados_12);
+        Spinner des_12 = (Spinner) view.findViewById(R.id.spinner_desocupados_12);
         ArrayAdapter<CharSequence> adapter12 = ArrayAdapter.createFromResource(getActivity(),
-                R.array.desocupados_12, android.R.layout.simple_spinner_item);
+                R.array.desocupados_12_array, android.R.layout.simple_spinner_item);
         adapter12.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         des_12.setAdapter(adapter12);
 
@@ -88,10 +93,9 @@ public class DesocupadosFragment extends Fragment {
         des_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==8){
+                if (position == 8) {
                     ed3.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed3.setVisibility(View.GONE);
                 }
             }
@@ -105,10 +109,9 @@ public class DesocupadosFragment extends Fragment {
         des_8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==8){
+                if (position == 8) {
                     ed8.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed8.setVisibility(View.GONE);
                 }
             }
@@ -123,10 +126,9 @@ public class DesocupadosFragment extends Fragment {
         des_11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==7){
+                if (position == 7) {
                     ed11.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed11.setVisibility(View.GONE);
                 }
             }
@@ -141,10 +143,9 @@ public class DesocupadosFragment extends Fragment {
         des_12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==6){
+                if (position == 6) {
                     ed12.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed12.setVisibility(View.GONE);
                 }
             }
@@ -156,96 +157,123 @@ public class DesocupadosFragment extends Fragment {
         });
 
         final EditText ed13 = (EditText) view.findViewById(R.id.desocupados_13);
-        Switch swt13 = (Switch) view.findViewById(R.id.switch_desocupados_13);
-        swt13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Spinner spinner13 = (Spinner) view.findViewById(R.id.spinner_desocupados_13);
+        ArrayAdapter<CharSequence> adapter13 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.si_no, android.R.layout.simple_spinner_item);
+        adapter13.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner13.setAdapter(adapter13);
+        spinner13.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+            public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
+                if (i == 0) {
                     ed13.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed13.setVisibility(View.GONE);
                 }
             }
-        });
-        Switch swt4 = (Switch) view.findViewById(R.id.switch_desocupados_4);
-        swt4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                   // save();
-                    transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
-                }
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+
+        Spinner spinner4 = (Spinner) view.findViewById(R.id.spinner_desocupados_4);
+        ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.desocupados_4_array, android.R.layout.simple_spinner_item);
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner4.setAdapter(adapter4);
+        spinner4.setSelection(1);
+        spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View v, int position, long l) {
+                switch (position) {
+                    case 0:
+                        save(4);
+                        transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
+                        break;
+                    case 1:
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        final TextView desocupado12 = (TextView) view.findViewById(R.id.textview_desocupados_12);
+        desocupado12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogBuilder dialogBuilder = new DialogBuilder();
+                desocupado.setF12(callBackList);
+                dialogBuilder.MultipleChoiceList(callBackList, desocupado12, getActivity(), "", R.array.desocupados_12_array);
+            }
+        });
+        desocupado12.setBackgroundColor(Color.RED);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //save();
-                transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
+                save(1);
+                //transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
     }
+private ArrayList <String> callBackList = new ArrayList();
+    private Desocupado desocupado = new Desocupado();
 
-    private void save() {
-        String dato = "";
-        EditText desocupado = (EditText) view.findViewById(R.id.desocupados_1);
-        dato = desocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 1);
-        desocupado = (EditText) view.findViewById(R.id.desocupados_2);
-        dato = desocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 2);
+    private boolean save(int caso) {
+        ((MainActivity)getActivity()).getMiembro().setDesocupado(desocupado);
+        desocupado.setF1(((EditText) view.findViewById(R.id.desocupados_1)).getText().toString());
+        desocupado.setF2(((EditText) view.findViewById(R.id.desocupados_2)).getText().toString());
         Spinner desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
         if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
-            dato = desocupados_spinner.getSelectedItem().toString();
+            desocupado.setF3(desocupados_spinner.getSelectedItem().toString());
         else {
-            desocupado = (EditText) view.findViewById(R.id.desocupados_3);
-            dato = desocupado.getText().toString();
+            desocupado.setF3(((EditText) view.findViewById(R.id.desocupados_3)).getText().toString());
         }
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 3);
-        Switch dsocupados_switch = (Switch) view.findViewById(R.id.switch_desocupados_4);
-        if (dsocupados_switch.isChecked()) {
-            vivienda.getLastHogar().getLastMiembro().getOcupado().setE("si", 4);
-        } else vivienda.getLastHogar().getLastMiembro().getOcupado().setE("no", 4);
-        desocupado = (EditText) view.findViewById(R.id.desocupados_5);
-        dato = desocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 5);
-        desocupado = (EditText) view.findViewById(R.id.desocupados_6);
-        dato = desocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 6);
-        desocupado = (EditText) view.findViewById(R.id.desocupados_7);
-        dato = desocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 7);
+        if (caso == 4) {
+            Spinner desocupado4 = (Spinner) view.findViewById(R.id.spinner_desocupados_4);
+            desocupado.setF4(desocupado4.getSelectedItem().toString());
+            if (desocupado4.getSelectedItemPosition() == 0) {
+                Log.i("Desocupado",desocupado.toString());
+                return true;
+            }
+        }
+
+
+        desocupado.setF5(((EditText) view.findViewById(R.id.desocupados_5)).getText().toString());
+        desocupado.setF6(((EditText) view.findViewById(R.id.desocupados_6)).getText().toString());
+        desocupado.setF7(((EditText) view.findViewById(R.id.desocupados_7)).getText().toString());
+
         desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_8);
         if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
-            dato = desocupados_spinner.getSelectedItem().toString();
+            desocupado.setF8(desocupados_spinner.getSelectedItem().toString());
         else {
-            desocupado = (EditText) view.findViewById(R.id.desocupados_8);
-            dato = desocupado.getText().toString();
+            desocupado.setF8(((EditText) view.findViewById(R.id.desocupados_8)).getText().toString());
         }
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 8);
-        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_9);
-        dato = desocupados_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 9);
-        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_10);
-        dato = desocupados_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 10);
-        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_11);
-        if (!desocupados_spinner.getSelectedItem().toString().equalsIgnoreCase("otro"))
-            dato = desocupados_spinner.getSelectedItem().toString();
-        else {
-            desocupado = (EditText) view.findViewById(R.id.desocupados_11);
-            dato = desocupado.getText().toString();
-        }
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 11);
-        desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_12);
-        dato = desocupados_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getDesocupado().setF(dato, 12);
-        dsocupados_switch = (Switch) view.findViewById(R.id.switch_desocupados_13);
-        if (dsocupados_switch.isChecked()) {
-            vivienda.getLastHogar().getLastMiembro().getOcupado().setE("si", 13);
-        } else vivienda.getLastHogar().getLastMiembro().getOcupado().setE("no", 13);
+        desocupado.setF9(((Spinner) view.findViewById(R.id.spiner_desocupados_9)).getSelectedItem().toString());
+        desocupado.setF10(((Spinner) view.findViewById(R.id.spiner_desocupados_10)).getSelectedItem().toString());
+        Spinner spinner11 = (Spinner) view.findViewById(R.id.spiner_desocupados_11);
+        if (spinner11.getSelectedItemPosition()==8){
+            desocupado.setF11(((EditText) view.findViewById(R.id.desocupados_11)).getText().toString());
+        }else
+            desocupado.setF11(spinner11.getSelectedItem().toString());
 
+       /* Spinner spinner12 =  (Spinner) view.findViewById(R.id.spinner_desocupados_12);
+        if (spinner12.getSelectedItemPosition()==6)
+            desocupado.setF12(((EditText) view.findViewById(R.id.desocupados_12)).getText().toString());
+        else {
+            desocupado.setF12(spinner12.getSelectedItem().toString());
+        }*/
+
+        Spinner spinner13 = (Spinner) view.findViewById(R.id.spinner_desocupados_13);
+        if(spinner13.getSelectedItemPosition()==0)
+            desocupado.setF13(((EditText) view.findViewById(R.id.desocupados_13)).getText().toString());
+        else desocupado.setF13(spinner13.getSelectedItem().toString());
+        desocupado.setMiembroId(((MainActivity)getActivity()).getMiembro().getId());
+        Log.i("Desocupado",desocupado.toString());
+        return true;
     }
 
 }

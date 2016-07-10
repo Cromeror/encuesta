@@ -74,7 +74,6 @@ public class MiembroDAO implements DAO<Miembro, String> {
         values.put(estadoCivil, miembro.getEstadoCivil());
         Log.i("MiembroDAO", "Nuevo registro Miembro" );
         if((db.insert( TABLE_MIEMBRO , null, values ) != -1)){
-
         }else return null;
         return miembro;
     }

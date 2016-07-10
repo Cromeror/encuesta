@@ -54,7 +54,7 @@ public class IdentificacionFragment extends Fragment {
                 if(((MainActivity)getActivity()).isActivado()){
                     save();
                 }else {
-                    transaction.replace(R.id.contenedor, new ViviendaFragment()).commit();
+                    transaction.replace(R.id.contenedor, new CaracteristicasViviendaFragment()).commit();
                 }
             }
         });
@@ -74,7 +74,7 @@ public class IdentificacionFragment extends Fragment {
             vivienda.setBarrio(barrio);
             vivienda.setSector(sector);
             vivienda.setDireccion(direccion);
-            transaction.replace(R.id.contenedor, new ViviendaFragment()).commit();
+            transaction.replace(R.id.contenedor, new CaracteristicasViviendaFragment()).commit();
         } else {
             (new DialogBuilder()).dialogIncompleteField(getActivity(), "Recuerde no debe dejar campos vacios");
         }

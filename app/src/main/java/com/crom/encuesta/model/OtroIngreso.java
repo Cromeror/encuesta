@@ -6,18 +6,36 @@
 package com.crom.encuesta.model;
 
 /**
- *
  * @author cristobal
  */
 public class OtroIngreso {
 
+    private String id, miembroId;
     private String[] f;
 
     public OtroIngreso() {
+        id = "";
+        miembroId = "";
         f = new String[4];
         for (int i = 0; i < f.length; i++) {
             f[i] = "";
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getH(int number) {
@@ -31,6 +49,7 @@ public class OtroIngreso {
     @Override
     public String toString() {
         String string = "";
+        string += id + ", " + miembroId + ", ";
         for (int i = 0; i < f.length; i++) {
             if (i == f.length - 1) {
                 string += f[i];

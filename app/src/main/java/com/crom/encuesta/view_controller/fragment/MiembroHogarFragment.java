@@ -102,7 +102,7 @@ public class MiembroHogarFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (((MainActivity) getActivity()).isActivado()){
-                    if (Validador.validarSpinner(generales1, generales5)
+                    if (Validador.isEmptySpinners(generales1, generales5)
                             || Validador.isEmptyEditText(editTextEdad,nacimiento)
                             || textView.getText().toString().equals(getString(R.string.touch_me))) {
                         (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
@@ -119,7 +119,7 @@ public class MiembroHogarFragment extends Fragment {
                             Log.i("Vivienda toString", ((MainActivity)getActivity()).toString());
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                         }else {
-                            if(!Validador.validarSpinner(generales6)){
+                            if(!Validador.isEmptySpinners(generales6)){
                                 Miembro miembro = new Miembro();
                                 ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
                                 miembro.setSexo(generales1.getSelectedItem().toString());

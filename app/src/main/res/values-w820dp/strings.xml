@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="valor_mensual">Valor mensual $</string>
+    <string name="cual">¿Cual?</string>
+</resources>

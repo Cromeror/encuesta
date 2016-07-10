@@ -14,15 +14,33 @@ import java.util.List;
  */
 public class TIC {
 
-    private String i1, i2, i5;
+    private String i1, i2, i5, id, miembroId;
     private ArrayList<String> i3, i4;
 
     public TIC() {
+        id ="";
+        miembroId ="";
         i1 = "";
         i2 = "";
         i3 = new ArrayList<String>();
         i4 = new ArrayList<String>();
         i5 = "";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getI1() {
@@ -86,4 +104,16 @@ public class TIC {
         return strings;
     }
 
+    @Override
+    public String toString() {
+        return "TIC{" +
+                "id='" + id + '\'' +
+                ", miembroId='" + miembroId + '\'' +
+                ", i1='" + i1 + '\'' +
+                ", i2='" + i2 + '\'' +
+                ", i3=" + i3 + '\''+
+                ", i4=" + i4 + '\''+
+                ", i5='" + i5  +
+                '}';
+    }
 }

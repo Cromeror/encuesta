@@ -17,7 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -27,7 +27,7 @@ public class OcupadoFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
+    private Ocupado ocupado;
 
     public OcupadoFragment() {
         // Required empty public constructor
@@ -40,11 +40,11 @@ public class OcupadoFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_ocupado, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarE));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        vivienda = ((MainActivity) getActivity()).getVivienda();
+        ocupado = ((MainActivity) getActivity()).getOcupado();
 
         next = (Button) view.findViewById(R.id.next_gnrl_btn);
         init();
-        Spinner ocupado_4 = (Spinner) view.findViewById(R.id.ocupado_4);
+        Spinner ocupado_4 = (Spinner) view.findViewById(R.id.e4spinner);
         ArrayAdapter<CharSequence> spinner_adapter_4 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.ocupados_4, android.R.layout.simple_spinner_item);
         spinner_adapter_4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -56,13 +56,13 @@ public class OcupadoFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (scountry.equalsIgnoreCase("no")) {
-                    Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
+                    Spinner ocupado_5 = (Spinner) view.findViewById(R.id.e5spinner);
                     Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
                     Spinner ocupado_7 = (Spinner) view.findViewById(R.id.ocupado_7);
                     Spinner ocupado_7a = (Spinner) view.findViewById(R.id.ocupado_7a);
                     EditText ocupado_8 = (EditText) view.findViewById(R.id.ocupado_8);
                     TextView textView_9_text = (TextView) view.findViewById(R.id.ocupado_9_texto);
-                    EditText ocupado_9 = (EditText) view.findViewById(R.id.ocupado_9);
+                    Spinner ocupado_9 = (Spinner) view.findViewById(R.id.ocupado_9);
                     CheckBox ocupado_11_a = (CheckBox) view.findViewById(R.id.ocupado_10_a);
                     CheckBox ocupado_11_b = (CheckBox) view.findViewById(R.id.ocupado_10_b);
                     CheckBox ocupado_11_c = (CheckBox) view.findViewById(R.id.ocupado_10_c);
@@ -91,13 +91,13 @@ public class OcupadoFragment extends Fragment {
                     ocupado_11_text.setVisibility(View.GONE);
 
                 } else {
-                    Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
+                    Spinner ocupado_5 = (Spinner) view.findViewById(R.id.e5spinner);
                     Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
                     Spinner ocupado_7 = (Spinner) view.findViewById(R.id.ocupado_7);
                     Spinner ocupado_7a = (Spinner) view.findViewById(R.id.ocupado_7a);
                     EditText ocupado_8 = (EditText) view.findViewById(R.id.ocupado_8);
                     TextView textView_9_text = (TextView) view.findViewById(R.id.ocupado_9_texto);
-                    EditText ocupado_9 = (EditText) view.findViewById(R.id.ocupado_9);
+                    Spinner ocupado_9 = (Spinner) view.findViewById(R.id.ocupado_9);
                     CheckBox ocupado_11_a = (CheckBox) view.findViewById(R.id.ocupado_10_a);
                     CheckBox ocupado_11_b = (CheckBox) view.findViewById(R.id.ocupado_10_b);
                     CheckBox ocupado_11_c = (CheckBox) view.findViewById(R.id.ocupado_10_c);
@@ -132,7 +132,15 @@ public class OcupadoFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
-        Spinner ocupado_5 = (Spinner) view.findViewById(R.id.ocupado_5);
+
+        Spinner ocupado_9 = (Spinner) view.findViewById(R.id.ocupado_9);
+        ArrayAdapter spinner_adapter_9 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.sino_array, android.R.layout.simple_spinner_item);
+        spinner_adapter_9.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ocupado_9.setAdapter(spinner_adapter_9);
+
+
+        Spinner ocupado_5 = (Spinner) view.findViewById(R.id.e5spinner);
         ArrayAdapter spinner_adapter_5 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.ocupados_5, android.R.layout.simple_spinner_item);
         spinner_adapter_5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -141,12 +149,12 @@ public class OcupadoFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
-                if(position==1|| position==2){
+                if (position == 1 || position == 2) {
                     Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
                     TextView ocupado_6_text = (TextView) view.findViewById(R.id.ocupado_6_texto);
                     ocupado_6.setVisibility(View.GONE);
                     ocupado_6_text.setVisibility(View.GONE);
-                }else{
+                } else {
                     Spinner ocupado_6 = (Spinner) view.findViewById(R.id.ocupado_6);
                     TextView ocupado_6_text = (TextView) view.findViewById(R.id.ocupado_6_texto);
                     ocupado_6.setVisibility(View.VISIBLE);
@@ -184,7 +192,7 @@ public class OcupadoFragment extends Fragment {
                 // On selecting a spinner item
                 String scountry = adapter.getItemAtPosition(position).toString();
                 // Showing selected spinner item
-                if (position==1 || position==2) {
+                if (position == 1 || position == 2) {
                     Spinner ocupado_7a = (Spinner) view.findViewById(R.id.ocupado_7a);
                     TextView ocupado_7a_text = (TextView) view.findViewById(R.id.ocupado_7a_texto);
                     EditText ocupado_8 = (EditText) view.findViewById(R.id.ocupado_8);
@@ -226,12 +234,14 @@ public class OcupadoFragment extends Fragment {
                 if (scountry.equalsIgnoreCase("Trabajador por cuenta propia") || scountry.equalsIgnoreCase("Otro")) {
                     //save();
                     ((LinearLayout) view.findViewById(R.id.ocupado12a)).setVisibility(View.VISIBLE);
-                }else {
+                    next.setVisibility(View.GONE);
+                } else {
                     ((LinearLayout) view.findViewById(R.id.ocupado12a)).setVisibility(View.GONE);
+                    next.setVisibility(View.VISIBLE);
                 }
                 if (scountry.equalsIgnoreCase("Trabajador familiar sin remuneración")) {
-                    //save();
-                    transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
+                    if (save())
+                        transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
                 }
 
 
@@ -256,63 +266,64 @@ public class OcupadoFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                save();
-                transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
+                if (save())
+                    transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });
     }
 
-    private void save() {
-        EditText ocupado = (EditText) view.findViewById(R.id.que_hace_trabajo);
-        String dato = ocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 1);
-        ocupado = (EditText) view.findViewById(R.id.nombre_empresa_negocio);
-        dato = ocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 2);
-        ocupado = (EditText) view.findViewById(R.id.serivios_empresa_dedica);
-        dato = ocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 3);
-        Spinner ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_4);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 4);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_4);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 4);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_5);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 5);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_6);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 6);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_7);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 7);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_7a);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 8);
-        ocupado = (EditText) view.findViewById(R.id.ocupado_8);
-        dato = ocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 9);
-        EditText ocupado_switch = (EditText) view.findViewById(R.id.ocupado_9);
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 10);
-        dato = "";
+    private boolean save() {
+        ocupado.setE1(((EditText) view.findViewById(R.id.e1)).getText().toString());
+        ocupado.setE2(((EditText) view.findViewById(R.id.e2)).getText().toString());
+        ocupado.setE3(((EditText) view.findViewById(R.id.e3)).getText().toString());
+
+        Spinner e4Spinner = (Spinner) view.findViewById(R.id.e4spinner);
+        ocupado.setE4(e4Spinner.getSelectedItem().toString());
+        if (e4Spinner.getSelectedItemPosition() == 1) {
+            return save11_12();
+        }
+        Spinner e5Spinner = (Spinner) view.findViewById(R.id.e5spinner);
+        ocupado.setE5(e5Spinner.getSelectedItem().toString());
+        if (e5Spinner.getSelectedItemPosition() > 0) {
+            return save7();
+        }
+        Spinner e6Spinner = (Spinner) view.findViewById(R.id.ocupado_6);
+        ocupado.setE6(e6Spinner.getSelectedItem().toString());
+        return save7();
+    }
+
+    private boolean save7() {
+        Spinner e7Spinner = (Spinner) view.findViewById(R.id.ocupado_7);
+        ocupado.setE7(e7Spinner.getSelectedItem().toString());
+        if (e7Spinner.getSelectedItemPosition() > 0) {
+            return save9();
+        }
+        Spinner e7aSpinner = (Spinner) view.findViewById(R.id.ocupado_7a);
+        ocupado.setE7a(e7aSpinner.getSelectedItem().toString());
+        ocupado.setE8(((EditText) view.findViewById(R.id.ocupado_8)).getText().toString());
+        return save9();
+    }
+
+    private boolean save9() {
+        Spinner e9Spinner = (Spinner) view.findViewById(R.id.ocupado_9);
+        ocupado.setE9(e9Spinner.getSelectedItem().toString());
         CheckBox checkBox1 = (CheckBox) view.findViewById(R.id.ocupado_10_a);
         CheckBox checkBox2 = (CheckBox) view.findViewById(R.id.ocupado_10_b);
         CheckBox checkBox3 = (CheckBox) view.findViewById(R.id.ocupado_10_c);
-        if (checkBox1.isChecked())
-            dato = checkBox1.getText().toString();
-        else if (checkBox2.isChecked())
-            dato = dato + "," + checkBox2.getText().toString();
-        else if (checkBox3.isChecked()) dato = dato + "," + checkBox3.getText().toString();
-        if (",".equalsIgnoreCase(String.valueOf(dato.charAt(0)))) dato = dato.substring(1);
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 11);
-        ocupado = (EditText) view.findViewById(R.id.tiempo_enla_empresa);
-        dato = ocupado.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 12);
-        ocupado_spinner = (Spinner) view.findViewById(R.id.ocupado_12);
-        dato = ocupado_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 13);
+        ocupado.setE10a(checkBox1.getText().toString());
+        ocupado.setE10b(checkBox2.getText().toString());
+        ocupado.setE10c(checkBox3.getText().toString());
+        return save11_12();
     }
 
+    private boolean save11_12() {
+        ocupado.setE11(((EditText) view.findViewById(R.id.e11)).getText().toString());
+        Spinner e12Spinner = (Spinner) view.findViewById(R.id.ocupado_12);
+        if (e12Spinner.getSelectedItemPosition() == 8) {
+            ocupado.setE12(((EditText) view.findViewById(R.id.e12editText)).getText().toString());
+        } else
+            ocupado.setE12(e12Spinner.getSelectedItem().toString());
+        return true;
+    }
 
 }

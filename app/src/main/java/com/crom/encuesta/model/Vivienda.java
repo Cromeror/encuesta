@@ -190,7 +190,7 @@ public class Vivienda{
         return null;
     }
 
-    /*public String toString() {
+    public String toString() {
         StringBuilder output = new StringBuilder();
         StringBuilder result = new StringBuilder();
         output.append(departamento);
@@ -237,33 +237,14 @@ public class Vivienda{
                         output4.append(string);
                         output4.append("\n");
                         result.append(output4);
-                        Log.i("#####","#####");
                     }
                 }
+                //output3.append("\n");
+                //result.append(output3);
             }
 
         }
         return result.toString();
-    }*/
-
-    @Override
-    public String toString() {
-        return "Vivienda{" +
-                "id='" + id + '\'' +
-                ", departamento='" + departamento + '\'' +
-                ", municipio='" + municipio + '\'' +
-                ", zona='" + zona + '\'' +
-                ", barrio='" + barrio + '\'' +
-                ", sector='" + sector + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", tipoVivienda='" + tipoVivienda + '\'' +
-                ", propiedadVivienda='" + propiedadVivienda + '\'' +
-                ", cuantoPagan='" + cuantoPagan + '\'' +
-                ", materialPisos='" + materialPisos + '\'' +
-                ", materialParedesExteriores='" + materialParedesExteriores + '\'' +
-                ", cuartos=" + cuartos +
-                ", servicios=" + servicios +
-                ", hogares=" + hogares +
-                '}';
     }
+
 }

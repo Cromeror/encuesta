@@ -104,7 +104,7 @@ public class CalidadEmpleoFragment extends Fragment {
             }
         });
     }
-
+/*
     private void save() {
         String dato = "a.";
         Spinner calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57a);
@@ -131,5 +131,5 @@ public class CalidadEmpleoFragment extends Fragment {
         vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 61);
 
     }
-
+*/
 }

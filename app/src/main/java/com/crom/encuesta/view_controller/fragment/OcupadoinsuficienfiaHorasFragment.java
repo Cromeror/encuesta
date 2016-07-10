@@ -149,7 +149,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
             }
         });
     }
-
+/*
     private void save() {
         String dato = "";
         Spinner insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_1);
@@ -197,6 +197,6 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
 
 
     }
-
+*/
 
 }

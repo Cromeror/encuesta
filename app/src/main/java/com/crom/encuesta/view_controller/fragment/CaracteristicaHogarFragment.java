@@ -99,7 +99,7 @@ public class CaracteristicaHogarFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (((MainActivity)getActivity()).isActivado()){
-                    if (!Validador.validarSpinner(spinner3, spinner4, spinner5, spinner6,  spinner7 , spinner8)
+                    if (!Validador.isEmptySpinners(spinner3, spinner4, spinner5, spinner6,  spinner7 , spinner8)
                             && !Validador.isEmptyMultiChoice(textView2)) {
                         hogar.setAguaConsumo(spinner3.getSelectedItem().toString());
                         hogar.setAguaOtroUso(spinner4.getSelectedItem().toString());

@@ -92,6 +92,12 @@
                 android:text="@string/tics_3g"
                 android:id="@+id/cbox_tics_3g" />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cual otro"
+                android:id="@+id/et3"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,6 +140,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tics_4g"
                 android:id="@+id/cbox_tics_4g" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cual otro"
+                android:id="@+id/et4"/>
 
             <TextView
                 android:layout_width="match_parent"

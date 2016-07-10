@@ -29,7 +29,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ViviendaFragment extends Fragment {
+public class CaracteristicasViviendaFragment extends Fragment {
     private View view;
     private FragmentTransaction transaction;
     private Vivienda vivienda;
@@ -40,7 +40,7 @@ public class ViviendaFragment extends Fragment {
     private TextView textView5;
     private DialogBuilder builder = new DialogBuilder();
 
-    public ViviendaFragment() {
+    public CaracteristicasViviendaFragment() {
         // Required empty public constructor
     }
 
@@ -129,7 +129,7 @@ public class ViviendaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DialogBuilder dialogBuilder = new DialogBuilder();
-                dialogBuilder.MultipleChoiceList(ViviendaFragment.class, textView8, getActivity(), "", R.array.servicios_vivienda_array);
+                dialogBuilder.MultipleChoiceList(CaracteristicasViviendaFragment.class, textView8, getActivity(), "", R.array.servicios_vivienda_array);
             }
         });
         textView8.setBackgroundColor(Color.RED);
@@ -139,7 +139,7 @@ public class ViviendaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (((MainActivity) getActivity()).isActivado()) {
-                    if (!Validador.validarSpinner(spinner1, spinner2, spinner6, spinner7) &&
+                    if (!Validador.isEmptySpinners(spinner1, spinner2, spinner6, spinner7) &&
                             !Validador.isEmptyEditText(editText4, ((EditText) view.findViewById(R.id.mensualidad_arriendo)))
                             && !((TextView) view.findViewById(R.id.personas_cuarto_vivienda)).equals("Informacion persona por cuarto")
                             && !Validador.isEmptyMultiChoice(textView8)) {

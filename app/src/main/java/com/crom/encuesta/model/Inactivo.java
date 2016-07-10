@@ -12,12 +12,31 @@ package com.crom.encuesta.model;
 public class Inactivo {
 
     private String g[];
+    private String id, miembroId;
 
     public Inactivo() {
-        g = new String[9];
+        id = "";
+        miembroId = "";
+        g = new String[10];
         for (int i = 0; i < g.length; i++) {
             g[i] = "";
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMiembroId() {
+        return miembroId;
+    }
+
+    public void setMiembroId(String miembroId) {
+        this.miembroId = miembroId;
     }
 
     public String getG(int number) {

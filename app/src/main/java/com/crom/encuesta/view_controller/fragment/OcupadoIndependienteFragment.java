@@ -167,7 +167,7 @@ public class OcupadoIndependienteFragment extends Fragment {
             }
         });
     }
-
+/*
     private void save() {
         String dato = "";
         Spinner independientes_spinner = (Spinner) view.findViewById(R.id.independientes_1_spinner);
@@ -199,5 +199,5 @@ public class OcupadoIndependienteFragment extends Fragment {
         }
         vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 29);
     }
-
+*/
 }

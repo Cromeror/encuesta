@@ -118,6 +118,30 @@ public class EducacionFragment extends Fragment {
         return view;
     }
 
+    private void init() {
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (save(true)) {
+                    educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
+                    EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
+                    int edad = 0;
+                    try {
+                        edad = Integer.parseInt(((MainActivity) getActivity()).getMiembro().getEdad());
+                    } catch (Exception e) {
+                    }
+                    if (edad > 12) {
+                        transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
+                    } else if (edad > 5) {
+                        transaction.replace(R.id.contenedor, new TicsFragment()).commit();
+                    } else {
+                        transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
+                    }
+                }
+            }
+        });
+    }
+
     private boolean save(boolean b) {
         if (nivelEducativo.getSelectedItemPosition() == 0
                 || leerEscribir.getSelectedItemPosition() == 0 || estudia.getSelectedItemPosition() == 0) {
@@ -139,7 +163,7 @@ public class EducacionFragment extends Fragment {
         if (contentEstablecimiento.getVisibility() == View.VISIBLE) {
             educacion.setEstablecimientoOficial(spinnerEstablecimiento.getSelectedItem().toString());
         }
-        if (b){
+        if (b) {
             educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
         }
         educacion.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
@@ -147,16 +171,4 @@ public class EducacionFragment extends Fragment {
         return true;
     }
 
-    private void init() {
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (save(true)) {
-                    educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
-                    EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
-                    transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
-                }
-            }
-        });
-    }
 }

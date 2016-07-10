@@ -21,7 +21,7 @@
         </TextView>
 
         <EditText
-            android:id="@+id/que_hace_trabajo"
+            android:id="@+id/e1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Escriba sus observaciones"
@@ -34,7 +34,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
-            android:id="@+id/nombre_empresa_negocio"
+            android:id="@+id/e2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Escriba sus observaciones"
@@ -47,7 +47,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
-            android:id="@+id/serivios_empresa_dedica"
+            android:id="@+id/e3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Escriba sus observaciones"
@@ -61,7 +61,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/ocupado_4"
+            android:id="@+id/e4spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -78,13 +78,13 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/ocupado_5"
+            android:id="@+id/e5spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
             android:id="@+id/ocupado_6_texto"
@@ -158,12 +158,10 @@
             android:text="@string/esta_contento_contrato"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <EditText
+        <Spinner
             android:id="@+id/ocupado_9"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Escriba sus observaciones"
-            android:lines="4" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/ocupado_10_texto"
@@ -210,7 +208,7 @@
                 android:layout_weight="1">
 
                 <EditText
-                    android:id="@+id/tiempo_enla_empresa"
+                    android:id="@+id/e11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -233,7 +231,7 @@
             android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -242,7 +240,7 @@
             android:id="@+id/ocupado12a">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/e12editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"

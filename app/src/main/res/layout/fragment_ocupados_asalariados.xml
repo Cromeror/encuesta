@@ -12,23 +12,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
             android:text="@string/medio_consiguio_empleo"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <requestFocus/>
+            </TextView>
 
         <Spinner
+            android:id="@+id/asalariado_13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_1"
-            android:layout_gravity="center_vertical"></Spinner>
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
+            android:id="@+id/asalariado_13_edittext"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/otro_1" />
+            android:hint="@string/cual"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,496 +44,458 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/cuanto_gano_mes_pasado" />
+                android:text="@string/asalariados_14"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
             <EditText
+                android:id="@+id/asalariado_14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/asalariado_2"
-                android:layout_centerHorizontal="true" />
+                android:hint="@string/valor_mensual"
+                android:inputType="number" />
         </LinearLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/mes_pasado_horas_extras" />
+            android:text="@string/mes_pasado_horas_extras"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariado_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/asalariado_3" />
+            android:hint="@string/cuanto_recibi"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
             android:text="@string/asalariados_15a"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_15a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_4"
-            android:layout_gravity="center_vertical"></Spinner>
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
             android:text="@string/alimentos_parte_pago"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_5"
-            android:layout_gravity="center_vertical"></Spinner>
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
+            android:id="@+id/asalariado_16_otros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/asalariado_5_editText" />
+            android:hint="@string/en_cu_nto_estima_lo_que_recibi"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
             android:text="@string/aparte_de_salario_recibio_vivienda"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_6"
-            android:layout_gravity="center_vertical"></Spinner>
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
+            android:id="@+id/asalariado_17_otros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/asalariado_6_editText" />
+            android:hint="@string/en_cu_nto_estima_lo_que_recibi"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/usa_transporte_de_empresa" />
+            android:text="@string/usa_transporte_de_empresa"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_horizontal"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_7"
-            android:layout_gravity="center_horizontal" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
+            android:id="@+id/asalariado_18_otros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_gravity="center_horizontal"
             android:ems="10"
-            android:id="@+id/asalariado_7_editText"
-            android:layout_gravity="center_horizontal" />
+            android:hint="@string/en_cu_nto_estima_lo_que_recibi"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
             android:text="@string/aparte_de_salario_recibio_pago_especie"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_8"
-            android:layout_gravity="center_vertical"></Spinner>
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
+            android:id="@+id/asalariado_19_otros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_gravity="center_horizontal"
             android:ems="10"
-            android:id="@+id/asalariado_8_editText"
-            android:layout_gravity="center_horizontal" />
+            android:hint="@string/en_cu_nto_estima_lo_que_recibi"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/paddin_bottom"
             android:text="@string/subsidio_mes_pasado"
-            android:layout_gravity="center_vertical" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Switch
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/alimentacion_switch"
-            android:id="@+id/alimentacion_switch" />
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/asalariado20a"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Switch
+        <EditText
+            android:id="@+id/asalariado_20a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/trasnporte_switch"
-            android:id="@+id/trasnporte_switch" />
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/familiar_switch"
-            android:id="@+id/familiar_switch" />
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/educativo_switch"
-            android:id="@+id/educativo_switch" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:ems="10"
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/incluyo_este_valor"
-            android:id="@+id/textView2" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/alimentacion_switch"
-            android:id="@+id/alimentacion_textView" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_20a2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/alimentacion_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/alimentacion_editText"
-            android:layout_gravity="center_horizontal" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
+            android:id="@+id/trasnporte_switch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/trasnporte_switch"
-            android:id="@+id/transporte_textView" />
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/asalariado20b"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/asalariado_20b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:ems="10"
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/incluyo_este_valor"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_20b2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/trasnporte_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/transporte_editText"
-            android:layout_gravity="center_horizontal" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/familiar_switch"
-            android:id="@+id/familiar_textView" />
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/asalariado20c"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/asalariado_20c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:ems="10"
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/incluyo_este_valor"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_20c2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/familiar_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/familiar_editText"
-            android:layout_gravity="center_horizontal" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/educativo_switch"
-            android:id="@+id/educativo_textView" />
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/asalariado20d"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/asalariado_20d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:ems="10"
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/incluyo_este_valor"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_20d2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/educativo_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/educativo_editText"
-            android:layout_gravity="center_horizontal" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/asalariados_21"
-            android:id="@+id/textView3" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Switch
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/margin"
             android:text="@string/asalariados_21_a"
-            android:id="@+id/asalariado_21_a_switch" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Switch
+        <EditText
+            android:id="@+id/asalariado_21a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:text="@string/asalariados_21_b"
-            android:id="@+id/asalariado_21_b_switch" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:ems="10"
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/incluyo_este_valor"
-            android:id="@+id/textView3" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/asalariados_21_a"
-            android:id="@+id/asalariados_21_a_textView" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
+            android:id="@+id/asalariado_21a2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_21_a_spinner" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/asalariados_21_a_editText" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="@dimen/margin"
             android:text="@string/asalariados_21_b"
-            android:id="@+id/asalariados_21_b_textView" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariado_21_b_spinner" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariado_21b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
             android:ems="10"
-            android:id="@+id/asalariados_21_b_editText" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/asalariados_22"
-            android:id="@+id/asalariados_22_textView" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/asalariados_22_a"
-            android:id="@+id/asalariados_22_a_textView" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_22_a_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/asalariados_22_a_editText" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/asalariados_22_b"
-            android:id="@+id/asalariados_22_b_textView" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_22_b_spinner" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/asalariados_22_b_editText" />
+            android:hint="¿Cuánto recibió?"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/incluyo_este_valor"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/asalariado_21b2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/asalariados_22_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asalariados_22"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/asalariados_22_a_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asalariados_22_a"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/asalariados_22_a_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cuanto_recibi"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/asalariados_22_b_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asalariados_22_b"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+        <EditText
+            android:id="@+id/asalariados_22_b_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cuanto_recibi"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/asalariados_22_c"
-            android:id="@+id/textView5" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_22_c_spinner" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariados_22_c_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:hint="@string/cuanto_recibi"
             android:ems="10"
-            android:id="@+id/asalariados_22_c_editText" />
+            android:inputType="number" />
 
         <TextView
+            android:id="@+id/asalariados_22_d_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/asalariados_22_d"
-            android:id="@+id/asalariados_22_d_textView" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_22_d_spinner" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariados_22_d_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/asalariados_22_d_editText" />
+            android:hint="@string/cuanto_recibi"
+            android:inputType="number" />
 
         <TextView
+            android:id="@+id/asalariados_22_e_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/asalariados_22_e"
-            android:id="@+id/asalariados_22_e_textView" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_22_e_spinner" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariados_22_e_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:hint="@string/cuanto_recibi"
             android:ems="10"
-            android:id="@+id/asalariados_22_e_editText" />
+            android:inputType="number" />
 
         <TextView
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/asalariados_23"
-            android:id="@+id/textView7" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/asalariados_23_spinner" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/asalariados_23_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/asalariados_23_editText" />
+            android:hint="@string/cuantas"
+            android:inputType="number" />
 
         <Button
+            android:id="@+id/next_gnrl_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/next_gnrl_btn"
-            android:text="@string/btn_siguente"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btn_siguente" />
     </LinearLayout>
 </ScrollView>

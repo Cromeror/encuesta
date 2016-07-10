@@ -1,5 +1,7 @@
 package com.crom.encuesta.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,13 +127,13 @@ public class Hogar {
         return null;
     }
 
-   /* public List<String> toList() {
-        ArrayList<String> strings = new ArrayList<String>();
-        for (String servicio : serviciosBienes) {
+    public List<String> toList() {
+        ArrayList<String> strings = new ArrayList<>();
+        for (String service : serviciosBienes) {
             StringBuilder output = new StringBuilder();
             output.append(miembros.size());
             output.append(",");
-            output.append(servicio);
+            output.append(service);
             output.append(",");
             output.append(aguaConsumo);
             output.append(",");
@@ -146,6 +148,7 @@ public class Hogar {
             output.append(energiaCocinan);
             output.append(",");
             for (Miembro miembro : miembros) {
+               //Log.i("Mienbrosss",""+miembro.toList().size());
                 for (String string : miembro.toList()) {
                     StringBuilder output2 = new StringBuilder();
                     output2.append(output);
@@ -153,9 +156,11 @@ public class Hogar {
                     strings.add(output2.toString());
                 }
             }
+
+            //strings.add(output.toString());
         }
         return strings;
-    }*/
+    }
 
     @Override
     public String toString() {
