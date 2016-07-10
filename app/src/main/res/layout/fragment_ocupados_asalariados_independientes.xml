@@ -13,15 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="@string/asalariados_independienes_1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:focusable="true"
-            android:focusableInTouchMode="true">
-            <requestFocus/>
+            android:focusableInTouchMode="true"
+            android:text="@string/asalariados_independienes_1"
+            android:textAppearance="?android:attr/textAppearanceLarge">
+
+            <requestFocus />
         </TextView>
 
         <EditText
-            android:id="@+id/asalariado_1_editText"
+            android:id="@+id/ocupado_29_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -40,7 +41,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/asalariado_independiente_2_edtText"
+                android:id="@+id/ocupado_30_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -49,10 +50,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/l_31"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/l_31">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/asalariado_independiente_3_textView"
@@ -63,71 +64,66 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/asalariado_independiente_3_spinner"
+                android:id="@+id/ocupado_31_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/ocupado_31_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/asalariado_independiente_3_editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/vertical_margin">
+            android:text="@string/asalariados_independientes_4"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/ocupado_32_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:ems="8"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:id="@+id/l_33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/asalariado_independiente_5_textView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/asalariados_independientes_4"
+                android:layout_gravity="center_vertical"
+                android:text="@string/asalariados_independientes_33"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <RelativeLayout
-                android:layout_width="0dp"
+            <Spinner
+                android:id="@+id/ocupado_33_spinner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-                <EditText
-                    android:id="@+id/asalariado_independiente_4_editText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:ems="8"
-                    android:inputType="number" />
-            </RelativeLayout>
+            <EditText
+                android:id="@+id/ocupado_33_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:inputType="textAutoComplete" />
         </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/l_33">
-    <TextView
-        android:id="@+id/asalariado_independiente_5_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/asalariados_independientes_5"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Spinner
-        android:id="@+id/asalariado_independiente_5_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
-</LinearLayout>
 
         <TextView
             android:id="@+id/asalariado_independiente_6_textView"
@@ -138,21 +134,22 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/asalariado_independiente_6_spinner"
+            android:id="@+id/ocupado_34_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/asalariado_independiente_6_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:ems="10"
-            android:inputType="number" />
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/registre_horario_de_00_a_24_horas"
+            android:textAlignment="center" />
+
 
         <TextView
             android:id="@+id/asalariado_independiente_7_textView"
@@ -162,7 +159,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/asalariado_independiente_7_spinner"
+            android:id="@+id/ocupado_35_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -185,7 +182,7 @@
             android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
             android:id="@+id/asalariado_independiente_8_editText"
@@ -212,17 +209,17 @@
             android:id="@+id/asalariados_independientes_9_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/asalariados_independientes_10_textView"
+            android:id="@+id/ocupado_38_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_10"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/asalariados_independientes_10_spinner"
+            android:id="@+id/ocupado_38_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/activity_vertical_margin"
@@ -230,14 +227,14 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/asalariados_independientes_11_textView"
+            android:id="@+id/ocupado_39_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_11"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/asalariados_independientes_11_spinner"
+            android:id="@+id/ocupado_39_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/activity_vertical_margin"
@@ -290,62 +287,63 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/asalariados_independientes_14_textView"
+            android:id="@+id/ocupado_42_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_a"
+            android:id="@+id/ocupado_42_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_a" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_b"
+            android:id="@+id/ocupado_42_b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_b" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_c"
+            android:id="@+id/ocupado_42_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_c" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_d"
+            android:id="@+id/ocupado_42_d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_d" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_e"
+            android:id="@+id/ocupado_42_e"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_e" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_f"
+            android:id="@+id/ocupado_42_f"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_f" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_g"
+            android:id="@+id/ocupado_42_g"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_g" />
 
         <CheckBox
-            android:id="@+id/asalariados_independientes_14_h"
+            android:id="@+id/ocupado_42_h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/asalariados_independientes_14_h" />
 
         <EditText
-            android:id="@+id/asalariados_independientes_14_editText"
+            android:id="@+id/ocupado_42_editText"
+            android:hint="@string/otro_cual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

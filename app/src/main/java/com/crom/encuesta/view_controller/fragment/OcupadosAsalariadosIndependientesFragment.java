@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crom.encuesta.R;
-import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -32,7 +32,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
+    private Ocupado ocupado;
 
 
     public OcupadosAsalariadosIndependientesFragment() {
@@ -52,15 +52,17 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
     }
 
     private void init() {
-        vivienda = ((MainActivity) getActivity()).getVivienda();
-        EditText otro_14 = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
+        ocupado = ((MainActivity) getActivity()).getOcupado();
+        EditText otro_14 = (EditText) view.findViewById(R.id.ocupado_42_editText);
         otro_14.setVisibility(View.GONE);
-        Spinner asalariado_independiente_3 = (Spinner) view.findViewById(R.id.asalariado_independiente_3_spinner);
+        Spinner asalariado_independiente_31 = (Spinner) view.findViewById(R.id.ocupado_31_spinner);
+        Spinner asalariado_independiente_33 = (Spinner) view.findViewById(R.id.ocupado_33_spinner);
+
         ArrayAdapter spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_3, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        asalariado_independiente_3.setAdapter(spinner_adapter_1);
-        asalariado_independiente_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        asalariado_independiente_31.setAdapter(spinner_adapter_1);
+        asalariado_independiente_31.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapter, View v,
                                        int position, long id) {
@@ -68,7 +70,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 // Showing selected spinner item
 
-                EditText otro_1 = (EditText) view.findViewById(R.id.asalariado_independiente_3_editText);
+                EditText otro_1 = (EditText) view.findViewById(R.id.ocupado_31_editText);
                 if (scountry.equalsIgnoreCase("Otro")) {
                     otro_1.setVisibility(View.VISIBLE);
                 } else {
@@ -81,7 +83,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 // TODO Auto-generated method stub
             }
         });
-        final EditText independiente2 = (EditText) view.findViewById(R.id.asalariado_independiente_2_edtText);
+        final EditText independiente2 = (EditText) view.findViewById(R.id.ocupado_30_editText);
         independiente2.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
@@ -104,11 +106,11 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
         });
-        ((EditText) view.findViewById(R.id.asalariado_independiente_4_editText)).addTextChangedListener(new TextWatcher() {
+        ((EditText) view.findViewById(R.id.ocupado_32_editText)).addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    if (Integer.parseInt(s.toString()) < 30) {
+                    if (Integer.parseInt(s.toString()) > Integer.parseInt(((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString())) {
                         ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.GONE);
                     } else {
                         ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.VISIBLE);
@@ -128,13 +130,27 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         });
 
 
-        Spinner asalariado_independiente_5 = (Spinner) view.findViewById(R.id.asalariado_independiente_5_spinner);
         ArrayAdapter spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_5, android.R.layout.simple_spinner_item);
         spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        asalariado_independiente_5.setAdapter(spinner_adapter_2);
+        asalariado_independiente_33.setAdapter(spinner_adapter_2);
+        asalariado_independiente_33.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View v, int position, long l) {
+                if (position == 6) {
+                    ((EditText) view.findViewById(R.id.ocupado_33_editText)).setVisibility(View.VISIBLE);
+                } else {
+                    ((EditText) view.findViewById(R.id.ocupado_33_editText)).setVisibility(View.GONE);
+                }
+            }
 
-        Spinner asalariado_independiente_6 = (Spinner) view.findViewById(R.id.asalariado_independiente_6_spinner);
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        Spinner asalariado_independiente_6 = (Spinner) view.findViewById(R.id.ocupado_34_spinner);
         spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_6, android.R.layout.simple_spinner_item);
         spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -158,7 +174,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         asalariado_independiente_6.setSelection(1);
         ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.GONE);
 
-        Spinner asalariado_independiente_7 = (Spinner) view.findViewById(R.id.asalariado_independiente_7_spinner);
+        Spinner asalariado_independiente_7 = (Spinner) view.findViewById(R.id.ocupado_35_spinner);
         spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_7, android.R.layout.simple_spinner_item);
         spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -218,7 +234,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             }
         });
 
-        Spinner asalariado_independiente_10 = (Spinner) view.findViewById(R.id.asalariados_independientes_10_spinner);
+        Spinner asalariado_independiente_10 = (Spinner) view.findViewById(R.id.ocupado_38_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_10, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -234,19 +250,36 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
 
                 if (scountry.equalsIgnoreCase("No")) {
                     hide_38();
-                }
-                if (scountry.equalsIgnoreCase("Ya es pensionado")) {
+                    TextView asalariado_independiente_14_textView = (TextView) view.findViewById(R.id.ocupado_42_textView);
+                    asalariado_independiente_14_textView.setVisibility(View.VISIBLE);
+                    CheckBox a = (CheckBox) view.findViewById(R.id.ocupado_42_a);
+                    CheckBox b = (CheckBox) view.findViewById(R.id.ocupado_42_b);
+                    CheckBox c = (CheckBox) view.findViewById(R.id.ocupado_42_c);
+                    CheckBox d = (CheckBox) view.findViewById(R.id.ocupado_42_d);
+                    CheckBox e = (CheckBox) view.findViewById(R.id.ocupado_42_e);
+                    CheckBox f = (CheckBox) view.findViewById(R.id.ocupado_42_f);
+                    CheckBox g = (CheckBox) view.findViewById(R.id.ocupado_42_g);
+                    CheckBox h = (CheckBox) view.findViewById(R.id.ocupado_42_h);
+                    a.setVisibility(View.VISIBLE);
+                    b.setVisibility(View.VISIBLE);
+                    c.setVisibility(View.VISIBLE);
+                    d.setVisibility(View.VISIBLE);
+                    e.setVisibility(View.VISIBLE);
+                    f.setVisibility(View.VISIBLE);
+                    h.setVisibility(View.VISIBLE);
+                    g.setVisibility(View.VISIBLE);
+                } else if (scountry.equalsIgnoreCase("Ya es pensionado")) {
                     hide_38();
-                    CheckBox a = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_a);
-                    CheckBox b = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_b);
-                    CheckBox c = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_c);
-                    CheckBox d = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_d);
-                    CheckBox e = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_e);
-                    CheckBox f = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_f);
-                    CheckBox g = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_g);
-                    CheckBox h = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_h);
-                    EditText asalariado_independiente_14_editText = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
-                    TextView asalariado_independiente_14_textView = (TextView) view.findViewById(R.id.asalariados_independientes_14_textView);
+                    CheckBox a = (CheckBox) view.findViewById(R.id.ocupado_42_a);
+                    CheckBox b = (CheckBox) view.findViewById(R.id.ocupado_42_b);
+                    CheckBox c = (CheckBox) view.findViewById(R.id.ocupado_42_c);
+                    CheckBox d = (CheckBox) view.findViewById(R.id.ocupado_42_d);
+                    CheckBox e = (CheckBox) view.findViewById(R.id.ocupado_42_e);
+                    CheckBox f = (CheckBox) view.findViewById(R.id.ocupado_42_f);
+                    CheckBox g = (CheckBox) view.findViewById(R.id.ocupado_42_g);
+                    CheckBox h = (CheckBox) view.findViewById(R.id.ocupado_42_h);
+                    EditText asalariado_independiente_14_editText = (EditText) view.findViewById(R.id.ocupado_42_editText);
+                    TextView asalariado_independiente_14_textView = (TextView) view.findViewById(R.id.ocupado_42_textView);
 
                     asalariado_independiente_14_editText.setVisibility(View.GONE);
                     asalariado_independiente_14_textView.setVisibility(View.GONE);
@@ -258,21 +291,18 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                     f.setVisibility(View.GONE);
                     h.setVisibility(View.GONE);
                     g.setVisibility(View.GONE);
-                }
-                if (scountry.equalsIgnoreCase("Si")) {
+                } else {
                     show_38();
-                    CheckBox a = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_a);
-                    CheckBox b = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_b);
-                    CheckBox c = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_c);
-                    CheckBox d = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_d);
-                    CheckBox e = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_e);
-                    CheckBox f = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_f);
-                    CheckBox g = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_g);
-                    CheckBox h = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_h);
-                    EditText asalariado_independiente_14_editText = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
-                    TextView asalariado_independiente_14_textView = (TextView) view.findViewById(R.id.asalariados_independientes_14_textView);
+                    CheckBox a = (CheckBox) view.findViewById(R.id.ocupado_42_a);
+                    CheckBox b = (CheckBox) view.findViewById(R.id.ocupado_42_b);
+                    CheckBox c = (CheckBox) view.findViewById(R.id.ocupado_42_c);
+                    CheckBox d = (CheckBox) view.findViewById(R.id.ocupado_42_d);
+                    CheckBox e = (CheckBox) view.findViewById(R.id.ocupado_42_e);
+                    CheckBox f = (CheckBox) view.findViewById(R.id.ocupado_42_f);
+                    CheckBox g = (CheckBox) view.findViewById(R.id.ocupado_42_g);
+                    CheckBox h = (CheckBox) view.findViewById(R.id.ocupado_42_h);
+                    TextView asalariado_independiente_14_textView = (TextView) view.findViewById(R.id.ocupado_42_textView);
 
-                    asalariado_independiente_14_editText.setVisibility(View.VISIBLE);
                     asalariado_independiente_14_textView.setVisibility(View.VISIBLE);
                     a.setVisibility(View.VISIBLE);
                     b.setVisibility(View.VISIBLE);
@@ -291,11 +321,11 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             }
         });
 
-        Spinner asalariado_independiente_11 = (Spinner) view.findViewById(R.id.asalariados_independientes_11_spinner);
-        spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
-                R.array.asalariados_independientes_11, android.R.layout.simple_spinner_item);
-        spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        asalariado_independiente_11.setAdapter(spinner_adapter_1);
+        Spinner ocupado_39_spinner = (Spinner) view.findViewById(R.id.ocupado_39_spinner);
+        ArrayAdapter spinner_adapter_39 = ArrayAdapter.createFromResource(getActivity(),
+                R.array.ocupado_39_array, android.R.layout.simple_spinner_item);
+        spinner_adapter_39.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ocupado_39_spinner.setAdapter(spinner_adapter_39);
 
         Spinner asalariado_independiente_12 = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
@@ -303,15 +333,15 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariado_independiente_12.setAdapter(spinner_adapter_1);
 
-        final CheckBox asalariados_independientes_14_otro = (CheckBox) view.findViewById(R.id.asalariados_independientes_14_g);
+        final CheckBox asalariados_independientes_14_otro = (CheckBox) view.findViewById(R.id.ocupado_42_g);
         asalariados_independientes_14_otro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (asalariados_independientes_14_otro.isChecked()) {
-                    EditText otro_14 = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
+                    EditText otro_14 = (EditText) view.findViewById(R.id.ocupado_42_editText);
                     otro_14.setVisibility(View.VISIBLE);
                 } else {
-                    EditText otro_14 = (EditText) view.findViewById(R.id.asalariados_independientes_14_editText);
+                    EditText otro_14 = (EditText) view.findViewById(R.id.ocupado_42_editText);
                     otro_14.setVisibility(View.GONE);
                 }
             }
@@ -339,10 +369,10 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
 
     private void hide_38() {
         EditText a = (EditText) view.findViewById(R.id.asalariados_independientes_13_editText);
-        Spinner b = (Spinner) view.findViewById(R.id.asalariados_independientes_11_spinner);
+        Spinner b = (Spinner) view.findViewById(R.id.ocupado_39_spinner);
         Spinner c = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
         TextView d = (TextView) view.findViewById(R.id.asalariados_independientes_13_textView);
-        TextView e = (TextView) view.findViewById(R.id.asalariados_independientes_11_textView);
+        TextView e = (TextView) view.findViewById(R.id.ocupado_39_textView);
         TextView f = (TextView) view.findViewById(R.id.asalariados_independientes_12_textView);
 
         a.setVisibility(View.GONE);
@@ -355,10 +385,10 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
 
     private void show_38() {
         EditText a = (EditText) view.findViewById(R.id.asalariados_independientes_13_editText);
-        Spinner b = (Spinner) view.findViewById(R.id.asalariados_independientes_11_spinner);
+        Spinner b = (Spinner) view.findViewById(R.id.ocupado_39_spinner);
         Spinner c = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
         TextView d = (TextView) view.findViewById(R.id.asalariados_independientes_13_textView);
-        TextView e = (TextView) view.findViewById(R.id.asalariados_independientes_11_textView);
+        TextView e = (TextView) view.findViewById(R.id.ocupado_39_textView);
         TextView f = (TextView) view.findViewById(R.id.asalariados_independientes_12_textView);
 
         a.setVisibility(View.VISIBLE);
@@ -394,8 +424,33 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         dialog.show();
     }
 
-    private void save() {
-
+    private boolean save() {
+        ocupado.setE29(((EditText) view.findViewById(R.id.ocupado_29_editText)).getText().toString());
+        try {
+            int e30;
+            if (((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString().equals("")) {
+                e30 = 0;
+            } else {
+                e30 = Integer.parseInt(((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString());
+            }
+            ocupado.setE30(((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString());
+            if (e30 < 40) {
+                Spinner spinner = (Spinner) view.findViewById(R.id.ocupado_31_spinner);
+                if (spinner.getSelectedItem().toString().equals("Otro")) {
+                    ocupado.setE31(((EditText) view.findViewById(R.id.ocupado_31_editText)).getText().toString());
+                } else {
+                    ocupado.setE31(spinner.getSelectedItem().toString());
+                }
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        ocupado.setE32(((EditText) view.findViewById(R.id.ocupado_32_editText)).getText().toString());
+        Spinner spinner = (Spinner) view.findViewById(R.id.ocupado_33_spinner);
+        if (spinner.getSelectedItem().toString().equals("Otro")) {
+            //ocupado.setE31(((EditText)view.findViewById(R.id.oc33)).getText().toString());
+        }
+        return true;
     }
 
 }

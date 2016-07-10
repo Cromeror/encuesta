@@ -24,8 +24,8 @@
     <string name="asalariados_independientes_2">30. ¿Cuántos horas a la semana trabaja normalmente Ud. en este trabajo?</string>
     <string name="asalariados_independientes_3">31. ¿Cuál es la razón por la que trabaja normalmente menos de 40 horas a la semana?</string>
     <string name="asalariados_independientes_4">32. ¿Cuántos horas trabajó Ud. la semana pasada en este trabajo?</string>
-    <string name="asalariados_independientes_5">33. ¿Por qué razón, de las horas que normalmente trabaja, hubo algunas que no trabajó la semana (Solo realice está pregunta si en 32 la respuesta es menor que en30) pasada?</string>
-    <string name="asalariados_independientes_6">34. ¿En qué horario realizó su trabajo principal de la semana pasada? (registre horario de 00 a 24 horas)</string>
+    <string name="asalariados_independientes_33">33. ¿Por qué razón, de las horas que normalmente trabaja, hubo algunas que no trabajó la semana pasada?</string>
+    <string name="asalariados_independientes_6">34. ¿En qué horario realizó su trabajo principal de la semana pasada?</string>
     <string name="asalariados_independientes_7">35. ¿Cuántas personas en total tiene la empresa, negocio, industria, oficina, firma o finca donde Ud. trabaja?</string>
     <string name="asalariados_independientes_8">36. Donde realiza principalmente su trabajo</string>
     <string name="asalariados_independientes_9">37. ¿En caso de enfermedad como cubriría los costos médicos y los medicamentos?</string>
@@ -82,10 +82,10 @@
     <string name="recibio_atencion_hospital_sanjose">¿Ud alguna vez ha recibido alguna atención en el hospital San Jose?</string>
     <string name="atencion_hospital_sanjose">¿Que tal le parace la atención en el hospital?</string>
     <!-- Fuerza trabajo -->
-    <string name="actividad_primera_semana_junio">1. ¿En que actividad ocupo ud la mayor parte de la primera semana de Junio?</string>
-    <string name="ademas_de_anterior">2. Ademas de lo anterior, ¿Ud realizo durante la primera semana de Mayo alguna actividad paga por una hora o más ?</string>
-    <string name="aunque_usted_no_trabajo">3. Aunque ud no trabajo la primera semana de Mayo, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
-    <string name="actividad_ultima_semana_mayo_hora">4. ¿Trabajo la ultima semana de Mayo en un negocio por una hora o mas sin que le pagaran ?</string>
+    <string name="actividad_primera_semana_junio">1. ¿En que actividad ocupo ud la mayor parte de la última semana de Junio?</string>
+    <string name="ademas_de_anterior">2. Ademas de lo anterior, ¿Ud realizo durante la última semana de Junio alguna actividad paga por una hora o más ?</string>
+    <string name="aunque_usted_no_trabajo">3. Aunque ud no trabajó la última semana de Junio, por una hora o más en forma remunerada. ¿Tenia durante esa semana algún trabajo o negocio por el cual recibe ingresos?</string>
+    <string name="actividad_ultima_semana_mayo_hora">4. ¿Trabajo la última semana de Junio en un negocio por una hora o mas sin que le pagaran ?</string>
     <string name="diligencia_ultimo_mes">5. En el ultimo mes, ¿ Ud hizo alguna diligencia para conseguir un trabajo o instalar un negocio?</string>
     <string name="hizo_ultimas_4_semanas">6. ¿Qué hizo principalmente en las ultimas 4 semanas para conseguir un trabajo o instalar un negocio?</string>
     <string name="desea_trabajo_negocio">7. ¿Ud desea conseguir un trabajo remunerado o instalar un negocio?</string>
@@ -627,7 +627,7 @@
         <item>No</item>
         <item>Ya es pensionado</item>
     </string-array>
-    <string-array name="asalariados_independientes_11">
+    <string-array name="ocupado_39_array">
         <item>Fondo privado</item>
         <item>Colpensiones, FNA?</item>
         <item>Fondo subsidiado</item>
@@ -653,6 +653,9 @@
     <string name="valor_mensual">Valor mensual $</string>
     <string name="cuantas">¿Cuántas?</string>
     <string name="cual">¿Cual?</string>
+    <string name="sino_lo_ha_renovado_escriba_00">sino lo ha renovado escriba 00</string>
+    <string name="registre_horario_de_00_a_24_horas">registre horario de 00 a 24 horas</string>
+    <string name="otro_cual">Otro, ¿Cual?</string>
 
     <!--ocupados trabajos secundarios Arrays-->
     <string-array name="secundario_3">
@@ -775,7 +778,6 @@
         <item>Haciendo inversiones</item>
         <item>Pagando un seguro por su cuenta</item>
         <item>Preparando a sus hijos para que lo mantengan en la vejez</item>
-        <item>Otro, ¿Cual?</item>
         <item>Nada</item>
     </string-array>
 

@@ -31,7 +31,6 @@ public class DesocupadosFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
 
     public DesocupadosFragment() {
         // Required empty public constructor
@@ -50,9 +49,6 @@ public class DesocupadosFragment extends Fragment {
     }
 
     private void init() {
-
-
-        vivienda = ((MainActivity) getActivity()).getVivienda();
         Spinner des_3 = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.desocupados_3_8, android.R.layout.simple_spinner_item);
@@ -82,12 +78,6 @@ public class DesocupadosFragment extends Fragment {
                 R.array.desocupados_11, android.R.layout.simple_spinner_item);
         adapter11.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         des_11.setAdapter(adapter11);
-
-        Spinner des_12 = (Spinner) view.findViewById(R.id.spinner_desocupados_12);
-        ArrayAdapter<CharSequence> adapter12 = ArrayAdapter.createFromResource(getActivity(),
-                R.array.desocupados_12_array, android.R.layout.simple_spinner_item);
-        adapter12.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        des_12.setAdapter(adapter12);
 
         final EditText ed3 = (EditText) view.findViewById(R.id.desocupados_3);
         des_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -139,23 +129,6 @@ public class DesocupadosFragment extends Fragment {
             }
         });
 
-        final EditText ed12 = (EditText) view.findViewById(R.id.desocupados_12);
-        des_12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 6) {
-                    ed12.setVisibility(View.VISIBLE);
-                } else {
-                    ed12.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
         final EditText ed13 = (EditText) view.findViewById(R.id.desocupados_13);
         Spinner spinner13 = (Spinner) view.findViewById(R.id.spinner_desocupados_13);
         ArrayAdapter<CharSequence> adapter13 = ArrayAdapter.createFromResource(getActivity(),
@@ -189,8 +162,8 @@ public class DesocupadosFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View v, int position, long l) {
                 switch (position) {
                     case 0:
-                        save(4);
-                        transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
+                        if (save(4))
+                            transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
                         break;
                     case 1:
                 }
@@ -214,16 +187,17 @@ public class DesocupadosFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                save(1);
-                //transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
+                if (save(1))
+                    transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
             }
         });
     }
-private ArrayList <String> callBackList = new ArrayList();
+
+    private ArrayList<String> callBackList = new ArrayList();
     private Desocupado desocupado = new Desocupado();
 
     private boolean save(int caso) {
-        ((MainActivity)getActivity()).getMiembro().setDesocupado(desocupado);
+        ((MainActivity) getActivity()).getMiembro().setDesocupado(desocupado);
         desocupado.setF1(((EditText) view.findViewById(R.id.desocupados_1)).getText().toString());
         desocupado.setF2(((EditText) view.findViewById(R.id.desocupados_2)).getText().toString());
         Spinner desocupados_spinner = (Spinner) view.findViewById(R.id.spiner_desocupados_3);
@@ -236,7 +210,7 @@ private ArrayList <String> callBackList = new ArrayList();
             Spinner desocupado4 = (Spinner) view.findViewById(R.id.spinner_desocupados_4);
             desocupado.setF4(desocupado4.getSelectedItem().toString());
             if (desocupado4.getSelectedItemPosition() == 0) {
-                Log.i("Desocupado",desocupado.toString());
+                Log.i("Desocupado", desocupado.toString());
                 return true;
             }
         }
@@ -255,24 +229,20 @@ private ArrayList <String> callBackList = new ArrayList();
         desocupado.setF9(((Spinner) view.findViewById(R.id.spiner_desocupados_9)).getSelectedItem().toString());
         desocupado.setF10(((Spinner) view.findViewById(R.id.spiner_desocupados_10)).getSelectedItem().toString());
         Spinner spinner11 = (Spinner) view.findViewById(R.id.spiner_desocupados_11);
-        if (spinner11.getSelectedItemPosition()==8){
+        if (spinner11.getSelectedItemPosition() == 8) {
             desocupado.setF11(((EditText) view.findViewById(R.id.desocupados_11)).getText().toString());
-        }else
+        } else
             desocupado.setF11(spinner11.getSelectedItem().toString());
-
-       /* Spinner spinner12 =  (Spinner) view.findViewById(R.id.spinner_desocupados_12);
-        if (spinner12.getSelectedItemPosition()==6)
-            desocupado.setF12(((EditText) view.findViewById(R.id.desocupados_12)).getText().toString());
-        else {
-            desocupado.setF12(spinner12.getSelectedItem().toString());
-        }*/
+        if (!((EditText) view.findViewById(R.id.desocupados_12)).getText().toString().equals("")) {
+            desocupado.getF12().add(((EditText) view.findViewById(R.id.desocupados_12)).getText().toString());
+        }
 
         Spinner spinner13 = (Spinner) view.findViewById(R.id.spinner_desocupados_13);
-        if(spinner13.getSelectedItemPosition()==0)
+        if (spinner13.getSelectedItemPosition() == 0)
             desocupado.setF13(((EditText) view.findViewById(R.id.desocupados_13)).getText().toString());
         else desocupado.setF13(spinner13.getSelectedItem().toString());
-        desocupado.setMiembroId(((MainActivity)getActivity()).getMiembro().getId());
-        Log.i("Desocupado",desocupado.toString());
+        desocupado.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
+        Log.i("Desocupado", desocupado.toString());
         return true;
     }
 

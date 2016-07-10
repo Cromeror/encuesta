@@ -2,4 +2,6 @@
 <resources>
     <string name="valor_mensual">Valor mensual $</string>
     <string name="cual">¿Cual?</string>
+    <string name="sino_lo_ha_renovado_escriba_00">sino lo ha renovado escriba 00</string>
+    <string name="registre_horario_de_00_a_24_horas">registre horario de 00 a 24 horas</string>
 </resources>

@@ -26,7 +26,6 @@ import com.crom.encuesta.view_controller.MainActivity;
  * A simple {@link Fragment} subclass.
  */
 public class FuerzaFragment extends Fragment {
-    private static final String PARAM_EDAD = "Edad";
     private Button next;
     private View view;
     private FragmentTransaction transaction;
@@ -73,7 +72,6 @@ public class FuerzaFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
             }
         });
 

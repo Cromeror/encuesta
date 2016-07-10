@@ -21,7 +21,7 @@
         </TextView>
 
         <Spinner
-            android:id="@+id/independientes_1_spinner"
+            android:id="@+id/independientes_24_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -30,7 +30,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <EditText
-            android:id="@+id/otro_editText_1"
+            android:id="@+id/idependientes_24_otro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal" />
@@ -49,7 +49,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Spinner
-                android:id="@+id/independientes_2_Spinner"
+                android:id="@+id/independientes_25_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/activity_vertical_margin"
@@ -69,10 +69,11 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/independientes_3_editText"
+                    android:id="@+id/independientes_25a_editText"
+                    android:inputType="number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="sino lo ha registrado escriba 00"/>
+                    android:hint="@string/sino_lo_ha_renovado_escriba_00"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,9 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:ems="10"
             android:hint="valor mensual"
-            android:id="@+id/independientes_4_editText"/>
+            android:id="@+id/independientes_26_editText"/>
 
         <TextView
             android:paddingTop="@dimen/paddin_bottom"
@@ -105,11 +105,11 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
-            android:id="@+id/independientes_5_editText"
+            android:id="@+id/independientes_27_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="valor mensual"
-            android:lines="4" />
+            android:inputType="number"
+            android:hint="valor mensual" />
 
         <TextView
             android:id="@+id/independientes_6_textView"
@@ -120,18 +120,19 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <Spinner
-            android:id="@+id/independientes_6_spinner"
+            android:id="@+id/independientes_28_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"></Spinner>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <EditText
-            android:id="@+id/otro_editText_6"
+            android:id="@+id/otro_editText_28"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/cual"
             android:layout_gravity="center_horizontal" />
 
         <Button
