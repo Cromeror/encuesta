@@ -147,8 +147,9 @@ public class Hogar {
             output.append(",");
             output.append(energiaCocinan);
             output.append(",");
+            Log.i("Mienbrosss",""+miembros.size());
             for (Miembro miembro : miembros) {
-               //Log.i("Mienbrosss",""+miembro.toList().size());
+               Log.i("Mienbrosss TO list",""+miembro.toList().size());
                 for (String string : miembro.toList()) {
                     StringBuilder output2 = new StringBuilder();
                     output2.append(output);

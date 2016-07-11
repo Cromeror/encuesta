@@ -193,23 +193,23 @@ public class Vivienda{
     public String toString() {
         StringBuilder output = new StringBuilder();
         StringBuilder result = new StringBuilder();
-        output.append(departamento);
+        output.append(depurarComas(departamento));
         output.append(",");
-        output.append(municipio);
+        output.append(depurarComas(municipio));
         output.append(",");
-        output.append(zona);
+        output.append(depurarComas(zona));
         output.append(",");
-        output.append(barrio);
+        output.append(depurarComas(barrio));
         output.append(",");
-        output.append(sector);
+        output.append(depurarComas(sector));
         output.append(",");
-        output.append(direccion);
+        output.append(depurarComas(sector));
         output.append(",");
-        output.append(tipoVivienda);
+        output.append(depurarComas(tipoVivienda));
         output.append(",");
-        output.append(propiedadVivienda);
+        output.append(depurarComas(propiedadVivienda));
         output.append(",");
-        output.append(cuantoPagan);
+        output.append(depurarComas(cuantoPagan));
         output.append(",");
         output.append(cuartos.size());
         output.append(",");
@@ -219,9 +219,9 @@ public class Vivienda{
             output2.append(output);
             output2.append(personasCuarto);
             output2.append(",");
-            output2.append(materialPisos);
+            output2.append(depurarComas(materialPisos));
             output2.append(",");
-            output2.append(materialParedesExteriores);
+            output2.append(depurarComas(materialParedesExteriores));
             output2.append(",");
             for (String servicio : servicios) {
                 StringBuilder output3 = new StringBuilder();
@@ -245,6 +245,15 @@ public class Vivienda{
 
         }
         return result.toString();
+    }
+    private String depurarComas(String cadena){
+        String result = "";
+        for (char c: cadena.toCharArray()){
+            if (c == ',')
+                c = '.';
+            result+=c;
+        }
+        return result;
     }
 
 }

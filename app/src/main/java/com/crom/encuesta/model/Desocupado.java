@@ -17,7 +17,7 @@ public class Desocupado {
     private ArrayList<String> f12;
 
     public Desocupado() {
-        id = "";
+       /* id = "";
         miembroId = "";
         f1 = "";
         f2 = "";
@@ -29,9 +29,9 @@ public class Desocupado {
         f8 = "";
         f9 = "";
         f10 = "";
-        f11 = "";
+        f11 = "";*/
         f12 = new ArrayList<>();
-        f13 = "";
+        //f13 = "";
     }
 
     public String getId() {
@@ -156,22 +156,18 @@ public class Desocupado {
 
     @Override
     public String toString() {
-        return "Desocupado{" +
-                "id='" + id + '\'' +
-                ", miembroId='" + miembroId + '\'' +
-                ", f1='" + f1 + '\'' +
-                ", f2='" + f2 + '\'' +
-                ", f3='" + f3 + '\'' +
-                ", f4='" + f4 + '\'' +
-                ", f5='" + f5 + '\'' +
-                ", f6='" + f6 + '\'' +
-                ", f7='" + f7 + '\'' +
-                ", f8='" + f8 + '\'' +
-                ", f9='" + f9 + '\'' +
-                ", f10='" + f10 + '\'' +
-                ", f11='" + f11 + '\'' +
-                ", f12='" + f12 + '\'' +
-                ", f13='" + f13 + '\'' +
-                '}';
+        return f1 + ',' +
+                f2 + ',' +
+                f3 + ',' +
+                f4 + ',' +
+                f5 + ',' +
+                f6 + ',' +
+                f7 + ',' +
+                f8 + ',' +
+                f9 + ',' +
+                f10 + ',' +
+                f11 + ',' +
+                f12 + ',' +
+                f13;
     }
 }

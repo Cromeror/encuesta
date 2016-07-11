@@ -1,5 +1,7 @@
 package com.crom.encuesta.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -196,6 +198,8 @@ public class Miembro {
             }
         }else {
             String string = (new Ocupado()).toString();
+
+            Log.i("tic.toList()",""+tic.toList().size());
             if (!tic.toList().isEmpty()) {
                 for (String string1 : tic.toList()) {
                     String s2 = s + string + ',' + desocupado.toString() + ","
@@ -208,7 +212,6 @@ public class Miembro {
                 list.add(s2);
             }
         }
-        list.add(s);
         return list;
     }
 

@@ -44,6 +44,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -85,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FuerzaTrabajoDAO.getInstance().create(db);
         TicDAO.getInstance().create(db);
         OtroIngresoDAO.getInstance().create(db);*/
-        SuperDAO.getInstance().drop(db);
-        SuperDAO.getInstance().create(db);
+        //SuperDAO.getInstance().drop(db);
+        //SuperDAO.getInstance().create(db);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -153,14 +156,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 try {
                     File ruta_sd_global = Environment.getExternalStorageDirectory();
                     //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
-
-                    File f = new File(ruta_sd_global.getAbsolutePath(), "import.txt");
+                    Calendar c = Calendar.getInstance();
+                    String dia = Integer.toString(c.get(Calendar.DATE));
+                    String mes = Integer.toString(c.get(Calendar.MONTH));
+                    String annio = Integer.toString(c.get(Calendar.YEAR));
+                    String hora = Integer.toString(c.get(Calendar.MINUTE));
+                    File f = new File(ruta_sd_global.getAbsolutePath(), "import_"+hora+"_"+dia+"-"+mes+"-"+annio+")].txt");
 
                     OutputStreamWriter fout =
                             new OutputStreamWriter(
                                     new FileOutputStream(f));
                     for (String vivienda : SuperDAO.getInstance().read(this.getDb())) {
-                        fout.write(vivienda.toString()+"\n");
+                        fout.write(vivienda.toString()+"");
                     }
                     fout.close();
                     Toast.makeText(MainActivity.this, "Fichero creado con éxito" + ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();

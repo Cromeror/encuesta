@@ -262,7 +262,33 @@
     <string name="incluye_actualmente">¿Incluyó este valor en los ingresos del mes pasado que me informo anteriormente?</string>
     <string name="vivienda_por_pago">Además del salario en dinero, ¿el mes pasado recibió vivienda como parte de pago por su trabajo? (si no sabe estimar el monto escriba 98)</string>
 
-    <!--Arrays-->
+    <string name="asalariados_21">21. El mes pasado Ud. recibió: (si no sabe el valor correcto coloque 98)</string>
+    <string name="asalariados_21_a">Primas (técnica, de antigüedad, clima, orden público, otras, etc.)</string>
+    <string name="asalariados_21_b">Algún tipo de bonificación de carácter mensual</string>
+    <string name="asalariados_22">22. En los últimos 12 meses Ud. recibió: (si no sabe estimar el monto escriba 98)</string>
+    <string name="asalariados_22_a">22a. Prima de servicios</string>
+    <string name="asalariados_22_b">22b. Prima de navidad</string>
+    <string name="asalariados_22_c">22c. Prima de vacaciones</string>
+    <string name="asalariados_22_d">22d. Viáticos permanentes y/o bonos anuales</string>
+    <string name="asalariados_22_e">22e. Pago por accidentes de trabajo</string>
+    <string name="asalariados_23">23. ¿La semana pasada Ud. trabajó horas extra remuneradas?</string>
+    <string name="asalariados_independientes_14_a">Aportar a un fondo de pensiones obligatorias</string>
+    <string name="asalariados_independientes_14_b">Aportar a un fondo de pensiones voluntarias</string>
+    <string name="asalariados_independientes_14_c">Ahorrando</string>
+    <string name="asalariados_independientes_14_d">Haciendo inversiones</string>
+    <string name="asalariados_independientes_14_e">Pagando un seguro por su cuenta1</string>
+    <string name="asalariados_independientes_14_f">Preparando a sus hijos para que lo mantengan en su vejez</string>
+    <string name="asalariados_independientes_14_g">Otro</string>
+    <string name="asalariados_independientes_14_h">Nada</string>
+    <string name="en_cu_nto_estima_lo_que_recibi">¿En cuánto estima lo que recibió?</string>
+    <string name="cuanto_recibi">¿Cuánto recibió?</string>
+    <string name="valor_mensual">Valor mensual $</string>
+    <string name="cuantas">¿Cuántas?</string>
+    <string name="cual">¿Cual?</string>
+    <string name="sino_lo_ha_renovado_escriba_00">sino lo ha renovado escriba 00</string>
+    <string name="registre_horario_de_00_a_24_horas">registre horario de 00 a 24 horas</string>
+    <string name="otro_cual">Otro, ¿Cual?</string>
+    <string name="horas">Horas</string> <!--Arrays-->
     <string-array name="zona_array">
         <item>Urbana</item>
         <item>Rural</item>
@@ -282,7 +308,7 @@
         <item>Media (10°-11°)</item>
         <item>Superior o universitaria</item>
         <item>Ninguno</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="titulo_educativo_array">
         <item>Seleccione una opción</item>
@@ -291,19 +317,19 @@
         <item>Tecnico o tecnologico</item>
         <item>Universitario</item>
         <item>Postgrado</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="tipo_vivienda__array">
         <item>Casa</item>
         <item>Apartamento</item>
         <item>Pensión</item>
         <item>Indígena</item>
-        <item>Otra (Cueva, carpa, etc)</item>
+        <item>Otra (Cueva. carpa. etc)</item>
         <item>Seleccione una opción</item>
     </string-array>
     <string-array name="vivienda_habita_es_array">
         <item>Propia totalmente paga</item>
-        <item>Propia, la estan pagando</item>
+        <item>Propia. la estan pagando</item>
         <item>En arriendo o en subarriendo</item>
         <item>En usufructo</item>
         <item>Posesión sin titulo ó de propiedad colectiva</item>
@@ -311,22 +337,22 @@
         <item>Seleccione una opción</item>
     </string-array>
     <string-array name="material_pisos_array">
-        <item>Tierra, arena</item>
-        <item>Cemento, gravilla</item>
-        <item>Madera, tabla, tablon</item>
+        <item>Tierra. arena</item>
+        <item>Cemento. gravilla</item>
+        <item>Madera. tabla. tablon</item>
         <item>Marmol</item>
-        <item>Baldosa, ladrillo, otros materiales sinteticos</item>
+        <item>Baldosa. ladrillo. otros materiales sinteticos</item>
         <item>Seleccione una opción</item>
     </string-array>
     <string-array name="material_exteriores_array">
-        <item>Ladrillo, bloque, material prefabricado, piedra</item>
+        <item>Ladrillo. bloque. material prefabricado. piedra</item>
         <item>Madera pulida</item>
         <item>Adobe</item>
         <item>Bahereque</item>
-        <item>Madera burda, tabla, tablon</item>
+        <item>Madera burda. tabla. tablon</item>
         <item>Guadua</item>
-        <item>Esterilla, caña, otro material vegetal</item>
-        <item>Zinc, tela, carton, latas, plastico</item>
+        <item>Esterilla. caña. otro material vegetal</item>
+        <item>Zinc. tela. carton. latas. plastico</item>
         <item>Sin paredes</item>
         <item>Seleccione una opción</item>
     </string-array>
@@ -342,9 +368,9 @@
         <item>Tuberia conectada al acueducto</item>
         <item>De otra fuente por tuberia</item>
         <item>De pozo con bomba</item>
-        <item>De pozo sin bomba, aljibe, jaguey.</item>
+        <item>De pozo sin bomba. aljibe. jaguey.</item>
         <item>Aguas lluvias</item>
-        <item>Rio, quebrada, nacimiento o manantial.</item>
+        <item>Rio. quebrada. nacimiento o manantial.</item>
         <item>Pila publica</item>
         <item>Carro tanque</item>
         <item>Aguatero</item>
@@ -353,8 +379,8 @@
     </string-array>
     <string-array name="como_eliminan_basura_array">
         <item>Por recolección  pública o privada</item>
-        <item>La tiran a un rio, quebrada, caño o laguna.</item>
-        <item>La tiran a un patio, lote, zanja o baldio.</item>
+        <item>La tiran a un rio. quebrada. caño o laguna.</item>
+        <item>La tiran a un patio. lote. zanja o baldio.</item>
         <item>La queman o entierran</item>
         <item>Otras formas.</item>
         <item>Seleccione una opción</item>
@@ -375,10 +401,10 @@
     </string-array>
     <string-array name="energia_cocina_array">
         <item>Electricidad</item>
-        <item>Petroleo, gasolina, Kerosone, alcohol</item>
+        <item>Petroleo. gasolina. Kerosone. alcohol</item>
         <item>Gas natural conectado a red publica</item>
         <item>Gas propano en cilindro o pipeta</item>
-        <item>Leña, madera o de carbon de leña</item>
+        <item>Leña. madera o de carbon de leña</item>
         <item>Carbón mineral</item>
         <item>Materiales de desecho</item>
         <item>No cocina</item>
@@ -404,15 +430,15 @@
         <item>Bicicleta</item>
         <item>Moto</item>
         <item>Carro particular</item>
-        <item>Casa, apartamento o finca de recreo</item>
+        <item>Casa. apartamento o finca de recreo</item>
     </string-array>
     <string name="title_activity_caracteristicas_gnrl">CaracteristicasGnrlActivity</string>
 
     <!--Caracteristicas generales -->
     <string-array name="generales5">
         <item>Jefe(a) del hogar</item>
-        <item>Pareja, esposo(a), conyuge</item>
-        <item>Hijo(a), Hijastro(a)</item>
+        <item>Pareja. esposo(a). conyuge</item>
+        <item>Hijo(a). Hijastro(a)</item>
         <item>Nieto</item>
         <item>Otro pariente</item>
         <item>Empleado(a) del servicio domestico</item>
@@ -452,14 +478,14 @@
     </string-array>
     <string-array name="fuerza_6">
         <item>Seleccione una opción</item>
-        <item>Pidió ayuda a familia, amigos, colegas</item>
-        <item>Visitó, llevó o envío hojas de vida a empresas o empleadores</item>
-        <item>Visitó, llevó o envío hojas de vida a bolsas de empleo o intermediarios</item>
+        <item>Pidió ayuda a familia. amigos. colegas</item>
+        <item>Visitó. llevó o envío hojas de vida a empresas o empleadores</item>
+        <item>Visitó. llevó o envío hojas de vida a bolsas de empleo o intermediarios</item>
         <item>Puso o consultó avisos clasificados</item>
         <item>Se presentó a convocatorias </item>
         <item>Hizo preparatorios para iniciar un negocio</item>
         <item>Otro medio</item>
-        <item>No sabe, No informa</item>
+        <item>No sabe. No informa</item>
     </string-array>
     <string-array name="fuerza_8">
         <item>Seleccione una opción</item>
@@ -482,17 +508,17 @@
     <string-array name="ocupados_5">
         <item>Escrito</item>
         <item>Verbal</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="ocupados_6">
         <item>Termino fijo</item>
         <item>Término indefinido</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="ocupados_7">
         <item>No</item>
         <item>Si</item>
-        <item>No sabe,no informa</item>
+        <item>No sabe.no informa</item>
     </string-array>
     <string-array name="ocupados_8">
         <item>De servicios temporales</item>
@@ -522,41 +548,30 @@
 
     <!--Ocupados asalariados arrays-->
     <string-array name="asalariados_13">
-        <item>Pidió ayuda a familia, amigos, colegas</item>
-        <item>Visitó, llevó o envió hojas de vida a empresas o empleadores</item>
-        <item>Visitó, llevó o envió hojas de vida a bolsas de empleo o intermediarios</item>
+        <item>Pidió ayuda a familia. amigos. colegas</item>
+        <item>Visitó. llevó o envió hojas de vida a empresas o empleadores</item>
+        <item>Visitó. llevó o envió hojas de vida a bolsas de empleo o intermediarios</item>
         <item>Puso o consultó avisos clasificados</item>
         <item>Por convocatorias </item>
         <item>Por medio del SENA</item>
         <item>Otro medio</item>
-        <item>No sabe,no informa</item>
+        <item>No sabe.no informa</item>
     </string-array>
     <string-array name="si_no_nosabe">
         <item>Si</item>
         <item>No</item>
-        <item>No sabe,no informa</item>
+        <item>No sabe.no informa</item>
     </string-array>
-    <string name="asalariados_21">21. El mes pasado Ud. recibió: (si no sabe el valor correcto coloque 98)</string>
-    <string name="asalariados_21_a">Primas (técnica, de antigüedad, clima, orden público, otras, etc.)</string>
-    <string name="asalariados_21_b">Algún tipo de bonificación de carácter mensual</string>
-    <string name="asalariados_22">22. En los últimos 12 meses Ud. recibió: (si no sabe estimar el monto escriba 98)</string>
-    <string name="asalariados_22_a">22a. Prima de servicios</string>
-    <string name="asalariados_22_b">22b. Prima de navidad</string>
-    <string name="asalariados_22_c">22c. Prima de vacaciones</string>
-    <string name="asalariados_22_d">22d. Viáticos permanentes y/o bonos anuales</string>
-    <string name="asalariados_22_e">22e. Pago por accidentes de trabajo</string>
-    <string name="asalariados_23">23. ¿La semana pasada Ud. trabajó horas extra remuneradas?</string>
-
 
     <!--ocupados independientes Arrays-->
     <string-array name="independientes_1">
         <item>Trabajó por obra</item>
         <item>Trabajó por honorarios o prestación de servicios</item>
-        <item>Trabajó por piezas (maquila, etc.)</item>
+        <item>Trabajó por piezas (maquila. etc.)</item>
         <item>Trabajó por comisión únicamente</item>
         <item>Trabajó vendiendo por catálogo</item>
-        <item>Trabajó en su oficio (taxista, ama de casa por días, etc.)</item>
-        <item>Tiene un negocio de industria, comercio, servicios o tiene una finca</item>
+        <item>Trabajó en su oficio (taxista. ama de casa por días. etc.)</item>
+        <item>Tiene un negocio de industria. comercio. servicios o tiene una finca</item>
         <item>Otro</item>
     </string-array>
     <string-array name="independientes_6">
@@ -573,7 +588,7 @@
         <item>Otro</item>
     </string-array>
     <string-array name="asalariados_independientes_5">
-        <item>Enfermedad, permiso o licencia</item>
+        <item>Enfermedad. permiso o licencia</item>
         <item>Festivos</item>
         <item>Vacaciones</item>
         <item>Capacitación</item>
@@ -603,8 +618,8 @@
         <item>En un vehículo</item>
         <item>De puerta en puerta</item>
         <item>En la calle</item>
-        <item>Local, oficina, fábrica, etc</item>
-        <item>En el campo, mar o rio</item>
+        <item>Local. oficina. fábrica. etc</item>
+        <item>En el campo. mar o rio</item>
         <item>En una obra en construcción</item>
         <item>En una mina o cantera</item>
         <item>Otro</item>
@@ -629,34 +644,18 @@
     </string-array>
     <string-array name="ocupado_39_array">
         <item>Fondo privado</item>
-        <item>Colpensiones, FNA?</item>
+        <item>Colpensiones. FNA?</item>
         <item>Fondo subsidiado</item>
-        <item>Regímenes especiales (FFMM, Ecopetrol)</item>
+        <item>Regímenes especiales (FFMM. Ecopetrol)</item>
         <item></item>
     </string-array>
     <string-array name="asalariados_independientes_12">
         <item>Ud. paga una parte y otra la empresa o patrón</item>
-        <item>Colpensiones, FNA</item>
+        <item>Colpensiones. FNA</item>
         <item>Fondo subsidiado</item>
-        <item>Regímenes especiales (FFMM, Ecopetrol)</item>
+        <item>Regímenes especiales (FFMM. Ecopetrol)</item>
     </string-array>
-    <string name="asalariados_independientes_14_a">Aportar a un fondo de pensiones obligatorias</string>
-    <string name="asalariados_independientes_14_b">Aportar a un fondo de pensiones voluntarias</string>
-    <string name="asalariados_independientes_14_c">Ahorrando</string>
-    <string name="asalariados_independientes_14_d">Haciendo inversiones</string>
-    <string name="asalariados_independientes_14_e">Pagando un seguro por su cuenta1</string>
-    <string name="asalariados_independientes_14_f">Preparando a sus hijos para que lo mantengan en su vejez</string>
-    <string name="asalariados_independientes_14_g">Otro</string>
-    <string name="asalariados_independientes_14_h">Nada</string>
-    <string name="en_cu_nto_estima_lo_que_recibi">¿En cuánto estima lo que recibió?</string>
-    <string name="cuanto_recibi">¿Cuánto recibió?</string>
-    <string name="valor_mensual">Valor mensual $</string>
-    <string name="cuantas">¿Cuántas?</string>
-    <string name="cual">¿Cual?</string>
-    <string name="sino_lo_ha_renovado_escriba_00">sino lo ha renovado escriba 00</string>
-    <string name="registre_horario_de_00_a_24_horas">registre horario de 00 a 24 horas</string>
-    <string name="otro_cual">Otro, ¿Cual?</string>
-    <string name="horas">Horas</string>
+
 
     <!--ocupados trabajos secundarios Arrays-->
     <string-array name="secundario_3">
@@ -691,7 +690,7 @@
         <item>Entre 1 y menos de 2 años</item>
         <item>Entre 2 y menos de 5 años</item>
         <item>5 años y más</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="inactivo_8_array">
         <item>Si</item>
@@ -725,9 +724,9 @@
     </string-array>
     <string-array name="fondos_afiliados_actualmente_array">
         <item>fondo privado</item>
-        <item>Colpensiones, FNA</item>
+        <item>Colpensiones. FNA</item>
         <item>Fondo subsidiado</item>
-        <item>regimenes especiales (FFMM,Ecopetrol)</item>
+        <item>regimenes especiales (FFMM.Ecopetrol)</item>
     </string-array>
 
     <!--desocupado Arrays -->
@@ -740,7 +739,7 @@
         <item>Trabajador familiar sin remuneración</item>
         <item>Trabajador sin remuneración en empresas o negocios de otros hogares</item>
         <item>Jornalero o peón</item>
-        <item>Otro, ¿cual?</item>
+        <item>Otro. ¿cual?</item>
     </string-array>
     <string-array name="desocupados_4_array">
         <item>Primera vez</item>
@@ -760,7 +759,7 @@
     <string-array name="desocupados_10">
         <item>Si</item>
         <item>No</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="desocupados_11">
         <item>Tiene regimen subsidiario</item>
@@ -770,7 +769,7 @@
         <item>Con otro tipo de seguro</item>
         <item>Pidiendo dinero prestado</item>
         <item>No lo ha considerado</item>
-        <item>Otro,¿cual?</item>
+        <item>Otro.¿cual?</item>
     </string-array>
     <string-array name="desocupados_12_array">
         <item>Aportar a un fondo de pensiones obligatorias</item>
@@ -785,15 +784,15 @@
     <!-- TICs -->
     <string-array name="tics_5">
         <item>Al menos una vez al día</item>
-        <item>Al menos una vez a la semana, pero no cada día</item>
-        <item>Al menos una vez al mes, pero no cada semana</item>
+        <item>Al menos una vez a la semana. pero no cada día</item>
+        <item>Al menos una vez al mes. pero no cada semana</item>
         <item>Menos de una vez al mes</item>
 
     </string-array>
     <string-array name="tics_1_2">
         <item>Si</item>
         <item>No</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
 
     <!-- calidad del empleo principal -->
@@ -830,7 +829,7 @@
         <item>No lo ha considerado</item>
         <item>Venderia su vivienda o bienes del hogar</item>
         <item>Empeñaria bienes del hogar</item>
-        <item>Otro, cual?</item>
+        <item>Otro. cual?</item>
     </string-array>
     <string-array name="sino_array">
         <item>Seleccione una opción</item>
@@ -841,14 +840,14 @@
         <item>Seleccione una opción</item>
         <item>Si</item>
         <item>No</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="salud2_array">
         <item>Seleccione una opción</item>
         <item>Contributivo EPS</item>
-        <item>Especial (Fuerzas armadas, Ecopetrol, Universidades</item>
+        <item>Especial (Fuerzas armadas. Ecopetrol. Universidades</item>
         <item>Subsidiado</item>
-        <item>No sabe, no informa</item>
+        <item>No sabe. no informa</item>
     </string-array>
     <string-array name="atencion_array">
         <item>Seleccione una opción</item>

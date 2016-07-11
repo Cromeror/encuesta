@@ -91,14 +91,20 @@ public class Educacion {
 
     @Override
     public String toString() {
-        return "Educacion{" +
-                "id='" + id + '\'' +
-                ", miembroId='" + miembroId + '\'' +
-                ", leerEscribir='" + leerEscribir + '\'' +
-                ", asisteEscuela='" + asisteEscuela + '\'' +
-                ", establecimientoOficial='" + establecimientoOficial + '\'' +
-                ", nivelEducativo='" + nivelEducativo + '\'' +
-                ", mayorTitulo='" + mayorTitulo + '\'' +
-                '}';
+        return depurarComas(leerEscribir+"") + ',' +
+               depurarComas(asisteEscuela+"") + ',' +
+               depurarComas(establecimientoOficial+"") + ',' +
+               depurarComas(nivelEducativo+"") + ',' +
+               depurarComas(mayorTitulo+"");
+    }
+
+    private String depurarComas(String cadena){
+        String result = "";
+        for (char c: cadena.toCharArray()){
+            if (c == ',')
+                c = '.';
+            result+=c;
+        }
+        return result;
     }
 }
