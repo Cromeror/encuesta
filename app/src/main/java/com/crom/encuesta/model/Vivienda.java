@@ -47,7 +47,7 @@ public class Vivienda{
     }
 
     public Vivienda() {
-        departamento = "";
+        /*departamento = "";
         municipio = "";
         zona = "";
         barrio = "";
@@ -57,7 +57,7 @@ public class Vivienda{
         propiedadVivienda = "";
         cuantoPagan = "";
         materialPisos = "";
-        materialParedesExteriores = "";
+        materialParedesExteriores = "";*/
         cuartos = new ArrayList<>();
         servicios = new ArrayList<>();
         hogares = new ArrayList<>();

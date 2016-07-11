@@ -15,12 +15,12 @@ public class Inactivo {
     private String id, miembroId;
 
     public Inactivo() {
-        id = "";
-        miembroId = "";
         g = new String[10];
+        /*id = "";
+        miembroId = "";
         for (int i = 0; i < g.length; i++) {
             g[i] = "";
-        }
+        }*/
     }
 
     public String getId() {
@@ -52,7 +52,7 @@ public class Inactivo {
         String string = "";
         for (int i = 0; i < g.length; i++) {
             if (i == g.length - 1) {
-                string += g[i];
+                string += g[i]+"";
             } else {
                 string += g[i] + ",";
             }

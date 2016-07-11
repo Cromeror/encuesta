@@ -27,8 +27,11 @@ import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
 import com.crom.encuesta.persistence.HogarDAO;
 import com.crom.encuesta.persistence.MiembroDAO;
 import com.crom.encuesta.persistence.OcupadoDAO;
+import com.crom.encuesta.persistence.OtroIngresoDAO;
 import com.crom.encuesta.persistence.SQLiteHelper;
 import com.crom.encuesta.persistence.SaludDAO;
+import com.crom.encuesta.persistence.SuperDAO;
+import com.crom.encuesta.persistence.TicDAO;
 import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.fragment.BookmarkFragmento;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
@@ -63,13 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         SQLiteHelper helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
-        ViviendaDAO.getInstance().drop(db);
+        /*ViviendaDAO.getInstance().drop(db);
         HogarDAO.getInstance().drop(db);
         MiembroDAO.getInstance().drop(db);
         SaludDAO.getInstance().drop(db);
         EducacionDAO.getInstance().drop(db);
         OcupadoDAO.getInstance().drop(db);
         FuerzaTrabajoDAO.getInstance().drop(db);
+        TicDAO.getInstance().drop(db);
+        OtroIngresoDAO.getInstance().drop(db);
 
         ViviendaDAO.getInstance().create(db);
         HogarDAO.getInstance().create(db);
@@ -78,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         EducacionDAO.getInstance().create(db);
         OcupadoDAO.getInstance().create(db);
         FuerzaTrabajoDAO.getInstance().create(db);
+        TicDAO.getInstance().create(db);
+        OtroIngresoDAO.getInstance().create(db);*/
+        SuperDAO.getInstance().drop(db);
+        SuperDAO.getInstance().create(db);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -141,8 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }*/
         } else if (id == R.id.nav_import) {
             if (isExternalStorageWritable()) {
-                try
-                {
+                try {
                     File ruta_sd_global = Environment.getExternalStorageDirectory();
                     //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
 
@@ -151,14 +159,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     OutputStreamWriter fout =
                             new OutputStreamWriter(
                                     new FileOutputStream(f));
-
-                    fout.write(vivienda.toString());
+                    for (String vivienda : SuperDAO.getInstance().read(this.getDb())) {
+                        fout.write(vivienda.toString()+"\n");
+                    }
                     fout.close();
-                    Toast.makeText(MainActivity.this,  "Fichero creado con éxito"+ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Fichero creado con éxito" + ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
                     Log.i("Ficheros", vivienda.toString());
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     Log.e("Ficheros", "Error al escribir fichero a tarjeta SD");
                 }
             }

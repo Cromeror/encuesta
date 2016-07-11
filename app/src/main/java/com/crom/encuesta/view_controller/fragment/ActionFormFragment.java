@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.persistence.SuperDAO;
+import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -44,6 +46,7 @@ public class ActionFormFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.i("FINISH", ((MainActivity)getActivity()).getVivienda().toString());
+                SuperDAO.getInstance().insert(((MainActivity)getActivity()).getVivienda(), ((MainActivity)getActivity()).getDb());
                 transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
             }
         });

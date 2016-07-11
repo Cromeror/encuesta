@@ -32,12 +32,12 @@ public class Hogar {
     public Hogar() {
         miembros = new ArrayList<>();
         serviciosBienes = new ArrayList<>();
-        aguaConsumo = "";
+        /*aguaConsumo = "";
         aguaOtroUso = "";
         basura = "";
         sanitarioHogar = "";
         sanitarioVivienda = "";
-        energiaCocinan = "";
+        energiaCocinan = "";*/
     }
 
     public String getViviendaId() {

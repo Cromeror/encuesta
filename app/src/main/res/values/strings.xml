@@ -656,6 +656,7 @@
     <string name="sino_lo_ha_renovado_escriba_00">sino lo ha renovado escriba 00</string>
     <string name="registre_horario_de_00_a_24_horas">registre horario de 00 a 24 horas</string>
     <string name="otro_cual">Otro, ¿Cual?</string>
+    <string name="horas">Horas</string>
 
     <!--ocupados trabajos secundarios Arrays-->
     <string-array name="secundario_3">

@@ -13,6 +13,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     HogarDAO hogarDAO = HogarDAO.getInstance();
     MiembroDAO miembroDAO = MiembroDAO.getInstance();
     SaludDAO saludDAO = SaludDAO.getInstance();
+    TicDAO ticDAO = TicDAO.getInstance();
+    OcupadoDAO ocupadoDAO = OcupadoDAO.getInstance();
+    EducacionDAO educacionDAO = EducacionDAO.getInstance();
+    FuerzaTrabajoDAO fuerzaTrabajoDAO = FuerzaTrabajoDAO.getInstance();
+    OtroIngresoDAO otroIngresoDAO = OtroIngresoDAO.getInstance();
 
     public SQLiteHelper(Context contexto) {
         super(contexto, DATA_BASE, null, VERSION);
@@ -24,7 +29,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         viviendaDAO.create(db);
         miembroDAO.create(db);
         saludDAO.create(db);
+        ticDAO.create(db);
 
+        ocupadoDAO.create(db);
+        educacionDAO.create(db);
+        fuerzaTrabajoDAO.create(db);
+        otroIngresoDAO.create(db);
     }
 
     @Override
@@ -33,9 +43,20 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         hogarDAO.drop(db);
         miembroDAO.drop(db);
         saludDAO.drop(db);
+        ticDAO.drop(db);
+        ocupadoDAO.drop(db);
+        educacionDAO.drop(db);
+        fuerzaTrabajoDAO.drop(db);
+        otroIngresoDAO.drop(db);
+
         viviendaDAO.create(db);
         hogarDAO.create(db);
         miembroDAO.create(db);
         saludDAO.create(db);
+        ticDAO.create(db);
+        ocupadoDAO.create(db);
+        educacionDAO.create(db);
+        fuerzaTrabajoDAO.create(db);
+        otroIngresoDAO.create(db);
     }
 }

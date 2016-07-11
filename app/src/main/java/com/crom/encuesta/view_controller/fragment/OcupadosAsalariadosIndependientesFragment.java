@@ -25,6 +25,8 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.view_controller.MainActivity;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
  */
@@ -161,8 +163,8 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 if (position == 0) {
                     getDialog();
                 } else {
-                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setText("");
-                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.GONE);
+                    ((TextView) view.findViewById(R.id.ocupado_34_textView)).setText("");
+                    ((TextView) view.findViewById(R.id.ocupado_34_textView)).setVisibility(View.GONE);
                 }
             }
 
@@ -172,7 +174,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             }
         });
         asalariado_independiente_6.setSelection(1);
-        ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.GONE);
+        ((TextView) view.findViewById(R.id.ocupado_34_textView)).setVisibility(View.GONE);
 
         Spinner asalariado_independiente_7 = (Spinner) view.findViewById(R.id.ocupado_35_spinner);
         spinner_adapter_2 = ArrayAdapter.createFromResource(getActivity(),
@@ -180,7 +182,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         spinner_adapter_2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariado_independiente_7.setAdapter(spinner_adapter_2);
 
-        Spinner asalariado_independiente_8 = (Spinner) view.findViewById(R.id.asalariado_independiente_8_spinner);
+        Spinner asalariado_independiente_8 = (Spinner) view.findViewById(R.id.ocupado_36_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_8, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -193,7 +195,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 // Showing selected spinner item
 
-                EditText otro_1 = (EditText) view.findViewById(R.id.asalariado_independiente_8_editText);
+                EditText otro_1 = (EditText) view.findViewById(R.id.ocupado_36_editText);
                 if (scountry.equalsIgnoreCase("Otro")) {
                     otro_1.setVisibility(View.VISIBLE);
                 } else {
@@ -207,7 +209,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             }
         });
 
-        Spinner asalariado_independiente_9 = (Spinner) view.findViewById(R.id.asalariados_independientes_9_spinner);
+        Spinner asalariado_independiente_9 = (Spinner) view.findViewById(R.id.ocupado_37_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_9, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -220,7 +222,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 // Showing selected spinner item
 
-                EditText otro_1 = (EditText) view.findViewById(R.id.asalariados_independientes_9_editText);
+                EditText otro_1 = (EditText) view.findViewById(R.id.ocupado_37_editText);
                 if (scountry.equalsIgnoreCase("Otro")) {
                     otro_1.setVisibility(View.VISIBLE);
                 } else {
@@ -327,7 +329,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         spinner_adapter_39.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ocupado_39_spinner.setAdapter(spinner_adapter_39);
 
-        Spinner asalariado_independiente_12 = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
+        Spinner asalariado_independiente_12 = (Spinner) view.findViewById(R.id.ocupado_40_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.asalariados_independientes_12, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -347,13 +349,13 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             }
         });
 
-        Spinner asalariado_independiente_15 = (Spinner) view.findViewById(R.id.asalariados_independientes_15_spinner);
+        Spinner asalariado_independiente_15 = (Spinner) view.findViewById(R.id.ocupado_43_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.si_no_nosabe, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         asalariado_independiente_15.setAdapter(spinner_adapter_1);
 
-        Spinner asalariado_independiente_16 = (Spinner) view.findViewById(R.id.asalariados_independientes_16_spinner);
+        Spinner asalariado_independiente_16 = (Spinner) view.findViewById(R.id.ocupado_44_spinner);
         spinner_adapter_1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.si_no_nosabe, android.R.layout.simple_spinner_item);
         spinner_adapter_1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -362,15 +364,16 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
+                if (save())
+                    transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
             }
         });
     }
 
     private void hide_38() {
-        EditText a = (EditText) view.findViewById(R.id.asalariados_independientes_13_editText);
+        EditText a = (EditText) view.findViewById(R.id.ocupado_41_editText);
         Spinner b = (Spinner) view.findViewById(R.id.ocupado_39_spinner);
-        Spinner c = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
+        Spinner c = (Spinner) view.findViewById(R.id.ocupado_40_spinner);
         TextView d = (TextView) view.findViewById(R.id.asalariados_independientes_13_textView);
         TextView e = (TextView) view.findViewById(R.id.ocupado_39_textView);
         TextView f = (TextView) view.findViewById(R.id.asalariados_independientes_12_textView);
@@ -384,9 +387,9 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
     }
 
     private void show_38() {
-        EditText a = (EditText) view.findViewById(R.id.asalariados_independientes_13_editText);
+        EditText a = (EditText) view.findViewById(R.id.ocupado_41_editText);
         Spinner b = (Spinner) view.findViewById(R.id.ocupado_39_spinner);
-        Spinner c = (Spinner) view.findViewById(R.id.asalariados_independientes_12_spinner);
+        Spinner c = (Spinner) view.findViewById(R.id.ocupado_40_spinner);
         TextView d = (TextView) view.findViewById(R.id.asalariados_independientes_13_textView);
         TextView e = (TextView) view.findViewById(R.id.ocupado_39_textView);
         TextView f = (TextView) view.findViewById(R.id.asalariados_independientes_12_textView);
@@ -415,8 +418,8 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                         || de.length() == 0 || hasta.length() == 0) {
                     Toast.makeText(getContext(), "Recuerde que el formato de hora son 2 digitos", Toast.LENGTH_SHORT).show();
                 } else {
-                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setVisibility(View.VISIBLE);
-                    ((TextView) view.findViewById(R.id.asalariado_independiente_6_editText)).setText(de + " a " + hasta);
+                    ((TextView) view.findViewById(R.id.ocupado_34_textView)).setVisibility(View.VISIBLE);
+                    ((TextView) view.findViewById(R.id.ocupado_34_textView)).setText(de + " a " + hasta);
                     dialog.dismiss();
                 }
             }
@@ -426,8 +429,9 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
 
     private boolean save() {
         ocupado.setE29(((EditText) view.findViewById(R.id.ocupado_29_editText)).getText().toString());
+        int e30 = 0;
+        int e32 = 0;
         try {
-            int e30;
             if (((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString().equals("")) {
                 e30 = 0;
             } else {
@@ -442,14 +446,109 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
                     ocupado.setE31(spinner.getSelectedItem().toString());
                 }
             }
+            ocupado.setE32(((EditText) view.findViewById(R.id.ocupado_32_editText)).getText().toString());
+            e32 = Integer.parseInt(ocupado.getE32());
         } catch (Exception e) {
             return false;
         }
+        if (e32 < e30) {
+            Spinner spinner = (Spinner) view.findViewById(R.id.ocupado_33_spinner);
+            if (spinner.getSelectedItem().toString().equals("Otro"))
+                ocupado.setE31(((EditText) view.findViewById(R.id.ocupado_31_editText)).getText().toString());
+            else
+                ocupado.setE31(spinner.getSelectedItem().toString());
+        }
         ocupado.setE32(((EditText) view.findViewById(R.id.ocupado_32_editText)).getText().toString());
         Spinner spinner = (Spinner) view.findViewById(R.id.ocupado_33_spinner);
-        if (spinner.getSelectedItem().toString().equals("Otro")) {
-            //ocupado.setE31(((EditText)view.findViewById(R.id.oc33)).getText().toString());
+        if (spinner.getSelectedItem().toString().equals("Otro"))
+            ocupado.setE33(((EditText) view.findViewById(R.id.ocupado_33_editText)).getText().toString());
+        else
+            ocupado.setE33(spinner.getSelectedItem().toString());
+        Spinner spinner1 = (Spinner) view.findViewById(R.id.ocupado_34_spinner);
+        if (spinner1.getSelectedItemPosition() == 0) {
+            ocupado.setE34(((TextView) view.findViewById(R.id.ocupado_34_textView)).getText().toString());
+        } else
+            ocupado.setE34(spinner1.getSelectedItem().toString());
+        ocupado.setE35(((Spinner) view.findViewById(R.id.ocupado_35_spinner)).getSelectedItem().toString());
+        Spinner spinner36 = (Spinner) view.findViewById(R.id.ocupado_36_spinner);
+        if (spinner36.getSelectedItem().toString().equals("Otro"))
+            ocupado.setE36(((EditText) view.findViewById(R.id.ocupado_36_editText)).getText().toString());
+        else
+            ocupado.setE36(spinner36.getSelectedItem().toString());
+        Spinner spinner37 = (Spinner) view.findViewById(R.id.ocupado_37_spinner);
+        if (spinner37.getSelectedItem().toString().equals("Otro"))
+            ocupado.setE37(((EditText) view.findViewById(R.id.ocupado_37_editText)).getText().toString());
+        else
+            ocupado.setE37(spinner36.getSelectedItem().toString());
+        Spinner spinner38 = (Spinner) view.findViewById(R.id.ocupado_38_spinner);
+        ocupado.setE38(spinner38.getSelectedItem().toString());
+        if (spinner38.getSelectedItemPosition() == 1) {
+            ArrayList<String> list42 = new ArrayList<>();
+            CheckBox a = (CheckBox) view.findViewById(R.id.ocupado_42_a);
+            CheckBox b = (CheckBox) view.findViewById(R.id.ocupado_42_b);
+            CheckBox c = (CheckBox) view.findViewById(R.id.ocupado_42_c);
+            CheckBox d = (CheckBox) view.findViewById(R.id.ocupado_42_d);
+            CheckBox e = (CheckBox) view.findViewById(R.id.ocupado_42_e);
+            CheckBox f = (CheckBox) view.findViewById(R.id.ocupado_42_f);
+            CheckBox g = (CheckBox) view.findViewById(R.id.ocupado_42_g);
+            CheckBox h = (CheckBox) view.findViewById(R.id.ocupado_42_h);
+            if (a.isChecked())
+                list42.add(a.getText().toString());
+            if (b.isChecked())
+                list42.add(b.getText().toString());
+            if (c.isChecked())
+                list42.add(c.getText().toString());
+            if (d.isChecked())
+                list42.add(d.getText().toString());
+            if (e.isChecked())
+                list42.add(e.getText().toString());
+            if (f.isChecked())
+                list42.add(f.getText().toString());
+            if (g.isChecked())
+                list42.add(((EditText) view.findViewById(R.id.ocupado_42_editText)).getText().toString());
+            if (h.isChecked())
+                list42.add(h.getText().toString());
+            ocupado.setE42(list42);
+            ocupado.setE43(((Spinner) view.findViewById(R.id.ocupado_43_spinner)).getSelectedItem().toString());
+            ocupado.setE44(((Spinner) view.findViewById(R.id.ocupado_44_spinner)).getSelectedItem().toString());
+            return true;
+        } else if (spinner38.getSelectedItemPosition() == 2) {
+            ocupado.setE43(((Spinner) view.findViewById(R.id.ocupado_43_spinner)).getSelectedItem().toString());
+            ocupado.setE44(((Spinner) view.findViewById(R.id.ocupado_44_spinner)).getSelectedItem().toString());
+            return true;
         }
+        ocupado.setE39(((Spinner) view.findViewById(R.id.ocupado_39_spinner)).getSelectedItem().toString());
+        ocupado.setE40(((Spinner) view.findViewById(R.id.ocupado_40_spinner)).getSelectedItem().toString());
+        ocupado.setE41(((EditText) view.findViewById(R.id.ocupado_41_editText)).getText().toString());
+        ArrayList<String> list42 = new ArrayList<>();
+        CheckBox a = (CheckBox) view.findViewById(R.id.ocupado_42_a);
+        CheckBox b = (CheckBox) view.findViewById(R.id.ocupado_42_b);
+        CheckBox c = (CheckBox) view.findViewById(R.id.ocupado_42_c);
+        CheckBox d = (CheckBox) view.findViewById(R.id.ocupado_42_d);
+        CheckBox e = (CheckBox) view.findViewById(R.id.ocupado_42_e);
+        CheckBox f = (CheckBox) view.findViewById(R.id.ocupado_42_f);
+        CheckBox g = (CheckBox) view.findViewById(R.id.ocupado_42_g);
+        CheckBox h = (CheckBox) view.findViewById(R.id.ocupado_42_h);
+        if (a.isChecked())
+            list42.add(a.getText().toString());
+        if (b.isChecked())
+            list42.add(b.getText().toString());
+        if (c.isChecked())
+            list42.add(c.getText().toString());
+        if (d.isChecked())
+            list42.add(d.getText().toString());
+        if (e.isChecked())
+            list42.add(e.getText().toString());
+        if (f.isChecked())
+            list42.add(f.getText().toString());
+        if (g.isChecked())
+            list42.add(((EditText) view.findViewById(R.id.ocupado_42_editText)).getText().toString());
+        if (h.isChecked())
+            list42.add(h.getText().toString());
+        ocupado.setE42(list42);
+        ocupado.setE43(((Spinner) view.findViewById(R.id.ocupado_43_spinner)).getSelectedItem().toString());
+        ocupado.setE44(((Spinner) view.findViewById(R.id.ocupado_44_spinner)).getSelectedItem().toString());
+        Log.i("Asalariados Indepen", ocupado.toString());
         return true;
     }
 

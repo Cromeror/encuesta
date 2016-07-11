@@ -100,13 +100,6 @@ public class HogarDAO implements  DAO<Hogar, Integer>{
 
     @Override
     public List<Hogar> read(SQLiteDatabase db) {
-        String[] campos = new String[] {hogarId,viviendaId,
-                aguaConsumo,
-                aguaOtroUso,
-                basura,
-                sanitarioHogar,
-                sanitarioVivienda,
-                energiaCocinan };
         Cursor c = db.query(TABLE_HOGAR, null, null, null, null, null, null);
         ArrayList<Hogar> hogars = new ArrayList<>();
         //String[] args = new String[] {"Prueba"};

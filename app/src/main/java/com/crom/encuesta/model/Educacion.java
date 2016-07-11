@@ -24,13 +24,13 @@ public class Educacion {
     }
 
     public Educacion() {
-        leerEscribir = "";
+       /* leerEscribir = "";
         asisteEscuela = "";
         establecimientoOficial = "";
         nivelEducativo = "";
         mayorTitulo = "";
         id = "";
-        miembroId = "";
+        miembroId = "";*/
     }
 
     public String getId() {

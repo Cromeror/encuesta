@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Miembro {
 
-    private String id,hogarId, sexo, nacimiento, edad, lugarNacimiento, parentesco, estadoCivil;
+    private String id, hogarId, sexo, nacimiento, edad, lugarNacimiento, parentesco, estadoCivil;
     private Salud salud;
     private Educacion educacion;
     private FuerzaTrabajo fuerzaTrabajo;
@@ -18,8 +18,8 @@ public class Miembro {
     private OtroIngreso otroIngreso;
     private TIC tic;//con lista
 
-    public Miembro(String id,String hogarId, String sexo, String nacimiento, String edad, String lugarNacimiento, String parentesco, String estadoCivil, Salud salud, Educacion educacion, FuerzaTrabajo fuerzaTrabajo, Ocupado ocupado, Desocupado desocupado, Inactivo inactivo, OtroIngreso otroIngreso, TIC tic) {
-       this.hogarId =hogarId;
+    public Miembro(String id, String hogarId, String sexo, String nacimiento, String edad, String lugarNacimiento, String parentesco, String estadoCivil, Salud salud, Educacion educacion, FuerzaTrabajo fuerzaTrabajo, Ocupado ocupado, Desocupado desocupado, Inactivo inactivo, OtroIngreso otroIngreso, TIC tic) {
+        this.hogarId = hogarId;
         this.id = id;
         this.sexo = sexo;
         this.nacimiento = nacimiento;
@@ -38,13 +38,13 @@ public class Miembro {
     }
 
     public Miembro() {
-        id = "";
+        /*id = "";
         sexo = "";
         nacimiento = "";
         edad = "0";
         lugarNacimiento = "";
         parentesco = "";
-        estadoCivil = "";
+        estadoCivil = "";*/
         salud = new Salud();
         educacion = new Educacion();
         ocupado = new Ocupado();
@@ -186,14 +186,28 @@ public class Miembro {
         ArrayList<String> list = new ArrayList<>();
         String s = sexo + ',' + nacimiento + ',' + edad + ',' + lugarNacimiento + ',' + parentesco + ','
                 + estadoCivil + ',' + salud + "," + educacion + "," + fuerzaTrabajo + ",";
-
-        /*for (String string : ocupado.toList()) {
-            for (String string1 : tic.toList()) {
-                String s2 = s + string + ',' + desocupado.toString() + "," 
-                        + inactivo.toString() + "," + otroIngreso.toString() + ","+string1;
+        if (!ocupado.toList().isEmpty()) {
+            for (String string : ocupado.toList()) {
+                for (String string1 : tic.toList()) {
+                    String s2 = s + string + ',' + desocupado.toString() + ","
+                            + inactivo.toString() + "," + otroIngreso.toString() + "," + string1;
+                    list.add(s2);
+                }
+            }
+        }else {
+            String string = (new Ocupado()).toString();
+            if (!tic.toList().isEmpty()) {
+                for (String string1 : tic.toList()) {
+                    String s2 = s + string + ',' + desocupado.toString() + ","
+                            + inactivo.toString() + "," + otroIngreso.toString() + "," + string1;
+                    list.add(s2);
+                }
+            }else {
+                String s2 = s + string + ',' + desocupado.toString() + ","
+                        + inactivo.toString() + "," + otroIngreso.toString() + "," + (new TIC()).toString();
                 list.add(s2);
             }
-        }*/
+        }
         list.add(s);
         return list;
     }

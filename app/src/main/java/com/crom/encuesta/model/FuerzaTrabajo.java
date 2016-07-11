@@ -32,7 +32,7 @@ public class FuerzaTrabajo {
     }
 
     public FuerzaTrabajo() {
-        id="";
+        /*id="";
         miembroId="";
         d1 = "";
         d2 = "";
@@ -46,7 +46,7 @@ public class FuerzaTrabajo {
         d10 = "";
         d11 = "";
         d12 = "";
-        d13 = "";
+        d13 = "";*/
     }
 
     public String getId() {

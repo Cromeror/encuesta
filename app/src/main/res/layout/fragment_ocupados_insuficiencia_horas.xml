@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:hint=""
+            android:hint="@string/horas"
             android:id="@+id/insuficiencia_2_editText" />
 
         <TextView
@@ -160,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Otro"
-            android:id="@+id/checkBox8" />
+            android:id="@+id/checkBox9" />
 
         <EditText
             android:layout_width="match_parent"

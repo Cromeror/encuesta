@@ -9,22 +9,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author cristobal
  */
 public class TIC {
 
-    private String i1, i2, i5, id, miembroId;
+    private String id, miembroId, i1, i2, i5;
     private ArrayList<String> i3, i4;
 
     public TIC() {
-        id ="";
-        miembroId ="";
-        i1 = "";
-        i2 = "";
         i3 = new ArrayList<String>();
         i4 = new ArrayList<String>();
-        i5 = "";
+    }
+
+    public TIC(String id, String miembroId, String i1, String i2, String i5, ArrayList<String> i3, ArrayList<String> i4) {
+        this.id = id;
+        this.miembroId = miembroId;
+        this.i1 = i1;
+        this.i2 = i2;
+        this.i5 = i5;
+        this.i3 = i3;
+        this.i4 = i4;
     }
 
     public String getId() {
@@ -106,14 +110,10 @@ public class TIC {
 
     @Override
     public String toString() {
-        return "TIC{" +
-                "id='" + id + '\'' +
-                ", miembroId='" + miembroId + '\'' +
-                ", i1='" + i1 + '\'' +
-                ", i2='" + i2 + '\'' +
-                ", i3=" + i3 + '\''+
-                ", i4=" + i4 + '\''+
-                ", i5='" + i5  +
-                '}';
+        return i1 + ',' +
+                i2 + ',' +
+                "null," +
+                "null," +
+                i5;
     }
 }

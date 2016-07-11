@@ -14,12 +14,12 @@ public class OtroIngreso {
     private String[] f;
 
     public OtroIngreso() {
-        id = "";
-        miembroId = "";
         f = new String[4];
+        /*id = "";
+        miembroId = "";
         for (int i = 0; i < f.length; i++) {
             f[i] = "";
-        }
+        }*/
     }
 
     public String getId() {

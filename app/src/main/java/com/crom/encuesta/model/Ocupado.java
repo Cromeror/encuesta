@@ -8,23 +8,27 @@ package com.crom.encuesta.model;
 import java.util.ArrayList;
 
 /**
- *
  * @author cristobal
  */
 public class Ocupado {
     private String miembroId;
     private String id;
-    private String e1, e2, e3, e4, e5, e6,e7, e7a,e8,e9;
-    private String e10a,e10b,e10c,e11,e12;
-    private String e13,e14,e15,e15a,e16,e17,e18,e19;
-    private String e20a,e20b,e20c,e20d,e20a2,e20b2,e20c2,e20d2;
-    private String e21a,e21b,e21a2,e21b2;
-    private String e22a,e22b,e22c,e22d,e22e,e23;
+    private String e1, e2, e3, e4, e5, e6, e7, e7a, e8, e9;
+    private String e10a, e10b, e10c, e11, e12;
+    private String e13, e14, e15, e15a, e16, e17, e18, e19;
+    private String e20a, e20b, e20c, e20d, e20a2, e20b2, e20c2, e20d2;
+    private String e21a, e21b, e21a2, e21b2;
+    private String e22a, e22b, e22c, e22d, e22e, e23;
     private String e24, e25, e25a, e26, e27, e28;
-    private String e29,e30,e31,e32,e33,e34,e35,e36,e37,e38,e39,e40,e41,e42,e43,e44;
+    private String e29, e30, e31, e32, e33, e34, e35, e36, e37, e38, e39, e40, e41;
+    private ArrayList<String> e42;
+    private String e43, e44, e45, e46, e47, e48, e49, e50, e51, e52, e53;
+    private ArrayList<String> e54;
+    private String e55, e56, e57a, e57b, e57c, e57d, e57e, e57f, e58, e59, e60, e61;
 
     public Ocupado() {
-
+        e42 = new ArrayList<>();
+        e54 = new ArrayList<>();
     }
 
     public String getMiembroId() {
@@ -523,11 +527,11 @@ public class Ocupado {
         this.e41 = e41;
     }
 
-    public String getE42() {
+    public ArrayList<String> getE42() {
         return e42;
     }
 
-    public void setE42(String e42) {
+    public void setE42(ArrayList<String> e42) {
         this.e42 = e42;
     }
 
@@ -547,74 +551,367 @@ public class Ocupado {
         this.e44 = e44;
     }
 
+    public String getE45() {
+        return e45;
+    }
+
+    public void setE45(String e45) {
+        this.e45 = e45;
+    }
+
+    public String getE46() {
+        return e46;
+    }
+
+    public void setE46(String e46) {
+        this.e46 = e46;
+    }
+
+    public String getE47() {
+        return e47;
+    }
+
+    public void setE47(String e47) {
+        this.e47 = e47;
+    }
+
+    public String getE48() {
+        return e48;
+    }
+
+    public void setE48(String e48) {
+        this.e48 = e48;
+    }
+
+    public String getE49() {
+        return e49;
+    }
+
+    public void setE49(String e49) {
+        this.e49 = e49;
+    }
+
+    public String getE50() {
+        return e50;
+    }
+
+    public void setE50(String e50) {
+        this.e50 = e50;
+    }
+
+    public String getE51() {
+        return e51;
+    }
+
+    public void setE51(String e51) {
+        this.e51 = e51;
+    }
+
+    public String getE52() {
+        return e52;
+    }
+
+    public void setE52(String e52) {
+        this.e52 = e52;
+    }
+
+    public String getE53() {
+        return e53;
+    }
+
+    public void setE53(String e53) {
+        this.e53 = e53;
+    }
+
+    public ArrayList<String> getE54() {
+        return e54;
+    }
+
+    public void setE54(ArrayList<String> e54) {
+        this.e54 = e54;
+    }
+
+    public String getE55() {
+        return e55;
+    }
+
+    public void setE55(String e55) {
+        this.e55 = e55;
+    }
+
+    public String getE56() {
+        return e56;
+    }
+
+    public void setE56(String e56) {
+        this.e56 = e56;
+    }
+
+    public String getE57a() {
+        return e57a;
+    }
+
+    public void setE57a(String e57a) {
+        this.e57a = e57a;
+    }
+
+    public String getE57b() {
+        return e57b;
+    }
+
+    public void setE57b(String e57b) {
+        this.e57b = e57b;
+    }
+
+    public String getE57c() {
+        return e57c;
+    }
+
+    public void setE57c(String e57c) {
+        this.e57c = e57c;
+    }
+
+    public String getE57d() {
+        return e57d;
+    }
+
+    public void setE57d(String e57d) {
+        this.e57d = e57d;
+    }
+
+    public String getE57e() {
+        return e57e;
+    }
+
+    public void setE57e(String e57e) {
+        this.e57e = e57e;
+    }
+
+    public String getE57f() {
+        return e57f;
+    }
+
+    public void setE57f(String e57f) {
+        this.e57f = e57f;
+    }
+
+    public String getE58() {
+        return e58;
+    }
+
+    public void setE58(String e58) {
+        this.e58 = e58;
+    }
+
+    public String getE59() {
+        return e59;
+    }
+
+    public void setE59(String e59) {
+        this.e59 = e59;
+    }
+
+    public String getE60() {
+        return e60;
+    }
+
+    public void setE60(String e60) {
+        this.e60 = e60;
+    }
+
+    public String getE61() {
+        return e61;
+    }
+
+    public void setE61(String e61) {
+        this.e61 = e61;
+    }
+
     @Override
     public String toString() {
-        return "Ocupado{" +
-                "miembroId='" + miembroId + '\'' +
-                ", id='" + id + '\'' +
-                ", e1='" + e1 + '\'' +
-                ", e2='" + e2 + '\'' +
-                ", e3='" + e3 + '\'' +
-                ", e4='" + e4 + '\'' +
-                ", e5='" + e5 + '\'' +
-                ", e6='" + e6 + '\'' +
-                ", e7='" + e7 + '\'' +
-                ", e7a='" + e7a + '\'' +
-                ", e8='" + e8 + '\'' +
-                ", e9='" + e9 + '\'' +
-                ", e10a='" + e10a + '\'' +
-                ", e10b='" + e10b + '\'' +
-                ", e10c='" + e10c + '\'' +
-                ", e11='" + e11 + '\'' +
-                ", e12='" + e12 + '\'' +
-                ", e13='" + e13 + '\'' +
-                ", e14='" + e14 + '\'' +
-                ", e15='" + e15 + '\'' +
-                ", e15a='" + e15a + '\'' +
-                ", e16='" + e16 + '\'' +
-                ", e17='" + e17 + '\'' +
-                ", e18='" + e18 + '\'' +
-                ", e19='" + e19 + '\'' +
-                ", e20a='" + e20a + '\'' +
-                ", e20b='" + e20b + '\'' +
-                ", e20c='" + e20c + '\'' +
-                ", e20d='" + e20d + '\'' +
-                ", e20a2='" + e20a2 + '\'' +
-                ", e20b2='" + e20b2 + '\'' +
-                ", e20c2='" + e20c2 + '\'' +
-                ", e20d2='" + e20d2 + '\'' +
-                ", e21a='" + e21a + '\'' +
-                ", e21b='" + e21b + '\'' +
-                ", e21a2='" + e21a2 + '\'' +
-                ", e21b2='" + e21b2 + '\'' +
-                ", e22a='" + e22a + '\'' +
-                ", e22b='" + e22b + '\'' +
-                ", e22c='" + e22c + '\'' +
-                ", e22d='" + e22d + '\'' +
-                ", e22e='" + e22e + '\'' +
-                ", e23='" + e23 + '\'' +
-                ", e24='" + e24 + '\'' +
-                ", e25='" + e25 + '\'' +
-                ", e25a='" + e25a + '\'' +
-                ", e26='" + e26 + '\'' +
-                ", e27='" + e27 + '\'' +
-                ", e28='" + e28 + '\'' +
-                ", e29='" + e29 + '\'' +
-                ", e30='" + e30 + '\'' +
-                ", e31='" + e31 + '\'' +
-                ", e32='" + e32 + '\'' +
-                ", e33='" + e33 + '\'' +
-                ", e34='" + e34 + '\'' +
-                ", e35='" + e35 + '\'' +
-                ", e36='" + e36 + '\'' +
-                ", e37='" + e37 + '\'' +
-                ", e38='" + e38 + '\'' +
-                ", e39='" + e39 + '\'' +
-                ", e40='" + e40 + '\'' +
-                ", e41='" + e41 + '\'' +
-                ", e42='" + e42 + '\'' +
-                ", e43='" + e43 + '\'' +
-                ", e44='" + e44 + '\'' +
-                '}';
+        return e1 + ',' +
+                e2 + ',' +
+                e3 + ',' +
+                e4 + ',' +
+                e5 + ',' +
+                e6 + ',' +
+                e7 + ',' +
+                e7a + ',' +
+                e8 + ',' +
+                e9 + ',' +
+                e10a + ',' +
+                e10b + ',' +
+                e10c + ',' +
+                e11 + ',' +
+                e12 + ',' +
+                e13 + ',' +
+                e14 + ',' +
+                e15 + ',' +
+                e15a + ',' +
+                e16 + ',' +
+                e17 + ',' +
+                e18 + ',' +
+                e19 + ',' +
+                e20a + ',' +
+                e20b + ',' +
+                e20c + ',' +
+                e20d + ',' +
+                e20a2 + ',' +
+                e20b2 + ',' +
+                e20c2 + ',' +
+                e20d2 + ',' +
+                e21a + ',' +
+                e21b + ',' +
+                e21a2 + ',' +
+                e21b2 + ',' +
+                e22a + ',' +
+                e22b + ',' +
+                e22c + ',' +
+                e22d + ',' +
+                e22e + ',' +
+                e23 + ',' +
+                e24 + ',' +
+                e25 + ',' +
+                e25a + ',' +
+                e26 + ',' +
+                e27 + ',' +
+                e28 + ',' +
+                e29 + ',' +
+                e30 + ',' +
+                e31 + ',' +
+                e32 + ',' +
+                e33 + ',' +
+                e34 + ',' +
+                e35 + ',' +
+                e36 + ',' +
+                e37 + ',' +
+                e38 + ',' +
+                e39 + ',' +
+                e40 + ',' +
+                e41 + ',' +
+                "null," +
+                e43 + ',' +
+                e44 + ',' +
+                e45 + ',' +
+                e46 + ',' +
+                e47 + ',' +
+                e48 + ',' +
+                e49 + ',' +
+                e50 + ',' +
+                e51 + ',' +
+                e52 + ',' +
+                e53 + ',' +
+                "null," +
+                e55 + ',' +
+                e56 + ',' +
+                e57a + ',' +
+                e57b + ',' +
+                e57c + ',' +
+                e57d + ',' +
+                e57e + ',' +
+                e57f + ',' +
+                e58 + ',' +
+                e59 + ',' +
+                e60 + ',' +
+                e61;
+    }
+
+    public ArrayList<String> toList() {
+        ArrayList<String> list = new ArrayList<>();
+        String s1 = miembroId + ',' +
+                id + ',' +
+                e1 + ',' +
+                e2 + ',' +
+                e3 + ',' +
+                e4 + ',' +
+                e5 + ',' +
+                e6 + ',' +
+                e7 + ',' +
+                e7a + ',' +
+                e8 + ',' +
+                e9 + ',' +
+                e10a + ',' +
+                e10b + ',' +
+                e10c + ',' +
+                e11 + ',' +
+                e12 + ',' +
+                e13 + ',' +
+                e14 + ',' +
+                e15 + ',' +
+                e15a + ',' +
+                e16 + ',' +
+                e17 + ',' +
+                e18 + ',' +
+                e19 + ',' +
+                e20a + ',' +
+                e20b + ',' +
+                e20c + ',' +
+                e20d + ',' +
+                e20a2 + ',' +
+                e20b2 + ',' +
+                e20c2 + ',' +
+                e20d2 + ',' +
+                e21a + ',' +
+                e21b + ',' +
+                e21a2 + ',' +
+                e21b2 + ',' +
+                e22a + ',' +
+                e22b + ',' +
+                e22c + ',' +
+                e22d + ',' +
+                e22e + ',' +
+                e23 + ',' +
+                e24 + ',' +
+                e25 + ',' +
+                e25a + ',' +
+                e26 + ',' +
+                e27 + ',' +
+                e28 + ',' +
+                e29 + ',' +
+                e30 + ',' +
+                e31 + ',' +
+                e32 + ',' +
+                e33 + ',' +
+                e34 + ',' +
+                e35 + ',' +
+                e36 + ',' +
+                e37 + ',' +
+                e38 + ',' +
+                e39 + ',' +
+                e40 + ',' +
+                e41 + ',';
+        for (String elemento : e42) {
+            String s2 = s1;
+            s2 += elemento + ',';
+            s2 += e43 + ',' +
+                    e44 + ',' +
+                    e45 + ',' +
+                    e46 + ',' +
+                    e47 + ',' +
+                    e48 + ',' +
+                    e49 + ',' +
+                    e50 + ',' +
+                    e51 + ',' +
+                    e52 + ',' +
+                    e53 + ',';
+            for (String elemento2 : e54) {
+                String s3 = s2;
+                s3 += elemento2 + ',' +
+                        e55 + ',' +
+                        e56 + ',' +
+                        e57a + ',' +
+                        e57b + ',' +
+                        e57c + ',' +
+                        e57d + ',' +
+                        e57e + ',' +
+                        e57f + ',' +
+                        e58 + ',' +
+                        e59 + ',' +
+                        e60 + ',' +
+                        e61;
+                list.add(s3);
+            }
+        }
+        return list;
     }
 }

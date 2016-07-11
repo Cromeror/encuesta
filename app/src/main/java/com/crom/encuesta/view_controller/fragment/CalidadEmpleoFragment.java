@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
 
@@ -25,7 +27,7 @@ public class CalidadEmpleoFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
+    private Ocupado ocupado;
 
     public CalidadEmpleoFragment() {
         // Required empty public constructor
@@ -43,7 +45,7 @@ public class CalidadEmpleoFragment extends Fragment {
     }
 
     private void init() {
-        vivienda = ((MainActivity) getActivity()).getVivienda();
+        ocupado = ((MainActivity) getActivity()).getOcupado();
         Spinner empl_57a = (Spinner) view.findViewById(R.id.empleo_57a);
         Spinner empl_57b = (Spinner) view.findViewById(R.id.empleo_57b);
         Spinner empl_57c = (Spinner) view.findViewById(R.id.empleo_57c);
@@ -51,7 +53,7 @@ public class CalidadEmpleoFragment extends Fragment {
         Spinner empl_57e = (Spinner) view.findViewById(R.id.empleo_57e);
         Spinner empl_57f = (Spinner) view.findViewById(R.id.empleo_57f);
         Spinner empleo_58 = (Spinner) view.findViewById(R.id.empleo_58);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_57, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.empleo_57, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empl_57a.setAdapter(adapter);
         empl_57b.setAdapter(adapter);
@@ -59,22 +61,22 @@ public class CalidadEmpleoFragment extends Fragment {
         empl_57d.setAdapter(adapter);
         empl_57e.setAdapter(adapter);
         empl_57f.setAdapter(adapter);
-        adapter = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_58_array, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(getActivity(), R.array.empleo_58_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empleo_58.setAdapter(adapter);
 
         Spinner empl_59 = (Spinner) view.findViewById(R.id.empleo_59);
-        ArrayAdapter<CharSequence> adapter59 = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_59, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter59 = ArrayAdapter.createFromResource(getActivity(), R.array.empleo_59, android.R.layout.simple_spinner_item);
         adapter59.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empl_59.setAdapter(adapter59);
 
         Spinner empl_60 = (Spinner) view.findViewById(R.id.empleo_60);
-        ArrayAdapter<CharSequence> adapter60 = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_60, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter60 = ArrayAdapter.createFromResource(getActivity(), R.array.empleo_60, android.R.layout.simple_spinner_item);
         adapter60.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empl_60.setAdapter(adapter60);
 
         Spinner empl_61 = (Spinner) view.findViewById(R.id.empleo_61);
-        ArrayAdapter<CharSequence> adapter61 = ArrayAdapter.createFromResource(getActivity(),R.array.empleo_61, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter61 = ArrayAdapter.createFromResource(getActivity(), R.array.empleo_61, android.R.layout.simple_spinner_item);
         adapter61.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         empl_61.setAdapter(adapter61);
 
@@ -82,10 +84,9 @@ public class CalidadEmpleoFragment extends Fragment {
         empl_61.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position==9){
+                if (position == 9) {
                     ed61.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     ed61.setVisibility(View.GONE);
                 }
             }
@@ -104,32 +105,30 @@ public class CalidadEmpleoFragment extends Fragment {
             }
         });
     }
-/*
-    private void save() {
-        String dato = "a.";
-        Spinner calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57a);
-        dato = dato + calidad_spinner.getSelectedItem().toString();
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57b);
-        dato = dato + ",b." + calidad_spinner.getSelectedItem().toString();
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57c);
-        dato = dato + ",c." + calidad_spinner.getSelectedItem().toString();
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57d);
-        dato = dato + ",d." + calidad_spinner.getSelectedItem().toString();
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57e);
-        dato = dato + ",e." + calidad_spinner.getSelectedItem().toString();
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57f);
-        dato = dato + ",f." + calidad_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 57);
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_59);
-        dato = calidad_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 59);
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_60);
-        dato = calidad_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 60);
-        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_61);
-        dato = calidad_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 61);
 
+    private boolean save() {
+        Spinner calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57a);
+        ocupado.setE57a(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57b);
+        ocupado.setE57b(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57c);
+        ocupado.setE57c(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57d);
+        ocupado.setE57d(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57e);
+        ocupado.setE57e(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_57f);
+        ocupado.setE57f(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_59);
+        ocupado.setE59(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_60);
+        ocupado.setE60(calidad_spinner.getSelectedItem().toString());
+        calidad_spinner = (Spinner) view.findViewById(R.id.empleo_61);
+        if (calidad_spinner.getSelectedItemPosition() == 9)
+            ocupado.setE61(((EditText) view.findViewById(R.id.otro_61)).toString());
+        else
+            ocupado.setE61(calidad_spinner.getSelectedItem().toString());
+        Log.i("Calidad Empleo", ocupado.toString());
+        return true;
     }
-*/
 }

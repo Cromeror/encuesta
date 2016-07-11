@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -26,7 +30,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
+    private Ocupado ocupado;
 
     public OcupadoinsuficienfiaHorasFragment() {
         // Required empty public constructor
@@ -46,7 +50,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
     }
 
     private void init() {
-        vivienda = ((MainActivity) getActivity()).getVivienda();
+        ocupado = ((MainActivity) getActivity()).getOcupado();
         final EditText otro = (EditText) view.findViewById(R.id.otro);
         otro.setVisibility(View.GONE);
 
@@ -137,43 +141,47 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
             }
         });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // save();
-                transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
+                if (save()) {
+                    Log.i("Insuficiencia Horas", ocupado.toString());
+                    transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
+                }
             }
         });
     }
-/*
-    private void save() {
+
+
+    private boolean save() {
         String dato = "";
-        Spinner insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_1);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 49);
-        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_8_spinner);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 51);
-        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_3_spinner);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 52);
-        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_4_spinner);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 53);
-        EditText insuficienca = (EditText) view.findViewById(R.id.insuficiencia_2_editText);
-        dato = insuficienca.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 50);
-        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_6_spinner);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 55);
-        insuficiencia_spinner = (Spinner) view.findViewById(R.id.insuficiencia_7_spinner);
-        dato = insuficiencia_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 56);
-        dato = "";
+        Spinner spinner = (Spinner) view.findViewById(R.id.insuficiencia_1);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE49(dato);
+        if (dato.equalsIgnoreCase("no"))
+            return save53();
+        ocupado.setE50(((EditText) view.findViewById(R.id.insuficiencia_2_editText)).getText().toString());
+        spinner = (Spinner) view.findViewById(R.id.insuficiencia_8_spinner);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE51(dato);
+        spinner = (Spinner) view.findViewById(R.id.insuficiencia_3_spinner);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE52(dato);
+        return save53();
+    }
+
+    public boolean save53() {
+        String dato = "";
+        Spinner spinner = (Spinner) view.findViewById(R.id.insuficiencia_4_spinner);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE53(dato);
+        if (dato.equalsIgnoreCase("no")) {
+            return true;
+        }
+        ArrayList<String> list54 = new ArrayList<>();
         CheckBox checkBox1 = (CheckBox) view.findViewById(R.id.checkBox1);
         CheckBox checkBox2 = (CheckBox) view.findViewById(R.id.checkBox2);
         CheckBox checkBox3 = (CheckBox) view.findViewById(R.id.checkBox3);
@@ -182,21 +190,33 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         CheckBox checkBox6 = (CheckBox) view.findViewById(R.id.checkBox6);
         CheckBox checkBox7 = (CheckBox) view.findViewById(R.id.checkBox7);
         CheckBox checkBox8 = (CheckBox) view.findViewById(R.id.checkBox8);
-       // CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.che);
-        if (checkBox1.isChecked()) dato = checkBox1.getText().toString();
-        else if (checkBox2.isChecked()) dato = dato + "," + checkBox2.getText().toString();
-        else if (checkBox3.isChecked()) dato = dato + "," + checkBox3.getText().toString();
-        else if (checkBox4.isChecked()) dato = dato + "," + checkBox4.getText().toString();
-        else if (checkBox5.isChecked()) dato = dato + "," + checkBox5.getText().toString();
-        else if (checkBox6.isChecked()) dato = dato + "," + checkBox6.getText().toString();
-        else if (checkBox7.isChecked()) dato = dato + "," + checkBox7.getText().toString();
-        else if (checkBox8.isChecked()) dato = dato + "," + checkBox8.getText().toString();
-       // else if (checkBox9.isChecked()) dato = dato + "," + checkBox9.getText().toString();
-        if (",".equalsIgnoreCase(String.valueOf(dato.charAt(0)))) dato = dato.substring(1);
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 54);
-
-
+        CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.checkBox9);
+        // CheckBox checkBox9 = (CheckBox) view.findViewById(R.id.che);
+        if (checkBox1.isChecked())
+            list54.add(checkBox1.getText().toString());
+        if (checkBox2.isChecked())
+            list54.add(checkBox2.getText().toString());
+        if (checkBox3.isChecked())
+            list54.add(checkBox3.getText().toString());
+        if (checkBox4.isChecked())
+            list54.add(checkBox4.getText().toString());
+        if (checkBox5.isChecked())
+            list54.add(checkBox5.getText().toString());
+        if (checkBox6.isChecked())
+            list54.add(checkBox6.getText().toString());
+        if (checkBox7.isChecked())
+            list54.add(checkBox7.getText().toString());
+        if (checkBox8.isChecked())
+            list54.add(checkBox8.getText().toString());
+        if (checkBox9.isChecked())
+            list54.add(((EditText) view.findViewById(R.id.otro)).getText().toString());
+        ocupado.setE54(list54);
+        spinner = (Spinner) view.findViewById(R.id.insuficiencia_6_spinner);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE55(dato);
+        spinner = (Spinner) view.findViewById(R.id.insuficiencia_7_spinner);
+        dato = spinner.getSelectedItem().toString();
+        ocupado.setE56(dato);
+        return true;
     }
-*/
-
 }

@@ -16,12 +16,12 @@ public class Salud {
     }
 
     public Salud() {
-        afiliado = "";
+       /* afiliado = "";
         regimenAfiliado = "";
         atencionESE = "";
         comentarioAtencionESE = "";
         id="";
-        miembroId="";
+        miembroId="";*/
     }
 
     public String getId() {

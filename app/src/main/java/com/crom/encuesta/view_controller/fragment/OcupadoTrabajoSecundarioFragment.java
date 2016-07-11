@@ -4,6 +4,7 @@ package com.crom.encuesta.view_controller.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.crom.encuesta.R;
+import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
 
@@ -24,7 +26,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
     private Button next;
     private View view;
     private FragmentTransaction transaction;
-    private Vivienda vivienda;
+    private Ocupado ocupado;
 
     public OcupadoTrabajoSecundarioFragment() {
         // Required empty public constructor
@@ -47,7 +49,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
     }
 
     private void init() {
-        vivienda = ((MainActivity) getActivity()).getVivienda();
+        ocupado = ((MainActivity) getActivity()).getOcupado();
         final EditText otro = (EditText) view.findViewById(R.id.otro);
         otro.setVisibility(View.GONE);
         Spinner secundario_1 = (Spinner) view.findViewById(R.id.secundario_1_spinner);
@@ -62,8 +64,8 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
 
                 if (scountry.equalsIgnoreCase("no")) {
-                    //save();
-                    transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
+                    if (save())
+                        transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
                 }
 
             }
@@ -86,7 +88,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
                 String scountry = adapter.getItemAtPosition(position).toString();
                 if (scountry.equalsIgnoreCase("Otro")) {
                     otro.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     otro.setVisibility(View.GONE);
                 }
             }
@@ -100,20 +102,24 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //save();
-                transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
+                if (save())
+                    transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });
     }
-/*
-    private void save() {
+
+    private boolean save() {
         String dato = "";
         Spinner secundario_spinner = (Spinner) view.findViewById(R.id.secundario_1_spinner);
         dato = secundario_spinner.getSelectedItem().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 45);
+        if (secundario_spinner.getSelectedItemPosition() == 1) {
+            ocupado.setE45(dato);
+            return true;
+        }
+        ocupado.setE45(dato);
         EditText secundario_editText = (EditText) view.findViewById(R.id.secundario_2_editText);
         dato = secundario_editText.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 46);
+        ocupado.setE46(dato);
         secundario_spinner = (Spinner) view.findViewById(R.id.secundario_3_spinner);
         if (!secundario_spinner.getSelectedItem().toString().equalsIgnoreCase("Otro")) {
             dato = secundario_spinner.getSelectedItem().toString();
@@ -121,11 +127,12 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
             EditText otro = (EditText) view.findViewById(R.id.otro);
             dato = otro.getText().toString();
         }
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 47);
+        ocupado.setE47(dato);
         secundario_editText = (EditText) view.findViewById(R.id.secundario_4_editText);
         dato = secundario_editText.getText().toString();
-        vivienda.getLastHogar().getLastMiembro().getOcupado().setE(dato, 48);
-
+        ocupado.setE48(dato);
+        Log.i("Trabajo Secundario", ocupado.toString());
+        return true;
     }
-*/
+
 }
