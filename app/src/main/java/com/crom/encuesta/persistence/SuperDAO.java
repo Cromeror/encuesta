@@ -61,6 +61,9 @@ public class SuperDAO {
             }while (c.moveToNext());
         }
         return viviendas;
-
+    }
+    public void update(SQLiteDatabase db, String id, Vivienda vivienda){
+        Log.i("UPDATE", vivienda.toString());
+        db.execSQL("UPDATE "+TABLE_VIVIENDA+" SET "+data+"='"+vivienda.toString()+"' WHERE "+viviendaId+"="+id);
     }
 }

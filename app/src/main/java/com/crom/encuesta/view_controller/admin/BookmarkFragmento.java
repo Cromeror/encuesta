@@ -1,4 +1,4 @@
-package com.crom.encuesta.view_controller.fragment;
+package com.crom.encuesta.view_controller.admin;
 
 
 import android.os.Bundle;
@@ -10,6 +10,24 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.fragment.CalidadEmpleoFragment;
+import com.crom.encuesta.view_controller.fragment.CaracteristicaHogarFragment;
+import com.crom.encuesta.view_controller.fragment.CaracteristicasViviendaFragment;
+import com.crom.encuesta.view_controller.fragment.DesocupadosFragment;
+import com.crom.encuesta.view_controller.fragment.EducacionFragment;
+import com.crom.encuesta.view_controller.fragment.FuerzaFragment;
+import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
+import com.crom.encuesta.view_controller.fragment.InactivosFragment;
+import com.crom.encuesta.view_controller.fragment.MiembroHogarFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadoFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadoIndependienteFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadoTrabajoSecundarioFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadoinsuficienfiaHorasFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadosAsalariadosFragment;
+import com.crom.encuesta.view_controller.fragment.OcupadosAsalariadosIndependientesFragment;
+import com.crom.encuesta.view_controller.fragment.OtrosIngresosFragment;
+import com.crom.encuesta.view_controller.fragment.SaludFragment;
+import com.crom.encuesta.view_controller.fragment.TicsFragment;
 
 /**
  * A simple {@link Fragment} subclass.

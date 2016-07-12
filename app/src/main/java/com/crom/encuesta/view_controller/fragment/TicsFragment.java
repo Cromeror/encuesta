@@ -122,8 +122,12 @@ public class TicsFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save())
+                if (((MainActivity) getActivity()).isActivado()) {
+                    if (save())
+                        transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
+                }else {
                     transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
+                }
             }
         });
     }

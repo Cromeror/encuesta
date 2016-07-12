@@ -1,18 +1,20 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.persistence.SuperDAO;
-import com.crom.encuesta.persistence.ViviendaDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -45,9 +47,12 @@ public class ActionFormFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("FINISH", ((MainActivity)getActivity()).getVivienda().toString());
-                SuperDAO.getInstance().insert(((MainActivity)getActivity()).getVivienda(), ((MainActivity)getActivity()).getDb());
-                transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
+                if (((MainActivity) getActivity()).isActivado())
+                    getDialog();
+                else {
+                    Toast.makeText(getActivity(), "RECUERDE: En esta vista no se guardarán los datos", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
         miembro.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +67,28 @@ public class ActionFormFragment extends Fragment {
                 transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
             }
         });
+    }
+
+    private void getDialog() {
+        // Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("RECUERDE: Al guardar los datos no podrá modificarlos\n¿Desea continuar?")
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Log.i("Finalizar", "");
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+                        Toast.makeText(getActivity(), "Datos guardados", Toast.LENGTH_SHORT).show();
+                        transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+        // Create the AlertDialog object and return it
+        builder.create();
+        builder.show();
     }
 
 }

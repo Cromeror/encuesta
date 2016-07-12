@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Desocupado;
-import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
@@ -243,6 +243,7 @@ public class DesocupadosFragment extends Fragment {
         else desocupado.setF13(spinner13.getSelectedItem().toString());
         desocupado.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
         Log.i("Desocupado", desocupado.toString());
+        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
         return true;
     }
 

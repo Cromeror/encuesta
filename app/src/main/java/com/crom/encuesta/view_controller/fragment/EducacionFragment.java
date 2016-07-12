@@ -15,7 +15,7 @@ import android.widget.Spinner;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Educacion;
-import com.crom.encuesta.persistence.EducacionDAO;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
@@ -101,7 +101,7 @@ public class EducacionFragment extends Fragment {
                 if (position >= 6) {
                     if (save(false)) {
                         ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
-                        EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     } else {
                         nivelEducativo.setSelection(0);
@@ -124,17 +124,20 @@ public class EducacionFragment extends Fragment {
             public void onClick(View v) {
                 if (save(true)) {
                     educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
-                    EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
+                    //EducacionDAO.getInstance().insert(educacion, ((MainActivity) getActivity()).getDb());
                     int edad = 0;
                     try {
                         edad = Integer.parseInt(((MainActivity) getActivity()).getMiembro().getEdad());
                     } catch (Exception e) {
                     }
                     if (edad > 12) {
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     } else if (edad > 5) {
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new TicsFragment()).commit();
                     } else {
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                     }
                 }

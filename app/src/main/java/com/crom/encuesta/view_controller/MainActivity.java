@@ -1,52 +1,25 @@
 package com.crom.encuesta.view_controller;
 
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Hogar;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Ocupado;
 import com.crom.encuesta.model.Vivienda;
-import com.crom.encuesta.persistence.EducacionDAO;
-import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
-import com.crom.encuesta.persistence.HogarDAO;
-import com.crom.encuesta.persistence.MiembroDAO;
-import com.crom.encuesta.persistence.OcupadoDAO;
-import com.crom.encuesta.persistence.OtroIngresoDAO;
 import com.crom.encuesta.persistence.SQLiteHelper;
-import com.crom.encuesta.persistence.SaludDAO;
-import com.crom.encuesta.persistence.SuperDAO;
-import com.crom.encuesta.persistence.TicDAO;
-import com.crom.encuesta.persistence.ViviendaDAO;
-import com.crom.encuesta.view_controller.fragment.BookmarkFragmento;
+import com.crom.encuesta.view_controller.admin.AdminAccessFragment;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -140,9 +113,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.nav_bookmark) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new BookmarkFragmento()).commit();
-        } else if (id == R.id.nav_encuestar) {
+        //fragmentManager.beginTransaction().replace(R.id.contenedor, new BookmarkFragmento()).commit();
+        if (id == R.id.nav_encuestar) {
             setActivado(true);
             fragmentManager.beginTransaction().replace(R.id.contenedor, new IdentificacionFragment()).commit();
             /*if (!activado) {
@@ -151,31 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             } else {
                 Toast.makeText(this, "Encuesta en curso", Toast.LENGTH_SHORT).show();
             }*/
-        } else if (id == R.id.nav_import) {
-            if (isExternalStorageWritable()) {
-                try {
-                    File ruta_sd_global = Environment.getExternalStorageDirectory();
-                    //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
-                    Calendar c = Calendar.getInstance();
-                    String dia = Integer.toString(c.get(Calendar.DATE));
-                    String mes = Integer.toString(c.get(Calendar.MONTH));
-                    String annio = Integer.toString(c.get(Calendar.YEAR));
-                    String hora = Integer.toString(c.get(Calendar.MINUTE));
-                    File f = new File(ruta_sd_global.getAbsolutePath(), "import_"+hora+"_"+dia+"-"+mes+"-"+annio+")].txt");
-
-                    OutputStreamWriter fout =
-                            new OutputStreamWriter(
-                                    new FileOutputStream(f));
-                    for (String vivienda : SuperDAO.getInstance().read(this.getDb())) {
-                        fout.write(vivienda.toString()+"");
-                    }
-                    fout.close();
-                    Toast.makeText(MainActivity.this, "Fichero creado con éxito" + ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
-                    Log.i("Ficheros", vivienda.toString());
-                } catch (Exception ex) {
-                    Log.e("Ficheros", "Error al escribir fichero a tarjeta SD");
-                }
-            }
+        } else if (id == R.id.nav_admin) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new AdminAccessFragment()).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -222,22 +171,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.ocupado = ocupado;
     }
 
-    /* Checks if external storage is available for read and write */
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
-    }
-
-    /* Checks if external storage is available to at least read */
-    public boolean isExternalStorageReadable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) ||
-                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            return true;
-        }
-        return false;
-    }
 }

@@ -16,7 +16,7 @@ import android.widget.Spinner;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
-import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -65,6 +65,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
 
                 if (scountry.equalsIgnoreCase("no")) {
                     if (save())
+                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
                 }
 
@@ -103,6 +104,7 @@ public class OcupadoTrabajoSecundarioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (save())
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                     transaction.replace(R.id.contenedor, new OcupadoinsuficienfiaHorasFragment()).commit();
             }
         });

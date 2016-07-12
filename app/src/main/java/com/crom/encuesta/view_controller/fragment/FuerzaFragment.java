@@ -18,8 +18,7 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.FuerzaTrabajo;
-import com.crom.encuesta.persistence.EducacionDAO;
-import com.crom.encuesta.persistence.FuerzaTrabajoDAO;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -253,9 +252,13 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 2) {
                     save(9);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.GONE);
                 } else {
                     save(0);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     ((LinearLayout) view.findViewById(R.id.l10)).setVisibility(View.VISIBLE);
                 }
             }
@@ -275,9 +278,13 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i == 1) {
                     save(10);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     ((LinearLayout) view.findViewById(R.id.l11)).setVisibility(View.GONE);
                 } else if (i == 2) {
                     save(10);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }
             }
@@ -318,9 +325,13 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
             public void onItemSelected(AdapterView<?> adapterView, View v, int i, long l) {
                 if (i==1){
                     save(13);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     transaction.replace(R.id.contenedor, new DesocupadosFragment()).commit();
                 }else if (i == 2) {
                     save(13);
+                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
                     transaction.replace(R.id.contenedor, new InactivosFragment()).commit();
                 }
             }
@@ -430,6 +441,7 @@ final EditText fuerza_6E = (EditText) view.findViewById(R.id.fuerza6_e);
                 return false;
         }
         fuerzaTrabajo.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
+        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
         Log.i("FUERZA Save", fuerzaTrabajo.toString());
         return true;
     }

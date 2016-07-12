@@ -1,7 +1,5 @@
 package com.crom.encuesta.model;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 /**
@@ -193,6 +191,8 @@ public class Vivienda{
     public String toString() {
         StringBuilder output = new StringBuilder();
         StringBuilder result = new StringBuilder();
+        output.append(depurarComas(id));
+        output.append(",");
         output.append(depurarComas(departamento));
         output.append(",");
         output.append(depurarComas(municipio));
@@ -203,7 +203,7 @@ public class Vivienda{
         output.append(",");
         output.append(depurarComas(sector));
         output.append(",");
-        output.append(depurarComas(sector));
+        output.append(depurarComas(direccion));
         output.append(",");
         output.append(depurarComas(tipoVivienda));
         output.append(",");

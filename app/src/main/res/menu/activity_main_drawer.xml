@@ -7,19 +7,15 @@
             android:id="@+id/nav_encuestar"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Encuestar" />
-        <item
-            android:id="@+id/nav_bookmark"
-            android:icon="@drawable/ic_bookmark_black_24dp"
-            android:title="Explorando formularios" />
     </group>
 
     <item android:title="Administración">
-        <menu>
+        <group android:checkableBehavior="single">
             <item
-                android:id="@+id/nav_import"
+                android:id="@+id/nav_admin"
                 android:icon="@drawable/ic_menu_camera"
-                android:title="Import" />
-        </menu>
+                android:title="Administrador" />
+        </group>
     </item>
 
 </menu>

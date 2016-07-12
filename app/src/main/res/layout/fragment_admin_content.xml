@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crom.encuesta.view_controller.admin.AdminContentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnImport"
+            style="@style/admin_contenido"
+            android:text="@string/importar_csv" />
+
+        <Button
+            android:id="@+id/btnList"
+            style="@style/admin_contenido"
+            android:text="@string/listar_base_de_datos" />
+
+        <Button
+            android:id="@+id/btnDrop"
+            style="@style/admin_contenido"
+            android:text="Vaciar base de datos" />
+
+    </LinearLayout>
+
+</RelativeLayout>

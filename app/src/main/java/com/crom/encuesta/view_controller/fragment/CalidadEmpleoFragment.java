@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
-import com.crom.encuesta.model.Vivienda;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -129,6 +129,8 @@ public class CalidadEmpleoFragment extends Fragment {
         else
             ocupado.setE61(calidad_spinner.getSelectedItem().toString());
         Log.i("Calidad Empleo", ocupado.toString());
+        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
         return true;
     }
 }

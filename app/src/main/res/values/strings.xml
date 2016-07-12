@@ -529,6 +529,9 @@
     <string name="ocupados_11_a">Vacaciones con sueldo</string>
     <string name="ocupados_11_b">Prima de navidad</string>
     <string name="ocupados_11_c">Derecho a cesantía</string>
+    <string name="importar_csv">Importar CSV</string>
+    <string name="listar_base_de_datos">Listar Base de datos</string>
+    <string name="atras">Atras</string>
     <string-array name="ocupados_12">
         <item>Obrero o empleado de empresa particular</item>
         <item>Obrero o empleado del gobierno</item>

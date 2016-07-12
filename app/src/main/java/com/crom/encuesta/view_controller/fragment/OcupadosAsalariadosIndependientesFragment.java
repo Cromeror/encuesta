@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
+import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 import java.util.ArrayList;
@@ -364,8 +365,9 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save())
-                    transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
+                if (save())                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
+                transaction.replace(R.id.contenedor, new OcupadoTrabajoSecundarioFragment()).commit();
             }
         });
     }
