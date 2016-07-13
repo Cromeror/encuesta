@@ -154,11 +154,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public boolean isActivado() {
-        return activado;
+        return true;
     }
 
     public void setActivado(boolean activado) {
-        this.activado = activado;
+        this.activado = true;
     }
 
     public Vivienda getVivienda() {

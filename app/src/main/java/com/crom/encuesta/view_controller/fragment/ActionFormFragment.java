@@ -3,6 +3,7 @@ package com.crom.encuesta.view_controller.fragment;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -17,7 +18,11 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,12 +54,9 @@ public class ActionFormFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (((MainActivity) getActivity()).isActivado())
-                    getDialog();
-                else {
-                    Toast.makeText(getActivity(), "RECUERDE: En esta vista no se guardarán los datos", Toast.LENGTH_SHORT).show();
+                saveExternal();
+                getDialog();
 
-                }
             }
         });
         miembro.setOnClickListener(new View.OnClickListener() {
@@ -80,10 +82,10 @@ public class ActionFormFragment extends Fragment {
                         Log.i("Finalizar", "");
                         ((MainActivity) getActivity()).saveInternal(((MainActivity) getActivity()).getVivienda().toString());
                         try {
-                            SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+                            SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(), ((MainActivity) getActivity()).getVivienda());
 
                             Toast.makeText(getActivity(), "Datos guardados", Toast.LENGTH_SHORT).show();
-                        }catch (Exception e){
+                        } catch (Exception e) {
 
                         }
                         transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
@@ -97,6 +99,40 @@ public class ActionFormFragment extends Fragment {
         // Create the AlertDialog object and return it
         builder.create();
         builder.show();
+    }
+
+    public void saveExternal() {
+        if (isExternalStorageWritable()) {
+            try {
+                File ruta_sd_global = Environment.getExternalStorageDirectory();
+                //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+                Calendar c = Calendar.getInstance();
+                String dia = Integer.toString(c.get(Calendar.DATE));
+                String mes = Integer.toString(c.get(Calendar.MONTH));
+                String annio = Integer.toString(c.get(Calendar.YEAR));
+                String hora = Integer.toString(c.get(Calendar.HOUR_OF_DAY));
+                Date fecha = new Date();
+                File f = new File(ruta_sd_global.getAbsolutePath(), "import_" + fecha + ".csv");
+
+                OutputStreamWriter fout = new OutputStreamWriter(new FileOutputStream(f));
+                fout.write(((MainActivity) getActivity()).getVivienda().toString() + "");
+                fout.close();
+                //Toast.makeText(getActivity(), "Fichero creado con éxito\n Ruta: " + ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                //Log.i("Ficheros", vivienda.toString());
+            } catch (Exception ex) {
+                Log.i("#####", "" + ex.toString());
+                Toast.makeText(getActivity(), "Error al escribir fichero", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    /* Checks if external storage is available for read and write */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
     }
 
 }
