@@ -196,17 +196,17 @@ public class Miembro {
                     list.add(s2);
                 }
             }
-        }else {
+        } else {
             String string = (new Ocupado()).toString();
 
-            Log.i("tic.toList()",""+tic.toList().size());
+            Log.i("tic.toList()", "" + tic.toList().size());
             if (!tic.toList().isEmpty()) {
                 for (String string1 : tic.toList()) {
                     String s2 = s + string + ',' + desocupado.toString() + ","
                             + inactivo.toString() + "," + otroIngreso.toString() + "," + string1;
                     list.add(s2);
                 }
-            }else {
+            } else {
                 String s2 = s + string + ',' + desocupado.toString() + ","
                         + inactivo.toString() + "," + otroIngreso.toString() + "," + (new TIC()).toString();
                 list.add(s2);
@@ -217,23 +217,19 @@ public class Miembro {
 
     @Override
     public String toString() {
-        return "Miembro{" +
-                "id='" + id + '\'' +
-                ", hogarId='" + hogarId + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", nacimiento='" + nacimiento + '\'' +
-                ", edad='" + edad + '\'' +
-                ", lugarNacimiento='" + lugarNacimiento + '\'' +
-                ", parentesco='" + parentesco + '\'' +
-                ", estadoCivil='" + estadoCivil + '\'' +
-                ", salud=" + salud +
-                ", educacion=" + educacion +
-                ", fuerzaTrabajo=" + fuerzaTrabajo +
-                ", ocupado=" + ocupado +
-                ", desocupado=" + desocupado +
-                ", inactivo=" + inactivo +
-                ", otroIngreso=" + otroIngreso +
-                ", tic=" + tic +
-                '}';
+        return sexo + "," +
+                nacimiento + "," +
+                edad + "," +
+                lugarNacimiento + "," +
+                parentesco + "," +
+                estadoCivil + "," +
+                salud + "," +
+                educacion + "," +
+                fuerzaTrabajo + "," +
+                ocupado + "," +
+                desocupado + "," +
+                inactivo + "," +
+                otroIngreso + "," +
+                tic;
     }
 }

@@ -152,7 +152,7 @@ public class CaracteristicasViviendaFragment extends Fragment {
                             vivienda.setCuartos(personasCuarto);
                             vivienda.setMaterialPisos(spinner6.getSelectedItem().toString());
                             vivienda.setMaterialParedesExteriores(spinner7.getSelectedItem().toString());
-                            ViviendaDAO.getInstance().insert(vivienda, ((MainActivity)getActivity()).getDb());
+                            //ViviendaDAO.getInstance().insert(vivienda, ((MainActivity)getActivity()).getDb());
                             transaction.replace(R.id.contenedor, new CaracteristicaHogarFragment()).commit();
                         }
                     } else {

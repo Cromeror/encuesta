@@ -1,5 +1,6 @@
 package com.crom.encuesta.view_controller;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -9,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,9 +23,14 @@ import com.crom.encuesta.persistence.SQLiteHelper;
 import com.crom.encuesta.view_controller.admin.AdminAccessFragment;
 import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private final Vivienda vivienda = new Vivienda();
+    private Vivienda vivienda = new Vivienda();
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private boolean activado = true;
     private SQLiteDatabase db = null;
@@ -37,9 +44,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //deleteInternal();
         miembro.setOcupado(ocupado);
-
         SQLiteHelper helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
         /*ViviendaDAO.getInstance().drop(db);
@@ -171,4 +177,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.ocupado = ocupado;
     }
 
+    public void setVivienda(Vivienda vivienda) {
+        this.vivienda = vivienda;
+    }
+
+    public boolean saveInternal(String texto) {
+        try {
+            String t = readInternal() + "|" + texto;
+            OutputStreamWriter fout =
+                    new OutputStreamWriter(
+                            openFileOutput("prueba_int.txt", Context.MODE_PRIVATE));
+
+            fout.write(t);
+            fout.close();
+        } catch (Exception ex) {
+            Log.e("Ficheros", "Error al escribir fichero a memoria interna");
+            return false;
+        }
+        return true;
+    }
+
+    public void deleteInternal() {
+        deleteFile("prueba_int.txt");
+    }
+
+    public String readInternal() {
+        try {
+            BufferedReader fin =
+                    new BufferedReader(
+                            new InputStreamReader(
+                                    openFileInput("prueba_int.txt")));
+            String texto = fin.readLine();
+            fin.close();
+            return texto;
+        } catch (Exception ex) {
+            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+        }
+        return "";
+    }
 }

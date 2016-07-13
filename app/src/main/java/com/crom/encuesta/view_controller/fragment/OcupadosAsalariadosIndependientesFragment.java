@@ -113,7 +113,7 @@ public class OcupadosAsalariadosIndependientesFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    if (Integer.parseInt(s.toString()) > Integer.parseInt(((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString())) {
+                    if (Integer.parseInt(s.toString()) >= Integer.parseInt(((EditText) view.findViewById(R.id.ocupado_30_editText)).getText().toString())) {
                         ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.GONE);
                     } else {
                         ((LinearLayout) view.findViewById(R.id.l_33)).setVisibility(View.VISIBLE);

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Katherine Buelvas on 17/06/2016.
  */
-public class Vivienda{
+public class Vivienda {
 
     private String id;
     private String departamento;
@@ -246,13 +246,17 @@ public class Vivienda{
         }
         return result.toString();
     }
-    private String depurarComas(String cadena){
+
+    private String depurarComas(String cadena) {
         String result = "";
-        for (char c: cadena.toCharArray()){
-            if (c == ',')
-                c = '.';
-            result+=c;
-        }
+        if (cadena != null) {
+            for (char c : cadena.toCharArray()) {
+                if (c == ',')
+                    c = '.';
+                result += c;
+            }
+        } else
+            result = cadena;
         return result;
     }
 

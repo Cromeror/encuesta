@@ -108,7 +108,7 @@ public class CaracteristicaHogarFragment extends Fragment {
                         hogar.setSanitarioVivienda(spinner7.getSelectedItem().toString());
                         hogar.setEnergiaCocinan(spinner8.getSelectedItem().toString());
                         hogar.setViviendaId(((MainActivity)getActivity()).getVivienda().getId());
-                        HogarDAO.getInstance().insert(hogar,((MainActivity)getActivity()).getDb());
+//                        HogarDAO.getInstance().insert(hogar,((MainActivity)getActivity()).getDb());
                         ((MainActivity)getActivity()).setHogar(hogar);
                         transaction.replace(R.id.contenedor, new MiembroHogarFragment()).commit();
                     }else{

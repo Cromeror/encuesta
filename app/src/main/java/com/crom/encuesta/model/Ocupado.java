@@ -818,9 +818,7 @@ public class Ocupado {
 
     public ArrayList<String> toList() {
         ArrayList<String> list = new ArrayList<>();
-        String s1 = miembroId + ',' +
-                id + ',' +
-                e1 + ',' +
+        String s1 = e1 + ',' +
                 e2 + ',' +
                 e3 + ',' +
                 e4 + ',' +

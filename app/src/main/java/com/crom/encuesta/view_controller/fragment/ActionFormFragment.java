@@ -17,6 +17,8 @@ import com.crom.encuesta.R;
 import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
+import java.io.FileOutputStream;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -76,8 +78,14 @@ public class ActionFormFragment extends Fragment {
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Log.i("Finalizar", "");
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
-                        Toast.makeText(getActivity(), "Datos guardados", Toast.LENGTH_SHORT).show();
+                        ((MainActivity) getActivity()).saveInternal(((MainActivity) getActivity()).getVivienda().toString());
+                        try {
+                            SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
+
+                            Toast.makeText(getActivity(), "Datos guardados", Toast.LENGTH_SHORT).show();
+                        }catch (Exception e){
+
+                        }
                         transaction.replace(R.id.contenedor, new IdentificacionFragment()).commit();
                     }
                 })

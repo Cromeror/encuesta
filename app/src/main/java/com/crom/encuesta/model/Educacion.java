@@ -98,13 +98,16 @@ public class Educacion {
                depurarComas(mayorTitulo+"");
     }
 
-    private String depurarComas(String cadena){
+    private String depurarComas(String cadena) {
         String result = "";
-        for (char c: cadena.toCharArray()){
-            if (c == ',')
-                c = '.';
-            result+=c;
-        }
+        if (cadena != null) {
+            for (char c : cadena.toCharArray()) {
+                if (c == ',')
+                    c = '.';
+                result += c;
+            }
+        } else
+            result = cadena;
         return result;
     }
 }

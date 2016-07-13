@@ -18,6 +18,11 @@
             android:text="@string/importar_csv" />
 
         <Button
+            style="@style/admin_contenido"
+            android:text="Import CSV 2"
+            android:id="@+id/button2"/>
+
+        <Button
             android:id="@+id/btnList"
             style="@style/admin_contenido"
             android:text="@string/listar_base_de_datos" />

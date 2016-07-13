@@ -1,9 +1,11 @@
 package com.crom.encuesta.view_controller.admin;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
+import com.crom.encuesta.view_controller.fragment.IdentificacionFragment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -77,10 +80,54 @@ public class AdminContentFragment extends Fragment {
         btnDrop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SuperDAO.getInstance().drop(((MainActivity) getActivity()).getDb());
-                SuperDAO.getInstance().create(((MainActivity) getActivity()).getDb());
-                Toast.makeText(getActivity(), "Base de datos Vacia.", Toast.LENGTH_SHORT).show();
-                //getFragmentManager().beginTransaction().replace().commit();
+                // Use the Builder class for convenient dialog construction
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("RECUERDE: Se borrar los datos, no los podrá recuperar\n¿Desea continuar?")
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                SuperDAO.getInstance().drop(((MainActivity) getActivity()).getDb());
+                                SuperDAO.getInstance().create(((MainActivity) getActivity()).getDb());
+                                Toast.makeText(getActivity(), "Base de datos Vacia.", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // User cancelled the dialog
+                            }
+                        });
+                // Create the AlertDialog object and return it
+                builder.create();
+                builder.show();
+            }
+        });
+        Button button1 = (Button) view.findViewById(R.id.button2);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.i("LEEEEEEE", ((MainActivity) getActivity()).readInternal());
+
+                if (isExternalStorageWritable()) {
+                    try {
+                        File ruta_sd_global = Environment.getExternalStorageDirectory();
+                        //File ruta_sd_app_musica = getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+                        Calendar c = Calendar.getInstance();
+                        String dia = Integer.toString(c.get(Calendar.DATE));
+                        String mes = Integer.toString(c.get(Calendar.MONTH));
+                        String annio = Integer.toString(c.get(Calendar.YEAR));
+                        String hora = Integer.toString(c.get(Calendar.HOUR_OF_DAY));
+                        File f = new File(ruta_sd_global.getAbsolutePath(), "importV2_" + hora + "_" + dia + "-" + mes + "-" + annio + ")].csv");
+
+                        OutputStreamWriter fout = new OutputStreamWriter(new FileOutputStream(f));
+                        fout.write(((MainActivity) getActivity()).readInternal());
+                        fout.close();
+                        Toast.makeText(getActivity(), "Fichero creado con éxito\n Ruta: " + ruta_sd_global.getAbsolutePath(), Toast.LENGTH_LONG).show();
+                        //Log.i("Ficheros", vivienda.toString());
+                    } catch (Exception ex) {
+                        Log.i("#####", "" + ex.toString());
+                        Toast.makeText(getActivity(), "Error al escribir fichero", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
         return view;

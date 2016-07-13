@@ -32,7 +32,8 @@ public class IdentificacionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.a_fragment_identificacion, container, false);
-        vivienda = ((MainActivity) getActivity()).getVivienda();
+        vivienda = new Vivienda();
+        ((MainActivity) getActivity()).setVivienda(vivienda);
         getActivity().setTitle(getActivity().getString(R.string.capA));
 
         Spinner zona = (Spinner) view.findViewById(R.id.spiner_zona);
@@ -51,9 +52,9 @@ public class IdentificacionFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(((MainActivity)getActivity()).isActivado()){
+                if (((MainActivity) getActivity()).isActivado()) {
                     save();
-                }else {
+                } else {
                     transaction.replace(R.id.contenedor, new CaracteristicasViviendaFragment()).commit();
                 }
             }
