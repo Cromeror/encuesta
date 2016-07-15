@@ -12,25 +12,12 @@
         android:layout_centerVertical="true"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnImport"
-            style="@style/admin_contenido"
-            android:text="@string/importar_csv" />
 
         <Button
             style="@style/admin_contenido"
             android:text="Import CSV 2"
             android:id="@+id/button2"/>
 
-        <Button
-            android:id="@+id/btnList"
-            style="@style/admin_contenido"
-            android:text="@string/listar_base_de_datos" />
-
-        <Button
-            android:id="@+id/btnDrop"
-            style="@style/admin_contenido"
-            android:text="Vaciar base de datos" />
 
     </LinearLayout>
 

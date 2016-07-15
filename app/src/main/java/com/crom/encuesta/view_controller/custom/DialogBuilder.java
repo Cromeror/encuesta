@@ -91,7 +91,7 @@ public class DialogBuilder {
             }
             index++;
         }
-        //Toast.makeText(activity,"Cjhecks: "+Arrays.toString(checks), Toast.LENGTH_LONG).show();
+        //Toast.makeText(activity,"Cjhecks: "+Arrays.toList(checks), Toast.LENGTH_LONG).show();
         builder.setTitle(title)
                 .setMultiChoiceItems(array, checks,
                         new DialogInterface.OnMultiChoiceClickListener() {
@@ -122,8 +122,8 @@ public class DialogBuilder {
                                 aceptar.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        selectList.add("Otro, ¿Cual?: " + editText.getText().toString());
-                                        Toast.makeText(activity, "" + editText.getText().toString(), Toast.LENGTH_LONG).show();
+                                        selectList.add("Otro, ¿Cual?: " + editText.getText().toList());
+                                        Toast.makeText(activity, "" + editText.getText().toList(), Toast.LENGTH_LONG).show();
                                         dialog.dismiss();
                                     }
                                 });

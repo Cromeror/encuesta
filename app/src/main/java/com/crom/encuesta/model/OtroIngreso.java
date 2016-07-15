@@ -49,7 +49,7 @@ public class OtroIngreso {
     @Override
     public String toString() {
         String string = "";
-        string += id + ", " + miembroId + ", ";
+        string += "";
         for (int i = 0; i < f.length; i++) {
             if (i == f.length - 1) {
                 string += f[i];

@@ -191,7 +191,7 @@ public class Miembro {
         if (!ocupado.toList().isEmpty()) {
             for (String string : ocupado.toList()) {
                 for (String string1 : tic.toList()) {
-                    String s2 = s + string + ',' + desocupado.toString() + ","
+                    String s2 = s + string + ',' + desocupado.toList() + ","
                             + inactivo.toString() + "," + otroIngreso.toString() + "," + string1;
                     list.add(s2);
                 }
@@ -202,12 +202,12 @@ public class Miembro {
             Log.i("tic.toList()", "" + tic.toList().size());
             if (!tic.toList().isEmpty()) {
                 for (String string1 : tic.toList()) {
-                    String s2 = s + string + ',' + desocupado.toString() + ","
+                    String s2 = s + string + ',' + desocupado.toList() + ","
                             + inactivo.toString() + "," + otroIngreso.toString() + "," + string1;
                     list.add(s2);
                 }
             } else {
-                String s2 = s + string + ',' + desocupado.toString() + ","
+                String s2 = s + string + ',' + desocupado.toList() + ","
                         + inactivo.toString() + "," + otroIngreso.toString() + "," + (new TIC()).toString();
                 list.add(s2);
             }

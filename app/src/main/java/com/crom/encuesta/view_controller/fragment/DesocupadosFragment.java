@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Desocupado;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
@@ -32,6 +31,8 @@ public class DesocupadosFragment extends Fragment {
     private View view;
     private FragmentTransaction transaction;
 
+    private ArrayList<String> callBackList = new ArrayList();
+    private Desocupado desocupado = new Desocupado();
     public DesocupadosFragment() {
         // Required empty public constructor
     }
@@ -193,8 +194,6 @@ public class DesocupadosFragment extends Fragment {
         });
     }
 
-    private ArrayList<String> callBackList = new ArrayList();
-    private Desocupado desocupado = new Desocupado();
 
     private boolean save(int caso) {
         ((MainActivity) getActivity()).getMiembro().setDesocupado(desocupado);
@@ -210,7 +209,7 @@ public class DesocupadosFragment extends Fragment {
             Spinner desocupado4 = (Spinner) view.findViewById(R.id.spinner_desocupados_4);
             desocupado.setF4(desocupado4.getSelectedItem().toString());
             if (desocupado4.getSelectedItemPosition() == 0) {
-                Log.i("Desocupado", desocupado.toString());
+                Log.i("Desocupado", desocupado.toList().toString());
                 return true;
             }
         }
@@ -242,8 +241,6 @@ public class DesocupadosFragment extends Fragment {
             desocupado.setF13(((EditText) view.findViewById(R.id.desocupados_13)).getText().toString());
         else desocupado.setF13(spinner13.getSelectedItem().toString());
         desocupado.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
-        Log.i("Desocupado", desocupado.toString());
-        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
         return true;
     }
 

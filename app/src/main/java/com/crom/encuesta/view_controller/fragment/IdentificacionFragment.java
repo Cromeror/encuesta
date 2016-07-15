@@ -1,9 +1,11 @@
 package com.crom.encuesta.view_controller.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,11 @@ import com.crom.encuesta.model.Vivienda;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Date;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +33,10 @@ public class IdentificacionFragment extends Fragment {
     private View view;
     private FragmentTransaction transaction;
     private Vivienda vivienda;
+    private Date fecha;
+    private static String EXT = ".ect", idTablet = "NONE";
+    public static String ficheroIdTablet = "idTablet";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +44,11 @@ public class IdentificacionFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.a_fragment_identificacion, container, false);
         vivienda = new Vivienda();
+        fecha = new Date();
+        String fichero = readInternal(ficheroIdTablet);
+        if (fichero != null)
+            idTablet = fichero;
+        vivienda.setId(idTablet + "-" + fecha);
         ((MainActivity) getActivity()).setVivienda(vivienda);
         getActivity().setTitle(getActivity().getString(R.string.capA));
 
@@ -93,4 +109,37 @@ public class IdentificacionFragment extends Fragment {
         return auxi;
     }
 
+    public boolean saveInternal(String texto, String name) {
+        try {
+            String t = texto;
+            OutputStreamWriter fout =
+                    new OutputStreamWriter(
+                            getActivity().openFileOutput(name + EXT, Context.MODE_PRIVATE));
+            fout.write(t);
+            fout.close();
+        } catch (Exception ex) {
+            Log.e("Ficheros", "Error al escribir fichero a memoria interna");
+            return false;
+        }
+        return true;
+    }
+
+    public void deleteInternal(String name) {
+        getActivity().deleteFile(name + EXT);
+    }
+
+    public String readInternal(String name) {
+        try {
+            BufferedReader fin =
+                    new BufferedReader(
+                            new InputStreamReader(
+                                    getActivity().openFileInput(name + EXT)));
+            String texto = fin.readLine();
+            fin.close();
+            return texto;
+        } catch (Exception ex) {
+            Log.e("Ficheros", "Error al leer fichero desde memoria interna");
+        }
+        return null;
+    }
 }

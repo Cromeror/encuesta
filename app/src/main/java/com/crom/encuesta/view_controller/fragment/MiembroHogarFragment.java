@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -101,6 +100,7 @@ public class MiembroHogarFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Miembro miembro;
                 if (((MainActivity) getActivity()).isActivado()){
                     if (Validador.isEmptySpinners(generales1, generales5)
                             || Validador.isEmptyEditText(editTextEdad,nacimiento)
@@ -108,19 +108,19 @@ public class MiembroHogarFragment extends Fragment {
                         (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));
                     } else {
                         if (Integer.parseInt(editTextEdad.getText().toString()) < 10) {
-                            Miembro miembro = new Miembro();
-                            ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
+                            miembro = new Miembro();
+                            ((MainActivity) getActivity()).setMiembro(miembro);
+                            ((MainActivity) getActivity()).getHogar().getMiembros().add(miembro);
                             miembro.setSexo(generales1.getSelectedItem().toString());
                             miembro.setParentesco(generales5.getSelectedItem().toString());
                             miembro.setLugarNacimiento(((EditText) view.findViewById(R.id.generales4)).getText().toString());
                             miembro.setEdad(editTextEdad.getText().toString());
                             miembro.setNacimiento(textView.getText().toString());
-                            Log.i("Vivienda toString", ((MainActivity)getActivity()).toString());
-                            SuperDAO.getInstance().insert(((MainActivity) getActivity()).getVivienda(), ((MainActivity) getActivity()).getDb());
+                            Log.i("Vivienda toList", ((MainActivity)getActivity()).toString());
                             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                         }else {
                             if(!Validador.isEmptySpinners(generales6)){
-                                Miembro miembro = new Miembro();
+                                miembro = new Miembro();
                                 ((MainActivity) getActivity()).getVivienda().getLastHogar().getMiembros().add(miembro);
                                 miembro.setSexo(generales1.getSelectedItem().toString());
                                 miembro.setParentesco(generales5.getSelectedItem().toString());
@@ -130,7 +130,6 @@ public class MiembroHogarFragment extends Fragment {
                                 miembro.setNacimiento(textView.getText().toString());
                                 ((MainActivity)getActivity()).setMiembro(miembro);
                                 miembro.setHogarId(((MainActivity)getActivity()).getHogar().getId());
-                                SuperDAO.getInstance().insert(((MainActivity) getActivity()).getVivienda(), ((MainActivity) getActivity()).getDb());
                                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new SaludFragment()).commit();
                             }else
                                 (new DialogBuilder()).dialogIncompleteField(getActivity(), getString(R.string.incomplete));

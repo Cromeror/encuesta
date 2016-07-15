@@ -16,7 +16,6 @@ import android.widget.Spinner;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.OtroIngreso;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -122,7 +121,6 @@ public class OtrosIngresosFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (save())
-                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                 transaction.replace(R.id.contenedor, new TicsFragment()).commit();
             }
         });

@@ -158,7 +158,7 @@ public class Hogar {
                 }
             }
 
-            //strings.add(output.toString());
+            //strings.add(output.toList());
         }
         return strings;
     }

@@ -177,7 +177,7 @@ public class TicsFragment extends Fragment {
         tic.setI5(tics_5.getSelectedItem().toString());
         tic.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
         ((MainActivity) getActivity()).getMiembro().setTic(tic);
-        Log.i("TIC toString", tic.toString());
+        Log.i("TIC toList", tic.toString());
         return true;
     }
 

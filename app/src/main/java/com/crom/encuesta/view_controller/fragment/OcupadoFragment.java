@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -241,8 +240,7 @@ public class OcupadoFragment extends Fragment {
                     next.setVisibility(View.VISIBLE);
                 }
                 if (scountry.equalsIgnoreCase("Trabajador familiar sin remuneración")) {
-                    if (save())                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
-
+                    if (save())
                     transaction.replace(R.id.contenedor, new OcupadosAsalariadosIndependientesFragment()).commit();
                 }
 
@@ -268,8 +266,7 @@ public class OcupadoFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save())                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
-
+                if (save())
                 transaction.replace(R.id.contenedor, new OcupadosAsalariadosFragment()).commit();
             }
         });

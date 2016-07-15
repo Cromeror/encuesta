@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Hogar;
-import com.crom.encuesta.persistence.HogarDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -40,6 +39,8 @@ public class CaracteristicaHogarFragment extends Fragment {
         getActivity().setTitle(getActivity().getString(R.string.capHogarA));
         view = inflater.inflate(R.layout.fragment_caracterisitca_hogar, container, false);
         hogar = new Hogar();
+        ((MainActivity) getActivity()).getVivienda().getHogares().add(hogar);
+        ((MainActivity) getActivity()).setHogar(hogar);
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
         init();
         return view;

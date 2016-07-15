@@ -15,7 +15,6 @@ import android.widget.Spinner;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Educacion;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 
@@ -37,7 +36,6 @@ public class EducacionFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_educacion, container, false);
         getActivity().setTitle(getActivity().getString(R.string.capMHogarC));
         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
         next = (Button) view.findViewById(R.id.next_salud_btn);
         init();
         contentEstablecimiento = ((LinearLayout) view.findViewById(R.id.content_establecimiento));
@@ -100,8 +98,6 @@ public class EducacionFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 if (position >= 6) {
                     if (save(false)) {
-                        ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     } else {
                         nivelEducativo.setSelection(0);
@@ -131,13 +127,10 @@ public class EducacionFragment extends Fragment {
                     } catch (Exception e) {
                     }
                     if (edad > 12) {
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new FuerzaFragment()).commit();
                     } else if (edad > 5) {
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new TicsFragment()).commit();
                     } else {
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                         transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                     }
                 }
@@ -169,6 +162,7 @@ public class EducacionFragment extends Fragment {
         if (b) {
             educacion.setMayorTitulo(tituloMayor.getSelectedItem().toString());
         }
+        ((MainActivity) getActivity()).getMiembro().setEducacion(educacion);
         educacion.setMiembroId(((MainActivity) getActivity()).getMiembro().getId());
         Log.i("INPUT", ((MainActivity) getActivity()).getVivienda().toString());
         return true;

@@ -108,6 +108,20 @@ public class TIC {
         return strings;
     }
 
+    private String depurarComas(String cadena) {
+        String result = "";
+        if (cadena != null) {
+            for (char c : cadena.toCharArray()) {
+                if (c == ',')
+                    c = '.';
+                result += c;
+            }
+        } else
+            result = cadena;
+        return result;
+    }
+
+
     @Override
     public String toString() {
         return i1 + ',' +

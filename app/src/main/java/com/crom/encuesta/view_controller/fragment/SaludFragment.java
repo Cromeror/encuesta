@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Miembro;
 import com.crom.encuesta.model.Salud;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 import com.crom.encuesta.view_controller.custom.DialogBuilder;
 import com.crom.encuesta.view_controller.util.Validador;
@@ -107,12 +106,10 @@ public class SaludFragment extends Fragment {
                 } else {
                     if (save(spinner1, spinner2, spinner3, spinner4)) {
                         salud.setMiembroId(((MainActivity)getActivity()).getMiembro().getId());
-                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
 
                         if (edad > 3) {
                             transaction.replace(R.id.contenedor, new EducacionFragment()).commit();
                         } else {
-                            SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
                             transaction.replace(R.id.contenedor, new ActionFormFragment()).commit();
                         }
                     } else {
@@ -125,7 +122,7 @@ public class SaludFragment extends Fragment {
     }
 
     private boolean save(Spinner... spinners) {
-        Miembro miembro = ((MainActivity) getActivity()).getVivienda().getLastHogar().getLastMiembro();
+        Miembro miembro = ((MainActivity) getActivity()).getMiembro();
         salud = new Salud();
         miembro.setSalud(salud);
         edad = Integer.parseInt(miembro.getEdad());

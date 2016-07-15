@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Inactivo;
 import com.crom.encuesta.model.Vivienda;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 /**
@@ -245,8 +244,6 @@ public class InactivosFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (save()) {
-                    SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
-
                     transaction.replace(R.id.contenedor, new OtrosIngresosFragment()).commit();
                 }else
                     Toast.makeText(getActivity(), "Error al guardar los datos", Toast.LENGTH_LONG).show();

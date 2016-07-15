@@ -5,6 +5,8 @@
  */
 package com.crom.encuesta.model;
 
+import android.util.Log;
+
 /**
  *
  * @author cristobal
@@ -57,6 +59,7 @@ public class Inactivo {
                 string += g[i] + ",";
             }
         }
+        Log.i("INACTIVO", string);
         return string; //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.crom.encuesta.R;
 import com.crom.encuesta.model.Ocupado;
-import com.crom.encuesta.persistence.SuperDAO;
 import com.crom.encuesta.view_controller.MainActivity;
 
 import java.util.ArrayList;
@@ -147,8 +146,7 @@ public class OcupadoinsuficienfiaHorasFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (save()) {                        SuperDAO.getInstance().update(((MainActivity) getActivity()).getDb(), ((MainActivity) getActivity()).getVivienda().getId(),((MainActivity) getActivity()).getVivienda());
-
+                if (save()) {
                     Log.i("Insuficiencia Horas", ocupado.toString());
                     transaction.replace(R.id.contenedor, new CalidadEmpleoFragment()).commit();
                 }

@@ -154,9 +154,8 @@ public class Desocupado {
         this.f13 = f13;
     }
 
-    @Override
-    public String toString() {
-        return f1 + ',' +
+    public String toList() {
+        String string = f1 + ',' +
                 f2 + ',' +
                 f3 + ',' +
                 f4 + ',' +
@@ -167,7 +166,7 @@ public class Desocupado {
                 f9 + ',' +
                 f10 + ',' +
                 f11 + ',' +
-                f12 + ',' +
-                f13;
+                f12 + ',' + f13;
+        return string;
     }
 }
